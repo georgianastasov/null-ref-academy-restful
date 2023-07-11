@@ -1,0 +1,68 @@
+<div class="site-dashboard">
+    <app-admin-navigation></app-admin-navigation>
+    <div class="site-right">
+        <div id="course-section">
+            <div class="site-top">
+                <p class="caption">Section Courses</p>
+                <a class="btt create" routerLink="/Admin/{{routeid}}/Add/Course">Create Course</a>
+            </div>
+            <table class="dashboard-table">
+                <thead>
+                    <tr>
+                        <th>Identical</th>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Points</th>
+                        <th>CreatedDate</th>
+                        <th>Sections</th>
+                        <th>Category</th>
+                        <th>Enrolled Students</th>
+                        <th>Createdby</th>
+                        <th>Options</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let course of courses">
+                        <td>{{ course.id }}</td>
+                        <td>{{ course.title }}</td>
+                        <td>{{ course.description }}</td>
+                        <td>{{ course.points }}</td>
+                        <td>{{ course.createdDate }}</td>
+                        <td>
+                            <ng-container *ngFor="let section of sections">
+                                <p *ngIf="section.courseID == course.id">Id: {{ section.id }} <br>Title: {{ section.title }}</p>
+                                <p *ngIf="section.courseID == course.id"class="line"></p>
+                            </ng-container>
+                        </td>
+                        <ng-container *ngFor="let category of categories">
+                            <ng-container *ngIf="course.categoryID == category.id">
+                                <td *ngIf="course.categoryID == category.id">
+                                    <p>Id: {{ category.id }} <br>Title: {{ category.title }}</p>
+                                </td>
+                            </ng-container>
+                        </ng-container>
+                        <td>
+                            <p [innerHTML]="studentTextArray[course.id]"></p>
+                        </td>
+                        <ng-container *ngIf="course.adminID != null">
+                            <ng-container *ngFor="let admin of admins">
+                                <td *ngIf="course.adminID == admin.id">Admin <br>Id: {{ admin.id }} <br>Username: {{ admin.username }}</td>
+                            </ng-container>
+                        </ng-container>
+                        <ng-container *ngIf="course.teacherID != null">
+                            <ng-container *ngFor="let teacher of teachers">
+                                <td *ngIf="course.teacherID == teacher.id">Teacher <br>Id: {{ teacher.id }} <br>Username: {{ teacher.username }}</td>
+                            </ng-container>
+                        </ng-container>
+                        <td>
+                            <div class="box">
+                                <a class="update" routerLink="/Admin/{{routeid}}/Update/Course/{{course.id}}">Update</a>
+                                <a class="delete" routerLink="/Admin/{{routeid}}/Delete/Course/{{course.id}}">Delete</a>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

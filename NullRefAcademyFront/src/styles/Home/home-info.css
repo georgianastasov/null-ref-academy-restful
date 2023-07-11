@@ -1,0 +1,67 @@
+﻿.site-info {
+    margin-bottom: 4rem;
+    padding: 1rem;
+}
+
+.site-info .wrapper{
+    
+}
+
+.site-info .title{
+    font-weight: bold;
+    font-size: 1.9rem;
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+.site-info .bars{
+    text-align: center;
+}
+
+.site-info .bars .bar{
+    margin-bottom: 4rem;
+    transition: transform 0.3s ease;
+}
+
+.site-info .bars .bar:hover{
+    transform: translateY(-5%) scale(1.05);
+}
+
+.site-info .bars i{
+    color: #0B92C3;
+    font-size: 3.1rem;
+    margin-bottom: 1.4rem;
+}
+
+.site-info .bars .caption{
+    font-weight: 500;
+    margin-bottom: 0.4rem;
+    font-size: 1.2rem;
+}
+
+.site-info .bars .description{
+    font-size: 0.8rem;
+    color: dimgray;
+}
+
+@media screen and (min-width: 950px) {
+    .site-info {
+        margin-bottom: 8rem;
+        padding: 1rem;
+    }
+
+    .site-info .bars {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .site-info .title {
+        margin-bottom: 9rem;
+    }
+
+    .site-info .bars .bar {
+        margin-right: 1rem;
+        margin-bottom: 0;
+    }
+}

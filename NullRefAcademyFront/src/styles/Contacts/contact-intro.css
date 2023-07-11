@@ -1,0 +1,47 @@
+﻿.contact-intro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(https://www.seekpng.com/png/detail/420-4208919_contact-us-contact-email-banner.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: repeat;
+    position: relative;
+    overflow: hidden;
+    padding: 6rem 3rem;
+    transition: transform 0.3s ease;
+    z-index: -1;
+}
+
+.contact-intro::before {
+    display: block;
+    content: '';
+    background: rgba(136, 214, 239, 0.90);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+.contact-intro:hover{
+    transform: scale(1.05);
+}
+
+.contact-intro .contact-caption {
+    position: relative;
+    z-index: 10;
+}
+
+.contact-intro .contact-caption {
+    color: black;
+    font-size: 2.5rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+.contact-line {
+    height: 1.5rem;
+    background-color: #26B6D2;
+}

@@ -1,0 +1,111 @@
+﻿.site-intro {
+    margin-bottom: 8rem;
+    margin-top: 4rem;
+}
+
+.site-intro .wrapper {
+    
+}
+
+.site-intro .media {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.site-intro .media img {
+    width: 85%;
+    border-bottom: 0.5px solid #186AF2;
+    border-left: 0.5px solid #186AF2;
+    transition: transform 0.3s ease;
+}
+
+.site-intro .media img:hover {
+    transform: translate(-5%,-5%) scale(1.05);
+    border-bottom: 3px solid #186AF2;
+    border-left: 3px solid #186AF2;
+}
+
+.site-intro .site-caption{
+    text-align: center;
+}
+
+.site-intro .site-caption .title {
+    font-weight: bold;
+    font-size: 2.0rem;
+}
+
+.site-intro .site-caption .description {
+    font-weight: lighter;
+    font-size: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1.3rem;
+    color: dimgray;
+}
+
+.site-intro .site-caption .butons {
+    display: block;
+}
+
+.site-intro .site-caption .butons a{
+    text-decoration: none;
+    padding: 0.7rem 0.9rem;
+    color: white;
+    font-weight: 500;
+    font-size: 0.8rem;
+    background-color: #186AF2;
+    margin-right: 0.5rem;
+    border-radius: 0.2rem;
+}
+
+.site-intro .site-caption .butons a:hover{
+    font-weight: bold;
+    border: 1px solid white;
+    outline: 1px solid #186AF2;
+}
+
+.site-intro .site-caption .butons a:active{
+    font-weight: bold;
+    border: 1px solid white;
+    outline: 1px solid #186AF2;
+}
+
+@media screen and (min-width: 950px) {
+    .site-intro {
+        margin-bottom: 9rem;
+        margin-top: 6rem;
+    }
+
+    .site-intro .wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .site-intro .media {
+        margin-right: 2rem;
+        margin-bottom: 0;
+    }
+
+    .site-intro .media img {
+        width: 100%;
+    }
+
+    .site-intro .site-caption{
+        text-align: start;
+    }
+
+    .site-intro .site-caption .description {
+        margin-bottom: 0.8rem;
+    }
+
+    .site-intro .site-caption .butons {
+        display: flex;
+    }
+
+    .site-intro .site-caption .butons a{
+        padding: 0.5rem 0.4rem;
+        display: block;
+    }
+}

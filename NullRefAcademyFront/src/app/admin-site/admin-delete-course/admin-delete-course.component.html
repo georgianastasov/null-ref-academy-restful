@@ -1,0 +1,60 @@
+<div class="site-dashboard">
+    <app-admin-navigation></app-admin-navigation>
+    <div class="site-right">
+        <form #form="ngForm" (ngSubmit)="onSubmit()">
+            <input asp-for="Id" hidden />
+            <div class="site-top">
+                <p class="caption">Delete Course</p>
+            </div>
+            <div class="box-form">
+                <div asp-validation-summary="ModelOnly"></div>
+                <div class="form-group">
+                    <div class="box">
+                        <label>Title</label>
+                        <input type="text" value="{{course.title}}" disabled />
+                    </div>
+                    <div class="box">
+                        <label>Description</label>
+                        <textarea rows="12" cols="55" value="{{course.description}}" disabled></textarea>
+                    </div>
+                    <div class="box">
+                        <label>Points</label>
+                        <input type="text" value="{{course.points}}" disabled />
+                    </div>
+                    <div class="box">
+                        <label>Created Date</label>
+                        <input type="text" value="{{course.createdDate}}" disabled />
+                    </div>
+                    <div class="box">
+                        <label>Category</label>
+                        <textarea rows="2" cols="45" disabled>{{categoryText}}</textarea>
+                    </div>
+                    <div class="box">
+                        <label>Sections</label>
+                        <textarea rows="10" cols="45" disabled>{{sectionsText}}</textarea>
+                    </div>
+                    <div class="box">
+                        <label>Students</label>
+                        <textarea rows="10" cols="45" disabled>{{studentsText}}</textarea>
+                    </div>
+                    <div class="box" *ngIf="hasAdmin">
+                        <label>Admin</label>
+                        <textarea rows="2" cols="45" disabled>{{adminText}}</textarea>
+                    </div>
+                    <div class="box" *ngIf="hasTeacher">
+                        <label>Teacher</label>
+                        <textarea rows="2" cols="45" disabled>{{teacherText}}</textarea>
+                    </div>
+                    <div class="box" *ngIf="!hasAdmin && !hasTeacher">
+                        <label>Created by</label>
+                        <textarea rows="2" cols="45" disabled>The creator was deactivated or no information.</textarea>
+                    </div>
+                    <div class="box-buttons">
+                        <button class="delete">Delete</button>
+                        <a class="" routerLink="/Admin/{{routeid}}/Courses">Back</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

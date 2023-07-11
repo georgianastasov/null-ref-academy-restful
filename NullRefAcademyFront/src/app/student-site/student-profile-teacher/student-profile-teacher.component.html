@@ -1,0 +1,219 @@
+<app-student-header></app-student-header>
+<div class="acount-dashboard-teacher">
+    <div class="wrapper">
+        <div class="left">
+            <div class="left-links">
+                <p>Wellcome, <a class="username">{{teacher.username}}</a></p>
+                <p class="info">Teacher dashboard</p>
+            </div>
+        </div>
+        <div class="right">
+            <p class="score">Categories: {{countCategories}}</p>
+            <p class="score">Courses: {{countCourses}}</p>
+            <p class="score">Sections: {{countSections}}</p>
+        </div>
+    </div>
+</div>
+<div class="teacher-menu">
+    <div class="wrapper">
+        <a (click)="showCategoriess()">Categories</a>
+        <a (click)="showCoursess()">Courses</a>
+        <a (click)="showSectionss()">Sections</a>
+        <a (click)="showStudentss()">Students</a>
+        <a (click)="showProfilee()">Profile</a>
+    </div>
+</div>
+<div class="teacher-dashboard">
+    <div class="wrapper">
+        <div id="teacher-categories" class="downn down-categories" *ngIf="showCategories">
+            <div class="top-top">
+                <p class="titlee">My categories</p>
+            </div>
+            <ng-container *ngFor="let category of categories">
+                <ng-container *ngIf="category.teacherID != null">
+                    <ng-container *ngIf="category.teacherID == teacherid">
+                        <div class="box">
+                            <div class="leftt">
+                                <div class="top">
+                                    <div class="left">
+                                        <p class="title">{{category.title}}</p>
+                                    </div>
+                                </div>
+                                <div class="middle">
+                                    <p class="description">{{category.description}}</p>
+                                </div>
+                                <div class="down">
+                                    <ng-container *ngIf="hasCoursesInCategory">
+                                        <p class="courses">Courses in this category: {{countCoursesInCategory}}</p>
+                                    </ng-container>
+                                    <ng-container *ngIf="!hasCoursesInCategory">
+                                        <p class="courses">No courses in this category yet.</p>
+                                    </ng-container>
+                                </div>
+                            </div>
+                            <div class="rightt">
+                                <a class="btn preview" routerLink="/Student/{{routeid}}/Category/{{category.id}}">Preview</a>
+                            </div>
+                        </div>
+                    </ng-container>
+                </ng-container>
+            </ng-container>
+            <ng-container *ngIf="!hasCreatedCategories">
+                <p class="no">No created categories at this moment.</p>
+            </ng-container>
+        </div>
+        <div id="teacher-courses" class="downn down-courses" *ngIf="showCourses">
+            <div class="top-top">
+                <p class="titlee">My courses</p>
+            </div>
+            <ng-container *ngFor="let course of courses">
+                <ng-container *ngIf="course.teacherID != null">
+                    <ng-container *ngIf="course.teacherID == teacherid">
+                        <div class="box">
+                            <div class="leftt">
+                                <div class="top">
+                                    <div class="left">
+                                        <p class="title">{{course.title}}</p>
+                                        <ng-container *ngFor="let category of categories">
+                                            <ng-container *ngIf="course.categoryID == category.id">
+                                                <p class="category">Category: {{category.title}}</p>
+                                            </ng-container>
+                                        </ng-container>
+                                    </div>
+                                    <div class="right">
+                                        <p class="points">Points: {{course.points}}</p>
+                                    </div>
+                                </div>
+                                <div class="middle">
+                                    <p class="description">{{course.description}}</p>
+                                </div>
+                                <div class="pre-down">
+                                    <ng-container *ngIf="hasSectionsInCourse">
+                                        <p class="courses">Sections in this course: {{countSectionsInCourse}}</p>
+                                    </ng-container>
+                                    <ng-container *ngIf="!hasSectionsInCourse">
+                                        <p class="courses">No sections in this course yet.</p>
+                                    </ng-container>
+                                </div>
+                                <div class="down">
+                                    <ng-container *ngId="course.studentsIDs != null">
+                                        <p class="students">Students enrolled in this course: {{studentCourse[course.id]}}</p>
+                                    </ng-container>
+                                    <ng-container *ngId="course.studentsIDs == null">
+                                        <p class="students">No students enrolled in this course yet.</p>
+                                    </ng-container>
+                                </div>
+                            </div>
+                            <div class="rightt">
+                                <a class="btn preview" routerLink="/Student/{{routeid}}/Course/{{course.id}}">Preview</a>
+                            </div>
+                        </div>
+                    </ng-container>
+                </ng-container>
+            </ng-container>
+            <ng-container *ngIf="!hasCreatedCourses">
+                <p class="no">No created courses at this moment.</p>
+            </ng-container>
+        </div>
+        <div id="teacher-sections" class="downn down-sections" *ngIf="showSections">
+            <div class="top-top">
+                <p class="titlee">My sections</p>
+            </div>
+            <ng-container *ngFor="let section of sections">
+                <ng-container *ngIf="section.teacherID != null">
+                    <ng-container *ngIf="section.teacherID == teacherid">
+                        <div class="box">
+                            <div class="leftt">
+                                <div class="top">
+                                    <div class="left">
+                                        <p class="title">{{section.title}}</p>
+                                        <ng-container *ngFor="let course of courses">
+                                            <ng-container *ngIf="section.courseID == course.id">
+                                                <p class="course">Course: {{course.title}}</p>
+                                            </ng-container>
+                                        </ng-container>
+                                    </div>
+                                </div>
+                                <div class="middle">
+                                    <p class="description">{{section.description}}</p>
+                                </div>
+                            </div>
+                            <div class="rightt">
+                                <a class="btn preview" routerLink="/Student/{{routeid}}/Section/{{sectionCourse[section.id]}}">Preview</a>
+                            </div>
+                        </div>
+                    </ng-container>
+                </ng-container>
+            </ng-container>
+            <ng-container *ngIf="!hasCreatedSections">
+                <p class="no">No created sections at this moment.</p>
+            </ng-container>
+        </div>
+        <div id="teacher-students" class="downn down-students" *ngIf="showStudents">
+            <p class="titlee">My students</p>
+            <ng-container *ngIf="teacherStudents.length != null || teacherStudents.length > 0 || teacherStudents.length != 0">
+                <ng-container *ngFor="let teacherStudent of teacherStudents">
+                    <div class="box">
+                        <div class="up">
+                            <p class="cap">Student</p>
+                            <p class="name">{{teacherStudent.firstName}} {{teacherStudent.lastName}}</p>
+                            <p class="name">{{teacherStudent.email}}</p>
+                        </div>
+                        <div class="middle">
+                            <p class="bio">{{teacherStudent.bio}}</p>
+                        </div>
+                        <div class="predown">
+                            <p class="username">Username: {{teacherStudent.username}}</p>
+                            <p class="points">Points: {{teacherStudent.points}}</p>
+                        </div>
+                        <div class="down">
+                            <p class="courses">Courses enrolled: {{teacherStudent.courseCount}}</p>
+                        </div>
+                        <p class="btnbox"><a class="btn preview" routerLink="/Student/{{routeid}}/Profile/Student/{{teacherStudent.id}}">View Profile</a></p>
+                    </div>
+                </ng-container>
+            </ng-container>
+            <ng-container *ngIf="teacherStudents.length == null || teacherStudents.length == 0">
+                <p class="no">No students enrolled in you courses at this moment.</p>
+            </ng-container>
+        </div>
+        <div id="teacher-profile" class="downn down-profile" *ngIf="showProfile">
+            <p class="titlee">My profile</p>
+            <div class="info-box">
+                <div class="up">
+                    <p class="cap">Information</p>
+                    <p class="desc"><i class="fa-solid fa-user"></i>Profile</p>
+                </div>
+                <div class="down">
+                    <p class="cap">User statistic</p>
+                    <div class="box">
+                        <p class="info-left">Date joined</p>
+                        <p class="info-right">{{teacher.createdDate}}</p>
+                    </div>
+                    <div class="box">
+                        <p class="info-left">Created categories</p>
+                        <p class="info-right">{{countCategories}}</p>
+                    </div>
+                    <div class="box">
+                        <p class="info-left">Created courses</p>
+                        <p class="info-right">{{countCourses}}</p>
+                    </div>
+                    <div class="box">
+                        <p class="info-left">Created sections</p>
+                        <p class="info-right">{{countSections}}</p>
+                    </div>
+                    <div class="box">
+                        <p class="info-left">Students enrolled to your teach</p>
+                        <ng-container *ngIf="hasStudentsInCourses">
+                            <p class="info-right">{{countStudents}}</p>
+                        </ng-container>
+                        <ng-container *ngIf="!hasStudentsInCourses">
+                            <p class="info-right">0</p>
+                        </ng-container>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-student-footer></app-student-footer>

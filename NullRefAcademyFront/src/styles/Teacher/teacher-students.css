@@ -1,0 +1,93 @@
+﻿.teacher-dashboard .down-students {
+    display: block;
+    flex-wrap: wrap;
+}
+
+.teacher-dashboard .down-students .titlee {
+    margin-bottom: 2rem;
+    flex-basis: 100%;
+}
+
+.teacher-dashboard .down-students .box {
+    flex-basis: 45%;
+    padding: 1rem;
+    border: 1px solid gray;
+    border-radius: 0.3rem;
+    box-shadow: 0px 0px 14px 3px rgba(0,0,0,0.2);
+    margin-bottom: 3rem;
+    justify-content: space-between;
+}
+
+.teacher-dashboard .down-students .box .up{
+   border-bottom: 1px solid lightgray;
+   margin-bottom: 0.3rem;
+   padding-bottom: 0.2rem;
+}
+
+.teacher-dashboard .down-students .box .cap{
+   font-size: 0.85rem;
+   text-transform: uppercase;
+   color: darkslategray;
+   font-weight: 500;
+}
+
+.teacher-dashboard .down-students .box .name{
+   font-weight: 500;
+}
+
+.teacher-dashboard .down-students .box .bio{
+   font-size: 0.9rem;
+   padding: 0.5rem 0;
+   color: gray;
+}
+
+.teacher-dashboard .down-students .box .predown{
+   border-top: 1px solid lightgray;
+   margin-top: 0.3rem;
+   padding-top: 0.2rem;
+}
+
+.teacher-dashboard .down-students .box .username{
+   font-weight: 500;
+   font-size: 0.9rem;
+}
+
+.teacher-dashboard .down-students .box .courses{
+   font-size: 0.9rem;
+   color: gray;
+}
+
+.teacher-dashboard .down-students .box .points{
+   font-weight: 500;
+   font-size: 0.9rem;
+}
+
+.teacher-dashboard .down-students .box .btnbox{
+    text-align: end;
+}
+
+.teacher-dashboard .down-students .box .btn{
+    display: inline-block;
+    color: black;
+    border-radius: 0.4rem;
+    padding: 0.3rem 0.5rem;
+    margin-top: 0.5rem;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+}
+
+.teacher-dashboard .down-students .box .btn:hover {
+    color: white;
+}
+
+.teacher-dashboard .down-students .box .btn.preview{
+    background-color: #5FC9DE;
+}
+
+@media screen and (min-width: 1050px) {
+   .teacher-dashboard .down-students {
+      display: flex;
+      flex-wrap: wrap;
+  }
+}

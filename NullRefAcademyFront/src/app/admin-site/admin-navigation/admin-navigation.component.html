@@ -1,0 +1,23 @@
+<div class="site-left">
+    <p class="site-title">Admin Dashboard</p>
+    <nav class="navigation-account">
+        <ul>
+            <li>
+                <a href="/Admin/{{routeid}}/Dashboard">Admin: {{ admin.username }}</a>
+            </li>
+            <li><a routerLink="/Home/Main">Logout</a></li>
+        </ul>
+    </nav>
+    <nav class="navigation-admin">
+        <ul>
+            <li><a routerLink="/Admin/{{routeid}}/Dashboard">All</a></li>
+            <li><a routerLink="/Admin/{{routeid}}/Users">Users</a></li>
+            <li><a routerLink="/Admin/{{routeid}}/Admins">Admins</a></li>
+            <li><a routerLink="/Admin/{{routeid}}/Teachers">Teachers</a></li>
+            <li><a routerLink="/Admin/{{routeid}}/Students">Students</a></li>
+            <li><a routerLink="/Admin/{{routeid}}/Categories">Categories</a></li>
+            <li><a routerLink="/Admin/{{routeid}}/Courses">Courses</a></li>
+            <li><a routerLink="/Admin/{{routeid}}/Sections">Sections</a></li>
+        </ul>
+    </nav>
+</div>

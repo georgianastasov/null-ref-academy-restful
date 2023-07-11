@@ -1,0 +1,200 @@
+﻿html {
+    scroll-behavior: smooth;
+}
+
+.intro-enroll {
+    padding: 1.5rem;
+    background-color: #0A2A66;
+}
+
+.intro-enroll .upcap a{
+    text-decoration: none;
+    color: lightgray;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.intro-enroll .upcap a:hover{
+    color: white;
+    font-weight: bold;
+}
+
+.intro-enroll .cap{
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: white;
+}
+
+.info-enroll {
+    padding: 4rem 0 4rem 0;
+    background-color: #F7F8FA;
+}
+
+.info-enroll .wrapper{
+    display: block;
+}
+
+.info-enroll .left{
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.info-enroll .left .cap{
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-bottom: 0.2rem;
+}
+
+.info-enroll .left .up{
+    margin-bottom: 2rem;
+} 
+
+.info-enroll .left .up .count a{
+    font-size: 0.9rem;
+    color: gray;
+    text-decoration: none;
+}
+
+.info-enroll .left .up .count a:hover{
+    font-size: 0.9rem;
+    color: darkslategray;
+    text-decoration: underline;
+}
+
+.info-enroll .left .down .points {
+    padding: 0.1rem 0.8rem;
+    border-radius: 0.4rem;
+    font-size: 0.9rem;
+    background: linear-gradient(to right, #0A2A66, #25B6D2);
+    vertical-align: central;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 2rem;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.info-enroll .left .down-down {
+    margin-bottom: 2rem;
+}
+
+.info-enroll .left .down-down .description {
+    font-size: 0.9rem;
+    color: gray;
+}
+
+.info-enroll .left .bottom .creator{
+    font-size: 0.9rem;
+    color: gray;
+}
+
+.info-enroll .left .bottom .creatort{
+    text-decoration: none;
+    font-size: 0.9rem;
+    color: gray;
+}
+
+.info-enroll .left .bottom .creatort:hover{
+    color: darkslategray;
+    text-decoration: underline;
+}
+
+.info-enroll .right{
+    margin-left: 2rem; 
+    flex-basis: 75%;
+}
+
+.info-enroll .right .title{
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.info-enroll .right .box{
+    margin-bottom: 3.5rem;
+    margin-left: 0.3rem;
+}
+
+.info-enroll .right .box .section-title{
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.info-enroll .right .box .description {
+    font-size: 0.9rem;
+    color: gray;
+    padding-bottom: 0.2rem;
+}
+
+.info-enroll .right .box .down {
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid lightgray;
+}
+
+.info-enroll .right .box .down-down{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width:100%;
+    display:inline;
+}
+
+.info-enroll .right .box .down-down .text{
+    max-width:100%;
+}
+
+.info-enroll .right .under p{
+    text-align: end;
+}
+
+.info-enroll .right .under .ready{
+    font-size: 0.9rem;
+    color: green;
+    margin-bottom: 0.2rem;
+}
+
+.info-enroll .right .under .done{
+    font-size: 0.9rem;
+    color: blue;
+    margin-bottom: 0.2rem;
+}
+
+.info-enroll .right .under a {
+    text-decoration: none;
+    padding: 0.7rem 1.2rem;
+    color: white;
+    font-weight: 500;
+    font-size: 0.8rem;
+    background-color: green;
+    margin-right: 0.5rem;
+    border-radius: 0.3rem;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.info-enroll .right .under .donebtn {
+    background-color: blue;
+}
+
+.info-enroll .right .under a:hover {
+    font-weight: bold;
+    border: 2px solid white;
+    outline: 2px solid green;
+}
+
+.info-enroll .right .under .donebtn:hover {
+    outline: 2px solid blue;
+}
+
+@media screen and (min-width: 1050px) {
+    .info-enroll .wrapper{
+        display: flex;
+    }
+
+    .info-enroll .left{
+        border-right: 1px solid lightgray;
+        padding-right: 1rem;
+        flex-basis: 20%;
+        margin-bottom: 0rem;
+        text-align: start;
+    }
+}

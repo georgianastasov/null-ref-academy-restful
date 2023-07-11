@@ -1,0 +1,128 @@
+﻿.teacher-dashboard .down-categories .top-top {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.teacher-dashboard .down-categories .top-top .titlee {
+    margin-bottom: 0;
+}
+
+.teacher-dashboard .down-categories .top-top .btncreate {
+    display: inline-block;
+    margin-left: 1rem;
+    margin-top: 0.2rem;
+    text-decoration: none;
+    color: black;
+    border-radius: 0.4rem;
+    padding: 0.2rem 0.5rem;
+    background-color: #5FC9DE;
+}
+
+.teacher-dashboard .down-categories .top-top .btncreate:hover{
+    border: 1px solid black;
+    font-weight: 500;
+}
+
+.teacher-dashboard .down-categories .box {
+    padding: 1rem;
+    border: 1px solid gray;
+    border-radius: 0.3rem;
+    box-shadow: 0px 0px 14px 3px rgba(0,0,0,0.2);
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+    display: block;
+    justify-content: space-between;
+}
+
+.teacher-dashboard .down-categories .box .leftt{
+    flex-basis: 88%;
+}
+
+.teacher-dashboard .down-categories .box .rightt{
+    flex-basis: 8%;
+    display: block;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 0.5rem;
+}
+
+.teacher-dashboard .down-categories .box .top{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.8rem;
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 0.2rem;
+}
+
+.teacher-dashboard .down-categories .box .top .title{
+    font-size:1.2rem;
+    font-weight: bold;
+}
+
+.teacher-dashboard .down-categories .box .middle .description{
+    font-size: 0.95rem;
+    color: gray;
+}
+
+.teacher-dashboard .down-categories .box .down{
+    margin-top: 0.8rem;
+    border-top: 1px solid lightgray;
+    padding-top: 0.2rem;
+}
+
+.teacher-dashboard .down-categories .box .down .courses{
+    color: gray;
+}
+
+.teacher-dashboard .down-categories .box .btn{
+    display: inline-block;
+    color: black;
+    border-radius: 0.4rem;
+    padding: 0.3rem 0.5rem;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    margin-right: 0.5rem;
+}
+
+.teacher-dashboard .down-categories .box .btn:hover{
+    color: white;
+}
+
+.teacher-dashboard .down-categories .box .btn.update{
+    background-color: orange;
+}
+
+.teacher-dashboard .down-categories .box .btn.delete{
+    background-color: red;
+}
+
+.teacher-dashboard .down-categories .box .btn.preview{
+    background-color: #5FC9DE;
+}
+
+
+.teacher-dashboard .down-categories .box .btn:last-child{
+    margin-bottom: 0;
+}
+
+@media screen and (min-width: 1050px) {
+    .teacher-dashboard .down-categories .box {
+        align-items: center;
+        flex-wrap: wrap;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .teacher-dashboard .down-categories .box .rightt{
+        display: flex;
+        margin-top: 0rem;
+    }
+
+    .teacher-dashboard .down-categories .box .btn{
+        margin-right: 0;
+    }
+}

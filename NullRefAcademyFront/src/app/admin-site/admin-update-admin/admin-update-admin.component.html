@@ -1,0 +1,71 @@
+<div class="site-dashboard">
+    <app-admin-navigation></app-admin-navigation>
+    <div class="site-right">
+        <form #form="ngForm" (ngSubmit)="onSubmit()">
+            <input asp-for="Id" hidden/>
+            <div class="site-top">
+                <p class="caption">Update Admin</p>
+            </div>
+            <div class="box-form">
+                <div asp-validation-summary="ModelOnly"></div>
+                <div class="form-group">
+                    <div class="box">
+                        <label>First Name</label>
+                        <input type="text" value="{{takenAdmin.firstName}}" name="firstName" [(ngModel)]="admin.firstName"/>
+                        <span class="validation">First Name must be longer than 2 letters.</span>
+                    </div>
+                    <div class="box">
+                        <label>Last Name</label>
+                        <input type="text" value="{{takenAdmin.lastName}}" name="lastName" [(ngModel)]="admin.lastName"/>
+                        <span class="validation">Last Name must be longer than 2 letters.</span>
+                    </div>
+                    <div class="box">
+                        <label>Username</label>
+                        <input type="text" value="{{takenAdmin.username}}" name="username" [(ngModel)]="admin.username" />
+                        <span class="validation">Username must be longer than 5 letters.</span>
+                    </div>
+                    <div class="box">
+                        <label>Email</label>
+                        <input type="text" value="{{takenAdmin.email}}" name="email" [(ngModel)]="admin.email"/>
+                    </div>
+                    <div class="box">
+                        <label>Account Type</label>
+                        <input type="text" value="{{takenAdmin.accountType}}" [(ngModel)]="admin.accountType" disabled/>
+                    </div>
+                    <div class="box">
+                        <label>Password</label>
+                        <input type="text" value="{{takenAdmin.password}}" name="password" [(ngModel)]="admin.password" />
+                        <span class="validation">Password must start with uppercase letter.</span>
+                        <span class="validation">Password must have digits.</span>
+                        <span class="validation">Password must be longer than 5 symbols.</span>
+                    </div>
+                    <div class="box">
+                        <label>Confirm Password</label>
+                        <input type="text" value="{{takenAdmin.confirmPassword}}" name="confirmPassword" [(ngModel)]="admin.confirmPassword"/>
+                        <span class="validation">Confirm Password must match password.</span>
+                    </div>
+                    <div class="box">
+                        <label>Created Date</label>
+                        <input type="text" value="{{takenAdmin.createdDate}}" [(ngModel)]="admin.createdDate" disabled/>
+                    </div>
+                    <div class="box">
+                        <label>Categories</label>
+                        <textarea type="text" rows="10" cols="45" disabled>{{ categoriesText }}</textarea>
+                    </div>
+                    <div class="box">
+                        <label>Courses</label>
+                        <textarea type="text" rows="10" cols="45" disabled>{{ coursesText }}</textarea>
+                    </div>
+                    <div class="box">
+                        <label>Sections</label>
+                        <textarea type="text" rows="10" cols="45" disabled>{{ sectionsText }}</textarea>
+                    </div>
+                    <div class="box-buttons">
+                        <button class="update">Update</button>
+                        <a class="" routerLink="/Admin/{{routeid}}/Admins">Back</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+     </div>
+</div>

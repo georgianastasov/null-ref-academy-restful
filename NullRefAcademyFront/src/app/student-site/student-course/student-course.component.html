@@ -1,0 +1,121 @@
+<app-student-header></app-student-header>
+<div class="intro-course">
+    <div class="wrapper">
+        <ng-container *ngFor="let course of courses">
+            <ng-container *ngIf="course.id == courseid">
+                <p class="upcap"><a routerLink="/Student/{{routeid}}/Courses">{{course.title}}</a></p>
+            </ng-container>
+        </ng-container>
+        <p class="cap">Course</p>
+    </div>
+</div>
+<div class="info-course">
+    <div class="wrapper">
+        <div class="left">
+            <div class="up">
+                <p class="cap">In this course:</p>
+                <ng-container *ngFor="let section of sections">
+                    <ng-container *ngIf="section.courseID == courseid">
+                        <p class="count">{{counts[section.id]}}. {{section.title}}</p>
+                    </ng-container>
+                </ng-container>
+            </div>
+            <div class="down">
+                <p class="cap">This course will bring you:</p>
+                <ng-container *ngFor="let course of courses">
+                    <ng-container *ngIf="course.id == courseid">
+                        <a class="points">{{course.points}} points</a>
+                    </ng-container>
+                </ng-container>
+            </div>
+            <div class="down-down">
+                <p class="cap">Course about:</p>
+                <ng-container *ngFor="let course of courses">
+                    <ng-container *ngIf="course.id == courseid">
+                        <p class="description">{{course.description}}</p>
+                    </ng-container>
+                </ng-container>
+            </div>
+            <div class="bottom">
+                <p class="cap">Created by:</p>
+                <ng-container *ngFor="let course of courses">
+                    <ng-container *ngIf="course.id == courseid">
+                        <ng-container *ngIf="course.adminID != null">
+                            <ng-container *ngFor="let admin of admins">
+                                <ng-container *ngIf="course.adminID == admin.id">
+                                    <p class="creator">Admin: {{admin.username}}</p>
+                                </ng-container>
+                            </ng-container>
+                        </ng-container>
+                        <ng-container *ngIf="course.teacherID != null">
+                            <ng-container *ngFor="let teacher of teachers">
+                                <ng-container *ngIf="course.teacherID == teacher.id">
+                                    <a class="creator" routerLink="/Student/{{routeid}}/Profile/Teacher/{{teacher.id}}">Teacher: {{teacher.username}}</a>
+                                </ng-container>
+                            </ng-container>
+                        </ng-container>
+                        <ng-container *ngIf="course.teacherID == null && course.adminID == null">
+                            <p class="creator">The creator was deactivated.</p>
+                        </ng-container>
+                    </ng-container>
+                </ng-container>
+            </div>
+        </div>
+        <div class="right">
+            <ng-container *ngFor="let course of courses">
+                <ng-container *ngIf="course.id == courseid"> 
+                    <ng-container *ngFor="let section of sections">
+                        <ng-container *ngIf="section.courseID == courseid">
+                            <ng-container *ngFor="let category of categories">
+                                <ng-container *ngIf="course.categoryID == category.id">
+                                    <div class="box">
+                                        <div class="up">
+                                            <ng-container *ngIf="category.title == 'Math'">
+                                                <a routerLink="/Student/{{routeid}}/Category/{{category.id}}"><img
+                                                    src="../../../assets/images/mathicon.jpg"></a>
+                                            </ng-container>
+                                            <ng-container *ngIf="category.title == 'Science'">
+                                                <a routerLink="/Student/{{routeid}}/Category/{{category.id}}"><img
+                                                    src="../../../assets/images/scienceicon.jpg"></a>
+                                            </ng-container>
+                                            <ng-container *ngIf="category.title == 'Art'">
+                                                <a routerLink="/Student/{{routeid}}/Category/{{category.id}}"><img
+                                                    src="../../../assets/images/articon.jpg"></a>
+                                            </ng-container>
+                                            <ng-container *ngIf="category.title == 'Informatics'">
+                                                <a routerLink="/Student/{{routeid}}/Category/{{category.id}}"><img
+                                                    src="../../../assets/images/informaticsicon.png"></a>
+                                            </ng-container>
+                                            <ng-container *ngIf="category.title == 'Physics'">
+                                                <a routerLink="/Student/{{routeid}}/Category/{{category.id}}"><img
+                                                    src="../../../assets/images/physicsicon.jpg"></a>
+                                            </ng-container>
+                                            <p class="title">{{section.title}}</p>
+                                        </div>
+                                        <div class="down">
+                                            <p class="description">{{section.description}}</p>
+                                        </div>
+                                    </div>
+                                </ng-container>
+                            </ng-container>
+                        </ng-container>
+                    </ng-container>
+                </ng-container>
+            </ng-container>
+            <div class="under">
+                <ng-container *ngIf="studentCourses.length == 0">
+                    <p><a routerLink="/Student/{{routeid}}/Course/{{courseid}}/Enroll">Enroll</a></p>
+                </ng-container>
+                <ng-container *ngIf="studentCourses.length != 0">
+                    <ng-container *ngIf="hasEnroll">
+                        <p><a routerLink="/Student/{{routeid}}/Course/{{courseid}}/Enroll">Preview</a></p>
+                    </ng-container>
+                    <ng-container *ngIf="!hasEnroll">
+                        <p><a routerLink="/Student/{{routeid}}/Course/{{courseid}}/Enroll">Enroll</a></p>
+                    </ng-container>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+</div>
+<app-student-footer></app-student-footer>

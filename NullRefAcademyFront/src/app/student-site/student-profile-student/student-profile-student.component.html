@@ -1,0 +1,170 @@
+<app-student-header></app-student-header>
+<div class="acount-dashboard">
+    <div class="wrapper">
+        <div class="left">
+            <a><img src="../../../assets/images/blobby-green.svg"></a>
+            <div class="left-links">
+                <p>Wellcome, <a class="username">{{student.username}}</a></p>
+                <a class="bio">
+                    <ng-container *ngIf="student.bio != null">
+                        <a class="bio-written">{{student.bio}}</a>
+                    </ng-container>
+                </a>
+            </div>
+        </div>
+        <div class="right">
+            <p class="score">Points: {{student.points}}</p>
+        </div>
+    </div>
+</div>
+<div class="student-dashboard">
+    <div class="wrapper">
+        <div class="left">
+            <p class="desc">Stuff</p>
+            <p><a class="stuff" (click)="showCoursess()">Courses</a></p>
+            <p class="desc">Account</p>
+            <p><a class="acc" (click)="showProgress()">Progress</a></p>
+            <p><a class="acc" (click)="showProfilee()">Profile</a></p>
+        </div>
+        <div id="student-course" class="right right-courses" *ngIf="showCourse">
+            <p class="titlee">Courses</p>
+            <ng-container *ngFor="let studentCourse of studentCourses">
+                <div class="box">
+                    <div class="up">
+                        <div class="leftt">
+                            <p class="title">{{studentCourse.title}}</p>
+                            <ng-container *ngFor="let category of categories">
+                                <ng-container *ngIf="category.id == studentCourse.categoryID">
+                                    <p class="category">Category: <a>{{category.title}}</a></p>
+                                </ng-container>
+                            </ng-container>
+                        </div>
+                        <div class="rightt">
+                            <ng-container *ngIf="studentCourse.isFinished == '1'">
+                                <p class="isfinishy">Finished</p>
+                            </ng-container>
+                            <ng-container *ngIf="studentCourse.isFinished == '0'">
+                                <p class="isfinishn">Not finished yet</p>
+                            </ng-container>
+                        </div>
+                    </div>
+                    <div class="down">
+                        <ng-container *ngFor="let section of sections">
+                            <ng-container *ngIf="section.courseID == studentCourse.id">
+                                <ng-container *ngFor="let category of categories">
+                                    <ng-container *ngIf="category.id == studentCourse.categoryID">
+                                        <div class="section">
+                                            <ng-container *ngIf="category.title == 'Math'">
+                                                <p class="section-img"><img src="../../../assets/images/mathicon.jpg"></p>
+                                                <p class="section-title">{{section.title}}</p>
+                                            </ng-container>
+                                            <ng-container *ngIf="category.title == 'Science'">
+                                                <p class="section-img"><img src="../../../assets/images/scienceicon.jpg"></p>
+                                                <p class="section-title">{{section.title}}</p>
+                                            </ng-container>
+                                            <ng-container *ngIf="category.title == 'Art'">
+                                                <p class="section-img"><img src="../../../assets/images/articon.jpg"></p>
+                                                <p class="section-title">{{section.title}}</p>
+                                            </ng-container>
+                                            <ng-container *ngIf="category.title == 'Informatics'">
+                                                <p class="section-img"><img src="../../../assets/images/informaticsicon.png"></p>
+                                                <p class="section-title">{{section.title}}</p>
+                                            </ng-container>
+                                            <ng-container *ngIf="category.title == 'Physics'">
+                                                <p class="section-img"><img src="../../../assets/images/physicsicon.jpg"></p>
+                                                <p class="section-title">{{section.title}}</p>
+                                            </ng-container>
+                                        </div>
+                                    </ng-container>
+                                </ng-container>
+                            </ng-container>
+                        </ng-container>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+        <div id="student-progress" class="right right-progress" *ngIf="showProgres">
+            <p class="titlee">Progress</p>
+            <ng-container *ngFor="let studentCourse of studentCourses">
+                <div class="progress-box">
+                    <p class="title">{{studentCourse.title}}</p>
+                    <div class="p-box">
+                        <span class="line start-line"></span><p class="start">Started on: <span class="bold">{{studentCourse.startDate}}</span></p>
+                    </div>
+                    <ng-container *ngIf="studentCourse.isFinished == '1'">
+                        <div class="p-box">
+                            <span class="line end-line"></span><p class="end">Finished on: <span class="bold">{{studentCourse.endDate}}</span></p>
+                        </div>
+                    </ng-container>
+                    <ng-container *ngIf="studentCourse.isFinished != '1'">
+                        <div class="p-box">
+                            <span class="line end-line"></span><p class="end">Not finished yed</p>
+                        </div>
+                    </ng-container>
+                    <div class="p-box">
+                        <span class="line points-line"></span><p class="final">Points: <span class="bold">+{{studentCourse.points}}</span></p>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+        <div id="student-profile" class="right right-profile" *ngIf="showProfile">
+            <p class="titlee">Profile</p>
+            <div class="info-box">
+                <div class="up">
+                    <p class="cap">Information</p>
+                    <p class="desc"><i class="fa-solid fa-user"></i>Profile</p>
+                </div>
+                <div class="down">
+                    <p class="cap">User statistic</p>
+                    <div class="box">
+                        <p class="info-left">Date joined</p>
+                        <p class="info-right">{{student.createdDate}}</p>
+                    </div>
+                    <div class="box">
+                        <p class="info-left">Time spent</p>
+                        <p class="info-right">{{student.timeSpent}}</p>
+                    </div>
+                    <div class="box">
+                        <p class="info-left">Progress</p>
+                        <ng-container *ngIf="dates.length < 2">
+                            <p class="info-right">from {{dates[0]}} to {{dates[0]}}</p>
+                        </ng-container>
+                        <ng-container *ngIf="dates.length >= 2">
+                            <p class="info-right">from {{dates[0]}} to {{dates[dates.length - 1]}}</p>
+                        </ng-container>
+                        <ng-container *ngIf="dates.length == 0">
+                            <p class="info-right">no progress yet</p>
+                        </ng-container>
+                    </div>
+                </div>
+            </div>
+            <div class="info-box">
+                <div class="up">
+                    <p class="cap">Information</p>
+                    <p class="desc"><i class="fa-solid fa-code"></i>Courses</p>
+                </div>
+                <div class="down">
+                    <p class="cap">Course statistic</p>
+                    <div class="box">
+                        <p class="info-left">Course completed</p>
+                        <p class="info-right">{{counter}}</p>
+                    </div>
+                    <div class="box">
+                        <p class="info-left">Energy points earned</p>
+                        <p class="info-right points">{{student.points}}</p>
+                    </div>
+                    <div class="box">
+                        <p class="info-left">Course enrolled</p>
+                        <ng-container *ngIf="studentCourses.length != null">
+                            <p class="info-right">{{studentCourses.length}}</p>
+                        </ng-container>
+                        <ng-container *ngIf="studentCourses.length == null">
+                            <p class="info-right">0</p>
+                        </ng-container>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-student-footer></app-student-footer>

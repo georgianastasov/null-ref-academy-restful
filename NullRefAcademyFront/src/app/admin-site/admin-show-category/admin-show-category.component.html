@@ -1,0 +1,52 @@
+<div class="site-dashboard">
+    <app-admin-navigation></app-admin-navigation>
+    <div class="site-right">
+        <div id="category-section">
+            <div class="site-top">
+                <p class="caption">Section Categories</p>
+                <a class="btt create" routerLink="/Admin/{{ routeid }}/Add/Category">Create Category</a>
+            </div>
+            <table class="dashboard-table">
+                <thead>
+                    <tr>
+                        <th>Identical</th>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Courses in this category</th>
+                        <th>Created by</th>
+                        <th>Options</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let category of categories">
+                        <td>{{ category.id }}</td>
+                        <td>{{ category.title }}</td>
+                        <td>{{ category.description }}</td>
+                        <td>
+                            <ng-container *ngFor="let course of courses">
+                                <p *ngIf="course.categoryID == category.id">Id: {{ course.id }} <br>Title: {{ course.title }}</p>
+                                <p *ngIf="course.categoryID == category.id" class="line"></p>
+                            </ng-container>
+                        </td>
+                        <ng-container *ngIf="category.adminID != null">
+                            <ng-container *ngFor="let admin of admins">
+                                <td *ngIf="category.adminID == admin.id">Admin <br>Id: {{ admin.id }} <br>Username: {{ admin.username }}</td>
+                            </ng-container>
+                        </ng-container>
+                        <ng-container *ngIf="category.teacherID != null">
+                            <ng-container *ngFor="let teacher of teachers">
+                                <td *ngIf="category.teacherID == teacher.id">Teacher <br>Id: {{ teacher.id }} <br>Username: {{ teacher.username }}</td>
+                            </ng-container>
+                        </ng-container>
+                        <td>
+                            <div class="box">
+                                <a class="update" routerLink="/Admin/{{routeid}}/Update/Category/{{category.id}}">Update</a>
+                                <a class="delete" routerLink="/Admin/{{routeid}}/Delete/Category/{{category.id}}">Delete</a>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

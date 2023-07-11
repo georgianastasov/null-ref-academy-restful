@@ -1,0 +1,117 @@
+﻿.site-info-teacher {
+    margin-bottom: 8rem;
+}
+
+.site-info-teacher .wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.site-info-teacher .media {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+    flex-basis: 100%;
+    order: 1;
+}
+
+.site-info-teacher .media img {
+    width: 75%;
+    border-bottom: 0.5px solid #901B73;
+    border-right: 0.5px solid #901B73;
+    transition: transform 0.3s ease;
+}
+
+.site-info-teacher .media img:hover {
+    transform: translate(-5%,-5%) scale(1.05);
+    border-bottom: 3px solid #901B73;
+    border-right: 3px solid #901B73;
+}
+
+.site-info-teacher .site-caption{
+    text-align: center;
+    flex-basis: 100%;
+    order: 2;
+}
+
+.site-info-teacher .site-caption .upper{
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    color: dimgray;
+}
+
+.site-info-teacher .site-caption .title {
+    font-weight: bold;
+    font-size: 2.0rem;
+}
+
+.site-info-teacher .site-caption .description {
+    font-weight: lighter;
+    font-size: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1.2rem;
+    color: dimgray;
+}
+
+.site-info-teacher .site-caption .butons {
+    display: block;
+}
+
+.site-info-teacher .site-caption .butons a{
+    text-decoration: none;
+    padding: 0.6rem 0.9rem;
+    color: white;
+    font-weight: 500;
+    font-size: 0.8rem;
+    background-color: #901B73;
+    margin-right: 0.5rem;
+    border-radius: 0.2rem;
+}
+
+.site-info-teacher .site-caption .butons a:hover{
+    font-weight: bold;
+    border: 1px solid white;
+    outline: 1px solid #901B73;
+}
+
+@media screen and (min-width: 950px) {
+    .site-info-teacher {
+        margin-bottom: 10rem;
+    }
+
+    .site-info-teacher .wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: nowrap;
+    }
+
+    .site-info-teacher .media {
+        margin-left: 2rem;
+        margin-bottom: 0;
+        order: 2;
+    }
+
+    .site-info-teacher .media img {
+        width: 90%;
+    }
+
+    .site-info-teacher .site-caption{
+        text-align: start;
+        order: 1;
+    }
+
+    .site-info-teacher .site-caption .description {
+        margin-bottom: 0.8rem;
+    }
+
+    .site-info-teacher .site-caption .butons {
+        display: flex;
+    }
+
+    .site-info-teacher .site-caption .butons a{
+        padding: 0.5rem 0.4rem;
+        display: block;
+    }
+}

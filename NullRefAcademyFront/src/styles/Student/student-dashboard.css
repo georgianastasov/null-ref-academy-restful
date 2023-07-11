@@ -1,0 +1,575 @@
+﻿#box-form-box {
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%, 0);
+    padding: 2rem;
+    background-color: white;
+    border-radius: 0.2rem;
+    box-shadow: 0px 0px 15px 3px rgba(0,0,0,0.5);
+    z-index: 200;
+    margin-top: 6.5rem;
+}
+
+.top-box .form-group{
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.top-box .form-group .box{
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 0.5rem;
+}
+
+.top-box .form-group .box .validation{
+    font-size: 0.8rem;
+    font-style: italic;
+    flex-basis: 100%;
+}
+
+.top-box .form-group .box label{
+    flex-basis: 70%;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.top-box .form-group .box textarea{
+    padding: 0.3rem;
+    font-size: 1rem;
+}
+
+.top-box .form-group .box-buttons {
+    flex-basis: 90%;
+    display: block;
+}
+
+.top-box .form-group .box-buttons .add{
+    border: none;
+    border-radius: 0.4rem;
+    background-color: green;
+    color: white;
+    font-size: 0.9rem;
+    padding: 0.3rem;
+    cursor: pointer;
+    margin-right: 0.5rem;
+}
+
+.top-box .form-group .box-buttons .add{
+    display: inline-block;
+    border: none;
+    border-radius: 0.4rem;
+    background-color: green;
+    color: white;
+    font-size: 0.9rem;
+    padding: 0.5rem 0.6rem;
+    cursor: pointer;
+}
+
+.top-box .form-group .box-buttons .add:hover{
+    font-size: 1rem;
+}
+
+.top-box .form-group .box-buttons .back{
+    display: inline-block;
+    border: none;
+    border-radius: 0.4rem;
+    background-color: blue;
+    color: white;
+    font-size: 0.9rem;
+    padding: 0.4rem 0.5rem;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.top-box .form-group .box-buttons .back:hover {
+    font-size: 1rem;
+}
+
+#box-profile-box {
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%, 0);
+    padding: 2rem;
+    background-color: white;
+    border-radius: 0.2rem;
+    box-shadow: 0px 0px 15px 3px rgba(0,0,0,0.5);
+    z-index: 200;
+    margin-top: 2rem;
+}
+
+#box-profile-box .form-group {
+    display: block;
+}
+
+#box-profile-box .form-group .box {
+    margin-bottom: 0.5rem;
+}
+
+#box-profile-box .form-group .validation{
+    font-size: 0.8rem;
+    font-style: italic;
+    flex-basis: 100%;
+}
+
+#box-profile-box .form-group .box input {
+    padding: 0.3rem;
+    font-size: 1rem;
+}
+
+#box-profile-box  .form-group .box-buttons {
+    flex-basis: 100%;
+}
+
+#box-profile-box  .form-group .box-buttons .update {
+    display: inline-block;
+    border: none;
+    border-radius: 0.4rem;
+    background-color: orange;
+    color: white;
+    font-size: 0.9rem;
+    padding: 0.5rem 0.6rem;
+    cursor: pointer;
+    margin-right: 0.5rem;
+}
+
+#box-profile-box  .form-group .box-buttons .update:hover {
+    font-size: 1rem;
+}
+
+.acount-dashboard {
+    background-color: #E9F8FA;
+    padding: 1rem;
+}
+
+.acount-dashboard .wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.acount-dashboard .left{
+    display: flex;
+    align-items: center;
+}
+
+.acount-dashboard .left i{
+    color: blue;
+    margin-right: 1rem;
+    font-size: 2rem;
+}
+
+.acount-dashboard .left img{
+    width: 100px;
+    margin-right: 0.5rem;
+}
+
+.acount-dashboard .left img:hover{
+    background-color: white;
+}
+
+.acount-dashboard .left .left-links{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.acount-dashboard .left .left-links .username{
+    flex-basis: 100%;
+    text-decoration: none;
+    color: black;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.acount-dashboard .left .left-links .bio{
+    flex-basis: 100%;
+    color: black;
+    font-size: 0.9rem;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.acount-dashboard .left .left-links .bio-o{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.acount-dashboard .left .left-links .bio-written{
+    flex-basis: 100%;
+    color: black;
+    font-size: 0.9rem;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.acount-dashboard .left .left-links a:hover{
+    color: blue;
+}
+
+.acount-dashboard .right{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.acount-dashboard .right .btn{
+    flex-basis: 65%;
+    /*margin-bottom: 0.5rem;*/
+    /*background-color: white;*/
+    color: black;
+    text-decoration: none;
+    padding: 0.2rem 0.3rem;
+    border-radius: 0.4rem;
+    display: inline-block;
+    text-align: center;
+    /*border: 1px solid black;*/
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.acount-dashboard .right .btn:hover{
+    color: blue;
+    font-weight:500;
+}
+
+.acount-dashboard .right .score{
+    display: inline-block;
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.4rem;
+    font-size: 0.9rem;
+    background: linear-gradient(to right, #25B6D2, #71CFE2); 
+}
+
+.student-dashboard {
+    padding: 2rem 0;
+}
+
+.student-dashboard .wrapper{
+    display: block;
+}
+
+.student-dashboard .left{
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.student-dashboard .left .desc{
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    color: gray;
+    font-weight: 500;
+    margin-bottom: 0.3rem;
+}
+
+.student-dashboard .left .stuff{
+    margin-bottom: 1.5rem;
+}
+
+.student-dashboard .left p:nth-child(2){
+    margin-bottom: 1.5rem;
+}
+
+.student-dashboard .left a{
+    cursor: pointer;
+    padding: 0.3rem 0.3rem 0.3rem 0.3rem;
+    border-radius: 0.4rem;
+    display: block;
+}
+
+.student-dashboard .left a:hover{
+    color: blue;
+    background-color: #A0DFEB;
+}
+
+.student-dashboard .right{
+    margin-left: 2rem;
+    flex-basis: 80%;
+}
+
+.student-dashboard .right .titlee{
+    font-size: 1.4rem;
+    font-weight: 500;
+    flex-basis: 100%;
+    margin-bottom: 1.5rem;
+}
+
+.student-dashboard .right-courses {
+    display: block;
+}
+
+.student-dashboard .right-courses .titlee{
+    flex-basis: 100%;
+}
+
+.student-dashboard .right-courses .box{
+    flex-basis: 45%;
+    margin-bottom: 4rem;
+}
+
+.student-dashboard .right-courses .box .up{
+    border-bottom: 1px solid lightgray;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.student-dashboard .right-courses .box .up .leftt .title{
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.student-dashboard .right-courses .box .up .leftt .category{
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: gray;
+}
+
+.student-dashboard .right-courses .box .up .leftt .category a{
+    text-decoration: none;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: gray;
+}
+
+.student-dashboard .right-courses .box .up .leftt .category a:hover{
+    text-decoration: underline;
+    color: darkslategray;
+}
+
+.student-dashboard .right-courses .box .up .rightt .isfinishy{
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    color: dodgerblue;
+    font-weight: bold;
+}
+
+.student-dashboard .right-courses .box .up .rightt .isfinishn{
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    color: steelblue;
+    font-weight: bold;
+}
+
+.student-dashboard .right-courses .box .down{
+    margin-bottom: 1rem;
+}
+
+.student-dashboard .right-courses .box .down img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 0.3rem;
+}
+
+.student-dashboard .right-courses .box .down .section{
+    display: flex;
+    align-items: center;
+}
+
+.student-dashboard .right-courses .box .down .section-title{
+    font-size: 1rem;
+    font-weight: 400;
+    margin-left: 0.2rem;
+}
+
+.student-dashboard .right-courses .box .down p:hover img{
+    transform: scale(1.05);
+}
+
+.student-dashboard .right-courses .box .down span{
+    display:inline-block;
+    width: 3px;
+    height: 23px;
+    background-color: #1C7A8C;
+    position: relative;
+    left: 1rem;
+}
+
+.student-dashboard .right-courses .box .down span:last-child{
+    display:none;
+}
+
+.student-dashboard .right-courses .box .btn a{
+    text-decoration: none;
+    padding: 0.4rem 0.5rem;
+    color: white;
+    font-weight: 500;
+    font-size: 0.8rem;
+    margin-right: 0.5rem;
+    border-radius: 0.3rem;
+    display: inline-block;
+}
+
+.student-dashboard .right-courses .box .btn.preview a{
+    background-color: dodgerblue;
+}
+
+.student-dashboard .right-courses .box .btn.preview a:hover{
+    font-weight: bold;
+    border: 2px solid white;
+    outline: 2px solid dodgerblue;
+}
+
+.student-dashboard .right-courses .box .btn.resume a{
+    background-color: steelblue;
+}
+
+.student-dashboard .right-courses .box .btn.resume a:hover{
+    font-weight: bold;
+    border: 2px solid white;
+    outline: 2px solid steelblue;
+}
+
+.student-dashboard .right-progress{
+    display: block;
+}
+
+.student-dashboard .right-progress .titlee{
+    flex-basis: 100%;
+}
+
+.student-dashboard .right-progress .progress-box{
+    margin-bottom: 4rem;
+    margin-left: 0.8rem;
+    flex-basis: 45%;
+}
+
+.student-dashboard .right-progress .progress-box .title{
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+    border-bottom: 1px solid lightgray;
+}
+
+.student-dashboard .right-progress .progress-box .line{
+    display: inline-block;
+    width: 60px;
+    height: 4px;
+    /*border-top-right-radius: 60%;*/
+    /*border-bottom-right-radius: 60%;*/
+}
+
+.student-dashboard .right-progress .progress-box .start-line{
+    background-color: orange;
+}
+
+.student-dashboard .right-progress .progress-box .end-line{
+    background-color: green;
+}
+
+.student-dashboard .right-progress .progress-box .points-line{
+    background-color: blue;
+}
+
+.student-dashboard .right-progress .progress-box .p-box{
+    display: flex;
+    align-items: center;
+}
+
+.student-dashboard .right-progress .progress-box .p-box p{
+    display: inline-block;
+    margin-left: 0.4rem;
+    margin-bottom: 0.2rem;
+}
+
+.student-dashboard .right-progress .progress-box .p-box .bold{
+    font-weight: 500;
+}
+
+.student-dashboard .right-progress .view a{
+    text-decoration: none;
+    padding: 0.3rem 0.3rem;
+    color: white;
+    font-weight: 500;
+    font-size: 0.8rem;
+    border-radius: 0.3rem;
+    display: inline-block;
+    background-color: #2BB8D3;
+    display: inline-block;
+    margin-top: 1rem;
+}
+
+.student-dashboard .right-progress .view a:hover{
+    font-weight: bold;
+}
+
+.student-dashboard .right-profile .info-box {
+    border: 2px solid lightgray;
+    border-radius: 0.4rem;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.student-dashboard .right-profile .info-box .up{
+    border-bottom: 2px solid lightgray;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+}
+
+.student-dashboard .right-profile .info-box .cap{
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.student-dashboard .right-profile .info-box .desc{
+    font-size: 0.7rem;
+    color: gray;
+}
+
+.student-dashboard .right-profile .info-box .down{
+    padding: 0.5rem;
+}
+
+.student-dashboard .right-profile .info-box .box{
+    display: flex;
+    justify-content: space-between;
+}
+
+.student-dashboard .right-profile .info-box .box .points{
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.4rem;
+    font-size: 0.8rem;
+    background: linear-gradient(to right, #25B6D2, #71CFE2); 
+}
+
+@media screen and (min-width: 1050px) {
+    .student-dashboard {
+        padding: 6rem 0;
+    }
+
+    .student-dashboard .wrapper{
+        display: flex;
+    }
+
+    .student-dashboard .left{
+        border-right: 1px solid gray;
+        flex-basis: 20%;
+        padding: 0 0.3rem 0 0;
+        margin-bottom: 0;
+        text-align: start;
+    }
+
+    .student-dashboard .left a{
+        padding: 0.3rem 0.8rem 0.3rem 0.3rem;
+    }
+
+    .student-dashboard .right-courses {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .student-dashboard .right-progress{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .student-dashboard .right-progress .progress-box{
+        margin-bottom: 4rem;
+    }
+}

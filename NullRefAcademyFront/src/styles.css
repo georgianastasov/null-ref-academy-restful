@@ -1,0 +1,45 @@
+@import url(../node_modules/font-awesome/css/font-awesome.min.css);
+@import url(../src/assets/fontawesome-free-6.1.1-web/css/all.css);
+
+@import url(../src/styles/Initial/reset.css);
+@import url(../src/styles/Initial/animations.css);
+
+@import url(../src/styles/Initial/form.css);
+@import url(../src/styles/Initial/layout.css);
+@import url(../src/styles/Initial/typoghrapy.css);
+
+@import url(../src/styles/Site/header.css);
+@import url(../src/styles/Site/footer.css);
+
+@import url(../src/styles/Home/home-intro.css);
+@import url(../src/styles/Home/home-info.css);
+@import url(../src/styles/Home/home-info-teachers.css);
+@import url(../src/styles/Home/home-info-students.css);
+@import url(../src/styles/Home/home-info-children.css);
+
+@import url(../src/styles/About/about-coments.css);
+@import url(../src/styles/About/about-intro.css);
+@import url(../src/styles/About/about-info.css);
+@import url(../src/styles/About/about-separator.css);
+
+@import url(../src/styles/Contacts/contact-center.css);
+@import url(../src/styles/Contacts/contact-info.css);
+@import url(../src/styles/Contacts/contact-intro.css);
+
+@import url(../src/styles/Admin/admin-dashboard.css);
+@import url(../src/styles/Admin/admin-forms.css);
+
+@import url(../src/styles/Student/student-dashboard.css);
+@import url(../src/styles/Student/student-enroll.css);
+@import url(../src/styles/Student/student-preenroll.css);
+@import url(../src/styles/Student/student-categories.css);
+@import url(../src/styles/Student/student-courses.css);
+@import url(../src/styles/Student/student-sections.css);
+
+@import url(../src/styles/Teacher/teacher-categories.css);
+@import url(../src/styles/Teacher/teacher-courses.css);
+@import url(../src/styles/Teacher/teacher-dashboard.css);
+@import url(../src/styles/Teacher/teacher-forms.css);
+@import url(../src/styles/Teacher/teacher-menu.css);
+@import url(../src/styles/Teacher/teacher-sections.css);
+@import url(../src/styles/Teacher/teacher-students.css);

@@ -1,0 +1,55 @@
+<div class="site-dashboard">
+    <app-admin-navigation></app-admin-navigation>
+    <div class="site-right">
+        <form #form="ngForm" (ngSubmit)="onSubmit()">
+            <div class="site-top">
+                <p class="caption">Add Teacher</p>
+            </div>
+            <div class="box-form">
+                <div asp-validation-summary="ModelOnly"></div>
+                <div class="form-group">
+                    <div class="box">
+                        <label>First Name</label>
+                        <input type="text" aria-required="true" name="firstName" [(ngModel)]="teacher.firstName"/>
+                        <span class="validation">First Name must be longer than 2 letters.</span>
+                    </div>
+                    <div class="box">
+                        <label>Last Name</label>
+                        <input type="text" aria-required="true" name="lastName" [(ngModel)]="teacher.lastName"/>
+                        <span class="validation">First Name must be longer than 2 letters.</span>
+                    </div>
+                    <div class="box">
+                        <label>Username</label>
+                        <input type="text" aria-required="true" name="username" [(ngModel)]="teacher.username" />
+                        <span class="validation">Username must be longer than 5 letters.</span>
+                    </div>
+                    <div class="box">
+                        <label>Email</label>
+                        <input type="text" aria-required="true" name="email" [(ngModel)]="teacher.email"/>
+                    </div>
+                    <div class="box">
+                        <label>Account Type</label>
+                        <input type="text" value="Teacher" [(ngModel)]="teacher.accountType" disabled/>
+                    </div>
+                    <div class="box">
+                        <label>Password</label>
+                        <input type="text" aria-required="true" name="password" [(ngModel)]="teacher.password" />
+                        <span asp-validation-for="Password"></span>
+                        <span class="validation">Password must start with uppercase letter.</span>
+                        <span class="validation">Password must have digits.</span>
+                        <span class="validation">Password must be longer than 5 symbols.</span>
+                    </div>
+                    <div class="box">
+                        <label>Confirm Password</label>
+                        <input type="text" aria-required="true" name="confirmPassword" [(ngModel)]="teacher.confirmPassword"/>
+                        <span class="validation">Confirm Password must match password.</span>
+                    </div>
+                    <div class="box-buttons">
+                        <button class="add">Add</button>
+                        <a class="" routerLink="/Admin/{{routeid}}/Teachers">Back</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

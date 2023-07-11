@@ -1,0 +1,39 @@
+﻿.teacher-menu {
+    background-color: steelblue;
+}
+
+.teacher-menu a{
+    display: inline-block;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 0.7rem 0;
+    margin-left: 1rem;
+}
+
+.teacher-menu a:first-child{
+    margin-left: 0;
+}
+
+.teacher-menu a:hover{
+    color: white;
+    border-bottom: 5px solid white;
+}
+
+.teacher-menu a:first-child{
+    margin-left: 0;
+}
+
+.teacher-dashboard .downn {
+    padding: 3rem 0 4rem 0;
+}
+
+.teacher-dashboard .downn .titlee {
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}
+
+.teacher-dashboard .downn .no{
+    font-size: 1.2rem;
+    font-weight: 500;
+}

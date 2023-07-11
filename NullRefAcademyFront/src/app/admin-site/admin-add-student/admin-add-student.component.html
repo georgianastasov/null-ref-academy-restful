@@ -1,0 +1,72 @@
+<div class="site-dashboard">
+    <app-admin-navigation></app-admin-navigation>
+    <div class="site-right">
+        <form #form="ngForm" (ngSubmit)="onSubmit()">
+            <div class="site-top">
+                <p class="caption">Add Student</p>
+            </div>
+            <div class="box-form">
+                <div asp-validation-summary="ModelOnly"></div>
+                <div class="form-group">
+                    <div class="box">
+                        <label>First Name</label>
+                        <input type="text" aria-required="true" name="firstName" [(ngModel)]="student.firstName"/>
+                        <span class="validation">First Name must be longer than 2 letters.</span>
+                    </div>
+                    <div class="box">
+                        <label>Last Name</label>
+                        <input type="text" aria-required="true" name="lastName" [(ngModel)]="student.lastName"/>
+                        <span class="validation">First Name must be longer than 2 letters.</span>
+                    </div>
+                    <div class="box">
+                        <label>Username</label>
+                        <input type="text" aria-required="true" name="username" [(ngModel)]="student.username" />
+                        <span class="validation">Username must be longer than 5 letters.</span>
+                    </div>
+                    <div class="box">
+                        <label>Email</label>
+                        <input type="text" aria-required="true" name="email" [(ngModel)]="student.email"/>
+                    </div>
+                    <div class="box">
+                        <label>Account Type</label>
+                        <input type="text" value="Student" [(ngModel)]="student.accountType" disabled/>
+                    </div>
+                    <div class="box">
+                        <label>Points</label>
+                        <input type="text" value=0 [(ngModel)]="student.points" disabled/>
+                    </div>
+                    <div class="box">
+                        <label>Progress</label>
+                        <input type="text" value=0 [(ngModel)]="student.progress" disabled/>
+                    </div>
+                    <div class="box">
+                        <label>Time Spent</label>
+                        <input type="text" value="0" [(ngModel)]="student.timeSpent" disabled/>
+                    </div>
+                    <div class="box">
+                        <label>Bio</label>
+                        <textarea type="text" rows="8" cols="45" aria-required="true" name="bio" [(ngModel)]="student.bio"></textarea>
+                        <span class="validation">Bio must be longer than 5 symbols.</span>
+                    </div>
+                    <div class="box">
+                        <label>Password</label>
+                        <input type="text" aria-required="true" name="password" [(ngModel)]="student.password" />
+                        <span asp-validation-for="Password"></span>
+                        <span class="validation">Password must start with uppercase letter.</span>
+                        <span class="validation">Password must have digits.</span>
+                        <span class="validation">Password must be longer than 5 symbols.</span>
+                    </div>
+                    <div class="box">
+                        <label>Confirm Password</label>
+                        <input type="text" aria-required="true" name="confirmPassword" [(ngModel)]="student.confirmPassword"/>
+                        <span class="validation">Confirm Password must match password.</span>
+                    </div>
+                    <div class="box-buttons">
+                        <button class="add">Add</button>
+                        <a class="" routerLink="/Admin/{{routeid}}/Students">Back</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

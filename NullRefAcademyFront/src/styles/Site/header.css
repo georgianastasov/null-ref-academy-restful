@@ -1,0 +1,210 @@
+﻿.site-header {
+    background-color: white;
+    border-bottom: 0.1rem solid deepskyblue;
+    animation: navitemsin 0.3s 1 ease-out forwards;
+}
+
+.site-header .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.site-header nav{
+    text-align: center;
+}
+
+.site-header nav > ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0;
+    position: relative;
+}
+
+.site-header nav ul li {
+    display: block;
+    position: relative;
+    list-style: none outside;
+    padding: 0 0.5rem;
+}
+
+.site-header nav ul li a {
+    display: block;
+    text-decoration: none;
+    padding: 0.4rem 0.3rem;
+    color: #186AF2;
+    font-weight: bold;
+    font-size: 0.8rem;
+    transition: background-color 0.1s ease-out;
+}
+
+.site-header nav ul li a:hover {
+    border-radius: 0.6rem;
+    background-color: #186AF2;
+    color: white;
+}
+
+.site-header .site-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    order: -2;
+    flex-basis: 30%;
+}
+
+#toggle {
+    color: #186AF2;
+    order: -1;
+    flex-basis: 30%;
+    text-align: center;
+}
+
+#main-nav-toggle {
+    display: none;
+}
+
+.site-header .site-logo img {
+    width: 40px;
+    height: 40px;
+}
+
+.site-header .site-logo .caption {
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.25rem;
+    color: #186AF2;
+    margin-bottom: 0;
+    margin-left: 0.2rem;
+    margin-top: 0.2rem;
+}
+
+.site-header .site-logo .caption:hover{
+    color: deepskyblue;
+}
+
+.site-header .site-logo .caption:active{
+    color: deepskyblue;
+}
+
+@media screen and (min-width: 435px) {
+    .site-header .site-logo img {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media screen and (min-width: 510px) {
+    .site-header .site-logo img {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media screen and (min-width: 605px) {
+    .site-header .site-logo img {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+@media screen and (min-width: 805px) {
+    .site-header .site-logo img {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .site-header .site-logo img {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+@media screen and (max-width: 949px) {
+    .site-header nav {
+        display: none;
+    }
+
+    .site-header nav ul {
+        display: block;
+    }
+
+
+    #main-nav-toggle:checked + header nav{
+        display: block;
+        flex: 1 0 100%;
+    }
+
+    #main-nav-toggle:checked + header .wrapper {
+        padding-bottom: 0.3rem;
+    }
+
+    #toggle:hover, #toggle:hover i {
+        cursor: pointer;
+    }
+}
+
+@media screen and (min-width: 950px) {
+    .site-header {
+    }
+
+    .site-header + .site > .about-intro {
+        margin-bottom: 0;
+    }
+
+    .site-header .wrapper {
+        flex-wrap: nowrap;
+        padding-top: 0rem;
+    }
+
+    .site-header nav li:hover > ul {
+        opacity: 1;
+        z-index: 100;
+        pointer-events: inherit;
+        transform: translateY(0);
+    }
+
+    .site-header nav ul ul {
+        margin: 0;
+        opacity: 0;
+        pointer-events: none;
+        position: absolute;
+        z-index: 100;
+        transition: opacity 0.2s ease-out, transform 0.2s ease-in;
+        transform: translateY(2rem);
+        background-color: white;
+        padding: 0.3rem 0.3rem;
+    }
+
+    .site-header nav > ul > li > ul {
+        top: 1.98rem;
+        width: 6rem;
+    }
+
+    .site-header nav > ul > li > #courses-header {
+        left: -0.8rem;
+    }
+
+    .site-header nav > ul > li > #username-header {
+        left: 0.2rem;
+    }
+
+    #toggle {
+        display: none;
+    }
+
+    .site-header .site-logo {
+        order: 0;
+    }
+}
+
+@media screen and (min-width: 1100px) {
+    .site-header .site-logo img {
+        width: 90px;
+        height: 90px;
+    }
+}

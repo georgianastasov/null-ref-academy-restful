@@ -1,0 +1,57 @@
+<div class="site-dashboard">
+    <app-admin-navigation></app-admin-navigation>
+    <div class="site-right">
+        <div id="student-section">
+            <div class="site-top">
+                <p class="caption">Section Students</p>
+                <a class="btt add" routerLink="/Admin/{{routeid}}/Add/Student">Add Student</a>
+            </div>
+            <table class="dashboard-table">
+                <thead>
+                    <tr>
+                        <th>Identical</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>Account Type</th>
+                        <th>Password</th>
+                        <th>Bio</th>
+                        <th>Points</th>
+                        <th>Progress</th>
+                        <th>Time Spent</th>
+                        <th>Creted Date</th>
+                        <th>Courses</th>
+                        <th>Options</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let student of students">
+                        <td>{{ student.id }}</td>
+                        <td>{{ student.firstName }}</td>
+                        <td>{{ student.lastName }}</td>
+                        <td>{{ student.username }}</td>
+                        <td>{{ student.email }}</td>
+                        <td>{{ student.accountType }}</td>
+                        <td>{{ student.password }}</td>
+                        <td>{{ student.bio }}</td>
+                        <td>{{ student.points }}</td>
+                        <td>{{ student.progress }}</td>
+                        <td>{{ student.timeSpent }}</td>
+                        <td>{{ student.createdDate }}</td>
+                        <td>
+                            <p [innerHTML]="courseTextArray[student.id]"></p>
+                        <td>
+                            <div class="box">
+                                <a class="update"
+                                    routerLink="/Admin/{{routeid}}/Update/Student/{{student.id}}">Update</a>
+                                <a class="delete"
+                                    routerLink="/Admin/{{routeid}}/Delete/Student/{{student.id}}">Delete</a>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+<input type="checkbox" name="main-nav-toggle" id="main-nav-toggle" checked />
+<header id="header-down" class="site-header">
+    <div class="wrapper">
+        <nav class="site-nav left">
+            <ul>
+                <li>
+                    <a href="/Teacher/{{routeid}}/Courses">Courses</a>
+                    <ul id="courses-header">
+                        <li><a href="/Teacher/{{routeid}}/Categories">Categories</a></li>
+                        <li><a href="/Teacher/{{routeid}}/Courses">Courses</a></li>
+                        <li><a href="/Teacher/{{routeid}}/Sections">Sections</a></li>
+                    </ul>
+                </li>
+                <li><a href="/Teacher/{{routeid}}/About">About us</a></li>
+            </ul>
+        </nav>
+        <div class="site-logo">
+            <img src="../../../assets/images/458910.png" alt="">
+            <a class="caption" href="/Teacher/{{routeid}}/Dashboard">Academy</a>
+        </div>
+        <label for="main-nav-toggle" id="toggle"><i class="fab fa-xing"></i>Menu</label>
+        <nav class="site-nav right">
+            <ul>
+                <li><a href="/Teacher/{{routeid}}/Contacts">Contacts</a></li>
+                <li>
+                    <a href="/Teacher/{{routeid}}/Dashboard">{{teacher.username}}</a>
+                    <ul id="username-header">
+                        <li><a href="/Teacher/{{routeid}}/Dashboard">Account</a></li>
+                        <li><a href="/Teacher/{{routeid}}/Settings">Settings</a></li>
+                        <li><a href="/Home/Main">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>

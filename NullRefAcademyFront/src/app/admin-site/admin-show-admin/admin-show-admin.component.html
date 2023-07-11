@@ -1,0 +1,65 @@
+<div class="site-dashboard">
+    <app-admin-navigation></app-admin-navigation>
+    <div class="site-right">
+        <div id="admin-section">
+            <div class="site-top">
+                <p class="caption">Section Admins</p>
+                <a class="btt add" routerLink="/Admin/{{ routeid }}/Add/Admin">Add Admin</a>
+            </div>
+            <table class="dashboard-table">
+                <thead>
+                    <tr>
+                        <th>Identical</th>
+                        <th>First name</th>
+                        <th>Last Name</th>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>Account Type</th>
+                        <th>Password</th>
+                        <th>Created Date</th>
+                        <th>Categories</th>
+                        <th>Courses</th>
+                        <th>Sections</th>
+                        <th>Options</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let admin of admins">
+                        <td>{{ admin.id }}</td>
+                        <td>{{ admin.firstName }}</td>
+                        <td>{{ admin.lastName }}</td>
+                        <td>{{ admin.username }}</td>
+                        <td>{{ admin.email }}</td>
+                        <td>{{ admin.accountType }}</td>
+                        <td>{{ admin.password }}</td>
+                        <td>{{ admin.createdDate }}</td>
+                        <td>
+                            <ng-container *ngFor="let category of categories">
+                                <p *ngIf="category.adminID == admin.id">Id: {{ category.id }} <br>Title: {{ category.title }}</p>
+                                <p *ngIf="category.adminID == admin.id" class="line"></p>
+                            </ng-container>
+                        </td>
+                        <td>
+                            <ng-container *ngFor="let course of courses">
+                                <p *ngIf="course.adminID == admin.id">Id: {{ course.id }} <br>Title: {{ course.title }}</p>
+                                <p *ngIf="course.adminID == admin.id" class="line"></p>
+                            </ng-container>
+                        </td>
+                        <td>
+                            <ng-container *ngFor="let section of sections">
+                                <p *ngIf="section.adminID == admin.id">Id: {{ section.id }} <br>Title: {{ section.title }}</p>
+                                <p *ngIf="section.adminID == admin.id" class="line"></p>
+                            </ng-container>
+                        </td>
+                        <td>
+                            <div class="box">
+                                <a class="update" routerLink="/Admin/{{routeid}}/Update/Admin/{{admin.id}}">Update</a>
+                                <a class="delete" routerLink="/Admin/{{routeid}}/Delete/Admin/{{admin.id}}">Delete</a>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

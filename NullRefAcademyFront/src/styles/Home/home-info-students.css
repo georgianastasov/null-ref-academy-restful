@@ -1,0 +1,109 @@
+﻿.site-info-student {
+    margin-bottom: 8rem;
+}
+
+.site-info-student .wrapper {
+}
+
+.site-info-student .media {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin-right: 0;
+    margin-bottom: 3rem;
+}
+
+.site-info-student .media img {
+    width: 80%;
+    border-bottom: 0.5px solid #186AF2;
+    border-left: 0.5px solid #186AF2;
+    transition: transform 0.3s ease;
+}
+
+.site-info-student .media img:hover {
+    transform: translate(-5%,-5%) scale(1.05);
+    border-bottom: 3px solid #186AF2;
+    border-left: 3px solid #186AF2;
+}
+
+.site-info-student .site-caption{
+    text-align: center;
+}
+
+.site-info-student .site-caption .upper{
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    color: dimgray;
+}
+
+.site-info-student .site-caption .title {
+    font-weight: bold;
+    font-size: 2.0rem;
+}
+
+.site-info-student .site-caption .description {
+    font-weight: lighter;
+    font-size: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1.2rem;
+    color: dimgray;
+}
+
+.site-info-student .site-caption .butons {
+    display: block;
+}
+
+.site-info-student .site-caption .butons a{
+    text-decoration: none;
+    padding: 0.6rem 0.9rem;
+    color: white;
+    font-weight: 500;
+    font-size: 0.8rem;
+    background-color: #186AF2;
+    margin-right: 0.5rem;
+    border-radius: 0.2rem;
+}
+
+.site-info-student .site-caption .butons a:hover{
+    font-weight: bold;
+    border: 1px solid white;
+    outline: 1px solid #186AF2;
+}
+
+@media screen and (min-width: 950px) {
+    .site-info-student {
+        margin-bottom: 10rem;
+    }
+
+    .site-info-student .wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .site-info-student .media {
+        margin-right: 3rem;
+        margin-bottom: 0;
+    }
+
+    .site-info-student .media img {
+        width: 100%;
+    }
+
+    .site-info-student .site-caption{
+        text-align: start;
+    }
+
+    .site-info-student .site-caption .description {
+        margin-bottom: 0.8rem;
+    }
+
+    .site-info-student .site-caption .butons {
+        display: flex;
+    }
+
+    .site-info-student .site-caption .butons a{
+        padding: 0.5rem 0.4rem;
+        display: block;
+    }
+}

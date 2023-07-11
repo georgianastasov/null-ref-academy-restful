@@ -1,0 +1,46 @@
+﻿.contact-info {
+    padding: 6rem 1rem 0rem 1rem;
+}
+
+.contact-info .wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.contact-info .box{
+    flex-basis: 30%;
+    margin-right: 1rem;
+    margin-bottom: 4rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.contact-info .box:hover{
+    transform: translateY(-5%) scale(1.05);
+}
+
+.contact-info .box i{
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #0B92C3;
+}
+
+.contact-info .box a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.contact-info .box a:hover{
+    text-decoration:underline;
+}
+
+.contact-info .box p{
+    font-size: 0.8rem;
+    color: gray;
+}

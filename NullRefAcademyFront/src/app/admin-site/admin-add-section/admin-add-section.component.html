@@ -1,0 +1,40 @@
+<div class="site-dashboard">
+    <app-admin-navigation></app-admin-navigation>
+    <div class="site-right">
+        <form #form="ngForm" (ngSubmit)="onSubmit()">
+            <div class="site-top">
+                <p class="caption">Create Section</p>
+            </div>
+            <div class="box-form">
+                <div asp-validation-summary="ModelOnly"></div>
+                <div class="form-group">
+                    <div class="box">
+                        <label>Title</label>
+                        <input type="text" aria-required="true" name="title" [(ngModel)]="section.title"/>
+                        <span class="validation">Title must be longer than 2 letters.</span>
+                    </div>
+                    <div class="box">
+                        <label>Description</label>
+                        <textarea type="text" rows="10" cols="55" aria-required="true" name="description" [(ngModel)]="section.description"></textarea>
+                        <span class="validation">Description must be longer than 2 letters.</span>
+                    </div>
+                    <div class="box">
+                        <label>Text</label>
+                        <textarea type="text" rows="15" cols="85" aria-required="true" name="text" [(ngModel)]="section.text"></textarea>
+                        <span class="validation">The text must be longer than 2 letters.</span>
+                    </div>
+                    <div class="box">
+                        <label>Course</label>
+                        <select class="form-control" aria-required="true" placeholder="Select course" name="courseId" [(ngModel)]="section.courseID">
+                            <option *ngFor="let course of courses" value="{{ course.id }}">{{ course.title }}</option>
+                        </select>
+                    </div>
+                    <div class="box-buttons">
+                        <button class="add">Create</button>
+                        <a class="" routerLink="/Admin/{{routeid}}/Sections">Back</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

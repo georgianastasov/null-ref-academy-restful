@@ -1,0 +1,53 @@
+﻿.about-coments {
+    padding: 6rem 1rem;
+    background-color: #54C0A6;
+}
+
+.about-coments .wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.about-coments button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.about-coments button:first-child{
+    margin-right: 3rem;
+}
+
+.about-coments button:last-child{
+    margin-left: 3rem;
+}
+
+.about-coments button i{
+    font-weight: bold;
+    font-size: 2.5rem;
+    color: white;
+}
+
+.about-coments .box{
+    text-align:center;
+}
+
+.about-coments .box .comment{
+    font-weight:bold;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.about-coments .box .person{
+    color: papayawhip;
+}
+
+#box2 {
+    display: none;
+}
+
+#box3 {
+    display: none;
+}

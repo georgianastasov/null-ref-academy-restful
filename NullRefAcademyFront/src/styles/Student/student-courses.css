@@ -1,0 +1,132 @@
+﻿.intro-courses {
+    padding: 1.5rem;
+    background-color: #0A2A66;
+}
+
+.intro-courses .upcap a{
+    text-decoration: none;
+    color: lightgray;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.intro-courses .upcap a:hover{
+    color: white;
+    font-weight: bold;
+}
+
+.intro-courses .cap{
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: white;
+}
+
+.info-courses {
+    padding: 4rem 0;
+    background-color: #F7F8FA;
+}
+
+.info-courses .box {
+    padding: 1rem 0.5rem;
+    border: 1px solid gray;
+    border-radius: 0.3rem;
+    box-shadow: 0px 0px 14px 3px rgba(0,0,0,0.3);
+    display: block;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.info-courses .box:last-child {
+    margin-bottom: 0;
+}
+
+.info-courses .box .left {
+    flex-basis: 10%;
+    text-align: center;
+    margin-right: 0.3rem;
+}
+
+.info-courses .box .left a{
+    text-decoration: none;
+    color: #0A2A66;
+}
+
+.info-courses .box .left a img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.info-courses .box .left a:hover img {
+    transform: scale(1.05);
+}
+
+.info-courses .box .right {
+    flex-basis: 85%;
+}
+
+.info-courses .box .right .up{
+    display: block;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.info-courses .box .right .caption {
+    color: gray;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.info-courses .box .title{
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.info-courses .box .title a{
+    text-decoration: none;
+    color: black;
+}
+
+.info-courses .box .title a:hover{
+    color: #1B83AB;
+}
+
+.info-courses .box .points{
+    display: inline-block;
+    padding: 0.2rem 0.8rem;
+    border-radius: 0.4rem;
+    font-size: 0.9rem;
+    background: linear-gradient(to right, #0A2A66, #25B6D2);
+    text-align: center;
+    vertical-align: central;
+    font-weight: bold;
+    color: white;
+}
+
+.info-courses .box .description{
+    font-size: 0.9rem;
+    color: gray;
+}
+
+.info-courses .no{
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin: 4rem 0;
+}
+
+@media screen and (min-width: 1050px) {
+    .info-courses .box {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        text-align: start;
+    }
+
+    .info-courses .box .right .up{
+        display: flex;
+    }
+
+    .info-courses .box .points{
+        margin-left: 1rem;
+    }
+}

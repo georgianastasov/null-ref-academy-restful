@@ -1,0 +1,46 @@
+<div class="site-dashboard">
+    <app-admin-navigation></app-admin-navigation>
+    <div class="site-right">
+        <form #form="ngForm" (ngSubmit)="onSubmit()">
+            <input asp-for="Id" hidden/>
+            <div class="site-top">
+                <p class="caption">Update Category</p>
+            </div>
+            <div class="box-form">
+                <div asp-validation-summary="ModelOnly"></div>
+                <div class="form-group">
+                    <div class="box">
+                        <label>Title</label>
+                        <input type="text" value="{{takenCategory.title}}" name="title" [(ngModel)]="category.title"/>
+                        <span class="validation">Title must be longer than 2 letters.</span>
+                    </div>
+                    <div class="box">
+                        <label>Description</label>
+                        <textarea type="text" rows="10" cols="55" value="{{takenCategory.description}}" name="description" [(ngModel)]="category.description"></textarea>
+                        <span class="validation">Description must be longer than 2 letters.</span>
+                    </div>
+                    <div class="box">
+                        <label>Courses</label>
+                        <textarea rows="10" cols="40" disabled>{{ coursesText }}</textarea>
+                    </div>
+                    <div class="box" *ngIf="hasAdmin">
+                        <label>Admin</label>
+                        <textarea rows="2" cols="45" disabled>{{ adminText }}</textarea>
+                    </div>
+                    <div class="box" *ngIf="hasTeacher">
+                        <label>Teacher</label>
+                        <textarea rows="2" cols="45" disabled>{{ teacherText }}</textarea>
+                    </div>
+                    <div class="box" *ngIf="!hasAdmin && !hasTeacher">
+                        <label>Created by</label>
+                        <textarea rows="2" cols="45" disabled>The creator was deactivated or no information.</textarea>
+                    </div>
+                    <div class="box-buttons">
+                        <button class="update">Update</button>
+                        <a class="" routerLink="/Admin/{{routeid}}/Categories">Back</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

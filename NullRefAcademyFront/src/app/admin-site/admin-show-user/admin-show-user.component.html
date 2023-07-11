@@ -1,0 +1,44 @@
+<div class="site-dashboard">
+    <app-admin-navigation></app-admin-navigation>
+    <div class="site-right">    
+        <div id="user-section">
+            <div class="site-top">
+                <p class="caption">Section Users</p>
+                <a class="btt add" routerLink="/Admin/{{routeid}}/Add/User">Add User</a>
+            </div>
+            <table class="dashboard-table">
+                <thead>
+                    <tr>
+                        <th>Identical</th>
+                        <th>First name</th>
+                        <th>Last Name</th>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>Account Type</th>
+                        <th>Password</th>
+                        <th>Creted Date</th>
+                        <th>Options</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let user of users">
+                        <td>{{ user.id }}</td>
+                        <td>{{ user.firstName }}</td>
+                        <td>{{ user.lastName }}</td>
+                        <td>{{ user.username }}</td>
+                        <td>{{ user.email }}</td>
+                        <td>{{ user.accountType }}</td>
+                        <td>{{ user.password }}</td>
+                        <td>{{ user.createdDate }}</td>
+                        <td>
+                            <div class="box">
+                                <a class="update" (click)="findUserToUpdate(user.id)">Update</a>
+                                <a class="delete" (click)="findUserToDelete(user.id)">Delete</a>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

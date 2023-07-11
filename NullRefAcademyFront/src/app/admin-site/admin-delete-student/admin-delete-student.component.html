@@ -1,0 +1,72 @@
+<div class="site-dashboard">
+    <app-admin-navigation></app-admin-navigation>
+    <div class="site-right">
+        <form #form="ngForm" (ngSubmit)="onSubmit()">
+            <input asp-for="Id" hidden />
+            <div class="site-top">
+                <p class="caption">Delete Student</p>
+            </div>
+            <div class="box-form">
+                <div asp-validation-summary="ModelOnly"></div>
+                <div class="form-group">
+                    <div class="box">
+                        <label>First Name</label>
+                        <input type="text" value="{{student.firstName}}" disabled/>
+                    </div>
+                    <div class="box">
+                        <label>Last Name</label>
+                        <input type="text" value="{{student.lastName}}" disabled/>
+                    </div>
+                    <div class="box">
+                        <label>Username</label>
+                        <input type="text" value="{{student.username}}" disabled/>
+                    </div>
+                    <div class="box">
+                        <label>Email</label>
+                        <input type="text" value="{{student.email}}" disabled/>
+                    </div>
+                    <div class="box">
+                        <label>Account Type</label>
+                        <input type="text" value="{{student.accountType}}" disabled/>
+                    </div>
+                    <div class="box">
+                        <label>Points</label>
+                        <input type="text" value="{{student.points}}" disabled/>
+                    </div>
+                    <div class="box">
+                        <label>Progress</label>
+                        <input type="text" value="{{student.progress}}" disabled/>
+                    </div>
+                    <div class="box">
+                        <label>Time Spent</label>
+                        <input type="text" value="{{student.timeSpent}}" disabled/>
+                    </div>
+                    <div class="box">
+                        <label>Bio</label>
+                        <textarea rows="8" cols="45" value="{{student.bio}}" disabled></textarea>
+                    </div>
+                    <div class="box">
+                        <label>Password</label>
+                        <input type="text" value="{{student.password}}" disabled/>
+                    </div>
+                    <div class="box">
+                        <label>Confirm Password</label>
+                        <input type="text" value="{{student.confirmPassword}}" disabled/>
+                    </div>
+                    <div class="box">
+                        <label>Created Date</label>
+                        <input type="text" value="{{student.createdDate}}" disabled/>
+                    </div>
+                    <div class="box">
+                        <label>Courses</label>
+                        <textarea rows="10" cols="45" disabled>{{ coursesText }}</textarea>
+                    </div>
+                    <div class="box-buttons">
+                        <button class="delete">Delete</button>
+                        <a class="" routerLink="/Admin/{{routeid}}/Students">Back</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

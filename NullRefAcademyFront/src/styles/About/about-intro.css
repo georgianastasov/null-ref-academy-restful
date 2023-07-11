@@ -1,0 +1,47 @@
+﻿.about-intro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(https://www.clipartkey.com/mpngs/m/210-2100998_transparent-background-math-png.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: repeat;
+    position: relative;
+    overflow: hidden;
+    padding: 6rem 3rem;
+    transition: transform 0.3s ease;
+    z-index: -1;
+}
+
+.about-intro::before {
+    display: block;
+    content: '';
+    background: rgba(136, 214, 239, 0.90);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 5;
+}
+
+.about-intro:hover{
+    transform: scale(1.05);
+}
+
+.about-intro .about-caption {
+    position: relative;
+    z-index: 10;
+}
+
+.about-intro .about-caption {
+    color: black;
+    font-size: 2.5rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+.about-line {
+    height: 1.5rem;
+    background-color: #26B6D2;
+}

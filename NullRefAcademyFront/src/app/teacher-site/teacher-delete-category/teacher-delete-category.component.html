@@ -1,0 +1,61 @@
+<app-teacher-header></app-teacher-header>
+<div class="acount-dashboard-teacher">
+    <div class="wrapper">
+        <div class="left">
+            <div class="left-links">
+                <p>Wellcome, <a class="username" href="/Teacher/{{routeid}}/Dashboard">{{teacher.username}}</a></p>
+                <p class="info">Teacher dashboard</p>
+            </div>
+        </div>
+        <div class="right">
+            <p class="score">Categories: {{countCategories}}</p>
+            <p class="score">Courses: {{countCourses}}</p>
+            <p class="score">Sections: {{countSections}}</p>
+        </div>
+    </div>
+</div>
+<div class="teacher-form">
+    <div class="wrapper">
+        <form #form="ngForm" (ngSubmit)="onSubmit()">
+            <input asp-for="Id" hidden />
+            <div class="site-top">
+                <p class="caption">Delete Category</p>
+            </div>
+            <div class="box-form">
+                <div asp-validation-summary="ModelOnly"></div>
+                <div class="form-group">
+                    <div class="box">
+                        <label>Title</label>
+                        <input type="text" value="{{category.title}}" disabled />
+                    </div>
+                    <div class="box">
+                        <label>Description</label>
+                        <textarea rows="12" cols="55" value="{{category.description}}" disabled></textarea>
+                    </div>
+                    <div class="box">
+                        <label>Courses</label>
+                        <textarea rows="10" cols="40" disabled>{{ coursesText }}</textarea>
+                    </div>
+                    <div class="box" *ngIf="hasAdmin">
+                        <label>Admin</label>
+                        <textarea rows="2" cols="45" disabled>{{ adminText }}</textarea>
+                    </div>
+                    <div class="box" *ngIf="hasTeacher">
+                        <label>Teacher</label>
+                        <textarea rows="2" cols="45" disabled>{{ teacherText }}</textarea>
+                    </div>
+                    <div class="box" *ngIf="!hasAdmin && !hasTeacher">
+                        <label>Created by</label>
+                        <textarea rows="2" cols="45" disabled>The creator was deactivated or no information.</textarea>
+                    </div>
+                    <div class="box-buttons">
+                        <button class="delete">Delete</button>
+                        <a class="" routerLink="/Teacher/{{routeid}}/Dashboard">Back</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<app-teacher-footer></app-teacher-footer>

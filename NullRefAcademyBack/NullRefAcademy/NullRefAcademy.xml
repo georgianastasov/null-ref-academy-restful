@@ -1,0 +1,318 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NullRefAcademy</name>
+    </assembly>
+    <members>
+        <member name="M:NullRefAcademy.Controllers.AdminController.GetAllAdmins">
+            <summary>
+            Get all admins.
+            </summary>
+            <remarks>
+            Return all admins from database.
+            </remarks>
+        </member>
+        <member name="M:NullRefAcademy.Controllers.AdminController.GetAdmin(System.Int32)">
+            <summary>
+            Get admin by id.
+            </summary>
+            <remarks>
+            Enter id and recive admin by this id.
+            </remarks>
+            <param name="id"></param>
+        </member>
+        <member name="M:NullRefAcademy.Controllers.AdminController.AddAdmin(NullRefAcademy.Models.Admin)">
+            <summary>
+            Create an admin.
+            </summary>
+            <remarks>
+            Give the information and create an admin.
+            </remarks>
+        </member>
+        <member name="M:NullRefAcademy.Controllers.AdminController.DeleteAdmin(System.Int32)">
+            <summary>
+            Delete admin by id.
+            </summary>
+            <remarks>
+            Enter id and delete one admin by this id.
+            </remarks>
+            <param name="id"></param>
+        </member>
+        <member name="M:NullRefAcademy.Controllers.AdminController.UpdateAdmin(System.Int32,NullRefAcademy.Models.Admin)">
+            <summary>
+            Update admin by id.
+            </summary>
+            <remarks>
+            Enter id and update the parameters that you want.
+            </remarks>
+        </member>
+        <member name="M:NullRefAcademy.Controllers.CategoryController.GetAllCategories">
+            <summary>
+            Get all categories.
+            </summary>
+            <remarks>
+            Return all categories from database.
+            </remarks>
+        </member>
+        <member name="M:NullRefAcademy.Controllers.CategoryController.GetCategory(System.Int32)">
+            <summary>
+            Get category by id.
+            </summary>
+            <remarks>
+            Enter id and recive category by this id.
+            </remarks>
+            <param name="id"></param>
+        </member>
+        <member name="M:NullRefAcademy.Controllers.CategoryController.CreateCategory(NullRefAcademy.Models.Category)">
+            <summary>
+            Create a category.
+            </summary>
+            <remarks>
+            Give the information and create a category.
+            </remarks>
+        </member>
+        <member name="M:NullRefAcademy.Controllers.CategoryController.DeleteCategory(System.Int32)">
+            <summary>
+            Delete category by id.
+            </summary>
+            <remarks>
+            Enter id and delete one category by this id.
+            </remarks>
+            <param name="id"></param>
+        </member>
+        <member name="M:NullRefAcademy.Controllers.CategoryController.UpdateCategory(System.Int32,NullRefAcademy.Models.Category)">
+            <summary>
+            Update category by id.
+            </summary>
+            <remarks>
+            Enter id and update the parameters that you want.
+            </remarks>
+        </member>
+        <member name="M:NullRefAcademy.Controllers.CourseController.GetAllCourses">
+            <summary>
+            Get all courses.
+            </summary>
+            <remarks>
+            Return all courses from database.
+            </remarks>
+        </member>
+        <member name="M:NullRefAcademy.Controllers.CourseController.GetCourse(System.Int32)">
+            <summary>
+            Get course by id.
+            </summary>
+            <remarks>
+            Enter id and recive course by this id.
+            </remarks>
+            <param name="id"></param>
+        </member>
+        <member name="M:NullRefAcademy.Controllers.CourseController.CreateCourse(NullRefAcademy.Models.Course)">
+            <summary>
+            Create a course.
+            </summary>
+            <remarks>
+            Give the information and create a course.
+            </remarks>
+        </member>
+        <member name="M:NullRefAcademy.Controllers.CourseController.DeleteCourse(System.Int32)">
+            <summary>
+            Delete course by id.
+            </summary>
+            <remarks>
+            Enter id and delete one course by this id.
+            </remarks>
+            <param name="id"></param>
+        </member>
+        <member name="M:NullRefAcademy.Controllers.CourseController.UpdateCourse(System.Int32,NullRefAcademy.Models.Course)">
+            <summary>
+            Update course by id.
+            </summary>
+            <remarks>
+            Enter id and update the parameters that you want.
+            </remarks>
+        </member>
+        <member name="M:NullRefAcademy.Controllers.HomeController.Register(NullRefAcademy.Models.User)">
+            <summary>
+            User registration.
+            </summary>
+            <remarks>
+            Enter your info and register.
+            </remarks>
+        </member>
+        <member name="M:NullRefAcademy.Controllers.HomeController.Login(NullRefAcademy.Helpers.UserLogin)">
+            <summary>
+            User login.
+            </summary>
+            <remarks>
+            Enter your info and login.
+            </remarks>
+        </member>
+        <member name="M:NullRefAcademy.Controllers.SectionController.GetAllSections">
+            <summary>
+            Get all sections.
+            </summary>
+            <remarks>
+            Return all sections from database.
+            </remarks>
+        </member>
+        <member name="M:NullRefAcademy.Controllers.SectionController.GetSection(System.Int32)">
+            <summary>
+            Get section by id.
+            </summary>
+            <remarks>
+            Enter id and recive section by this id.
+            </remarks>
+            <param name="id"></param>
+        </member>
+        <member name="M:NullRefAcademy.Controllers.SectionController.CreateSection(NullRefAcademy.Models.Section)">
+            <summary>
+            Create a section.
+            </summary>
+            <remarks>
+            Give the information and create a section.
+            </remarks>
+        </member>
+        <member name="M:NullRefAcademy.Controllers.SectionController.DeleteSection(System.Int32)">
+            <summary>
+            Delete section by id.
+            </summary>
+            <remarks>
+            Enter id and delete one section by this id.
+            </remarks>
+            <param name="id"></param>
+        </member>
+        <member name="M:NullRefAcademy.Controllers.SectionController.UpdateSection(System.Int32,NullRefAcademy.Models.Section)">
+            <summary>
+            Update section by id.
+            </summary>
+            <remarks>
+            Enter id and update the parameters that you want.
+            </remarks>
+        </member>
+        <member name="M:NullRefAcademy.Controllers.StudentController.GetAllStudents">
+            <summary>
+            Get all students.
+            </summary>
+            <remarks>
+            Return all students from database.
+            </remarks>
+        </member>
+        <member name="M:NullRefAcademy.Controllers.StudentController.GetStudent(System.Int32)">
+            <summary>
+            Get student by id.
+            </summary>
+            <remarks>
+            Enter id and recive student by this id.
+            </remarks>
+            <param name="id"></param>
+        </member>
+        <member name="M:NullRefAcademy.Controllers.StudentController.AddStudent(NullRefAcademy.Models.Student)">
+            <summary>
+            Create a student.
+            </summary>
+            <remarks>
+            Give the information and create a student.
+            </remarks>
+        </member>
+        <member name="M:NullRefAcademy.Controllers.StudentController.DeleteStudent(System.Int32)">
+            <summary>
+            Delete student by id.
+            </summary>
+            <remarks>
+            Enter id and delete one student by this id.
+            </remarks>
+            <param name="id"></param>
+        </member>
+        <member name="M:NullRefAcademy.Controllers.StudentController.UpdateStudent(System.Int32,NullRefAcademy.Models.Student)">
+            <summary>
+            Update student by id.
+            </summary>
+            <remarks>
+            Enter id and update the parameters that you want.
+            </remarks>
+        </member>
+        <member name="M:NullRefAcademy.Controllers.TeacherController.GetAllTeachers">
+            <summary>
+            Get all teachers.
+            </summary>
+            <remarks>
+            Return all teachers from database.
+            </remarks>
+        </member>
+        <member name="M:NullRefAcademy.Controllers.TeacherController.GetTeacher(System.Int32)">
+            <summary>
+            Get teacher by id.
+            </summary>
+            <remarks>
+            Enter id and recive teacher by this id.
+            </remarks>
+            <param name="id"></param>
+        </member>
+        <member name="M:NullRefAcademy.Controllers.TeacherController.AddTeacher(NullRefAcademy.Models.Teacher)">
+            <summary>
+            Create a teacher.
+            </summary>
+            <remarks>
+            Give the information and create a teacher.
+            </remarks>
+        </member>
+        <member name="M:NullRefAcademy.Controllers.TeacherController.DeleteTeacher(System.Int32)">
+            <summary>
+            Delete teacher by id.
+            </summary>
+            <remarks>
+            Enter id and delete one teacher by this id.
+            </remarks>
+            <param name="id"></param>
+        </member>
+        <member name="M:NullRefAcademy.Controllers.TeacherController.UpdateTeacher(System.Int32,NullRefAcademy.Models.Teacher)">
+            <summary>
+            Update teacher by id.
+            </summary>
+            <remarks>
+            Enter id and update the parameters that you want.
+            </remarks>
+        </member>
+        <member name="M:NullRefAcademy.Controllers.UserController.GetAllUsers">
+            <summary>
+            Get all users.
+            </summary>
+            <remarks>
+            Return all users from database.
+            </remarks>
+        </member>
+        <member name="M:NullRefAcademy.Controllers.UserController.GetUser(System.Int32)">
+            <summary>
+            Get user by id.
+            </summary>
+            <remarks>
+            Enter id and recive user by this id.
+            </remarks>
+            <param name="id"></param>
+        </member>
+        <member name="M:NullRefAcademy.Controllers.UserController.AddUser(NullRefAcademy.Models.User)">
+            <summary>
+            Create a user.
+            </summary>
+            <remarks>
+            Give the information and create a user.
+            </remarks>
+        </member>
+        <member name="M:NullRefAcademy.Controllers.UserController.DeleteUser(System.Int32)">
+            <summary>
+            Delete user by id.
+            </summary>
+            <remarks>
+            Enter id and delete one user by this id.
+            </remarks>
+            <param name="id"></param>
+        </member>
+        <member name="M:NullRefAcademy.Controllers.UserController.UpdateUser(System.Int32,NullRefAcademy.Models.User)">
+            <summary>
+            Update user by id.
+            </summary>
+            <remarks>
+            Enter id and update the parameters that you want.
+            </remarks>
+        </member>
+    </members>
+</doc>

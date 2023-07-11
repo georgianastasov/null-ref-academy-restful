@@ -1,0 +1,57 @@
+<app-teacher-header></app-teacher-header>
+<div class="intro-sections">
+    <div class="wrapper">
+        <p class="cap">Sections</p>
+    </div>
+</div>
+<div class="info-sections">
+    <div class="wrapper">
+        <ng-container *ngFor="let section of sections">
+            <div class="box">
+                <div class="left">
+                    <ng-container *ngFor="let category of categories">
+                        <ng-container *ngFor="let course of courses">
+                            <ng-container *ngIf="section.courseID == course.id">
+                                <ng-container *ngIf="category.id == course.categoryID">
+                                    <ng-container *ngIf="category.title == 'Math'">
+                                        <a routerLink="/Teacher/{{routeid}}/Course/{{course.id}}"><img src="../../../assets/images/mathicon.jpg"></a>
+                                    </ng-container>
+                                    <ng-container *ngIf="category.title == 'Science'">
+                                        <a routerLink="/Teacher/{{routeid}}/Course/{{course.id}}"><img src="../../../assets/images/scienceicon.jpg"></a>
+                                    </ng-container>
+                                    <ng-container *ngIf="category.title == 'Art'">
+                                        <a routerLink="/Teacher/{{routeid}}/Course/{{course.id}}"><img src="../../../assets/images/articon.jpg"></a>
+                                    </ng-container>
+                                    <ng-container *ngIf="category.title == 'Informatics'">
+                                        <a routerLink="/Teacher/{{routeid}}/Course/{{course.id}}"><img src="../../../assets/images/informaticsicon.png"></a>
+                                    </ng-container>
+                                    <ng-container *ngIf="category.title == 'Physics'">
+                                        <a routerLink="/Teacher/{{routeid}}/Course/{{course.id}}"><img src="../../../assets/images/physicsicon.jpg"></a>
+                                    </ng-container>
+                                </ng-container>
+                            </ng-container>
+                        </ng-container>
+                    </ng-container>
+                </div>
+                <div class="right">
+                    <ng-container *ngFor="let category of categories">
+                        <ng-container *ngFor="let course of courses">
+                            <ng-container *ngIf="section.courseID == course.id">
+                                <ng-container *ngIf="category.id == course.categoryID">
+                                    <p class="caption">{{category.title}} > {{course.title}}</p>
+                                </ng-container>
+                            </ng-container>
+                        </ng-container>
+                    </ng-container>
+                    <ng-container *ngFor="let course of courses">
+                        <ng-container *ngIf="section.courseID == course.id">
+                            <p class="title"><a routerLink="/Teacher/{{routeid}}/Course/{{course.id}}">{{section.title}}</a></p>
+                        </ng-container>
+                    </ng-container>
+                    <p class="description">{{section.description}}</p>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</div>
+<app-teacher-footer></app-teacher-footer>

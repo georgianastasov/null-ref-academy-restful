@@ -1,0 +1,89 @@
+﻿.intro-categories {
+    padding: 1.5rem;
+    background-color: #0A2A66;
+}
+
+.intro-categories .cap{
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: white;
+}
+
+.info-categories {
+    padding: 5rem 0;
+    background-color: #F7F8FA;
+}
+
+.info-categories .box {
+    padding: 1rem 0.5rem;
+    border: 1px solid gray;
+    border-radius: 0.3rem;
+    box-shadow: 0px 0px 14px 3px rgba(0,0,0,0.3);
+    display: block;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.info-categories .box:last-child {
+    margin-bottom: 0;
+}
+
+.info-categories .box .left{
+    flex-basis: 11%;
+    text-align: center;
+    margin-right: 0.3rem;
+}
+
+.info-categories .box .right{
+    flex-basis: 85%;
+}
+
+.info-categories .box .left a{
+    text-decoration: none;
+    color: black;
+}
+
+.info-categories .box .left a img{
+    width: 100px;
+    height: 100px;
+    border-radius:50%;
+}
+
+.info-categories .box .left a:hover img{
+    transform: scale(1.05);
+}
+
+.info-categories .box .title{
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+}
+
+.info-categories .box .title a{
+    text-decoration: none;
+    color: black;
+}
+
+.info-categories .box .title a:hover{
+    color: #1B83AB;
+}
+
+.info-categories .box .description{
+    font-size: 0.9rem;
+    color: gray;
+}
+
+.info-categories .no {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin: 4rem 0;
+}
+
+@media screen and (min-width: 1050px) {
+    .info-categories .box {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        text-align: start;
+    }
+}

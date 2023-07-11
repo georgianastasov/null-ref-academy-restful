@@ -1,0 +1,64 @@
+<div class="site-dashboard">
+    <app-admin-navigation></app-admin-navigation>
+    <div class="site-right">
+        <form #form="ngForm" (ngSubmit)="onSubmit()">
+            <input asp-for="Id" hidden />
+            <div class="site-top">
+                <p class="caption">Delete Admin</p>
+            </div>
+            <div class="box-form">
+                <div asp-validation-summary="ModelOnly"></div>
+                <div class="form-group">
+                    <div class="box">
+                        <label>First Name</label>
+                        <input type="text" value="{{admin.firstName}}" disabled/>
+                    </div>
+                    <div class="box">
+                        <label>Last Name</label>
+                        <input type="text" value="{{admin.lastName}}" disabled/>
+                    </div>
+                    <div class="box">
+                        <label>Username</label>
+                        <input type="text" value="{{admin.username}}" disabled/>
+                    </div>
+                    <div class="box">
+                        <label>Email</label>
+                        <input type="text" value="{{admin.email}}" disabled/>
+                    </div>
+                    <div class="box">
+                        <label>Account Type</label>
+                        <input type="text" value="{{admin.accountType}}" disabled/>
+                    </div>
+                    <div class="box">
+                        <label>Password</label>
+                        <input type="text" value="{{admin.password}}" disabled/>
+                    </div>
+                    <div class="box">
+                        <label>Confirm Password</label>
+                        <input type="text" value="{{admin.confirmPassword}}" disabled/>
+                    </div>
+                    <div class="box">
+                        <label>Created Date</label>
+                        <input type="text" value="{{admin.createdDate}}" disabled/>
+                    </div>
+                    <div class="box">
+                        <label>Categories</label>
+                        <textarea rows="10" cols="45" disabled>{{ categoriesText }}</textarea>
+                    </div>
+                    <div class="box">
+                        <label>Courses</label>
+                        <textarea rows="10" cols="45" disabled>{{coursesText}}</textarea>
+                    </div>
+                    <div class="box">
+                        <label>Sections</label>
+                        <textarea rows="10" cols="45" disabled>{{sectionsText}}</textarea>
+                    </div>
+                    <div class="box-buttons">
+                        <button class="delete">Delete</button>
+                        <a class="" routerLink="/Admin/{{routeid}}/Admins">Back</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
