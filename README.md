@@ -51,8 +51,32 @@ The platform uses the following technologies:
 * Bash
 
 ## **🎓 Usage**
-Usage from the perspective of students, teachers and administrators.\
-❗It is about to be added..❗
+Usage from the perspective of students, teachers and administrators.
+
+### **Student Panel**
+1. Register and login to the application.
+2. Enrollment in various courses.
+3. Grade after finishing a course.
+4. Read articles and news.
+5. Rating of courses and articles.
+6. Profile overview and information about the platform and other students.
+
+### **Teacher Panel**
+1. Register and login to the application.
+2. Create courses and share information.
+3. Giving grades to students.
+4. Create articles.
+5. Read articles and news.
+5. Rating of courses and articles.
+6. Profile overview and information about the platform about the students and other teachers.
+
+### **Administrators Panel**
+1. Sign in to the app.
+2. View admin panel.
+3. An overview of everything happening on the platform.
+4. Information management.
+5. User management.
+6. Creation of news from the IT sphere and about the platform.
 
 ## :chart_with_upwards_trend: Product perspective
 The implemented platform has great potential for future development and improvement with the addition of many engaging and useful functionalities. With the development of e-learning and new technologies, the developed platform will also develop and support. Adding new features will make this kind of software competitive in the market and extremely popular.
