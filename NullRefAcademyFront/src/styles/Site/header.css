@@ -1,7 +1,10 @@
 ﻿.site-header {
-    background-color: white;
-    border-bottom: 0.1rem solid deepskyblue;
+    background-color: #222534;
+    border-bottom: 0.1rem solid #222534;
     animation: navitemsin 0.3s 1 ease-out forwards;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    padding: 1rem;
 }
 
 .site-header .wrapper {
@@ -9,6 +12,10 @@
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+}
+
+.site-header .logo{
+    filter: invert(100%);
 }
 
 .site-header nav{
@@ -34,24 +41,32 @@
     display: block;
     text-decoration: none;
     padding: 0.4rem 0.3rem;
-    color: #186AF2;
+    color: #FFE08C;
     font-weight: bold;
     font-size: 0.8rem;
     transition: background-color 0.1s ease-out;
 }
 
 .site-header nav ul li a:hover {
-    border-radius: 0.6rem;
-    background-color: #186AF2;
-    color: white;
+    scale: 1.05;
+    font-weight: bolder;
 }
 
 .site-header .site-logo {
     display: flex;
     justify-content: center;
     align-items: center;
-    order: -2;
-    flex-basis: 30%;
+    flex-wrap: wrap;
+}
+
+.site-header .site-logo:hover {
+    scale: 1.15;
+}
+
+.site-header .site-logo .nullref {
+    flex-basis: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 #toggle {
@@ -75,18 +90,20 @@
     text-align: center;
     font-weight: bold;
     font-size: 1.25rem;
-    color: #186AF2;
+    color: #FFE08C;
     margin-bottom: 0;
     margin-left: 0.2rem;
     margin-top: 0.2rem;
 }
 
 .site-header .site-logo .caption:hover{
-    color: deepskyblue;
+    scale: 1.05;
+    font-weight: bolder;
 }
 
 .site-header .site-logo .caption:active{
-    color: deepskyblue;
+    scale: 1.05;
+    font-weight: bolder;
 }
 
 @media screen and (min-width: 435px) {
