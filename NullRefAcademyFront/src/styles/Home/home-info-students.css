@@ -1,8 +1,7 @@
 ﻿.site-info-student {
-    margin-bottom: 8rem;
-}
-
-.site-info-student .wrapper {
+    background-color: #222534;
+    padding-bottom: 4rem;
+    padding-top: 4rem;
 }
 
 .site-info-student .media {
@@ -72,7 +71,7 @@
 
 @media screen and (min-width: 950px) {
     .site-info-student {
-        margin-bottom: 10rem;
+        padding-bottom: 6rem;
     }
 
     .site-info-student .wrapper {

@@ -1,10 +1,6 @@
 ﻿.site-info {
-    margin-bottom: 4rem;
-    padding: 1rem;
-}
-
-.site-info .wrapper{
-    
+    background-color: #222534;
+    padding: 4rem;
 }
 
 .site-info .title{
@@ -46,8 +42,7 @@
 
 @media screen and (min-width: 950px) {
     .site-info {
-        margin-bottom: 8rem;
-        padding: 1rem;
+        padding: 2rem 1rem 4rem 1rem;
     }
 
     .site-info .bars {

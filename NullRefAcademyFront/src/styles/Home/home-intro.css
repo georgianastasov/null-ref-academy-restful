@@ -1,10 +1,6 @@
 ﻿.site-intro {
-    margin-bottom: 8rem;
-    margin-top: 4rem;
-}
-
-.site-intro .wrapper {
-    
+    padding-bottom: 4rem;
+    padding-top: 4rem;
 }
 
 .site-intro .media {
@@ -73,8 +69,8 @@
 
 @media screen and (min-width: 950px) {
     .site-intro {
-        margin-bottom: 9rem;
-        margin-top: 6rem;
+        padding-bottom: 6rem;
+        padding-top: 6rem;
     }
 
     .site-intro .wrapper {
