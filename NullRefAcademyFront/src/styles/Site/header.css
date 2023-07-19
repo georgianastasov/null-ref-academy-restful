@@ -9,13 +9,9 @@
 
 .site-header .wrapper {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-}
-
-.site-header .logo{
-    filter: invert(100%);
 }
 
 .site-header nav{
@@ -57,6 +53,7 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    margin: 1rem 0;
 }
 
 .site-header .site-logo:hover {
@@ -70,10 +67,18 @@
 }
 
 #toggle {
-    color: #186AF2;
-    order: -1;
+    color: #FFE08C;
+    order: 0;
     flex-basis: 30%;
     text-align: center;
+    margin-bottom: 1rem;
+}
+
+#toggle img {
+    position: relative;
+    top: 0.1rem;
+    width: 20px;
+    height: 20px;
 }
 
 #main-nav-toggle {
@@ -176,6 +181,7 @@
     .site-header .wrapper {
         flex-wrap: nowrap;
         padding-top: 0rem;
+        justify-content: space-between;
     }
 
     .site-header nav li:hover > ul {
@@ -216,6 +222,7 @@
 
     .site-header .site-logo {
         order: 0;
+        margin: 0;
     }
 }
 
