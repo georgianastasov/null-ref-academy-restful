@@ -1,4 +1,5 @@
 ﻿.site-info-teacher {
+    background-color: #222534;
     padding-bottom: 4rem;
     padding-top: 4rem;
 }
@@ -19,15 +20,12 @@
 
 .site-info-teacher .media img {
     width: 75%;
-    border-bottom: 0.5px solid #901B73;
-    border-right: 0.5px solid #901B73;
     transition: transform 0.3s ease;
 }
 
 .site-info-teacher .media img:hover {
-    transform: translate(-5%,-5%) scale(1.05);
-    border-bottom: 3px solid #901B73;
-    border-right: 3px solid #901B73;
+    transform: scale(1.05);
+    border: 4px solid #FFE08C;
 }
 
 .site-info-teacher .site-caption{
@@ -39,12 +37,13 @@
 .site-info-teacher .site-caption .upper{
     text-transform: uppercase;
     font-size: 0.8rem;
-    color: dimgray;
+    color: lightgrey;
 }
 
 .site-info-teacher .site-caption .title {
     font-weight: bold;
     font-size: 2.0rem;
+    color: #FFE08C;
 }
 
 .site-info-teacher .site-caption .description {
@@ -52,7 +51,7 @@
     font-size: 1rem;
     margin-top: 1rem;
     margin-bottom: 1.2rem;
-    color: dimgray;
+    color: lightgrey;
 }
 
 .site-info-teacher .site-caption .butons {
@@ -62,24 +61,22 @@
 .site-info-teacher .site-caption .butons a{
     text-decoration: none;
     padding: 0.6rem 0.9rem;
-    color: white;
+    color: #222534;
     font-weight: 500;
     font-size: 0.8rem;
-    background-color: #901B73;
+    background-color: #FFE08C;
     margin-right: 0.5rem;
     border-radius: 0.2rem;
 }
 
 .site-info-teacher .site-caption .butons a:hover{
     font-weight: bold;
-    border: 1px solid white;
-    outline: 1px solid #901B73;
 }
 
 @media screen and (min-width: 950px) {
     .site-info-teacher {
-        padding-bottom: 4rem;
-        padding-top: 4rem;
+        padding-bottom: 5rem;
+        padding-top: 5rem;
     }
 
     .site-info-teacher .wrapper {
@@ -90,13 +87,22 @@
     }
 
     .site-info-teacher .media {
-        margin-left: 2rem;
+        margin-right: 2rem;
         margin-bottom: 0;
-        order: 2;
     }
+
 
     .site-info-teacher .media img {
         width: 90%;
+        border-bottom: 2px solid #FFE08C;
+        border-left: 2px solid #FFE08C;
+        transition: transform 0.3s ease;
+    }
+    
+    .site-info-teacher .media img:hover {
+        transform: translate(-5%,-5%) scale(1.05);
+        border-bottom: 4px solid #FFE08C;
+        border-left: 4px solid #FFE08C;
     }
 
     .site-info-teacher .site-caption{
