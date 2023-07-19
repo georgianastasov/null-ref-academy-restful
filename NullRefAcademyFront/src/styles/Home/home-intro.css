@@ -1,6 +1,6 @@
 ﻿.site-intro {
-    padding-bottom: 4rem;
-    padding-top: 4rem;
+    padding-bottom: 5rem;
+    padding-top: 5rem;
 }
 
 .site-intro .media {
@@ -9,19 +9,16 @@
     justify-content: center;
     margin-top: 1rem;
     margin-bottom: 1rem;
-    width: 100%;
 }
 
 .site-intro .media img {
-    border-bottom: 2px solid #222534;
-    border-left: 2px solid #222534;
     transition: transform 0.3s ease;
+    width: 75%;
 }
 
 .site-intro .media img:hover {
-    transform: translate(-5%,0%) scale(1.05);
-    border-bottom: 4px solid #FFE08C;
-    border-left: 4px solid #FFE08C;
+    transform: scale(1.05);
+    border: 2px solid #FFE08C;
 }
 
 .site-intro .site-caption{
@@ -73,8 +70,8 @@
 
 @media screen and (min-width: 950px) {
     .site-intro {
-        padding-bottom: 6rem;
-        padding-top: 6rem;
+        padding-bottom: 5rem;
+        padding-top: 5rem;
     }
 
     .site-intro .wrapper {
@@ -91,7 +88,16 @@
     }
 
     .site-intro .media img {
-        width: 100%;
+        width: 90%;
+        border-bottom: 2px solid #222534;
+        border-left: 2px solid #222534;
+        transition: transform 0.3s ease;
+    }
+    
+    .site-intro .media img:hover {
+        transform: translate(-5%,-5%) scale(1.05);
+        border-bottom: 4px solid #FFE08C;
+        border-left: 4px solid #FFE08C;
     }
 
     .site-intro .site-caption{

@@ -15,7 +15,8 @@
 }
 
 .site-info .bars .bar{
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
     transition: transform 0.3s ease;
 }
 
@@ -23,10 +24,8 @@
     transform: translateY(-5%) scale(1.05);
 }
 
-.site-info .bars i{
-    color: #FFE08C;
-    font-size: 3.1rem;
-    margin-bottom: 1.4rem;
+.site-info .bars img{
+    width: 15%;
 }
 
 .site-info .bars .caption{
@@ -44,13 +43,18 @@
 
 @media screen and (min-width: 950px) {
     .site-info {
-        padding: 2rem 1rem 4rem 1rem;
+        padding-top: 5rem;
+        padding-bottom: 5rem;
     }
 
     .site-info .bars {
         display: flex;
         justify-content: space-between;
         align-items: center;
+    }
+
+    .site-info .bars img{
+        width: 20%;
     }
 
     .site-info .title {
