@@ -1,0 +1,106 @@
+.site-improves{
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+.site-improves .wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.site-improves .site-caption{
+    text-align: center;
+    flex-basis: 100%;
+    order: 2;
+}
+
+.site-improves .title{
+    font-weight: bold;
+    font-size: 2.0rem;
+    color: #222534;
+}
+
+.site-improves .description {
+    font-weight: lighter;
+    font-size: 1rem;
+    margin-top: 1rem;
+    color: dimgray;
+}
+
+.site-improves .stats{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #222534;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.site-improves .stats .stat{
+    margin-bottom: 1rem;
+    margin-right: 3rem;
+}
+
+.site-improves .stats .stat img{
+    width: 35px; 
+    height: 35px;
+}
+
+.site-improves .site-caption .butons {
+    display: block;
+    margin-top: 1rem;
+}
+
+.site-improves .site-caption .butons a{
+    text-decoration: none;
+    padding: 0.6rem 0.9rem;
+    color: white;
+    font-weight: 500;
+    font-size: 0.8rem;
+    background-color: #222534;
+    margin-right: 0.5rem;
+    border-radius: 0.2rem;
+}
+
+.site-improves .site-caption .butons a:hover{
+    font-weight: bold;
+    color: #FFE08C;
+}
+
+@media screen and (min-width: 950px) {
+    .site-improves{
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+    }
+
+    .site-improves .wrapper {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: nowrap;
+    }
+
+    .site-improves .site-caption{
+        text-align: start;
+        padding-right: 3rem;
+        flex-basis: 60%;
+        order: 1;
+    }
+
+    .site-improves .stats{
+        text-align: start;
+        margin-bottom: 0;
+        order: 2;
+    }
+
+    .site-improves .site-caption .butons {
+        display: flex;
+    }
+
+    .site-improves .site-caption .butons a{
+        padding: 0.5rem 0.4rem;
+        display: block;
+    }
+}
