@@ -22,15 +22,12 @@
 
 .site-info-child .media img {
     width: 75%;
-    border-bottom: 0.5px solid #FFBC58;
-    border-right: 0.5px solid #FFBC58;
     transition: transform 0.3s ease;
 }
 
 .site-info-child .media img:hover {
-    transform: translate(-5%,-5%) scale(1.05);
-    border-bottom: 3px solid #FFBC58;
-    border-right: 3px solid #FFBC58;
+    transform: scale(1.05);
+    border: 2px solid #FFE08C;
 }
 
 .site-info-child .site-caption{
@@ -49,6 +46,7 @@
 .site-info-child .site-caption .title {
     font-weight: bold;
     font-size: 2.0rem;
+    color: #222534;
 }
 
 .site-info-child .site-caption .description {
@@ -69,21 +67,20 @@
     color: white;
     font-weight: 500;
     font-size: 0.8rem;
-    background-color: #FFBC58;
+    background-color: #222534;
     margin-right: 0.5rem;
     border-radius: 0.2rem;
 }
 
 .site-info-child .site-caption .butons a:hover{
     font-weight: bold;
-    border: 1px solid white;
-    outline: 1px solid #FFBC58;
+    color: #FFE08C;
 }
 
 @media screen and (min-width: 950px) {
     .site-info-child {
-        padding-bottom: 4rem;
-        padding-top: 4rem;
+        padding-bottom: 5rem;
+        padding-top: 5rem;
     }
 
     .site-info-child .wrapper {
@@ -100,7 +97,16 @@
     }
 
     .site-info-child .media img {
-        width: 100%;
+        width: 80%;
+        border-bottom: 2px solid #FFE08C;
+        border-right: 2px solid #FFE08C;
+        transition: transform 0.3s ease;
+    }
+    
+    .site-info-child .media img:hover {
+        transform: translate(-5%,-5%) scale(1.05);
+        border-bottom: 4px solid #FFE08C;
+        border-right: 4px solid #FFE08C;
     }
 
     .site-info-child .site-caption{
