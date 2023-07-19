@@ -19,15 +19,12 @@
 
 .site-info-softowaredeveloper .media img {
     width: 75%;
-    border-bottom: 2px solid #222534;
-    border-right: 2px solid #222534;
     transition: transform 0.3s ease;
 }
 
 .site-info-softowaredeveloper .media img:hover {
-    transform: translate(-5%,-5%) scale(1.05);
-    border-bottom: 4px solid #FFE08C;
-    border-right: 4px solid #FFE08C;
+    transform: scale(1.05);
+    border: 2px solid #FFE08C;
 }
 
 .site-info-softowaredeveloper .site-caption{
@@ -45,6 +42,7 @@
 .site-info-softowaredeveloper .site-caption .title {
     font-weight: bold;
     font-size: 2.0rem;
+    color: #222534;
 }
 
 .site-info-softowaredeveloper .site-caption .description {
@@ -77,8 +75,8 @@
 
 @media screen and (min-width: 950px) {
     .site-info-softowaredeveloper {
-        padding-bottom: 8rem;
-        padding-top: 8rem;
+        padding-bottom: 5rem;
+        padding-top: 5rem;
     }
 
     .site-info-softowaredeveloper .wrapper {
@@ -96,6 +94,15 @@
 
     .site-info-softowaredeveloper .media img {
         width: 90%;
+        border-bottom: 2px solid #222534;
+        border-right: 2px solid #222534;
+        transition: transform 0.3s ease;
+    }
+    
+    .site-info-softowaredeveloper .media img:hover {
+        transform: translate(-5%,-5%) scale(1.05);
+        border-bottom: 4px solid #FFE08C;
+        border-right: 4px solid #FFE08C;
     }
 
     .site-info-softowaredeveloper .site-caption{
