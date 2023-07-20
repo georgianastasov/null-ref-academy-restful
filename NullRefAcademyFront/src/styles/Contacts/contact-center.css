@@ -12,18 +12,21 @@
 
 .contact-center .intro .title{
     font-weight: bold;
-    font-size: 1.4rem;
+    font-size: 2rem;
     padding-bottom: 0.4rem;
+    color: #222534;
 }
 
 .contact-center .intro .date{
-    color:gray;
+    color:dimgray;
     font-size: 0.8rem;
     margin-bottom: 1.2rem;
 }
 
 .contact-center .center .caption{
     margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: #222534;
 }
 
 .contact-center .center ul{
@@ -32,6 +35,15 @@
     font-size: 0.93rem;
 }
 
-.contact-center .center i{
+.contact-center .center ul li{
+    color: #222534;
+    font-size: 0.9rem;
+}
+
+.contact-center .center img{
+    width: 30px;
+    height: 30px;
     margin-right: 0.3rem;
+    position: relative;
+    top: 0.25rem;
 }

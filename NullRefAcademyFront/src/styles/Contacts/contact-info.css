@@ -1,5 +1,8 @@
 ﻿.contact-info {
-    padding: 6rem 1rem 0rem 1rem;
+    padding: 4rem 1rem 2rem 1rem;
+    background-color: #222534;
+    position: relative;
+    top: -1rem;
 }
 
 .contact-info .wrapper {
@@ -15,6 +18,8 @@
     margin-bottom: 4rem;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     transition: transform 0.3s ease;
 }
@@ -23,15 +28,15 @@
     transform: translateY(-5%) scale(1.05);
 }
 
-.contact-info .box i{
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    color: #0B92C3;
+.contact-info .box img{
+    width: 75px;
+    height: 75px;
 }
 
 .contact-info .box a{
     text-decoration: none;
-    color: black;
+    color: #FFE08C;
+    font-size: 1.2rem;
     font-weight: bold;
     margin-bottom: 0.5rem;
 }
@@ -42,5 +47,5 @@
 
 .contact-info .box p{
     font-size: 0.8rem;
-    color: gray;
+    color: lightgrey;
 }

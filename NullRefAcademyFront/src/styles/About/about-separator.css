@@ -1,14 +1,30 @@
-﻿.about-separator {
-    background: #26B6D2;
-    opacity: 0.8;
+﻿.about-separator-first, .about-separator-second{
+    background: #222534;
     overflow: hidden;
     padding: 5px 0;
+    height: 400px;
     text-align: center;
     white-space: nowrap;
+    background-image: url(https://i.gifer.com/H2fl.gif);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
 }
 
-.about-separator img{
-    margin: 10px 5px 3px 1px;
-    width: 11.3rem;
-    height: 9.5rem;
+.about-separator-second{
+    background-image: url(https://www.jetbrains.com/webstorm/guide/assets/tip-4d77d667.gif);
+}
+
+.about-separator-first::before, .about-separator-second::before {
+    display: block;
+    content: '';
+    background: rgba(34, 34, 34, 0.7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 5;
 }
