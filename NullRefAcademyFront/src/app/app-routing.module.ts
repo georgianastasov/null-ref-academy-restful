@@ -69,6 +69,7 @@ import { TeacherSettingsComponent } from './teacher-site/teacher-settings/teache
 import { TeacherUpdateCategoryComponent } from './teacher-site/teacher-update-category/teacher-update-category.component';
 import { TeacherUpdateCourseComponent } from './teacher-site/teacher-update-course/teacher-update-course.component';
 import { TeacherUpdateSectionComponent } from './teacher-site/teacher-update-section/teacher-update-section.component';
+import { HomePrivacyComponent } from './home-site/home-privacy/home-privacy.component';
 
 const routes: Routes = [
   {
@@ -86,6 +87,10 @@ const routes: Routes = [
   {
     path: 'Home/Contacts',
     component: HomeContactsComponent
+  },
+  {
+    path: 'Home/Privacy',
+    component: HomePrivacyComponent
   },
   {
     path: 'Home/Login',

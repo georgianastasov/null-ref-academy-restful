@@ -14,6 +14,7 @@ import { HomeApiService } from './services/home-api.service';
 
 import { HomeAboutComponent } from './home-site/home-about/home-about.component';
 import { HomeContactsComponent } from './home-site/home-contacts/home-contacts.component';
+import { HomePrivacyComponent } from './home-site/home-privacy/home-privacy.component';
 import { HomeLoginComponent } from './home-site/home-login/home-login.component';
 import { HomeRegisterComponent } from './home-site/home-register/home-register.component';
 import { AdminSiteComponent } from './admin-site/admin-site.component';
@@ -94,6 +95,7 @@ import { TeacherProfileTeacherComponent } from './teacher-site/teacher-profile-t
     HomeMainComponent,
     HomeAboutComponent,
     HomeContactsComponent,
+    HomePrivacyComponent,
     HomeLoginComponent,
     HomeRegisterComponent,
     AdminSiteComponent,
