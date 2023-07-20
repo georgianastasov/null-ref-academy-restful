@@ -22,6 +22,7 @@
 .site-login .container h1 {
     font-weight: bold;
     margin: 0;
+    color: #FFE08C;
 }
 
 .site-login .container h2 {
@@ -29,11 +30,12 @@
 }
 
 .site-login .container p {
-    font-size: 14px;
+    font-size: 0.8rem;
     font-weight: 100;
     line-height: 20px;
     letter-spacing: 0.5px;
     margin: 20px 0 30px;
+    color: lightgrey;
 }
 
 .site-login .container span {
@@ -58,9 +60,9 @@
 
 .site-login .container button {
     border-radius: 20px;
-    border: 1px solid #25B6D2;
-    background-color: #25B6D2;
-    color: #FFFFFF;
+    border: 1px solid #222534;
+    background-color: #222534;
+    color: #FFE08C;
     font-size: 14px;
     font-weight: bold;
     padding: 12px 45px;
@@ -84,12 +86,16 @@
         border-color: white;
     }
 
+    button:hover {
+        transform: scale(1.1);
+        font-weight: bold;
+    }
+
 .site-login .container a {
     text-decoration: none;
     border-radius: 20px;
-    border: 1px solid #25B6D2;
-    background-color: #25B6D2;
-    color: #FFFFFF;
+    background-color: #FFE08C;
+    color: #222534;
     font-size: 14px;
     font-weight: bold;
     padding: 12px 45px;
@@ -111,12 +117,11 @@
 }
 
 .site-login .container a.ghost {
-    background-color: transparent;
-    border-color: white;
+    background-color: #FFE08C;
 }
 
 .site-login form {
-    background-color: #FFFFFF;
+    background-color: #FFE08C;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -126,7 +131,8 @@
 }
 
 .site-login input {
-    background-color: #e3e3e3;
+    background-color: #222534;
+    color: #FFE08C;
     border: none;
     padding: 15px 15px;
     margin: 10px 0;
@@ -136,12 +142,18 @@
 
 .site-login select {
     display: block;
-    background-color: #e3e3e3;
+    background-color: #222534;
+    color: #FFE08C;
     border: none;
     padding: 15px 15px;
     margin: 8px 0;
     width: 100%;
     font-size: 17px;
+}
+
+.site-login input:focus, .site-login select:focus{
+    outline: none;
+    border: 2px solid #222534;
 }
 
 .site-login .form-container {
@@ -181,15 +193,15 @@
 }
 
 .control:hover input ~ .control__indicator {
-    background-color: cyan;
+    background-color: #222534;
 }
 
 .control input:checked ~ .control__indicator {
-    background-color: #25B6D2;
+    background-color: #222534;
 }
 
 .control:hover input:not([disabled]):checked ~ .control__indicator, .control input:checked:focus ~ .control__indicator {
-    background-color: #25B6D2;
+    background-color: #222534;
 }
 
 .control input:disabled ~ .control__indicator {
@@ -211,7 +223,7 @@
 .control--checkbox .control__indicator {
     width: 23px;
     height: 23px;
-    border: solid 2px #28B7D3;
+    border: solid 2px #222534;
 }
 
 .control--checkbox input:disabled ~ .control__indicator {
@@ -232,12 +244,10 @@
 }
 
 
-
-
 .site-login .sign-in-container {
     left: 0;
     width: 50%;
-    /*z-index: 2;*/
+    background-color: #FFE08C;
 }
 
 .site-login .container.right-panel-active .sign-in-container {
@@ -248,7 +258,7 @@
     left: 0;
     width: 50%;
     opacity: 1;
-    /*z-index: 1;*/
+    background-color: #FFE08C;
 }
 
 .site-login .container.right-panel-active .sign-up-container {
@@ -306,9 +316,9 @@
 }
 
 .overlay-panel {
-    background: #25B6D2;
-    background: -webkit-linear-gradient(to right, #25B6D2, #71CFE2);
-    background: linear-gradient(to right, #25B6D2, #71CFE2);
+    background: #222534;
+    background: -webkit-linear-gradient(to right, #222534, #222534);
+    background: linear-gradient(to right, #222534, #222534);
     background-repeat: no-repeat;
     background-size: cover;
     position: absolute;
