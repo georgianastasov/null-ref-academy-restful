@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url(https://www.clipartkey.com/mpngs/m/210-2100998_transparent-background-math-png.png);
+    background-image: url(https://miro.medium.com/v2/resize:fit:1000/0*6G5cyylVWddKuwno.gif);
     background-position: center;
     background-size: cover;
     background-repeat: repeat;
@@ -11,12 +11,13 @@
     padding: 6rem 3rem;
     transition: transform 0.3s ease;
     z-index: -1;
+    top: -1rem;
 }
 
 .about-intro::before {
     display: block;
     content: '';
-    background: rgba(136, 214, 239, 0.90);
+    background: rgba(34, 34, 34, 0.85);
     position: absolute;
     top: 0;
     left: 0;
@@ -35,13 +36,15 @@
 }
 
 .about-intro .about-caption {
-    color: black;
+    color: #FFE08C;
     font-size: 2.5rem;
     text-align: center;
     font-weight: bold;
 }
 
 .about-line {
+    position: relative;
+    top: -1rem;
     height: 1.5rem;
-    background-color: #26B6D2;
+    background-color: #222534;
 }

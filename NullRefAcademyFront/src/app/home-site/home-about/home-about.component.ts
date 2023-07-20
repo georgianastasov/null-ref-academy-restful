@@ -33,7 +33,7 @@ export class HomeAboutComponent implements OnInit {
 		    box3!.style.display = 'block';
 		    box2!.style.display = 'none';
 		    box1!.style.display = 'none';
-		    block!.style.backgroundColor = "#3A8EA2";
+		    block!.style.backgroundColor = "#222534";
 	    }
     }
     else if (this.count == 2) {
@@ -42,7 +42,7 @@ export class HomeAboutComponent implements OnInit {
 		    box2!.style.display = 'block';
 		    box1!.style.display = 'none';
 		    box3!.style.display = 'none';
-		    block!.style.backgroundColor = "#71CFE2";
+		    block!.style.backgroundColor = "#222534";
 	    }
     }
     else if (this.count == 3) {
@@ -51,7 +51,7 @@ export class HomeAboutComponent implements OnInit {
 		    box1!.style.display = 'block';
 		    box2!.style.display = 'none';
 		    box3!.style.display = 'none';
-		    block!.style.backgroundColor = "#54C0A6";
+		    block!.style.backgroundColor = "#222534";
 	    }
     }
     
@@ -75,7 +75,7 @@ export class HomeAboutComponent implements OnInit {
 		    box2!.style.display = 'block';
 		    box3!.style.display = 'none';
 		    box1!.style.display = 'none';
-		    block!.style.backgroundColor = "#3A8EA2";
+		    block!.style.backgroundColor = "#222534";
 	    }
     }
     else if (this.count == 2) {
@@ -84,7 +84,7 @@ export class HomeAboutComponent implements OnInit {
 		    box3!.style.display = 'block';
 		    box1!.style.display = 'none';
 		    box2!.style.display = 'none';
-		    block!.style.backgroundColor = "#71CFE2";
+		    block!.style.backgroundColor = "#222534";
 	    }
     }
     else if (this.count == 3) {
@@ -93,7 +93,7 @@ export class HomeAboutComponent implements OnInit {
 		    box1!.style.display = 'block';
 		    box2!.style.display = 'none';
 		    box3!.style.display = 'none';
-		    block!.style.backgroundColor = "#54C0A6";
+		    block!.style.backgroundColor = "#222534";
 	    }
     }
   }

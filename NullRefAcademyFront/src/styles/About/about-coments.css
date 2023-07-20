@@ -1,6 +1,6 @@
 ﻿.about-coments {
     padding: 6rem 1rem;
-    background-color: #54C0A6;
+    background-color: #222534;
 }
 
 .about-coments .wrapper{
@@ -26,7 +26,7 @@
 .about-coments button i{
     font-weight: bold;
     font-size: 2.5rem;
-    color: white;
+    color: #FFE08C;
 }
 
 .about-coments .box{
@@ -37,7 +37,7 @@
     font-weight:bold;
     font-size: 1.2rem;
     margin-bottom: 1rem;
-    color: white;
+    color: #FFE08C;
 }
 
 .about-coments .box .person{
