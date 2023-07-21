@@ -6,33 +6,40 @@
     position: sticky;
     top: 0;
     height: 100vh;
-    background: linear-gradient(to right, #25B6D2, #71CFE2);
+    background-color: #222534;
     padding: 0 1.7rem;
-    color: white;
+    color: #FFE08C;
     text-align: center;
+    font-size: 0.95rem;
 }
 
 .site-dashboard .site-left .site-title{
     font-weight: bold;
-    font-size: 1.3rem;
+    font-size: 1.7rem;
     padding-top: 0.3rem;
     padding-bottom: 3rem;
+    color: #FFE08C;
 }
 
 .site-dashboard .site-left .navigation-account{
     padding-bottom: 0.5rem;
     margin-bottom: 0.3rem;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid #FFE08C;
     font-weight: 500;
 }
 
+.site-dashboard .site-left .navigation-account p{
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
 .site-dashboard .site-left .navigation-account ul li a{
-    color: white;
+    color: #FFE08C;
 }
 
 .site-dashboard .site-left .navigation-account ul li a:hover{
-    background-color: white;
-    color: blue;
+    background-color: #FFE08C;
+    color: #222534;
 }
 
 
@@ -45,12 +52,13 @@
     display: block;
     padding: 0.2rem;
     border-radius: 0.4rem;
-    color: white;
+    color: #FFE08C;
     cursor: pointer;
+    font-size: 0.95rem;
 }
 
 .site-dashboard .site-left .navigation-admin{
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid #FFE08C;
     padding: 0.5rem 0;
 }
 
@@ -59,8 +67,8 @@
 }
 
 .site-dashboard .site-left .navigation-admin ul li a:hover{
-    background-color: white;
-    color: blue;
+    background-color: #FFE08C;
+    color: #222534;
 }
 
 .site-dashboard .site-right{
