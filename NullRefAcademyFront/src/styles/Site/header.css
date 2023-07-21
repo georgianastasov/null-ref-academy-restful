@@ -199,8 +199,9 @@
         z-index: 100;
         transition: opacity 0.2s ease-out, transform 0.2s ease-in;
         transform: translateY(2rem);
-        background-color: white;
+        background-color: #222534;
         padding: 0.3rem 0.3rem;
+        border-radius: 0.3rem;
     }
 
     .site-header nav > ul > li > ul {
@@ -209,11 +210,11 @@
     }
 
     .site-header nav > ul > li > #courses-header {
-        left: -0.8rem;
+        left: -0.7rem;
     }
 
     .site-header nav > ul > li > #username-header {
-        left: 0.2rem;
+        left: -0.5rem;
     }
 
     #toggle {
