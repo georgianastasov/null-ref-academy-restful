@@ -394,3 +394,13 @@ Thumbs.db
 
 #Angular
 .angular/*
+
+#Config
+NullRefAcademyBack/.vs/NullRefAcademy/config/applicationhost.config
+NullRefAcademyBack/.vs/NullRefAcademy/DesignTimeBuild/.dtbcache.v2
+NullRefAcademyBack/.vs/NullRefAcademy/FileContentIndex/87fe1f77-ba89-42c7-9dc9-8b4db9045e5e.vsidx
+NullRefAcademyBack/.vs/NullRefAcademy/FileContentIndex/read.lock
+NullRefAcademyBack/.vs/NullRefAcademy/v17/.futdcache.v2
+NullRefAcademyBack/.vs/NullRefAcademy/v17/.suo
+NullRefAcademyBack/.vs/ProjectEvaluation/nullrefacademy.metadata.v6.1
+NullRefAcademyBack/.vs/ProjectEvaluation/nullrefacademy.projects.v6.1
