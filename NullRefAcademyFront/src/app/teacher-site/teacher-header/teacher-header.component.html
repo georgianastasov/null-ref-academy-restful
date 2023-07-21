@@ -3,7 +3,7 @@
     <div class="wrapper">
         <nav class="site-nav left">
             <ul>
-                <li>
+                <li class="font">
                     <a href="/Teacher/{{routeid}}/Courses">Courses</a>
                     <ul id="courses-header">
                         <li><a href="/Teacher/{{routeid}}/Categories">Categories</a></li>
@@ -11,19 +11,35 @@
                         <li><a href="/Teacher/{{routeid}}/Sections">Sections</a></li>
                     </ul>
                 </li>
-                <li><a href="/Teacher/{{routeid}}/About">About us</a></li>
+                <li class="font"><a href="/Teacher/{{routeid}}/About">About us</a></li>
             </ul>
         </nav>
-        <div class="site-logo">
-            <img src="../../../assets/images/458910.png" alt="">
-            <a class="caption" href="/Teacher/{{routeid}}/Dashboard">Academy</a>
-        </div>
+        <a href="/Teacher/{{routeid}}/Dashboard" class="site-logo">
+            <div class="nullref">
+                <img src="https://cdn-icons-png.flaticon.com/128/9812/9812340.png" alt="" style="width: 30px; height: 30px;">
+                <img src="https://cdn-icons-png.flaticon.com/128/9812/9812347.png" alt="" style="width: 30px; height: 30px;">
+                <img src="https://cdn-icons-png.flaticon.com/128/9812/9812338.png" alt="" style="width: 30px; height: 30px;">
+                <img src="https://cdn-icons-png.flaticon.com/128/9812/9812338.png" alt="" style="width: 30px; height: 30px;">
+                <img src="https://cdn-icons-png.flaticon.com/128/9812/9812344.png" alt="" style="width: 30px; height: 30px; margin-left: 1rem;">
+                <img src="https://cdn-icons-png.flaticon.com/128/9812/9812331.png" alt="" style="width: 30px; height: 30px;">
+                <img src="https://cdn-icons-png.flaticon.com/128/9812/9812332.png" alt="" style="width: 30px; height: 30px;">
+            </div>
+            <div class="academy">
+                <img src="https://cdn-icons-png.flaticon.com/128/9812/9812327.png" alt="" style="width: 30px; height: 30px;">
+                <img src="https://cdn-icons-png.flaticon.com/128/9812/9812329.png" alt="" style="width: 30px; height: 30px;">
+                <img src="https://cdn-icons-png.flaticon.com/128/9812/9812327.png" alt="" style="width: 30px; height: 30px;">
+                <img src="https://cdn-icons-png.flaticon.com/128/9812/9812330.png" alt="" style="width: 30px; height: 30px;">
+                <img src="https://cdn-icons-png.flaticon.com/128/9812/9812331.png" alt="" style="width: 30px; height: 30px;">
+                <img src="https://cdn-icons-png.flaticon.com/128/9812/9812339.png" alt="" style="width: 30px; height: 30px;">
+                <img src="https://cdn-icons-png.flaticon.com/128/9812/9812351.png" alt="" style="width: 30px; height: 30px;">
+            </div>
+        </a>
         <label for="main-nav-toggle" id="toggle"><i class="fab fa-xing"></i>Menu</label>
         <nav class="site-nav right">
             <ul>
-                <li><a href="/Teacher/{{routeid}}/Contacts">Contacts</a></li>
-                <li>
-                    <a href="/Teacher/{{routeid}}/Dashboard">{{teacher.username}}</a>
+                <li class="font"><a href="/Teacher/{{routeid}}/Contacts">Contacts</a></li>
+                <li class="font">
+                    <a href="/Teacher/{{routeid}}/Dashboard">Username</a>
                     <ul id="username-header">
                         <li><a href="/Teacher/{{routeid}}/Dashboard">Account</a></li>
                         <li><a href="/Teacher/{{routeid}}/Settings">Settings</a></li>
