@@ -42,8 +42,12 @@
     display: block;
 }
 
+.site-footer .upper-div .right .caption{
+    font-size: 1.3rem;
+}
+
 .site-footer .upper-div .right .info{
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     margin-top: 0.5rem;
 }
 
