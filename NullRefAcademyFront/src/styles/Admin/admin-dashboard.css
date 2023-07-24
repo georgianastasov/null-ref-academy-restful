@@ -11,6 +11,7 @@
     color: #FFE08C;
     text-align: center;
     font-size: 0.95rem;
+    width: 300px;
 }
 
 .site-dashboard .site-left .site-title{
@@ -98,6 +99,7 @@
     border-radius: 0.4rem;
     padding: 0.2rem 0.5rem;
     background-color: #222534;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
 
 .site-dashboard .site-right .site-top .btt:hover{
@@ -112,6 +114,7 @@
     table-layout: auto;
     width: 100%;
     margin-bottom: 4rem;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
 
 .site-dashboard .site-right .dashboard-table td, .dashboard-table th {
