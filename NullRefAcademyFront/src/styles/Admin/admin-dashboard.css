@@ -163,11 +163,11 @@
 .site-dashboard .site-right .dashboard-table .update {
     display: block;
     text-decoration: none;
-    background-color: orange;
+    background-color: #222534;
     padding: 0.3rem 0.5rem;
     border-radius: 0.4rem;
     margin-bottom: 0.3rem;
-    color: black;
+    color: #FFE08C;
 }
 
 .site-dashboard .site-right .dashboard-table .update:hover {
@@ -177,10 +177,10 @@
 .site-dashboard .site-right .dashboard-table .delete {
     display: block;
     text-decoration: none;
-    background-color: red;
+    background-color: #222534;
     padding: 0.3rem 0.5rem;
     border-radius: 0.4rem;
-    color: black;
+    color: #FFE08C;
 }
 
 .site-dashboard .site-right .dashboard-table .delete:hover {
