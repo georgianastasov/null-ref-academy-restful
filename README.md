@@ -48,6 +48,7 @@ The platform uses the following technologies:
 
 * Git
 * Github
+* GitHub Descktop
 * Bash
 
 ## **🎓 Usage**
