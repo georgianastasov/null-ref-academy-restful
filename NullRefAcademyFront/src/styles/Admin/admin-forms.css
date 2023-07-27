@@ -1,51 +1,85 @@
-﻿.site-right .site-top .caption {
-    margin-left: 1rem;
+﻿.site-form {
+    color: #222534;
+    margin-left: 30%;
+    margin-bottom: 2rem;
 }
 
-.site-right .box-form {
-    padding: 0.5rem 1rem;
+.site-form .site-top .caption {
+    margin-left: 5rem;
+    font-size: 2rem;
 }
 
-.site-right .box-form .box{
+.site-form .box-form .box{
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     margin-bottom: 0.5rem;
 }
 
-.site-right .box-form .box label{
+.site-form .box-form .box label{
     flex-basis: 100%;
     margin-bottom: 0.2rem;
-    font-size: 1.1rem;
-}
-
-.site-right .box-form .box input{
-    padding: 0.3rem;
-    font-size: 1.1rem;
-}
-
-.site-right .box-form .box textarea{
-    padding: 0.3rem;
     font-size: 1rem;
 }
 
-.site-right .box-form .box select {
+.site-form .box-form .box input{
+    padding: 0.3rem;
+    font-size: 0.7rem;
+    width: 400px;
+    color: #222534;
+}
+
+.site-form .box-form .box input:focus-visible{
+    border-color: #222534;
+    outline-color:#222534;
+    background-color: #FFE08C;
+}
+
+.site-form .box-form .box input:disabled{
+    border-color: #222534;
+    outline-color:#222534;
+    border-radius: 0.2rem;
+    background-color: #FFE08C;
+}
+
+.site-form .box-form .box .validation{
+    font-weight: bold;
+}
+
+.site-form .box-form .box textarea{
+    padding: 0.3rem;
+    font-size: 0.7rem;
+}
+
+.site-form .box-form .box textarea:focus-visible{
+    border-color: #222534;
+    outline-color:#222534;
+    background-color: #FFE08C;
+}
+
+.site-form .box-form .box select {
     display: block;
-    background-color: #e3e3e3;
-    border: none;
     padding: 12px 10px;
     margin: 8px 0;
     width: 50%;
-    font-size: 1rem;
+    font-size: 0.7rem;
+    border-radius: 0.2rem;
+    border-color: #222534;
 }
 
-.site-right .box-form .box span{
+.site-form .box-form .box select:focus-visible {
+    border-color: #222534;
+    outline-color:#222534;
+    background-color: #FFE08C;
+}
+
+.site-form .box-form .box span{
     flex-basis:100%;
     color: black;
     font-size: 0.7rem;
 }
 
-.site-right .box-form .box-buttons input{
+.site-form .box-form .box-buttons input{
     padding: 0.5rem 1rem;
     border: none;
     cursor: pointer;
@@ -55,7 +89,7 @@
     border-radius: 0.4rem;
 }
 
-.site-right .box-form .box-buttons button{
+.site-form .box-form .box-buttons button{
     padding: 0.5rem 1rem;
     border: none;
     cursor: pointer;
@@ -64,19 +98,19 @@
     border-radius: 0.4rem;
 }
 
-.site-right .box-form .box-buttons .add{
+.site-form .box-form .box-buttons .add{
     background-color: #222534;
 }
 
-.site-right .box-form .box-buttons .delete{
+.site-form .box-form .box-buttons .delete{
     background-color: #222534;
 }
 
-.site-right .box-form .box-buttons .update{
+.site-form .box-form .box-buttons .update{
     background-color: #222534;
 }
 
-.site-right .box-form .box-buttons a{
+.site-form .box-form .box-buttons a{
     display: inline-block;
     padding: 0.4rem 1rem;
     border: none;
@@ -88,4 +122,9 @@
     text-decoration: none;
     margin-top: 0.2rem;
     margin-left: 0.4rem;
+}
+
+.site-form .box-form .box-buttons a:hover{
+    font-weight: bold;
+    scale: 1.1;
 }
