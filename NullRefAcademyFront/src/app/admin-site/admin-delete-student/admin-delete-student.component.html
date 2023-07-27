@@ -1,69 +1,69 @@
 <div class="site-dashboard">
     <app-admin-navigation></app-admin-navigation>
-    <div class="site-right">
+    <div class="site-form">
         <form #form="ngForm" (ngSubmit)="onSubmit()">
             <input asp-for="Id" hidden />
             <div class="site-top">
-                <p class="caption">Delete Student</p>
+                <p class="caption digital">Delete Student</p>
             </div>
             <div class="box-form">
                 <div asp-validation-summary="ModelOnly"></div>
                 <div class="form-group">
                     <div class="box">
-                        <label>First Name</label>
+                        <label class="code">First Name</label>
                         <input type="text" value="{{student.firstName}}" disabled/>
                     </div>
                     <div class="box">
-                        <label>Last Name</label>
+                        <label class="code">Last Name</label>
                         <input type="text" value="{{student.lastName}}" disabled/>
                     </div>
                     <div class="box">
-                        <label>Username</label>
+                        <label class="code">Username</label>
                         <input type="text" value="{{student.username}}" disabled/>
                     </div>
                     <div class="box">
-                        <label>Email</label>
+                        <label class="code">Email</label>
                         <input type="text" value="{{student.email}}" disabled/>
                     </div>
                     <div class="box">
-                        <label>Account Type</label>
+                        <label class="code">Account Type</label>
                         <input type="text" value="{{student.accountType}}" disabled/>
                     </div>
                     <div class="box">
-                        <label>Points</label>
+                        <label class="code">Points</label>
                         <input type="text" value="{{student.points}}" disabled/>
                     </div>
                     <div class="box">
-                        <label>Progress</label>
+                        <label class="code">Progress</label>
                         <input type="text" value="{{student.progress}}" disabled/>
                     </div>
                     <div class="box">
-                        <label>Time Spent</label>
+                        <label class="code">Time Spent</label>
                         <input type="text" value="{{student.timeSpent}}" disabled/>
                     </div>
                     <div class="box">
-                        <label>Bio</label>
+                        <label class="code">Bio</label>
                         <textarea rows="8" cols="45" value="{{student.bio}}" disabled></textarea>
                     </div>
                     <div class="box">
-                        <label>Password</label>
+                        <label class="code">Password</label>
                         <input type="text" value="{{student.password}}" disabled/>
                     </div>
                     <div class="box">
-                        <label>Confirm Password</label>
+                        <label class="code">Confirm Password</label>
                         <input type="text" value="{{student.confirmPassword}}" disabled/>
                     </div>
                     <div class="box">
-                        <label>Created Date</label>
+                        <label class="code">Created Date</label>
                         <input type="text" value="{{student.createdDate}}" disabled/>
                     </div>
                     <div class="box">
-                        <label>Courses</label>
+                        <label class="code">Courses</label>
                         <textarea rows="10" cols="45" disabled>{{ coursesText }}</textarea>
                     </div>
                     <div class="box-buttons">
-                        <button class="delete">Delete</button>
-                        <a class="" routerLink="/Admin/{{routeid}}/Students">Back</a>
+                        <button class="delete font">Delete</button>
+                        <a class="font" routerLink="/Admin/{{routeid}}/Students">Back</a>
                     </div>
                 </div>
             </div>
