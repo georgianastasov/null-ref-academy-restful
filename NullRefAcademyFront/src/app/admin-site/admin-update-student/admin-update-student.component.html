@@ -1,79 +1,79 @@
 <div class="site-dashboard">
     <app-admin-navigation></app-admin-navigation>
-    <div class="site-right">
+    <div class="site-form">
         <form #form="ngForm" (ngSubmit)="onSubmit()">
             <input asp-for="Id" hidden/>
             <div class="site-top">
-                <p class="caption">Update Student</p>
+                <p class="caption digital">Update Student</p>
             </div>
             <div class="box-form">
                 <div asp-validation-summary="ModelOnly"></div>
                 <div class="form-group">
                     <div class="box">
-                        <label>First Name</label>
+                        <label class="code">First Name</label>
                         <input type="text" value="{{takenStudent.firstName}}" name="firstName" [(ngModel)]="student.firstName"/>
-                        <span class="validation">First Name must be longer than 2 letters.</span>
+                        <span class="validation code">First Name must be longer than 2 letters.</span>
                     </div>
                     <div class="box">
-                        <label>Last Name</label>
+                        <label class="code">Last Name</label>
                         <input type="text" value="{{takenStudent.lastName}}" name="lastName" [(ngModel)]="student.lastName"/>
-                        <span class="validation">Last Name must be longer than 2 letters.</span>
+                        <span class="validation code">Last Name must be longer than 2 letters.</span>
                     </div>
                     <div class="box">
-                        <label>Username</label>
+                        <label class="code">Username</label>
                         <input type="text" value="{{takenStudent.username}}" name="username" [(ngModel)]="student.username" />
-                        <span class="validation">Username must be longer than 5 letters.</span>
+                        <span class="validation code">Username must be longer than 5 letters.</span>
                     </div>
                     <div class="box">
-                        <label>Email</label>
+                        <label class="code">Email</label>
                         <input type="text" value="{{takenStudent.email}}" name="email" [(ngModel)]="student.email"/>
                     </div>
                     <div class="box">
-                        <label>Account Type</label>
+                        <label class="code">Account Type</label>
                         <input type="text" value="{{takenStudent.accountType}}" [(ngModel)]="student.accountType" disabled/>
                     </div>
                     <div class="box">
-                        <label>Points</label>
+                        <label class="code">Points</label>
                         <input type="text" value="{{takenStudent.points}}" name="points" [(ngModel)]="student.points"/>
-                        <span class="validation">Points must be greater than 0.</span>
+                        <span class="validation code">Points must be greater than 0.</span>
                     </div>
                     <div class="box">
-                        <label>Progress</label>
+                        <label class="code">Progress</label>
                         <input type="text" value="{{takenStudent.progress}}" name="progress" [(ngModel)]="student.progress"/>
-                        <span class="validation">Progress must be greater than 0.</span>
+                        <span class="validation code">Progress must be greater than 0.</span>
                     </div>
                     <div class="box">
-                        <label>Time Spent</label>
+                        <label class="code">Time Spent</label>
                         <input type="text" value="{{takenStudent.timeSpent}}" [(ngModel)]="student.timeSpent" disabled/>
                     </div>
                     <div class="box">
-                        <label>Bio</label>
+                        <label class="code">Bio</label>
                         <textarea type="text" rows="8" cols="45" value="{{takenStudent.bio}}" name="bio" [(ngModel)]="student.bio"></textarea>
-                        <span class="validation">Bio must be longer than 5 symbols.</span>
+                        <span class="validation code">Bio must be longer than 5 symbols.</span>
                     </div>
                     <div class="box">
-                        <label>Password</label>
+                        <label class="code">Password</label>
                         <input type="text" value="{{takenStudent.password}}" name="password" [(ngModel)]="student.password" />
-                        <span class="validation">Password must start with uppercase letter.</span>
-                        <span class="validation">Password must have digits.</span>
-                        <span class="validation">Password must be longer than 5 symbols.</span>
+                        <span class="validation code">Password must start with uppercase letter.</span>
+                        <span class="validation code">Password must have digits.</span>
+                        <span class="validation code">Password must be longer than 5 symbols.</span>
                     </div>
                     <div class="box">
-                        <label>Confirm Password</label>
+                        <label class="code">Confirm Password</label>
                         <input type="text" value="{{takenStudent.confirmPassword}}" name="confirmPassword" [(ngModel)]="student.confirmPassword"/>
-                        <span class="validation">Confirm Password must match password.</span>
+                        <span class="validation code">Confirm Password must match password.</span>
                     </div>
                     <div class="box">
-                        <label>Created Date</label>
+                        <label class="code">Created Date</label>
                         <input type="text" value="{{takenStudent.createdDate}}" [(ngModel)]="student.createdDate" disabled/>
                     </div>
                     <div class="box">
-                        <label>Courses</label>
+                        <label class="code">Courses</label>
                         <textarea type="text" rows="10" cols="45" disabled>{{ coursesText }}</textarea>
                     </div>
                     <div class="box-buttons">
-                        <button class="update">Update</button>
-                        <a class="" routerLink="/Admin/{{routeid}}/Students">Back</a>
+                        <button class="update font">Update</button>
+                        <a class="font" routerLink="/Admin/{{routeid}}/Students">Back</a>
                     </div>
                 </div>
             </div>
