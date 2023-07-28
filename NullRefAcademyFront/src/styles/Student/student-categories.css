@@ -1,12 +1,14 @@
 ﻿.intro-categories {
-    padding: 1.5rem;
-    background-color: #0A2A66;
+    position: relative;
+    top: -1rem;
+    padding: 2rem 1rem 1rem 1rem;
+    background-color: #FFE08C;
 }
 
 .intro-categories .cap{
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-weight: bold;
-    color: white;
+    color: #222534;
 }
 
 .info-categories {
