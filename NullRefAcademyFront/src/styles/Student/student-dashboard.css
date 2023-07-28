@@ -3,11 +3,12 @@
     left: 50%;
     transform: translate(-50%, 0);
     padding: 2rem;
-    background-color: white;
+    background-color:#222534;
     border-radius: 0.2rem;
     box-shadow: 0px 0px 15px 3px rgba(0,0,0,0.5);
     z-index: 200;
     margin-top: 6.5rem;
+    color: #FFE08C;
 }
 
 .top-box .form-group{
@@ -36,7 +37,15 @@
 
 .top-box .form-group .box textarea{
     padding: 0.3rem;
-    font-size: 1rem;
+    font-size: 0.9rem;
+    background-color: #FFE08C;
+    color: #222534;
+    border-radius: 0.2rem;
+}
+
+.top-box .form-group .box textarea:focus-visible{
+    border-color: #FFE08C;
+    outline-color: #FFE08C;
 }
 
 .top-box .form-group .box-buttons {
@@ -47,8 +56,8 @@
 .top-box .form-group .box-buttons .add{
     border: none;
     border-radius: 0.4rem;
-    background-color: green;
-    color: white;
+    background-color: #FFE08C;
+    color: #222534;
     font-size: 0.9rem;
     padding: 0.3rem;
     cursor: pointer;
@@ -59,43 +68,43 @@
     display: inline-block;
     border: none;
     border-radius: 0.4rem;
-    background-color: green;
-    color: white;
+    background-color: #FFE08C;
+    color: #222534;
     font-size: 0.9rem;
     padding: 0.5rem 0.6rem;
     cursor: pointer;
 }
 
 .top-box .form-group .box-buttons .add:hover{
-    font-size: 1rem;
+    font-weight: bold;
 }
 
 .top-box .form-group .box-buttons .back{
     display: inline-block;
     border: none;
     border-radius: 0.4rem;
-    background-color: blue;
-    color: white;
+    background-color: #FFE08C;
+    color: #222534;
     font-size: 0.9rem;
-    padding: 0.4rem 0.5rem;
+    padding: 0.5rem 0.6rem;
     cursor: pointer;
-    text-decoration: none;
 }
 
 .top-box .form-group .box-buttons .back:hover {
-    font-size: 1rem;
+    font-weight: bold;
 }
 
 #box-profile-box {
     position: fixed;
     left: 50%;
+    top: 10%;
     transform: translate(-50%, 0);
     padding: 2rem;
-    background-color: white;
+    background-color: #222534;
+    color:#FFE08C;
     border-radius: 0.2rem;
     box-shadow: 0px 0px 15px 3px rgba(0,0,0,0.5);
     z-index: 200;
-    margin-top: 2rem;
 }
 
 #box-profile-box .form-group {
@@ -115,6 +124,13 @@
 #box-profile-box .form-group .box input {
     padding: 0.3rem;
     font-size: 1rem;
+    background-color: #FFE08C;
+    border-radius: 0.2rem;
+}
+
+#box-profile-box .form-group .box input:focus-visible {
+    border-color: #FFE08C;
+    outline-color: #FFE08C;
 }
 
 #box-profile-box  .form-group .box-buttons {
@@ -125,8 +141,8 @@
     display: inline-block;
     border: none;
     border-radius: 0.4rem;
-    background-color: orange;
-    color: white;
+    background-color: #FFE08C;
+    color: #222534;
     font-size: 0.9rem;
     padding: 0.5rem 0.6rem;
     cursor: pointer;
@@ -134,12 +150,14 @@
 }
 
 #box-profile-box  .form-group .box-buttons .update:hover {
-    font-size: 1rem;
+    font-weight: bold;
 }
 
 .acount-dashboard {
-    background-color: #E9F8FA;
-    padding: 1rem;
+    position: relative;
+    top: -1rem;
+    background-color: #FFE08C;
+    padding: 3rem 1rem 2rem 1rem;
 }
 
 .acount-dashboard .wrapper{
@@ -154,7 +172,6 @@
 }
 
 .acount-dashboard .left i{
-    color: blue;
     margin-right: 1rem;
     font-size: 2rem;
 }
@@ -165,7 +182,7 @@
 }
 
 .acount-dashboard .left img:hover{
-    background-color: white;
+    scale: 1.05;
 }
 
 .acount-dashboard .left .left-links{
@@ -173,17 +190,23 @@
     flex-wrap: wrap;
 }
 
+.acount-dashboard .left .left-links p{
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 1.4rem;
+}
+
+
 .acount-dashboard .left .left-links .username{
     flex-basis: 100%;
     text-decoration: none;
-    color: black;
-    font-size: 1.2rem;
+    color: #222534;
     font-weight: 500;
 }
 
 .acount-dashboard .left .left-links .bio{
     flex-basis: 100%;
-    color: black;
+    color: #222534;
     font-size: 0.9rem;
     text-decoration: underline;
     cursor: pointer;
@@ -196,14 +219,14 @@
 
 .acount-dashboard .left .left-links .bio-written{
     flex-basis: 100%;
-    color: black;
+    color: #222534;
     font-size: 0.9rem;
     text-decoration: none;
     cursor: pointer;
 }
 
 .acount-dashboard .left .left-links a:hover{
-    color: blue;
+    font-weight: bold;
 }
 
 .acount-dashboard .right{
@@ -215,7 +238,7 @@
 
 .acount-dashboard .right .btn{
     flex-basis: 65%;
-    color: black;
+    color: #222534;
     text-decoration: none;
     padding: 0.2rem 0.3rem;
     border-radius: 0.4rem;
@@ -223,11 +246,11 @@
     text-align: center;
     font-size: 0.9rem;
     cursor: pointer;
+    text-decoration: underline;
 }
 
 .acount-dashboard .right .btn:hover{
-    color: blue;
-    font-weight:500;
+    font-weight:bold;
 }
 
 .acount-dashboard .right .score{
@@ -235,7 +258,16 @@
     padding: 0.2rem 0.4rem;
     border-radius: 0.4rem;
     font-size: 0.9rem;
-    background: linear-gradient(to right, #25B6D2, #71CFE2); 
+    background-color: #222534;
+    color: #FFE08C;
+}
+
+.acount-dashboard .right img{
+    position: relative;
+    top: 0.15rem;
+    width: 30px;
+    height: 30px;
+    margin-right: 0.3rem;
 }
 
 .student-dashboard {
@@ -253,8 +285,7 @@
 
 .student-dashboard .left .desc{
     text-transform: uppercase;
-    font-size: 0.8rem;
-    color: gray;
+    font-size: 1rem;
     font-weight: 500;
     margin-bottom: 0.3rem;
 }
@@ -275,8 +306,9 @@
 }
 
 .student-dashboard .left a:hover{
-    color: blue;
-    background-color: #A0DFEB;
+    color:#222534;
+    background-color:#FFE08C;
+    font-weight: bold;
 }
 
 .student-dashboard .right{
@@ -444,8 +476,6 @@
     display: inline-block;
     width: 60px;
     height: 4px;
-    /*border-top-right-radius: 60%;*/
-    /*border-bottom-right-radius: 60%;*/
 }
 
 .student-dashboard .right-progress .progress-box .start-line{
@@ -493,14 +523,16 @@
 }
 
 .student-dashboard .right-profile .info-box {
-    border: 2px solid lightgray;
+    border: 2px solid #FFE08C;
     border-radius: 0.4rem;
     margin-top: 1rem;
     width: 100%;
+    background-color: #222534;
+    color: #FFE08C;
 }
 
 .student-dashboard .right-profile .info-box .up{
-    border-bottom: 2px solid lightgray;
+    border-bottom: 2px solid #FFE08C;
     display: flex;
     justify-content: space-between;
     padding: 0.5rem;
@@ -512,8 +544,19 @@
 }
 
 .student-dashboard .right-profile .info-box .desc{
+    font-size: 0.9rem;
+}
+
+.student-dashboard .right-profile .info-box .desc img{
+    position: relative;
+    top: 0.1rem;
+    width: 30px;
+    height: 30px;
+    margin-right: 0.2rem;
+}
+
+.student-dashboard .right-profile .info-left {
     font-size: 0.7rem;
-    color: gray;
 }
 
 .student-dashboard .right-profile .info-box .down{
@@ -526,10 +569,7 @@
 }
 
 .student-dashboard .right-profile .info-box .box .points{
-    padding: 0.2rem 0.4rem;
-    border-radius: 0.4rem;
-    font-size: 0.8rem;
-    background: linear-gradient(to right, #25B6D2, #71CFE2); 
+    font-size: 1rem;
 }
 
 @media screen and (min-width: 1050px) {
