@@ -215,15 +215,12 @@
 
 .acount-dashboard .right .btn{
     flex-basis: 65%;
-    /*margin-bottom: 0.5rem;*/
-    /*background-color: white;*/
     color: black;
     text-decoration: none;
     padding: 0.2rem 0.3rem;
     border-radius: 0.4rem;
     display: inline-block;
     text-align: center;
-    /*border: 1px solid black;*/
     font-size: 0.9rem;
     cursor: pointer;
 }

@@ -52,6 +52,9 @@
                 </div>
             </div>
         </ng-container>
+        <ng-container *ngIf="sections.length == null || sections.length == 0">
+            <p class="no">No sections at this moment.</p>
+        </ng-container>
     </div>
 </div>
 <app-student-footer></app-student-footer>

@@ -109,6 +109,12 @@
     color: gray;
 }
 
+.info-sections .no {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin: 4rem 0;
+}
+
 @media screen and (min-width: 1050px) {
     .info-sections .box {
         display: flex;

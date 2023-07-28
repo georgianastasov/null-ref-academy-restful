@@ -40,6 +40,9 @@
                 </div>
             </div>
         </ng-container>
+        <ng-container *ngIf="courses.length == null || courses.length == 0">
+            <p class="no">No courses at this moment.</p>
+        </ng-container>
     </div>
 </div>
 <app-student-footer></app-student-footer>
