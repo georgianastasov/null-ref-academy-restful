@@ -4,13 +4,13 @@
         <div asp-validation-summary="ModelOnly"></div>
         <div class="form-group">
             <div class="box">
-                <label>Bio</label>
+                <label class="code">Bio</label>
                 <textarea type="text" rows="8" cols="45" value="{{student.bio}}" name="bio" [(ngModel)]="bioStudent.bio"></textarea>
-                <span class="validation">Bio must be longer than 5 symbols.</span>
+                <span class="validation code">Bio must be longer than 5 symbols.</span>
             </div>
             <div class="box-buttons">
-                <button class="add">Add</button>
-                <a class="back" (click)="hideBioo()">Back</a>
+                <button class="add font">Add</button>
+                <button class="back font" (click)="hideBioo()">Back</button>
             </div>
         </div>
     </form>
@@ -22,28 +22,28 @@
             <div asp-validation-summary="ModelOnly"></div>
             <div class="form-group">
                 <div class="box">
-                    <label>First Name</label>
+                    <label class="code">First Name</label>
                     <input type="text" value="{{student.firstName}}" name="firstName" [(ngModel)]="editStudent.firstName"/>
-                    <span class="validation">First Name must be longer than 2 letters.</span>
+                    <span class="validation code">First Name must be longer than 2 letters.</span>
                 </div>
                 <div class="box">
-                    <label>Last Name</label>
+                    <label class="code">Last Name</label>
                     <input type="text" value="{{student.lastName}}" name="lastName" [(ngModel)]="editStudent.lastName"/>
-                    <span class="validation">Last Name must be longer than 2 letters.</span>
+                    <span class="validation code">Last Name must be longer than 2 letters.</span>
                 </div>
                 <div class="box">
-                    <label>Username</label>
+                    <label class="code">Username</label>
                     <input type="text" value="{{student.username}}" name="username" [(ngModel)]="editStudent.username" />
-                    <span class="validation">Username must be longer than 5 letters.</span>
+                    <span class="validation code">Username must be longer than 5 letters.</span>
                 </div>
                 <div class="box">
-                    <label>Bio</label>
+                    <label class="code">Bio</label>
                     <textarea type="text" rows="8" cols="45" value="{{student.bio}}"  name="bio" [(ngModel)]="editStudent.bio"></textarea>
-                    <span class="validation">Bio must be longer than 5 symbols.</span>
+                    <span class="validation code">Bio must be longer than 5 symbols.</span>
                 </div>
                 <div class="box-buttons">
-                    <button class="update">Update</button>
-                    <a class="back" (click)="hideEditt()">Back</a>
+                    <button class="update font">Update</button>
+                    <button class="back font" (click)="hideEditt()">Back</button>
                 </div>
             </div>
         </div>
@@ -52,36 +52,36 @@
 <div class="acount-dashboard">
     <div class="wrapper">
         <div class="left">
-            <a href="/Student/{{routeid}}/Dashboard"><img src="../../../assets/images/blobby-green.svg"></a>
+            <a href="/Student/{{routeid}}/Dashboard"><img src="https://cdn-icons-png.flaticon.com/128/922/922941.png"></a>
             <div class="left-links">
-                <p>Wellcome, <a class="username" href="/Student/{{routeid}}/Dashboard">{{student.username}}</a></p>
+                <p class="digital">Wellcome, <a class="username" href="/Student/{{routeid}}/Dashboard">{{student.username}}</a></p>
                 <a class="bio">
                     <ng-container *ngIf="student.bio == null || student.bio == ''">
-                        <a class="bio-o" (click)="showBioo()">Add your bio here..</a>
+                        <a class="bio-o code" (click)="showBioo()">Add your bio here..</a>
                     </ng-container>
                     <ng-container *ngIf="student.bio != null">
-                        <a class="bio-written" (click)="showBioo()">{{student.bio}}</a>
+                        <a class="bio-written code" (click)="showBioo()">{{student.bio}}</a>
                     </ng-container>
                 </a>
             </div>
         </div>
         <div class="right">
-            <a class="btn" (click)="showEditt()">Edit profile</a>
-            <p class="score">Points: {{student.points}}</p>
+            <a class="btn code" (click)="showEditt()">Edit profile</a>
+            <p class="score code"> <img src="https://cdn-icons-png.flaticon.com/128/4291/4291373.png" alt="points">Points: {{student.points}}</p>
         </div>
     </div>
 </div>
 <div class="student-dashboard">
     <div class="wrapper">
         <div class="left">
-            <p class="desc">My stuff</p>
-            <p><a class="stuff" (click)="showCoursess()">Courses</a></p>
-            <p class="desc">My Account</p>
-            <p><a class="acc" (click)="showProgress()">Progress</a></p>
-            <p><a class="acc" (click)="showProfilee()">Profile</a></p>
+            <p class="desc digital">My stuff</p>
+            <p><a class="stuff code" (click)="showCoursess()">Courses</a></p>
+            <p class="desc digital">My Account</p>
+            <p><a class="acc code" (click)="showProgress()">Progress</a></p>
+            <p><a class="acc code" (click)="showProfilee()">Profile</a></p>
         </div>
         <div id="student-course" class="right right-courses" *ngIf="showCourse">
-            <p class="titlee">My courses</p>
+            <p class="titlee code">My courses</p>
             <ng-container *ngFor="let studentCourse of studentCourses">
                 <div class="box">
                     <div class="up">
@@ -144,7 +144,7 @@
             </ng-container>
         </div>
         <div id="student-progress" class="right right-progress" *ngIf="showProgres">
-            <p class="titlee">My Progress</p>
+            <p class="titlee code">My Progress</p>
             <ng-container *ngFor="let studentCourse of studentCourses">
                 <div class="progress-box">
                     <p class="title">{{studentCourse.title}}</p>
@@ -169,58 +169,58 @@
             </ng-container>
         </div>
         <div id="student-profile" class="right right-profile" *ngIf="showProfile">
-            <p class="titlee">My profile</p>
+            <p class="titlee code">My profile</p>
             <div class="info-box">
                 <div class="up">
-                    <p class="cap">Information</p>
-                    <p class="desc"><i class="fa-solid fa-user"></i>Profile</p>
+                    <p class="cap code">Information</p>
+                    <p class="desc code"><img src="https://cdn-icons-png.flaticon.com/128/471/471587.png" alt="profile">Profile</p>
                 </div>
                 <div class="down">
-                    <p class="cap">User statistic</p>
+                    <p class="cap code">User statistic</p>
                     <div class="box">
-                        <p class="info-left">Date joined</p>
-                        <p class="info-right">{{student.createdDate}}</p>
+                        <p class="info-left code">Date joined</p>
+                        <p class="info-right code">{{student.createdDate}}</p>
                     </div>
                     <div class="box">
-                        <p class="info-left">Time spent</p>
-                        <p class="info-right">{{student.timeSpent}}</p>
+                        <p class="info-left code">Time spent</p>
+                        <p class="info-right code">{{student.timeSpent}}</p>
                     </div>
                     <div class="box">
-                        <p class="info-left">Progress</p>
-                        <ng-container *ngIf="dates.length < 2">
-                            <p class="info-right">from {{dates[0]}} to {{dates[0]}}</p>
+                        <p class="info-left code">Progress</p>
+                        <ng-container *ngIf="dates.length < 2 && dates.length > 0">
+                            <p class="info-right code" style="font-size: 0.7rem;">from {{dates[0]}} to {{dates[0]}}</p>
                         </ng-container>
                         <ng-container *ngIf="dates.length >= 2">
-                            <p class="info-right">from {{dates[0]}} to {{dates[dates.length - 1]}}</p>
+                            <p class="info-right code" style="font-size: 0.7rem;">from {{dates[0]}} to {{dates[dates.length - 1]}}</p>
                         </ng-container>
                         <ng-container *ngIf="dates.length == 0">
-                            <p class="info-right">no progress yet</p>
+                            <p class="info-right code" style="font-size: 0.7rem;">no progress yet</p>
                         </ng-container>
                     </div>
                 </div>
             </div>
             <div class="info-box">
                 <div class="up">
-                    <p class="cap">Information</p>
-                    <p class="desc"><i class="fa-solid fa-code"></i>Courses</p>
+                    <p class="cap code">Information</p>
+                    <p class="desc code"><img src="https://cdn-icons-png.flaticon.com/128/887/887997.png" alt="course">Courses</p>
                 </div>
                 <div class="down">
-                    <p class="cap">Course statistic</p>
+                    <p class="cap code">Course statistic</p>
                     <div class="box">
-                        <p class="info-left">Course completed</p>
-                        <p class="info-right">{{counter}}</p>
+                        <p class="info-left code">Course completed</p>
+                        <p class="info-right code">{{counter}}</p>
                     </div>
                     <div class="box">
-                        <p class="info-left">Energy points earned</p>
-                        <p class="info-right points">{{student.points}}</p>
+                        <p class="info-left code">Energy points earned</p>
+                        <p class="info-right points code">{{student.points}}</p>
                     </div>
                     <div class="box">
-                        <p class="info-left">Course enrolled</p>
+                        <p class="info-left code">Course enrolled</p>
                         <ng-container *ngIf="studentCourses.length != null">
-                            <p class="info-right">{{studentCourses.length}}</p>
+                            <p class="info-right code">{{studentCourses.length}}</p>
                         </ng-container>
                         <ng-container *ngIf="studentCourses.length == null">
-                            <p class="info-right">0</p>
+                            <p class="info-right code">0</p>
                         </ng-container>
                     </div>
                 </div>
