@@ -1,12 +1,15 @@
 ﻿.teacher-menu {
-    background-color: steelblue;
+    background-color: #222534;
+    color: #FFE08C;
+    position: relative;
+    top: -1rem;
 }
 
 .teacher-menu a{
     display: inline-block;
     font-weight: 500;
     cursor: pointer;
-    padding: 0.7rem 0;
+    padding: 0.7rem 0.5rem;
     margin-left: 1rem;
 }
 
@@ -15,8 +18,9 @@
 }
 
 .teacher-menu a:hover{
-    color: white;
-    border-bottom: 5px solid white;
+    font-weight: bolder;
+    color: #222534;
+    background-color: #FFE08C;
 }
 
 .teacher-menu a:first-child{
