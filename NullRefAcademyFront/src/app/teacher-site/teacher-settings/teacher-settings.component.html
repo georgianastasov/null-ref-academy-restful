@@ -3,14 +3,14 @@
     <div class="wrapper">
         <div class="left">
             <div class="left-links">
-                <p>Wellcome, <a class="username" href="/Teacher/{{routeid}}/Dashboard">{{teacher.username}}</a></p>
-                <p class="info">Teacher dashboard</p>
+                <p class="digital">Wellcome, <a class="username" href="/Teacher/{{routeid}}/Dashboard">{{teacher.username}}</a></p>
+                <p class="info code">Teacher dashboard</p>
             </div>
         </div>
         <div class="right">
-            <p class="score">Categories: {{countCategories}}</p>
-            <p class="score">Courses: {{countCourses}}</p>
-            <p class="score">Sections: {{countSections}}</p>
+            <p class="score code"><img src="https://cdn-icons-png.flaticon.com/128/5415/5415390.png" alt="category">Categories: {{countCategories}}</p>
+            <p class="score code"><img src="https://cdn-icons-png.flaticon.com/128/9387/9387582.png" alt="course">Courses: {{countCourses}}</p>
+            <p class="score code"><img src="https://cdn-icons-png.flaticon.com/128/4228/4228952.png" alt="section">Sections: {{countSections}}</p>
         </div>
     </div>
 </div>
@@ -18,57 +18,57 @@
     <div class="wrapper">
         <form #form="ngForm" (ngSubmit)="onSubmit()">
             <div class="site-top">
-                <p class="caption">Settings</p>
+                <p class="caption digital">Settings</p>
             </div>
             <div class="box-form">
                 <div asp-validation-summary="ModelOnly"></div>
                 <div class="form-group">
                     <div class="box">
-                        <label>First Name</label>
+                        <label class="code">First Name</label>
                         <input type="text" value="{{takenTeacher.firstName}}" name="firstName" [(ngModel)]="teacher.firstName"/>
-                        <span class="validation">First Name must be longer than 2 letters.</span>
+                        <span class="validation code">First Name must be longer than 2 letters.</span>
                     </div>
                     <div class="box">
-                        <label>Last Name</label>
+                        <label class="code">Last Name</label>
                         <input type="text" value="{{takenTeacher.lastName}}" name="lastName" [(ngModel)]="teacher.lastName"/>
-                        <span class="validation">Last Name must be longer than 2 letters.</span>
+                        <span class="validation code">Last Name must be longer than 2 letters.</span>
                     </div>
                     <div class="box">
-                        <label>Username</label>
+                        <label class="code">Username</label>
                         <input type="text" value="{{takenTeacher.username}}" name="username" [(ngModel)]="teacher.username" />
-                        <span class="validation">Username must be longer than 5 letters.</span>
+                        <span class="validation code">Username must be longer than 5 letters.</span>
                     </div>
                     <div class="box">
-                        <label>Email</label>
+                        <label class="code">Email</label>
                         <input type="text" value="{{takenTeacher.email}}" name="email" [(ngModel)]="teacher.email"/>
                     </div>
                     <div class="box">
-                        <label>Password</label>
+                        <label class="code">Password</label>
                         <input type="text" value="{{takenTeacher.password}}" name="password" [(ngModel)]="teacher.password" />
-                        <span class="validation">Password must start with uppercase letter.</span>
-                        <span class="validation">Password must have digits.</span>
-                        <span class="validation">Password must be longer than 5 symbols.</span>
+                        <span class="validation code">Password must start with uppercase letter.</span>
+                        <span class="validation code">Password must have digits.</span>
+                        <span class="validation code">Password must be longer than 5 symbols.</span>
                     </div>
                     <div class="box">
-                        <label>Confirm Password</label>
+                        <label class="code">Confirm Password</label>
                         <input type="text" value="{{takenTeacher.confirmPassword}}" name="confirmPassword" [(ngModel)]="teacher.confirmPassword"/>
-                        <span class="validation">Confirm Password must match password.</span>
+                        <span class="validation code">Confirm Password must match password.</span>
                     </div>
                     <div class="box">
-                        <label>Categories</label>
+                        <label class="code">Categories</label>
                         <textarea type="text" rows="10" cols="45" disabled>{{ categoriesText }}</textarea>
                     </div>
                     <div class="box">
-                        <label>Courses</label>
+                        <label class="code">Courses</label>
                         <textarea type="text" rows="10" cols="45" disabled>{{ coursesText }}</textarea>
                     </div>
                     <div class="box">
-                        <label>Sections</label>
+                        <label class="code">Sections</label>
                         <textarea type="text" rows="10" cols="45" disabled>{{ sectionsText }}</textarea>
                     </div>
                     <div class="box-buttons">
-                        <button class="update">Update</button>
-                        <a class="" routerLink="/Teacher/{{routeid}}/Dashboard">Back</a>
+                        <button class="update font">Update</button>
+                        <a class="font" routerLink="/Teacher/{{routeid}}/Dashboard">Back</a>
                     </div>
                 </div>
             </div>

@@ -170,6 +170,11 @@
 }
 
 /*-------Profile--------*/
+.teacher-dashboard {
+    padding: 1rem 1rem 2rem 1rem;
+}
+
+
 .teacher-dashboard .down-profile .info-box {
     border: 2px solid #FFE08C;
     background-color: #222534;
