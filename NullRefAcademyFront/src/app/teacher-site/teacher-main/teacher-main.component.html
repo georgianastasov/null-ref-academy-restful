@@ -57,8 +57,8 @@
     <div class="wrapper">
         <div id="teacher-categories" class="downn down-categories" *ngIf="showCategories">
             <div class="top-top">
-                <p class="titlee">My categories</p>
-                <a class="btncreate" routerLink="/Teacher/{{routeid}}/Add/Category">Create category</a>
+                <p class="titlee code">My categories</p>
+                <a class="btncreate font" routerLink="/Teacher/{{routeid}}/Add/Category">Create category</a>
             </div>
             <ng-container *ngFor="let category of categories">
                 <ng-container *ngIf="category.teacherID != null">
@@ -78,7 +78,7 @@
                                         <p class="courses">Courses in this category: {{countCoursesInCategory}}</p>
                                     </ng-container>
                                     <ng-container *ngIf="!hasCoursesInCategory">
-                                        <p class="courses">No courses in this category yet.</p>
+                                        <p class="courses code">No courses in this category yet.</p>
                                     </ng-container>
                                 </div>
                             </div>
@@ -92,13 +92,13 @@
                 </ng-container>
             </ng-container>
             <ng-container *ngIf="!hasCreatedCategories">
-                <p class="no">No created categories at this moment.</p>
+                <p class="no code">No created categories at this moment.</p>
             </ng-container>
         </div>
         <div id="teacher-courses" class="downn down-courses" *ngIf="showCourses">
             <div class="top-top">
-                <p class="titlee">My courses</p>
-                <a class="btncreate" routerLink="/Teacher/{{routeid}}/Add/Course">Create course</a>
+                <p class="titlee code">My courses</p>
+                <a class="btncreate font" routerLink="/Teacher/{{routeid}}/Add/Course">Create course</a>
             </div>
             <ng-container *ngFor="let course of courses">
                 <ng-container *ngIf="course.teacherID != null">
@@ -126,7 +126,7 @@
                                         <p class="courses">Sections in this course: {{countSectionsInCourse}}</p>
                                     </ng-container>
                                     <ng-container *ngIf="!hasSectionsInCourse">
-                                        <p class="courses">No sections in this course yet.</p>
+                                        <p class="courses code">No sections in this course yet.</p>
                                     </ng-container>
                                 </div>
                                 <div class="down">
@@ -134,7 +134,7 @@
                                         <p class="students">Students enrolled in this course: {{studentCourse[course.id]}}</p>
                                     </ng-container>
                                     <ng-container *ngId="course.studentsIDs == null">
-                                        <p class="students">No students enrolled in this course yet.</p>
+                                        <p class="students code">No students enrolled in this course yet.</p>
                                     </ng-container>
                                 </div>
                             </div>
@@ -148,13 +148,13 @@
                 </ng-container>
             </ng-container>
             <ng-container *ngIf="!hasCreatedCourses">
-                <p class="no">No created courses at this moment.</p>
+                <p class="no code">No created courses at this moment.</p>
             </ng-container>
         </div>
         <div id="teacher-sections" class="downn down-sections" *ngIf="showSections">
             <div class="top-top">
-                <p class="titlee">My sections</p>
-                <a class="btncreate" routerLink="/Teacher/{{routeid}}/Add/Section">Create section</a>
+                <p class="titlee code">My sections</p>
+                <a class="btncreate font" routerLink="/Teacher/{{routeid}}/Add/Section">Create section</a>
             </div>
             <ng-container *ngFor="let section of sections">
                 <ng-container *ngIf="section.teacherID != null">
@@ -185,11 +185,11 @@
                 </ng-container>
             </ng-container>
             <ng-container *ngIf="!hasCreatedSections">
-                <p class="no">No created sections at this moment.</p>
+                <p class="no code">No created sections at this moment.</p>
             </ng-container>
         </div>
         <div id="teacher-students" class="downn down-students" *ngIf="showStudents">
-            <p class="titlee">My students</p>
+            <p class="titlee code">My students</p>
             <ng-container *ngIf="teacherStudents.length != null || teacherStudents.length > 0 || teacherStudents.length != 0">
                 <ng-container *ngFor="let teacherStudent of teacherStudents">
                     <div class="box">
@@ -213,7 +213,7 @@
                 </ng-container>
             </ng-container>
             <ng-container *ngIf="teacherStudents.length == null || teacherStudents.length == 0">
-                <p class="no">No students enrolled in you courses at this moment.</p>
+                <p class="no code">No students enrolled in you courses at this moment.</p>
             </ng-container>
         </div>
         <div id="teacher-profile" class="downn down-profile" *ngIf="showProfile">
