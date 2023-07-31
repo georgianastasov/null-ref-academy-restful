@@ -3,7 +3,7 @@
     left: 50%;
     transform: translate(-50%, 0);
     padding: 2rem;
-    background-color: white;
+    background-color: #222534;
     border-radius: 0.2rem;
     box-shadow: 0px 0px 15px 3px rgba(0,0,0,0.5);
     z-index: 200;
@@ -25,18 +25,27 @@
     flex-basis: 100%;
     font-size: 1.1rem;
     font-weight: 500;
+    color: #FFE08C;
 }
 
 #box-profile-boxx .form-group .box span{
     flex-basis: 100%;
     font-size: 0.8rem;
     font-style: italic;
+    color: #FFE08C;
 }
 
 
 #box-profile-boxx .form-group .box input {
     padding: 0.3rem;
     font-size: 1rem;
+    background-color: #FFE08C;
+    border-radius: 0.2rem;
+}
+
+#box-profile-boxx .form-group .box input:focus-visible {
+    border-color: #FFE08C;
+    outline-color: #FFE08C;
 }
 
 #box-profile-boxx  .form-group .box-buttons {
@@ -48,8 +57,8 @@
     display: inline-block;
     border: none;
     border-radius: 0.4rem;
-    background-color: orange;
-    color: white;
+    background-color: #FFE08C;
+    color: #222534;
     font-size: 0.9rem;
     padding: 0.5rem 0.6rem;
     cursor: pointer;
@@ -57,28 +66,30 @@
 }
 
 #box-profile-boxx  .form-group .box-buttons .update:hover {
-    font-size: 1rem;
+    font-weight: bold;
 }
 
 #box-profile-boxx .form-group .box-buttons .back {
     display: inline-block;
     border: none;
     border-radius: 0.4rem;
-    background-color: blue;
-    color: white;
+    background-color: #FFE08C;
+    color: #222534;
     font-size: 0.9rem;
-    padding: 0.4rem 0.5rem;
+    padding: 0.5rem 0.6rem;
     cursor: pointer;
     text-decoration: none;
 }
 
 #box-profile-boxx .form-group .box-buttons .back:hover {
-    font-size: 1rem;
+    font-weight: bold;
 }
 
 .acount-dashboard-teacher {
-    background-color: #E9F8FA;
-    padding: 3rem 1rem;
+    position: relative;
+    top: -1rem;
+    background-color: #FFE08C;
+    padding: 2rem 1rem 2rem 1rem;
 }
 
 .acount-dashboard-teacher .wrapper{
@@ -89,19 +100,27 @@
 
 .acount-dashboard-teacher .left .left-links .username{
     text-decoration: none;
-    color: black;
-    font-size: 1.2rem;
+    color: #222534;
     font-weight: 500;
 }
 
+.acount-dashboard-teacher .left .left-links p{
+    font-size: 1.7rem;
+}
+
 .acount-dashboard-teacher .left .left-links .info{
-    color: black;
+    color: #222534;
     font-size: 0.9rem;
     text-transform: uppercase;
+    font-weight: 500;
+}
+
+.acount-dashboard-teacher .left .left-links a{
+    text-decoration: underline;
 }
 
 .acount-dashboard-teacher .left .left-links a:hover{
-    color: blue;
+    font-weight: bold;
 }
 
 .acount-dashboard-teacher .right{
@@ -114,7 +133,6 @@
 .acount-dashboard-teacher .right .btn{
     flex-basis: 100%;
     color: black;
-    text-decoration: none;
     padding: 0.2rem 0.3rem;
     border-radius: 0.4rem;
     display: inline-block;
@@ -122,11 +140,11 @@
     font-size: 0.9rem;
     cursor: pointer;
     margin-left: 1.5rem;
+    text-decoration: underline;
 }
 
 .acount-dashboard-teacher .right .btn:hover{
-    color: blue;
-    font-weight:500;
+    font-weight: bold;
 }
 
 .acount-dashboard-teacher .right .score{
@@ -134,8 +152,17 @@
     padding: 0.2rem 0.4rem;
     border-radius: 0.4rem;
     font-size: 0.9rem;
-    background: linear-gradient(to right, #25B6D2, #71CFE2); 
     margin-left: 0.5rem;
+    background-color: #222534;
+    color: #FFE08C;
+}
+
+.acount-dashboard-teacher .right .score img{
+    position: relative;
+    top: 0.1rem;
+    width: 35px;
+    height: 35px;
+    margin-right: 0.2rem;
 }
 
 .acount-dashboard-teacher .right .score:first-child{
@@ -144,27 +171,45 @@
 
 /*-------Profile--------*/
 .teacher-dashboard .down-profile .info-box {
-    border: 2px solid lightgray;
+    border: 2px solid #FFE08C;
+    background-color: #222534;
     border-radius: 0.4rem;
     margin-top: 1rem;
     width: 100%;
+    color: #FFE08C;
 }
 
 .teacher-dashboard .down-profile .info-box .up{
-    border-bottom: 2px solid lightgray;
+    border-bottom: 2px solid #FFE08C;
+    background-color: #222534;
     display: flex;
     justify-content: space-between;
+    border-top-left-radius: 0.4rem;
+    border-top-right-radius: 0.4rem;
     padding: 0.5rem;
+    color: #FFE08C;
 }
 
 .teacher-dashboard .down-profile .info-box .cap{
-    font-size: 0.9rem;
+    font-size: 1rem;
     font-weight: 500;
+}
+
+.teacher-dashboard .down-profile .info-box .info-left{
+    font-size: 0.7rem;
 }
 
 .teacher-dashboard .down-profile .info-box .desc{
     font-size: 0.7rem;
-    color: gray;
+    color: #FFE08C;
+}
+
+.teacher-dashboard .down-profile .info-box .desc img{ 
+    position: relative;
+    top: 0.1rem;
+    width: 35px;
+    height: 35px;
+    margin-right: 0.2rem;
 }
 
 .teacher-dashboard .down-profile .info-box .down{

@@ -6,23 +6,23 @@
             <div asp-validation-summary="ModelOnly"></div>
             <div class="form-group">
                 <div class="box">
-                    <label>First Name</label>
+                    <label class="code">First Name</label>
                     <input type="text" value="{{teacher.firstName}}" name="firstName" [(ngModel)]="editTeacher.firstName"/>
-                    <span class="validation">First Name must be longer than 2 letters.</span>
+                    <span class="validation code">First Name must be longer than 2 letters.</span>
                 </div>
                 <div class="box">
-                    <label>Last Name</label>
+                    <label class="code">Last Name</label>
                     <input type="text" value="{{teacher.lastName}}" name="lastName" [(ngModel)]="editTeacher.lastName"/>
-                    <span class="validation">Last Name must be longer than 2 letters.</span>
+                    <span class="validation code">Last Name must be longer than 2 letters.</span>
                 </div>
                 <div class="box">
-                    <label>Username</label>
+                    <label class="code">Username</label>
                     <input type="text" value="{{teacher.username}}" name="username" [(ngModel)]="editTeacher.username" />
-                    <span class="validation">Username must be longer than 5 letters.</span>
+                    <span class="validation code">Username must be longer than 5 letters.</span>
                 </div>
                 <div class="box-buttons">
-                    <button class="update">Update</button>
-                    <a class="back" (click)="hideEditt()">Back</a>
+                    <button class="update font">Update</button>
+                    <button class="back font" (click)="hideEditt()">Back</button>
                 </div>
             </div>
         </div>
@@ -32,25 +32,25 @@
     <div class="wrapper">
         <div class="left">
             <div class="left-links">
-                <p>Wellcome, <a class="username" href="/Teacher/{{routeid}}/Dashboard">{{teacher.username}}</a></p>
-                <p class="info">Teacher dashboard</p>
+                <p class="digital">Wellcome, <a class="username" href="/Teacher/{{routeid}}/Dashboard">{{teacher.username}}</a></p>
+                <p class="info code">Teacher dashboard</p>
             </div>
         </div>
         <div class="right">
-            <a class="btn" (click)="showEditt()">Edit profile</a>
-            <p class="score">Categories: {{countCategories}}</p>
-            <p class="score">Courses: {{countCourses}}</p>
-            <p class="score">Sections: {{countSections}}</p>
+            <a class="btn code" (click)="showEditt()">Edit profile</a>
+            <p class="score code"><img src="https://cdn-icons-png.flaticon.com/128/5415/5415390.png" alt="category">Categories: {{countCategories}}</p>
+            <p class="score code"><img src="https://cdn-icons-png.flaticon.com/128/9387/9387582.png" alt="course">Courses: {{countCourses}}</p>
+            <p class="score code"><img src="https://cdn-icons-png.flaticon.com/128/4228/4228952.png" alt="section">Sections: {{countSections}}</p>
         </div>
     </div>
 </div>
 <div class="teacher-menu">
     <div class="wrapper">
-        <a (click)="showCategoriess()">Categories</a>
-        <a (click)="showCoursess()">Courses</a>
-        <a (click)="showSectionss()">Sections</a>
-        <a (click)="showStudentss()">Students</a>
-        <a (click)="showProfilee()">Profile</a>
+        <a class="code" (click)="showCategoriess()">Categories</a>
+        <a class="code" (click)="showCoursess()">Courses</a>
+        <a class="code" (click)="showSectionss()">Sections</a>
+        <a class="code" (click)="showStudentss()">Students</a>
+        <a class="code" (click)="showProfilee()">Profile</a>
     </div>
 </div>
 <div class="teacher-dashboard">
@@ -217,37 +217,37 @@
             </ng-container>
         </div>
         <div id="teacher-profile" class="downn down-profile" *ngIf="showProfile">
-            <p class="titlee">My profile</p>
+            <p class="titlee code">My profile</p>
             <div class="info-box">
                 <div class="up">
-                    <p class="cap">Information</p>
-                    <p class="desc"><i class="fa-solid fa-user"></i>Profile</p>
+                    <p class="cap code">Information</p>
+                    <p class="desc code"><img src="https://cdn-icons-png.flaticon.com/128/471/471587.png" alt="profile">Profile</p>
                 </div>
                 <div class="down">
-                    <p class="cap">User statistic</p>
+                    <p class="cap code">User statistic</p>
                     <div class="box">
-                        <p class="info-left">Date joined</p>
-                        <p class="info-right">{{teacher.createdDate}}</p>
+                        <p class="info-left code">Date joined</p>
+                        <p class="info-right code">{{teacher.createdDate}}</p>
                     </div>
                     <div class="box">
-                        <p class="info-left">Created categories</p>
-                        <p class="info-right">{{countCategories}}</p>
+                        <p class="info-left code">Created categories</p>
+                        <p class="info-right code">{{countCategories}}</p>
                     </div>
                     <div class="box">
-                        <p class="info-left">Created courses</p>
-                        <p class="info-right">{{countCourses}}</p>
+                        <p class="info-left code">Created courses</p>
+                        <p class="info-right code">{{countCourses}}</p>
                     </div>
                     <div class="box">
-                        <p class="info-left">Created sections</p>
-                        <p class="info-right">{{countSections}}</p>
+                        <p class="info-left code">Created sections</p>
+                        <p class="info-right code">{{countSections}}</p>
                     </div>
                     <div class="box">
-                        <p class="info-left">Students enrolled to your teach</p>
+                        <p class="info-left code">Students enrolled to your teach</p>
                         <ng-container *ngIf="hasStudentsInCourses">
-                            <p class="info-right">{{countStudents}}</p>
+                            <p class="info-right code">{{countStudents}}</p>
                         </ng-container>
                         <ng-container *ngIf="!hasStudentsInCourses">
-                            <p class="info-right">0</p>
+                            <p class="info-right code">0</p>
                         </ng-container>
                     </div>
                 </div>
