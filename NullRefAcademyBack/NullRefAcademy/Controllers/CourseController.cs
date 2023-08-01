@@ -76,6 +76,8 @@ namespace NullRefAcademy.Controllers
         {
             DateTime date = DateTime.Now;
             course.CreatedDate = date.ToString("dd/MM/yyyy");
+            course.Rating = 0;
+            course.RatingQty = 0;
 
             if (ModelState.IsValid)
             {

@@ -12,6 +12,8 @@ namespace NullRefAcademy.Data
         public DbSet<Category> Categories { get; set; }
         public DbSet<Course> Courses { get; set; }
         public DbSet<Section> Sections { get; set; }
+        public DbSet<Article> Articles { get; set; }
+        public DbSet<News> News { get; set; }
 
         public ApplicationDataContext(DbContextOptions<ApplicationDataContext> options) : base(options)
         {
