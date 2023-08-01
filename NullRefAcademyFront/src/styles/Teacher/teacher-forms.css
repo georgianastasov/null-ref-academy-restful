@@ -29,7 +29,7 @@
 
 .teacher-form .box-form .box input{
     padding: 0.3rem;
-    font-size: 1rem;
+    font-size: 0.8rem;
     width: 400px;
 }
 
@@ -40,7 +40,7 @@
 
 .teacher-form .box-form .box textarea{
     padding: 0.3rem;
-    font-size: 1rem;
+    font-size: 0.8rem;
 }
 
 .teacher-form .box-form .box textarea:focus-visible{
