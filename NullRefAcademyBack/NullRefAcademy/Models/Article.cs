@@ -22,6 +22,12 @@ namespace NullRefAcademy.Models
         [StringLength(3000, MinimumLength = 3)]
         public string Text { get; set; }
 
+        [DisplayName("Rating")]
+        public int Rating { get; set; }
+
+        [DisplayName("RatingQty")]
+        public int RatingQty { get; set; }
+
         [DisplayName("Created Date")]
         public string? CreatedDate { get; set; }
 

@@ -18,8 +18,14 @@ namespace NullRefAcademy.Models
         [StringLength(500, MinimumLength = 3)]
         public string Description { get; set; }
 
-        [Required(ErrorMessage = "Please enter Points of the Course")]
+        [Required(ErrorMessage = "Please enter Points for the Course")]
         public int Points { get; set; }
+
+        [DisplayName("Rating")]
+        public int Rating { get; set; }
+
+        [DisplayName("RatingQty")]
+        public int RatingQty { get; set; }
 
         [DisplayName("Created Date")]
         public string? CreatedDate { get; set; }
