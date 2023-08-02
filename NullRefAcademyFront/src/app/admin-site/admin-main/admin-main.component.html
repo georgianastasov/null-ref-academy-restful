@@ -271,6 +271,9 @@
                         <th>Title</th>
                         <th>Description</th>
                         <th>Points</th>
+                        <th>Rating</th>
+                        <th>Rating Qty</th>
+                        <th>Video Url</th>
                         <th>CreatedDate</th>
                         <th>Sections</th>
                         <th>Category</th>
@@ -285,6 +288,9 @@
                         <td>{{ course.title }}</td>
                         <td>{{ course.description }}</td>
                         <td>{{ course.points }}</td>
+                        <td>{{ course.rating }}</td>
+                        <td>{{ course.ratingQty }}</td>
+                        <td>{{ course.videoUrl }}</td>
                         <td>{{ course.createdDate }}</td>
                         <td>
                             <ng-container *ngFor="let section of sections">
@@ -333,6 +339,7 @@
                         <th>ID</th>
                         <th>Title</th>
                         <th>Description</th>
+                        <th>Video Url</th>
                         <th>Course</th>
                         <th>Created by</th>
                         <th>Options</th>
@@ -343,6 +350,7 @@
                         <td>{{ section.id }}</td>
                         <td>{{ section.title }}</td>
                         <td>{{ section.description }}</td>
+                        <td>{{ section.videoUrl }}</td>
                         <ng-container *ngIf="section.courseID != null">
                             <ng-container *ngFor="let course of courses">
                                 <td *ngIf="section.courseID == course.id">Id: {{ course.id }} <br>Title: {{ course.title }}</td>
