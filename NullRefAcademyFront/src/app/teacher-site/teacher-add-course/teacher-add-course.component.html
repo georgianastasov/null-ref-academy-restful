@@ -35,7 +35,12 @@
                     <div class="box">
                         <label class="code">Points</label>
                         <input type="text" aria-required="true" name="points" [(ngModel)]="course.points"/>
-                        <span class="validation code">Points must be bigger than > 0</span>
+                        <span class="validation code">Points must be bigger than > 0.</span>
+                    </div>
+                    <div class="box">
+                        <label class="code">Video Url</label>
+                        <input type="text" aria-required="true" name="videoUrl" [(ngModel)]="course.videoUrl"/>
+                        <span class="validation code">Video Url must be valid.</span>
                     </div>
                     <div class="box">
                         <label class="code">Category</label>
