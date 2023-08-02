@@ -3,6 +3,9 @@ export interface Course{
     title: string;
     description: string;
     points: number;
+    rating: number;
+    ratingQty: number;
+    videoUrl: number;
     createdDate: string;
     categoryID: number;
     teacherID: number;
