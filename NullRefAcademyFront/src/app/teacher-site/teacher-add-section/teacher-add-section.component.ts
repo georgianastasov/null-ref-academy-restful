@@ -36,6 +36,7 @@ export class TeacherAddSectionComponent implements OnInit {
     title: '',
     description: '',
     text: '',
+    videoUrl: '',
     courseID: 0,
     teacherID: 0,
     adminID: this.nullfield

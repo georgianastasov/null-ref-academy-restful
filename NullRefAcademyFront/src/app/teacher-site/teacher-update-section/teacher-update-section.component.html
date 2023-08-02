@@ -39,6 +39,11 @@
                         <span class="validation">The text must be longer than 2 letters.</span>
                     </div>
                     <div class="box">
+                        <label>Video Url</label>
+                        <input type="text" value="{{takenSection.videoUrl}}" name="videoUrl" [(ngModel)]="section.videoUrl"/>
+                        <span class="validation">Video Url must be valid.</span>
+                    </div>
+                    <div class="box">
                         <label>Course</label>
                         <textarea rows="2" cols="25" disabled>{{ courseText }}</textarea>
                     </div>

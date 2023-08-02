@@ -37,6 +37,7 @@ export class TeacherUpdateSectionComponent implements OnInit {
     title: '',
     description: '',
     text: '',
+    videoUrl: '',
     courseID: 0,
     teacherID: 0,
     adminID: 0
@@ -47,6 +48,7 @@ export class TeacherUpdateSectionComponent implements OnInit {
     title: '',
     description: '',
     text: '',
+    videoUrl: '',
     courseID: 0,
     teacherID: 0,
     adminID: 0
@@ -99,6 +101,9 @@ export class TeacherUpdateSectionComponent implements OnInit {
     }
     if (this.section.text != '') {
       this.takenSection.text = this.section.text;
+    }
+    if (this.section.videoUrl != '') {
+      this.takenSection.videoUrl = this.section.videoUrl;
     }
   }
 
