@@ -27,6 +27,7 @@ export class AdminDeleteSectionComponent implements OnInit {
     title: '',
     description: '',
     text: '',
+    videoUrl: '',
     courseID: 0,
     teacherID: 0,
     adminID: 0

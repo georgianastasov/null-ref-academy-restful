@@ -12,6 +12,7 @@
                         <th>Identical</th>
                         <th>Title</th>
                         <th>Description</th>
+                        <th>Video Url</th>
                         <th>Course</th>
                         <th>Created by</th>
                         <th>Options</th>
@@ -22,6 +23,7 @@
                         <td>{{ section.id }}</td>
                         <td>{{ section.title }}</td>
                         <td>{{ section.description }}</td>
+                        <td>{{ section.videoUrl }}</td>
                         <ng-container *ngIf="section.courseID != null">
                             <ng-container *ngFor="let course of courses">
                                 <td *ngIf="section.courseID == course.id">Id: {{ course.id }} <br>Title: {{ course.title }}</td>

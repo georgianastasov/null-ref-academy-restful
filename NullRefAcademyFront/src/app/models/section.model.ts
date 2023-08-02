@@ -3,7 +3,7 @@ export interface Section{
     title: string;
     description: string;
     text: string;
-    videoUrl: number;
+    videoUrl: string;
     courseID: number;
     teacherID: number;
     adminID: number;

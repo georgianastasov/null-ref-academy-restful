@@ -21,6 +21,7 @@ export class AdminAddSectionComponent implements OnInit {
     title: '',
     description: '',
     text: '',
+    videoUrl: '',
     courseID: 0,
     teacherID: this.nullfield,
     adminID: 0
