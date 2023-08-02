@@ -27,6 +27,9 @@ namespace NullRefAcademy.Models
         [DisplayName("RatingQty")]
         public int RatingQty { get; set; }
 
+        [DisplayName("VideoUrl")]
+        public string VideoUrl { get; set; }
+
         [DisplayName("Created Date")]
         public string? CreatedDate { get; set; }
 

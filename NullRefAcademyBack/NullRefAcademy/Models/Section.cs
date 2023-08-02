@@ -22,6 +22,9 @@ namespace NullRefAcademy.Models
         [StringLength(3000, MinimumLength = 3)]
         public string Text { get; set; }
 
+        [DisplayName("VideoUrl")]
+        public string VideoUrl { get; set; }
+
         [DisplayName("Course")]
         public int CourseID { get; set; }
 

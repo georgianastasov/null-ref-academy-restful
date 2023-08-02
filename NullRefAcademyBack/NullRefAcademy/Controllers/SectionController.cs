@@ -74,6 +74,7 @@ namespace NullRefAcademy.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> CreateSection([FromBody] Section section)
         {
+            section.VideoUrl = "initial";
 
             if (ModelState.IsValid)
             {

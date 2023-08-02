@@ -78,6 +78,7 @@ namespace NullRefAcademy.Controllers
             course.CreatedDate = date.ToString("dd/MM/yyyy");
             course.Rating = 0;
             course.RatingQty = 0;
+            course.VideoUrl = "initial";
 
             if (ModelState.IsValid)
             {
