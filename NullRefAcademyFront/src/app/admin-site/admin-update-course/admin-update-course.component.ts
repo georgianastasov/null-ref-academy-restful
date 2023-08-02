@@ -29,6 +29,9 @@ export class AdminUpdateCourseComponent implements OnInit {
     title: '',
     description: '',
     points: 0,
+    rating: 0,
+    ratingQty: 0,
+    videoUrl: '',
     createdDate: '',
     categoryID: 0,
     teacherID: 0,
@@ -41,6 +44,9 @@ export class AdminUpdateCourseComponent implements OnInit {
     title: '',
     description: '',
     points: 0,
+    rating: 0,
+    ratingQty: 0,
+    videoUrl: '',
     createdDate: '',
     categoryID: 0,
     teacherID: 0,
@@ -100,6 +106,15 @@ export class AdminUpdateCourseComponent implements OnInit {
     }
     if (this.course.points != 0) {
       this.takenCourse.points = this.course.points;
+    }
+    if (this.course.rating != 0) {
+      this.takenCourse.rating = this.course.rating;
+    }
+    if (this.course.ratingQty != 0) {
+      this.takenCourse.ratingQty = this.course.ratingQty;
+    }
+    if (this.course.videoUrl != '') {
+      this.takenCourse.videoUrl = this.course.videoUrl;
     }
   }
 

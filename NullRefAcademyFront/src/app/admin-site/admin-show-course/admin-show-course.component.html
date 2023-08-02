@@ -13,6 +13,9 @@
                         <th>Title</th>
                         <th>Description</th>
                         <th>Points</th>
+                        <th>Rating</th>
+                        <th>Rating Qty</th>
+                        <th>Video Url</th>
                         <th>CreatedDate</th>
                         <th>Sections</th>
                         <th>Category</th>
@@ -27,6 +30,9 @@
                         <td>{{ course.title }}</td>
                         <td>{{ course.description }}</td>
                         <td>{{ course.points }}</td>
+                        <td>{{ course.rating }}</td>
+                        <td>{{ course.ratingQty }}</td>
+                        <td>{{ course.videoUrl }}</td>
                         <td>{{ course.createdDate }}</td>
                         <td>
                             <ng-container *ngFor="let section of sections">

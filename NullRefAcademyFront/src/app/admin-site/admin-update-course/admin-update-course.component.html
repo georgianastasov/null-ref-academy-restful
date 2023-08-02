@@ -25,6 +25,21 @@
                         <span asp-validation-for="Points"></span>
                     </div>
                     <div class="box">
+                        <label class="code">Rating</label>
+                        <input type="text" value="{{takenCourse.rating}}" name="rating" [(ngModel)]="course.rating" />
+                        <span asp-validation-for="Rating"></span>
+                    </div>
+                    <div class="box">
+                        <label class="code">Rating Quantity</label>
+                        <input type="text" value="{{takenCourse.ratingQty}}" name="ratingQty" [(ngModel)]="course.ratingQty" />
+                        <span asp-validation-for="RatingQty"></span>
+                    </div>
+                    <div class="box">
+                        <label class="code">Video Url</label>
+                        <input type="text" value="{{takenCourse.videoUrl}}" name="videoUrl" [(ngModel)]="course.videoUrl" />
+                        <span class="validation code">Video Url must be valid.</span>
+                    </div>
+                    <div class="box">
                         <label class="code">Created Date</label>
                         <input type="text" value="{{takenCourse.createdDate}}" disabled />
                     </div>

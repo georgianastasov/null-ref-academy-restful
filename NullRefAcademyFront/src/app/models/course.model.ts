@@ -5,7 +5,7 @@ export interface Course{
     points: number;
     rating: number;
     ratingQty: number;
-    videoUrl: number;
+    videoUrl: string;
     createdDate: string;
     categoryID: number;
     teacherID: number;
