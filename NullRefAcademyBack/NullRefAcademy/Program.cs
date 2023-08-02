@@ -39,9 +39,9 @@ builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo
     {
-        Title = "NullRefAcademy",
+        Title = "Null Ref Academy",
         Version = "v1",
-        Description = "RESTful web base platform for study.",
+        Description = "RESTful web base platform for software developers.",
         Contact = new OpenApiContact
         {
             Name = "Georgi Anastasov",
