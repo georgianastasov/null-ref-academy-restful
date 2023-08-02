@@ -46,6 +46,48 @@
             Enter id and update the parameters that you want.
             </remarks>
         </member>
+        <member name="M:NullRefAcademy.Controllers.ArticleController.GetAllArticles">
+            <summary>
+            Get all articles.
+            </summary>
+            <remarks>
+            Return all articles from database.
+            </remarks>
+        </member>
+        <member name="M:NullRefAcademy.Controllers.ArticleController.GetArticle(System.Int32)">
+            <summary>
+            Get article by id.
+            </summary>
+            <remarks>
+            Enter id and recive article by this id.
+            </remarks>
+            <param name="id"></param>
+        </member>
+        <member name="M:NullRefAcademy.Controllers.ArticleController.CreateArticle(NullRefAcademy.Models.Article)">
+            <summary>
+            Create a article.
+            </summary>
+            <remarks>
+            Give the information and create an article.
+            </remarks>
+        </member>
+        <member name="M:NullRefAcademy.Controllers.ArticleController.DeleteArticle(System.Int32)">
+            <summary>
+            Delete article by id.
+            </summary>
+            <remarks>
+            Enter id and delete one article by this id.
+            </remarks>
+            <param name="id"></param>
+        </member>
+        <member name="M:NullRefAcademy.Controllers.ArticleController.UpdateArticle(System.Int32,NullRefAcademy.Models.Article)">
+            <summary>
+            Update article by id.
+            </summary>
+            <remarks>
+            Enter id and update the parameters that you want.
+            </remarks>
+        </member>
         <member name="M:NullRefAcademy.Controllers.CategoryController.GetAllCategories">
             <summary>
             Get all categories.
@@ -144,6 +186,48 @@
             </summary>
             <remarks>
             Enter your info and login.
+            </remarks>
+        </member>
+        <member name="M:NullRefAcademy.Controllers.NewsController.GetAllNews">
+            <summary>
+            Get all news.
+            </summary>
+            <remarks>
+            Return all news from database.
+            </remarks>
+        </member>
+        <member name="M:NullRefAcademy.Controllers.NewsController.GetNews(System.Int32)">
+            <summary>
+            Get news by id.
+            </summary>
+            <remarks>
+            Enter id and recive news by this id.
+            </remarks>
+            <param name="id"></param>
+        </member>
+        <member name="M:NullRefAcademy.Controllers.NewsController.CreateNews(NullRefAcademy.Models.News)">
+            <summary>
+            Create a news.
+            </summary>
+            <remarks>
+            Give the information and create a news.
+            </remarks>
+        </member>
+        <member name="M:NullRefAcademy.Controllers.NewsController.DeleteNews(System.Int32)">
+            <summary>
+            Delete news by id.
+            </summary>
+            <remarks>
+            Enter id and delete one news by this id.
+            </remarks>
+            <param name="id"></param>
+        </member>
+        <member name="M:NullRefAcademy.Controllers.NewsController.UpdateNews(System.Int32,NullRefAcademy.Models.News)">
+            <summary>
+            Update news by id.
+            </summary>
+            <remarks>
+            Enter id and update the parameters that you want.
             </remarks>
         </member>
         <member name="M:NullRefAcademy.Controllers.SectionController.GetAllSections">
