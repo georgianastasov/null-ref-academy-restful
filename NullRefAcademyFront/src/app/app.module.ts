@@ -85,6 +85,10 @@ import { StudentProfileTeacherComponent } from './student-site/student-profile-t
 import { StudentProfileStudentComponent } from './student-site/student-profile-student/student-profile-student.component';
 import { TeacherProfileStudentComponent } from './teacher-site/teacher-profile-student/teacher-profile-student.component';
 import { TeacherProfileTeacherComponent } from './teacher-site/teacher-profile-teacher/teacher-profile-teacher.component';
+import { AdminAddArticleComponent } from './admin-site/admin-add-article/admin-add-article.component';
+import { AdminDeleteArticleComponent } from './admin-site/admin-delete-article/admin-delete-article.component';
+import { AdminShowArticleComponent } from './admin-site/admin-show-article/admin-show-article.component';
+import { AdminUpdateArticleComponent } from './admin-site/admin-update-article/admin-update-article.component';
 
 @NgModule({
   declarations: [
@@ -114,7 +118,9 @@ import { TeacherProfileTeacherComponent } from './teacher-site/teacher-profile-t
     AdminShowCourseComponent,
     AdminAddCourseComponent,
     AdminAddSectionComponent,
+    AdminAddArticleComponent,
     AdminShowSectionComponent,
+    AdminShowArticleComponent,
     AdminDeleteAdminComponent,
     AdminDeleteTeacherComponent,
     AdminDeleteStudentComponent,
@@ -127,6 +133,7 @@ import { TeacherProfileTeacherComponent } from './teacher-site/teacher-profile-t
     AdminUpdateCategoryComponent,
     AdminUpdateCourseComponent,
     AdminUpdateSectionComponent,
+    AdminUpdateArticleComponent,
     StudentSiteComponent,
     StudentHeaderComponent,
     StudentFooterComponent,

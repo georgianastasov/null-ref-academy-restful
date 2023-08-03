@@ -70,6 +70,10 @@ import { TeacherUpdateCategoryComponent } from './teacher-site/teacher-update-ca
 import { TeacherUpdateCourseComponent } from './teacher-site/teacher-update-course/teacher-update-course.component';
 import { TeacherUpdateSectionComponent } from './teacher-site/teacher-update-section/teacher-update-section.component';
 import { HomePrivacyComponent } from './home-site/home-privacy/home-privacy.component';
+import { AdminShowArticleComponent } from './admin-site/admin-show-article/admin-show-article.component';
+import { AdminAddArticleComponent } from './admin-site/admin-add-article/admin-add-article.component';
+import { AdminDeleteArticleComponent } from './admin-site/admin-delete-article/admin-delete-article.component';
+import { AdminUpdateArticleComponent } from './admin-site/admin-update-article/admin-update-article.component';
 
 const routes: Routes = [
   {
@@ -207,6 +211,22 @@ const routes: Routes = [
   {
     path: 'Admin/:id/Update/Section/:id2',
     component: AdminUpdateSectionComponent
+  },
+  {
+    path: 'Admin/:id/Articles',
+    component: AdminShowArticleComponent
+  },
+  {
+    path: 'Admin/:id/Add/Article',
+    component: AdminAddArticleComponent
+  },
+  {
+    path: 'Admin/:id/Delete/Article/:id2',
+    component: AdminDeleteArticleComponent
+  },
+  {
+    path: 'Admin/:id/Update/Article/:id2',
+    component: AdminUpdateArticleComponent
   },
   {
     path: 'Student/:id/Dashboard',
