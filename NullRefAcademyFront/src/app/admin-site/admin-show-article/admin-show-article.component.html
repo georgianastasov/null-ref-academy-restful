@@ -1,0 +1,51 @@
+<div class="site-dashboard">
+    <app-admin-navigation></app-admin-navigation>
+    <div class="site-right">
+        <div id="course-section">
+            <div class="site-top">
+                <p class="caption digital">Section Articles</p>
+                <a class="btt create font" routerLink="/Admin/{{routeid}}/Add/Article">Create Article</a>
+            </div>
+            <table class="dashboard-table">
+                <thead>
+                    <tr class="code">
+                        <th>Identical</th>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Rating</th>
+                        <th>Rating Qty</th>
+                        <th>Created Date</th>
+                        <th>Createdby</th>
+                        <th>Options</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let article of articles">
+                        <td>{{ article.id }}</td>
+                        <td>{{ article.title }}</td>
+                        <td>{{ article.description }}</td>
+                        <td>{{ article.rating }}</td>
+                        <td>{{ article.ratingQty }}</td>
+                        <td>{{ article.createdDate }}</td>
+                        <ng-container *ngIf="article.adminID != null">
+                            <ng-container *ngFor="let admin of admins">
+                                <td *ngIf="article.adminID == admin.id">Admin <br>Id: {{ admin.id }} <br>Username: {{ admin.username }}</td>
+                            </ng-container>
+                        </ng-container>
+                        <ng-container *ngIf="article.teacherID != null">
+                            <ng-container *ngFor="let teacher of teachers">
+                                <td *ngIf="article.teacherID == teacher.id">Teacher <br>Id: {{ teacher.id }} <br>Username: {{ teacher.username }}</td>
+                            </ng-container>
+                        </ng-container>
+                        <td>
+                            <div class="box">
+                                <a class="update" routerLink="/Admin/{{routeid}}/Update/Article/{{article.id}}">Update</a>
+                                <a class="delete" routerLink="/Admin/{{routeid}}/Delete/Article/{{article.id}}">Delete</a>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
