@@ -8,6 +8,8 @@ import { Course } from '../models/course.model';
 import { Section } from '../models/section.model';
 import { Student } from '../models/student.model';
 import { Teacher } from '../models/teacher.model';
+import { Article } from '../models/article.model';
+import { News } from '../models/news.model';
 
 @Injectable({
   providedIn: 'root'
@@ -21,6 +23,8 @@ export class TeacherApiService {
   readonly categoryUrl = "https://localhost:44378/api/Category";
   readonly courseUrl = "https://localhost:44378/api/Course";
   readonly sectionUrl = "https://localhost:44378/api/Section";
+  readonly articleUrl = "https://localhost:44378/api/Article";
+  readonly newsUrl = "https://localhost:44378/api/News";
   constructor(private http: HttpClient, private router: Router) { }
   
   getAllAdmins(): Observable<Admin[]>{
@@ -101,5 +105,33 @@ export class TeacherApiService {
 
   updateSection(id: number, section: Section): Observable<any>{
     return this.http.put<Section>(this.sectionUrl + '/UpdateSection/' + id, section);
+  }
+
+  getAllArticles(): Observable<Article[]>{
+    return this.http.get<Article[]>(this.articleUrl + '/GetAllArticles');
+  }
+
+  getArticle(id: number): Observable<Article>{
+    return this.http.get<Article>(this.articleUrl + '/GetArticle/' + id);
+  }
+
+  createArticle(article: Article): Observable<any>{
+    return this.http.post<Article>(this.articleUrl + '/CreateArticle', article);
+  }
+
+  deleteArticle(id: number): Observable<any>{
+    return this.http.delete<Article>(this.articleUrl + '/DeleteArticle/' + id);
+  }
+
+  updateArticle(id: number, article: Article): Observable<any>{
+    return this.http.put<Article>(this.articleUrl + '/UpdateArticle/' + id, article);
+  }
+
+  getAllNews(): Observable<News[]>{
+    return this.http.get<News[]>(this.newsUrl + '/GetAllNews');
+  }
+
+  getNews(id: number): Observable<News>{
+    return this.http.get<News>(this.newsUrl + '/GetNews/' + id);
   }
 }
