@@ -1,0 +1,34 @@
+<div class="site-dashboard">
+    <app-admin-navigation></app-admin-navigation>
+    <div class="site-form">
+        <form #form="ngForm" (ngSubmit)="onSubmit()">
+            <div class="site-top">
+                <p class="caption digital">Add Article</p>
+            </div>
+            <div class="box-form">
+                <div asp-validation-summary="ModelOnly"></div>
+                <div class="form-group">
+                    <div class="box">
+                        <label class="code">Title</label>
+                        <input type="text" aria-required="true" name="title" [(ngModel)]="article.title"/>
+                        <span class="validation code">Title must be longer than 2 letters.</span>
+                    </div>
+                    <div class="box">
+                        <label class="code">Description</label>
+                        <input type="text" aria-required="true" name="description" [(ngModel)]="article.description"/>
+                        <span class="validation code">Description must be longer than 2 letters.</span>
+                    </div>
+                    <div class="box">
+                        <label class="code">Text</label>
+                        <input type="text" aria-required="true" name="text" [(ngModel)]="article.text" />
+                        <span class="validation code">The text must be longer than 2 letters.</span>
+                    </div>
+                    <div class="box-buttons">
+                        <button class="add font">Add</button>
+                        <a class="font" routerLink="/Admin/{{routeid}}/Articles">Back</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
