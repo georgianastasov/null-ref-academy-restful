@@ -26,6 +26,7 @@ export class AdminMainComponent implements OnInit {
   categories: any = [];
   courses: any = [];
   sections: any = [];
+  articles: any = [];
 
   userid: number = 0;
 
@@ -37,6 +38,7 @@ export class AdminMainComponent implements OnInit {
     this.getAllCategories();
     this.getAllCourses();
     this.getAllSections();
+    this.getAllArticles();
 
     this.routeSub = this.route.params.subscribe(params => {
       console.log(params);
@@ -125,6 +127,17 @@ export class AdminMainComponent implements OnInit {
         console.log('Sections');
         this.sections = response;
         console.log(this.sections);
+      }
+    );
+  }
+
+  getAllArticles() {
+    this.service.getAllArticles()
+    .subscribe(
+      response => {
+        console.log('Articles');
+        this.articles = response;
+        console.log(this.articles);
       }
     );
   }
