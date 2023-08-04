@@ -1,0 +1,22 @@
+<app-student-header></app-student-header>
+<div class="intro-articles">
+    <div class="wrapper">
+        <p class="cap digital">Articles</p>
+    </div>
+</div>
+<div class="info-articles">
+    <div class="wrapper">
+        <ng-container *ngFor="let article of articles">
+            <div class="box">
+                <div class="right">
+                    <p class="title"><a routerLink="/Student/{{routeid}}/Article/{{article.id}}">{{article.title}}</a></p>
+                    <p class="description">{{article.description}}</p>
+                </div>
+            </div>
+        </ng-container>
+        <ng-container *ngIf="articles.length == null || articles.length == 0">
+            <p class="no code">No articles at this moment.</p>
+        </ng-container>
+    </div>
+</div>
+<app-student-footer></app-student-footer>
