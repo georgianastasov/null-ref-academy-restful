@@ -142,6 +142,8 @@ import { AdminUpdateArticleComponent } from './admin-site/admin-update-article/a
     StudentMainComponent,
     StudentCategoriesComponent,
     StudentCoursesComponent,
+    StudentArticlesComponent,
+    StudentArticleComponent,
     StudentSectionsComponent,
     StudentCategoryComponent,
     StudentCourseComponent,

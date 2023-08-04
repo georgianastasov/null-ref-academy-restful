@@ -257,6 +257,14 @@ const routes: Routes = [
     component: StudentCourseComponent
   },
   {
+    path: 'Student/:id/Articles',
+    component: StudentArticlesComponent
+  },
+  {
+    path: 'Student/:id/Article/:id2',
+    component: StudentArticleComponent
+  },
+  {
     path: 'Student/:id/Course/:id2/Enroll',
     component: StudentEnrollcourseComponent
   },
