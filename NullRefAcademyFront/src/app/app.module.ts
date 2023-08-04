@@ -89,6 +89,13 @@ import { AdminAddArticleComponent } from './admin-site/admin-add-article/admin-a
 import { AdminDeleteArticleComponent } from './admin-site/admin-delete-article/admin-delete-article.component';
 import { AdminShowArticleComponent } from './admin-site/admin-show-article/admin-show-article.component';
 import { AdminUpdateArticleComponent } from './admin-site/admin-update-article/admin-update-article.component';
+import { StudentArticlesComponent } from './student-site/student-articles/student-articles.component';
+import { StudentArticleComponent } from './student-site/student-article/student-article.component';
+import { TeacherAddArticleComponent } from './teacher-site/teacher-add-article/teacher-add-article.component';
+import { TeacherDeleteArticleComponent } from './teacher-site/teacher-delete-article/teacher-delete-article.component';
+import { TeacherUpdateArticleComponent } from './teacher-site/teacher-update-article/teacher-update-article.component';
+import { TeacherArticlesComponent } from './teacher-site/teacher-articles/teacher-articles.component';
+import { TeacherArticleComponent } from './teacher-site/teacher-article/teacher-article.component';
 
 @NgModule({
   declarations: [
@@ -127,6 +134,7 @@ import { AdminUpdateArticleComponent } from './admin-site/admin-update-article/a
     AdminDeleteCategoryComponent,
     AdminDeleteCourseComponent,
     AdminDeleteSectionComponent,
+    AdminDeleteArticleComponent,
     AdminUpdateAdminComponent,
     AdminUpdateTeacherComponent,
     AdminUpdateStudentComponent,
@@ -156,12 +164,15 @@ import { AdminUpdateArticleComponent } from './admin-site/admin-update-article/a
     TeacherAboutComponent,
     TeacherContactsComponent,
     TeacherAddCourseComponent,
+    TeacherAddArticleComponent,
     TeacherDeleteCourseComponent,
     TeacherUpdateCourseComponent,
     TeacherAddCategoryComponent,
     TeacherDeleteCategoryComponent,
+    TeacherDeleteArticleComponent,
     TeacherUpdateCategoryComponent,
     TeacherUpdateSectionComponent,
+    TeacherUpdateArticleComponent,
     TeacherDeleteSectionComponent,
     TeacherAddSectionComponent,
     TeacherSettingsComponent,
@@ -170,6 +181,8 @@ import { AdminUpdateArticleComponent } from './admin-site/admin-update-article/a
     TeacherSectionsComponent,
     TeacherCategoryComponent,
     TeacherCourseComponent,
+    TeacherArticlesComponent,
+    TeacherArticleComponent,
     TeacherPreviewcourseComponent,
     StudentProfileTeacherComponent,
     StudentProfileStudentComponent,

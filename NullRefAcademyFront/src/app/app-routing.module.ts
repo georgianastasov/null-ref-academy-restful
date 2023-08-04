@@ -74,6 +74,13 @@ import { AdminShowArticleComponent } from './admin-site/admin-show-article/admin
 import { AdminAddArticleComponent } from './admin-site/admin-add-article/admin-add-article.component';
 import { AdminDeleteArticleComponent } from './admin-site/admin-delete-article/admin-delete-article.component';
 import { AdminUpdateArticleComponent } from './admin-site/admin-update-article/admin-update-article.component';
+import { StudentArticlesComponent } from './student-site/student-articles/student-articles.component';
+import { StudentArticleComponent } from './student-site/student-article/student-article.component';
+import { TeacherAddArticleComponent } from './teacher-site/teacher-add-article/teacher-add-article.component';
+import { TeacherDeleteArticleComponent } from './teacher-site/teacher-delete-article/teacher-delete-article.component';
+import { TeacherUpdateArticleComponent } from './teacher-site/teacher-update-article/teacher-update-article.component';
+import { TeacherArticleComponent } from './teacher-site/teacher-article/teacher-article.component';
+import { TeacherArticlesComponent } from './teacher-site/teacher-articles/teacher-articles.component';
 
 const routes: Routes = [
   {
@@ -333,6 +340,18 @@ const routes: Routes = [
     component: TeacherUpdateSectionComponent
   },
   {
+    path: 'Teacher/:id/Add/Article',
+    component: TeacherAddArticleComponent
+  },
+  {
+    path: 'Teacher/:id/Delete/Article/:id2',
+    component: TeacherDeleteArticleComponent
+  },
+  {
+    path: 'Teacher/:id/Update/Article/:id2',
+    component: TeacherUpdateArticleComponent
+  },
+  {
     path: 'Teacher/:id/Settings',
     component: TeacherSettingsComponent
   },
@@ -355,6 +374,14 @@ const routes: Routes = [
   {
     path: 'Teacher/:id/Sections',
     component: TeacherSectionsComponent
+  },
+  {
+    path: 'Teacher/:id/Article/:id2',
+    component: TeacherArticleComponent
+  },
+  {
+    path: 'Teacher/:id/Articles',
+    component: TeacherArticlesComponent
   },
   {
     path: 'Teacher/:id/Course/:id2/Preview',
