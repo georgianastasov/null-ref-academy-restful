@@ -1,0 +1,19 @@
+<app-teacher-header></app-teacher-header>
+<div class="intro-courses">
+    <div class="wrapper">
+        <p class="cap">Articles</p>
+    </div>
+</div>
+<div class="info-courses">
+    <div class="wrapper">
+        <ng-container *ngFor="let article of articles">
+            <div class="box">
+                <div class="right">
+                    <p class="title"><a routerLink="/Teacher/{{routeid}}/Article/{{article.id}}">{{article.title}}</a></p>
+                    <p class="description">{{article.description}}</p>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</div>
+<app-teacher-footer></app-teacher-footer>
