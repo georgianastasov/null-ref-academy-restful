@@ -1,0 +1,49 @@
+<app-teacher-header></app-teacher-header>
+<div class="acount-dashboard-teacher">
+    <div class="wrapper">
+        <div class="left">
+            <div class="left-links">
+                <p class="digital">Wellcome, <a class="username" href="/Teacher/{{routeid}}/Dashboard">{{teacher.username}}</a></p>
+                <p class="info code">Teacher dashboard</p>
+            </div>
+        </div>
+        <div class="right">
+            <p class="score code">Categories: {{countCategories}}</p>
+            <p class="score code">Courses: {{countCourses}}</p>
+            <p class="score code">Sections: {{countSections}}</p>
+            <p class="score code">Articles: {{countArticles}}</p>
+        </div>
+    </div>
+</div>
+<div class="teacher-form">
+        <form #form="ngForm" (ngSubmit)="onSubmit()">
+            <div class="site-top">
+                <p class="caption digital">Create Article</p>
+            </div>
+            <div class="box-form">
+                <div asp-validation-summary="ModelOnly"></div>
+                <div class="form-group">
+                    <div class="box">
+                        <label class="code">Title</label>
+                        <input type="text" aria-required="true" name="title" [(ngModel)]="article.title"/>
+                        <span class="validation">Title must be longer than 2 letters.</span>
+                    </div>
+                    <div class="box">
+                        <label class="code">Description</label>
+                        <textarea type="text" rows="10" cols="55" aria-required="true" name="description" [(ngModel)]="article.description"></textarea>
+                        <span class="validation code">Description must be longer than 2 letters.</span>
+                    </div>
+                    <div class="box">
+                        <label class="code">Text</label>
+                        <textarea type="text" rows="15" cols="85" aria-required="true" name="text" [(ngModel)]="article.text"></textarea>
+                        <span class="validation code">The text must be longer than 2 letters.</span>
+                    </div>
+                    <div class="box-buttons">
+                        <button class="add font">Create</button>
+                        <a class="font" routerLink="/Teacher/{{routeid}}/Dashboard">Back</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+</div>
+<app-teacher-footer></app-teacher-footer>
