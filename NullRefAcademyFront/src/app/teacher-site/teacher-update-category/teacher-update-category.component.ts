@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Admin } from 'src/app/models/admin.model';
+import { Article } from 'src/app/models/article.model';
 import { Category } from 'src/app/models/category.model';
 import { Course } from 'src/app/models/course.model';
 import { Section } from 'src/app/models/section.model';
@@ -54,6 +55,7 @@ export class TeacherUpdateCategoryComponent implements OnInit {
   categories: Category[] = [];
   courses: Course[] = [];
   sections: Section[] = [];
+  articles: Article[] = [];
 
   ngOnInit(): void {
     this.routeSub = this.route.params.subscribe(params => {
@@ -70,6 +72,7 @@ export class TeacherUpdateCategoryComponent implements OnInit {
     this.getCountCategories();
     this.getCountCourses();
     this.getCountSections();
+    this.getCountArticles();
   }
 
   ngOnDestroy() {
@@ -226,4 +229,20 @@ export class TeacherUpdateCategoryComponent implements OnInit {
       );
   }
 
+  countArticles: number = 0;
+  getCountArticles() {
+    this.service.getAllArticles()
+      .subscribe(
+        response => {
+          this.articles = response;
+          this.articles.forEach(article => {
+            if (article.teacherID != null) {
+              if (article.teacherID == this.routeid) {
+                this.countArticles++;
+              }
+            }
+          });
+        }
+      );
+  }
 }
