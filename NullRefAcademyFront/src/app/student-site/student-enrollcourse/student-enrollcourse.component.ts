@@ -49,7 +49,10 @@ export class StudentEnrollcourseComponent implements OnInit {
     categoryID: 0,
     teacherID: 0,
     adminID: 0,
-    studentsIDs: ''
+    studentsIDs: '',
+    rating: 0,
+    ratingQty: 0,
+    videoUrl: ''
   }
   
   admins: Admin[] = [];

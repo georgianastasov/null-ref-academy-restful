@@ -40,7 +40,8 @@ export class TeacherDeleteSectionComponent implements OnInit {
     text: '',
     courseID: 0,
     teacherID: 0,
-    adminID: 0
+    adminID: 0,
+    videoUrl: ''
   }
   
   hasAdmin: boolean = false;
