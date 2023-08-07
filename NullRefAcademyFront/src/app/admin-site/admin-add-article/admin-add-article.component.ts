@@ -44,7 +44,7 @@ export class AdminAddArticleComponent implements OnInit {
     .subscribe(
       response => {
         console.log(response);
-        this.router.navigate(['/Admin/' + this.routeid + '/Admins']);
+        this.router.navigate(['/Admin/' + this.routeid + '/Articles']);
       }
     )
   }
