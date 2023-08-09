@@ -1,0 +1,52 @@
+<div class="site-dashboard">
+    <app-admin-navigation></app-admin-navigation>
+    <div class="site-form">
+        <form #form="ngForm" (ngSubmit)="onSubmit()">
+            <input asp-for="Id" hidden />
+            <div class="site-top">
+                <p class="caption digital">Delete News</p>
+            </div>
+            <div class="box-form">
+                <div asp-validation-summary="ModelOnly"></div>
+                <div class="form-group">
+                    <div class="box">
+                        <label class="code">Title</label>
+                        <input type="text" value="{{news.title}}" disabled />
+                    </div>
+                    <div class="box">
+                        <label class="code">Description</label>
+                        <textarea rows="8" cols="55" value="{{news.description}}" disabled></textarea>
+                    </div>
+                    <div class="box">
+                        <label class="code">Text</label>
+                        <textarea rows="10" cols="85" value="{{news.text}}" disabled></textarea>
+                    </div>
+                    <div class="box">
+                        <label class="code">Rating</label>
+                        <input type="text" value="{{news.rating}}" disabled />
+                    </div>
+                    <div class="box">
+                        <label class="code">Rating Quantity</label>
+                        <input type="text" value="{{news.ratingQty}}" disabled />
+                    </div>
+                    <div class="box">
+                        <label class="code">Created Date</label>
+                        <input type="text" value="{{news.createdDate}}" disabled />
+                    </div>
+                    <div class="box" *ngIf="hasAdmin">
+                        <label class="code">Admin</label>
+                        <textarea rows="2" cols="45" disabled>{{adminText}}</textarea>
+                    </div>
+                    <div class="box" *ngIf="!hasAdmin">
+                        <label class="code">Created by</label>
+                        <textarea rows="2" cols="45" disabled>The creator was deactivated or no information.</textarea>
+                    </div>
+                    <div class="box-buttons">
+                        <button class="delete font">Delete</button>
+                        <a class="font" routerLink="/Admin/{{routeid}}/News">Back</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
