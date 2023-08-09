@@ -96,6 +96,10 @@ import { TeacherDeleteArticleComponent } from './teacher-site/teacher-delete-art
 import { TeacherUpdateArticleComponent } from './teacher-site/teacher-update-article/teacher-update-article.component';
 import { TeacherArticlesComponent } from './teacher-site/teacher-articles/teacher-articles.component';
 import { TeacherArticleComponent } from './teacher-site/teacher-article/teacher-article.component';
+import { AdminAddNewsComponent } from './admin-site/admin-add-news/admin-add-news.component';
+import { AdminDeleteNewsComponent } from './admin-site/admin-delete-news/admin-delete-news.component';
+import { AdminShowNewsComponent } from './admin-site/admin-show-news/admin-show-news.component';
+import { AdminUpdateNewsComponent } from './admin-site/admin-update-news/admin-update-news.component';
 
 @NgModule({
   declarations: [
@@ -118,6 +122,7 @@ import { TeacherArticleComponent } from './teacher-site/teacher-article/teacher-
     AdminAddAdminComponent,
     AdminShowUserComponent,
     AdminAddUserComponent,
+    AdminAddNewsComponent,
     AdminShowStudentComponent,
     AdminAddStudentComponent,
     AdminAddCategoryComponent,
@@ -128,6 +133,7 @@ import { TeacherArticleComponent } from './teacher-site/teacher-article/teacher-
     AdminAddArticleComponent,
     AdminShowSectionComponent,
     AdminShowArticleComponent,
+    AdminShowNewsComponent,
     AdminDeleteAdminComponent,
     AdminDeleteTeacherComponent,
     AdminDeleteStudentComponent,
@@ -135,6 +141,7 @@ import { TeacherArticleComponent } from './teacher-site/teacher-article/teacher-
     AdminDeleteCourseComponent,
     AdminDeleteSectionComponent,
     AdminDeleteArticleComponent,
+    AdminDeleteNewsComponent,
     AdminUpdateAdminComponent,
     AdminUpdateTeacherComponent,
     AdminUpdateStudentComponent,
@@ -142,6 +149,7 @@ import { TeacherArticleComponent } from './teacher-site/teacher-article/teacher-
     AdminUpdateCourseComponent,
     AdminUpdateSectionComponent,
     AdminUpdateArticleComponent,
+    AdminUpdateNewsComponent,
     StudentSiteComponent,
     StudentHeaderComponent,
     StudentFooterComponent,

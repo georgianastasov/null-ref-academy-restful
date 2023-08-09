@@ -81,6 +81,10 @@ import { TeacherDeleteArticleComponent } from './teacher-site/teacher-delete-art
 import { TeacherUpdateArticleComponent } from './teacher-site/teacher-update-article/teacher-update-article.component';
 import { TeacherArticleComponent } from './teacher-site/teacher-article/teacher-article.component';
 import { TeacherArticlesComponent } from './teacher-site/teacher-articles/teacher-articles.component';
+import { AdminShowNewsComponent } from './admin-site/admin-show-news/admin-show-news.component';
+import { AdminAddNewsComponent } from './admin-site/admin-add-news/admin-add-news.component';
+import { AdminDeleteNewsComponent } from './admin-site/admin-delete-news/admin-delete-news.component';
+import { AdminUpdateNewsComponent } from './admin-site/admin-update-news/admin-update-news.component';
 
 const routes: Routes = [
   {
@@ -234,6 +238,22 @@ const routes: Routes = [
   {
     path: 'Admin/:id/Update/Article/:id2',
     component: AdminUpdateArticleComponent
+  },
+  {
+    path: 'Admin/:id/News',
+    component: AdminShowNewsComponent
+  },
+  {
+    path: 'Admin/:id/Add/News',
+    component: AdminAddNewsComponent
+  },
+  {
+    path: 'Admin/:id/Delete/News/:id2',
+    component: AdminDeleteNewsComponent
+  },
+  {
+    path: 'Admin/:id/Update/News/:id2',
+    component: AdminUpdateNewsComponent
   },
   {
     path: 'Student/:id/Dashboard',
