@@ -27,6 +27,7 @@ export class AdminMainComponent implements OnInit {
   courses: any = [];
   sections: any = [];
   articles: any = [];
+  newss: any = [];
 
   userid: number = 0;
 
@@ -39,6 +40,7 @@ export class AdminMainComponent implements OnInit {
     this.getAllCourses();
     this.getAllSections();
     this.getAllArticles();
+    this.getAllNews();
 
     this.routeSub = this.route.params.subscribe(params => {
       console.log(params);
@@ -138,6 +140,17 @@ export class AdminMainComponent implements OnInit {
         console.log('Articles');
         this.articles = response;
         console.log(this.articles);
+      }
+    );
+  }
+
+  getAllNews() {
+    this.service.getAllNews()
+    .subscribe(
+      response => {
+        console.log('News');
+        this.newss = response;
+        console.log(this.newss);
       }
     );
   }

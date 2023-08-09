@@ -422,5 +422,46 @@
                 </tbody>
             </table>
         </div>
+        <div id="news-section">
+            <div class="site-top">
+                <p class="caption digital">Section News</p>
+                <a class="btt create font" routerLink="/Admin/{{ routeid }}/Add/News">Create News</a>
+            </div>
+            <table class="dashboard-table">
+                <thead>
+                    <tr class="code">
+                        <th>ID</th>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Rating</th>
+                        <th>Rating Qty</th>
+                        <th>CreatedDate</th>
+                        <th>Created by</th>
+                        <th>Options</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let news of newss">
+                        <td>{{ news.id }}</td>
+                        <td>{{ news.title }}</td>
+                        <td>{{ news.description }}</td>
+                        <td>{{ news.rating }}</td>
+                        <td>{{ news.ratingQty }}</td>
+                        <td>{{ news.createdDate }}</td>
+                        <ng-container *ngIf="news.adminID != null">
+                            <ng-container *ngFor="let admin of admins">
+                                <td *ngIf="news.adminID == admin.id">Admin <br>Id: {{ admin.id }} <br>Username: {{ admin.username }}</td>
+                            </ng-container>
+                        </ng-container>
+                        <td>
+                            <div class="box">
+                                <a class="update" routerLink="/Admin/{{routeid}}/Update/News/{{news.id}}">Update</a>
+                                <a class="delete" routerLink="/Admin/{{routeid}}/Delete/News/{{news.id}}">Delete</a>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
