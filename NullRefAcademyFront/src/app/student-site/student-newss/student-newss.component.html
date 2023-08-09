@@ -1,0 +1,22 @@
+<app-student-header></app-student-header>
+<div class="intro-newss">
+    <div class="wrapper">
+        <p class="cap digital">All News</p>
+    </div>
+</div>
+<div class="info-newss">
+    <div class="wrapper">
+        <ng-container *ngFor="let news of newss">
+            <div class="box">
+                <div class="right">
+                    <p class="title"><a routerLink="/Student/{{routeid}}/News/{{news.id}}">{{news.title}}</a></p>
+                    <p class="description">{{news.description}}</p>
+                </div>
+            </div>
+        </ng-container>
+        <ng-container *ngIf="newss.length == null || newss.length == 0">
+            <p class="no code">No news at this moment.</p>
+        </ng-container>
+    </div>
+</div>
+<app-student-footer></app-student-footer>
