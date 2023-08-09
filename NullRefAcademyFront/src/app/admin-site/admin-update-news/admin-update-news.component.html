@@ -1,0 +1,57 @@
+<div class="site-dashboard">
+    <app-admin-navigation></app-admin-navigation>
+    <div class="site-form">
+        <form #form="ngForm" (ngSubmit)="onSubmit()">
+            <input asp-for="Id" hidden/>
+            <div class="site-top">
+                <p class="caption digital">Update News</p>
+            </div>
+            <div class="box-form">
+                <div asp-validation-summary="ModelOnly"></div>
+                <div class="form-group">
+                    <div class="box">
+                        <label class="code">Title</label>
+                        <input type="text" value="{{takenNews.title}}" name="title" [(ngModel)]="news.title"/>
+                        <span class="validation code">Title must be longer than 2 letters.</span>
+                    </div>
+                    <div class="box">
+                        <label class="code">Description</label>
+                        <textarea type="text" rows="10" cols="55" value="{{takenNews.description}}" name="description" [(ngModel)]="news.description"></textarea>
+                        <span class="validation code">Description must be longer than 2 letters.</span>
+                    </div>
+                    <div class="box">
+                        <label class="code">Text</label>
+                        <textarea type="text" rows="15" cols="85" value="{{takenNews.text}}" name="text" [(ngModel)]="news.text"></textarea>
+                        <span class="validation code">The text must be longer than 2 letters.</span>
+                    </div>
+                    <div class="box">
+                        <label class="code">Rating</label>
+                        <input type="text" value="{{takenNews.rating}}" name="rating" [(ngModel)]="news.rating" />
+                        <span asp-validation-for="Rating"></span>
+                    </div>
+                    <div class="box">
+                        <label class="code">Rating Quantity</label>
+                        <input type="text" value="{{takenNews.ratingQty}}" name="ratingQty" [(ngModel)]="news.ratingQty" />
+                        <span asp-validation-for="RatingQty"></span>
+                    </div>
+                    <div class="box">
+                        <label class="code">Created Date</label>
+                        <input type="text" value="{{takenNews.createdDate}}" disabled />
+                    </div>
+                    <div class="box" *ngIf="hasAdmin">
+                        <label class="code">Admin</label>
+                        <textarea rows="2" cols="45" disabled>{{adminText}}</textarea>
+                    </div>
+                    <div class="box" *ngIf="!hasAdmin">
+                        <label class="code">Created by</label>
+                        <textarea rows="2" cols="45" disabled>The creator was deactivated or no information.</textarea>
+                    </div>
+                    <div class="box-buttons">
+                        <button class="update font">Update</button>
+                        <a class="font" routerLink="/Admin/{{routeid}}/News">Back</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
