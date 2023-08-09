@@ -100,6 +100,8 @@ import { AdminAddNewsComponent } from './admin-site/admin-add-news/admin-add-new
 import { AdminDeleteNewsComponent } from './admin-site/admin-delete-news/admin-delete-news.component';
 import { AdminShowNewsComponent } from './admin-site/admin-show-news/admin-show-news.component';
 import { AdminUpdateNewsComponent } from './admin-site/admin-update-news/admin-update-news.component';
+import { StudentNewsComponent } from './student-site/student-news/student-news.component';
+import { StudentNewssComponent } from './student-site/student-newss/student-newss.component';
 
 @NgModule({
   declarations: [
@@ -160,6 +162,8 @@ import { AdminUpdateNewsComponent } from './admin-site/admin-update-news/admin-u
     StudentCoursesComponent,
     StudentArticlesComponent,
     StudentArticleComponent,
+    StudentNewsComponent,
+    StudentNewssComponent,
     StudentSectionsComponent,
     StudentCategoryComponent,
     StudentCourseComponent,

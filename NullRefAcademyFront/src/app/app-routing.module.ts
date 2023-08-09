@@ -85,6 +85,8 @@ import { AdminShowNewsComponent } from './admin-site/admin-show-news/admin-show-
 import { AdminAddNewsComponent } from './admin-site/admin-add-news/admin-add-news.component';
 import { AdminDeleteNewsComponent } from './admin-site/admin-delete-news/admin-delete-news.component';
 import { AdminUpdateNewsComponent } from './admin-site/admin-update-news/admin-update-news.component';
+import { StudentNewssComponent } from './student-site/student-newss/student-newss.component';
+import { StudentNewsComponent } from './student-site/student-news/student-news.component';
 
 const routes: Routes = [
   {
@@ -290,6 +292,14 @@ const routes: Routes = [
   {
     path: 'Student/:id/Article/:id2',
     component: StudentArticleComponent
+  },
+  {
+    path: 'Student/:id/AllNews',
+    component: StudentNewssComponent
+  },
+  {
+    path: 'Student/:id/News/:id2',
+    component: StudentNewsComponent
   },
   {
     path: 'Student/:id/Course/:id2/Enroll',
