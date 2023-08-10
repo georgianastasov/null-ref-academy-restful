@@ -24,7 +24,7 @@ namespace NullRefAcademy.Models
         [StringLength(50, MinimumLength = 6)]
         public string Username { get; set; }
 
-        [Required(ErrorMessage = "E-mail is not valid.")]
+        [Required(ErrorMessage = "E-mail is required.")]
         [RegularExpression(@"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}")]
         public string Email { get; set; }
 
