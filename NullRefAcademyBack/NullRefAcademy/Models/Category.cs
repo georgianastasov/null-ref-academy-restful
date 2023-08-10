@@ -10,11 +10,11 @@ namespace NullRefAcademy.Models
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
-        [Required(ErrorMessage = "Please enter Title")]
+        [Required(ErrorMessage = "Title is required.")]
         [StringLength(100, MinimumLength = 3)]
         public string Title { get; set; }
 
-        [Required(ErrorMessage = "Please enter Description")]
+        [Required(ErrorMessage = "Description is required.")]
         [StringLength(500, MinimumLength = 3)]
         public string Description { get; set; }
 

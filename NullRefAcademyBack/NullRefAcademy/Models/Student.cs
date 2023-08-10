@@ -10,17 +10,17 @@ namespace NullRefAcademy.Models
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
-        [Required(ErrorMessage = "Please enter First Name")]
+        [Required(ErrorMessage = "First Name is required.")]
         [StringLength(50, MinimumLength = 3)]
         [DisplayName("First Name")]
         public string FirstName { get; set; }
 
-        [Required(ErrorMessage = "Please enter Last Name")]
+        [Required(ErrorMessage = "Last Name is required.")]
         [StringLength(50, MinimumLength = 3)]
         [DisplayName("Last Name")]
         public string LastName { get; set; }
 
-        [Required(ErrorMessage = "Please enter Username")]
+        [Required(ErrorMessage = "Username is required.")]
         [StringLength(50, MinimumLength = 6)]
         public string Username { get; set; }
 
@@ -31,11 +31,11 @@ namespace NullRefAcademy.Models
         [DisplayName("Account Type")]
         public string? AccountType { get; set; }
 
-        [Required(ErrorMessage = "Please enter Password")]
+        [Required(ErrorMessage = "Password is required.")]
         [RegularExpression(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,15}$")]
         public string Password { get; set; }
 
-        [Required(ErrorMessage = "Please confirm the Password")]
+        [Required(ErrorMessage = "Confirm Password is required.")]
         [Compare("Password")]
         [DisplayName("Confirm Password")]
         public string ConfirmPassword { get; set; }
