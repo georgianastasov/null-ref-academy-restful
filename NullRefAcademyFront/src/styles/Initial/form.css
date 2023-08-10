@@ -16,7 +16,7 @@
     overflow: hidden;
     width: 900px;
     max-width: 100%;
-    height: 900px;
+    height: 1150px;
 }
 
 .site-login .container h1 {
@@ -44,11 +44,28 @@
     display: block;
 }
 
-.site-login .container .error {
+.site-login .container .text-error {
     font-size: 15px;
     margin-bottom: 0.2rem;
     display: block;
     color: red;
+}
+
+.site-login .container .text-valid {
+    font-size: 15px;
+    margin-bottom: 0.2rem;
+    display: block;
+    color: green;
+}
+
+.site-login .container .input-error{
+    border: 1px solid red;
+    outline: 1px solid red;
+}
+
+.site-login .container .input-valid{
+    border: 1px solid green;
+    outline: 1px solid green;
 }
 
 /*.site-login .container a {
