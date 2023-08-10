@@ -11,6 +11,14 @@ import { HomeApiService } from '../../services/home-api.service';
 })
 export class HomeLoginComponent implements OnInit {
 
+  public hasErrorEmailPass: boolean = false;
+  public hasErrorInvalid: boolean = false;
+
+  public hasErrorEmail: boolean = false;
+  public hasErrorPass: boolean = false;
+
+  public submited: boolean = false;
+
   constructor(private service: HomeApiService, private router: Router) { }
 
   userlogin: UserLogin = {
@@ -18,12 +26,10 @@ export class HomeLoginComponent implements OnInit {
     password: ''
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
-  hasErrorEmailPass: boolean = false;
-  hasErrorInvalid: boolean = false;
   onSubmit() {
+    this.submited = true;
     this.service.loginUser(this.userlogin)
     .subscribe(
       response => {
@@ -36,14 +42,15 @@ export class HomeLoginComponent implements OnInit {
         else if(response.accountType == "Student"){
           this.router.navigate(['/Student/' + response.id + '/Dashboard'])
         }
-        console.log(response);
       },
       err => {
         console.log(err.error)
-        if (err.error == 'Login failed.') {
+        if (err.error === 'Login failed.') {
           this.hasErrorEmailPass = true;
+          this.hasErrorEmail = true;
+          this.hasErrorPass = true;
         }
-        if (err.error == 'Not valid input.') {
+        if (err.error === 'Not valid input.') {
           this.hasErrorInvalid = true;
         }
       }
