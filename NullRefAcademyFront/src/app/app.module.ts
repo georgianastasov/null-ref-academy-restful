@@ -102,6 +102,8 @@ import { AdminShowNewsComponent } from './admin-site/admin-show-news/admin-show-
 import { AdminUpdateNewsComponent } from './admin-site/admin-update-news/admin-update-news.component';
 import { StudentNewsComponent } from './student-site/student-news/student-news.component';
 import { StudentNewssComponent } from './student-site/student-newss/student-newss.component';
+import { TeacherNewsComponent } from './teacher-site/teacher-news/teacher-news.component';
+import { TeacherNewssComponent } from './teacher-site/teacher-newss/teacher-newss.component';
 
 @NgModule({
   declarations: [
@@ -195,6 +197,8 @@ import { StudentNewssComponent } from './student-site/student-newss/student-news
     TeacherCourseComponent,
     TeacherArticlesComponent,
     TeacherArticleComponent,
+    TeacherNewsComponent,
+    TeacherNewssComponent,
     TeacherPreviewcourseComponent,
     StudentProfileTeacherComponent,
     StudentProfileStudentComponent,
