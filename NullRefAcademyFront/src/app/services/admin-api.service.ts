@@ -180,7 +180,7 @@ export class AdminApiService {
   }
 
   addArticle(article: Article): Observable<any>{
-    return this.http.post<Article>(this.articleUrl + '/AddArticle', article);
+    return this.http.post<Article>(this.articleUrl + '/CreateArticle', article);
   }
 
   deleteArticle(id: number): Observable<any>{
@@ -200,7 +200,7 @@ export class AdminApiService {
   }
 
   addNews(news: News): Observable<any>{
-    return this.http.post<News>(this.newsUrl + '/AddNews', news);
+    return this.http.post<News>(this.newsUrl + '/CreateNews', news);
   }
 
   deleteNews(id: number): Observable<any>{
