@@ -10,18 +10,27 @@
                 <div class="form-group">
                     <div class="box">
                         <label class="code">Title</label>
-                        <input type="text" aria-required="true" name="title" [(ngModel)]="article.title"/>
-                        <span class="validation code">Title must be longer than 2 letters.</span>
+                        <input type="text" aria-required="true" placeholder="Title" name="title" [(ngModel)]="article.title"
+                            [class.input-error]="hasErrorTitle && submited"
+                            [class.input-valid]="!hasErrorTitle && submited"/>
+                        <span class="text-error code" *ngIf="hasErrorTitleRequired">Title is required.</span>
+                        <span class="text-error code" *ngIf="hasErrorTitleLength">Title must be longer than 2 characters.</span>
                     </div>
                     <div class="box">
                         <label class="code">Description</label>
-                        <input type="text" aria-required="true" name="description" [(ngModel)]="article.description"/>
-                        <span class="validation code">Description must be longer than 2 letters.</span>
+                        <input type="text" aria-required="true" placeholder="Description" name="description" [(ngModel)]="article.description"
+                            [class.input-error]="hasErrorDescription && submited"
+                            [class.input-valid]="!hasErrorDescription && submited"/>
+                        <span class="text-error code" *ngIf="hasErrorDescriptionRequired">Description is required.</span>
+                        <span class="text-error code" *ngIf="hasErrorDescriptionLength">Description must be longer than 2 characters.</span>
                     </div>
                     <div class="box">
                         <label class="code">Text</label>
-                        <input type="text" aria-required="true" name="text" [(ngModel)]="article.text" />
-                        <span class="validation code">The text must be longer than 2 letters.</span>
+                        <input type="text" aria-required="true" placeholder="Text" name="text" [(ngModel)]="article.text" 
+                            [class.input-error]="hasErrorText && submited"
+                            [class.input-valid]="!hasErrorText && submited"/>
+                        <span class="text-error code" *ngIf="hasErrorTextRequired">Text is required.</span>
+                        <span class="text-error code" *ngIf="hasErrorTextLength">Text must be longer than 2 characters.</span>
                     </div>
                     <div class="box-buttons">
                         <button class="add font">Add</button>
