@@ -10,13 +10,19 @@
                 <div class="form-group">
                     <div class="box">
                         <label class="code">Title</label>
-                        <input type="text" aria-required="true" name="title" [(ngModel)]="category.title"/>
-                        <span class="validation code">Title must be longer than 2 letters.</span>
+                        <input type="text" aria-required="true" placeholder="Title" name="title" [(ngModel)]="category.title"
+                            [class.input-error]="hasErrorTitle && submited"
+                            [class.input-valid]="!hasErrorTitle && submited"/>
+                        <span class="text-error code" *ngIf="hasErrorTitleRequired">Title is required.</span>
+                        <span class="text-error code" *ngIf="hasErrorTitleLength">Title must be longer than 2 characters.</span>
                     </div>
                     <div class="box">
                         <label class="code">Description</label>
-                        <textarea type="text" rows="10" cols="55" aria-required="true" name="description" [(ngModel)]="category.description"></textarea>
-                        <span class="validation code">Description must be longer than 2 letters.</span>
+                        <textarea type="text" rows="10" cols="55" placeholder="Description" aria-required="true" name="description" [(ngModel)]="category.description"
+                            [class.input-error]="hasErrorDescription && submited"
+                            [class.input-valid]="!hasErrorDescription && submited"></textarea>
+                        <span class="text-error code" *ngIf="hasErrorDescriptionRequired">Description is required.</span>
+                        <span class="text-error code" *ngIf="hasErrorDescriptionLength">Description must be longer than 2 characters.</span>
                     </div>
                     <div class="box-buttons">
                         <button class="add font">Create</button>
