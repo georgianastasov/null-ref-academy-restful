@@ -29,6 +29,7 @@ export class HomeRegisterComponent implements OnInit {
   public hasErrorUsernameLength: boolean = false;
   
   public hasErrorEmail: boolean = false;
+  public hasErrorEmailRequired: boolean = false;
   public hasErrorEmailRegex: boolean = false;
 
   public hasErrorAccountType: boolean = false;
@@ -109,7 +110,6 @@ export class HomeRegisterComponent implements OnInit {
         this.router.navigate(['/Home/Login']);
       },
       error => {
-        console.log(error.error.errors)
         let theError = error.error.errors;
         if (theError != null) {
           //first name
@@ -166,11 +166,15 @@ export class HomeRegisterComponent implements OnInit {
             this.hasErrorUsernameRequired = false;
             this.hasErrorUsernameLength = false;
           }
-          //emai
+          //email
           if (theError.Email != null) {
-            this.hasErrorEmail = true;
+            if(!theError.Email[0].includes('regular')){
+              this.hasErrorEmailRequired = true;
+            } else {
+              this.hasErrorEmailRequired = false;
+            }
           } else {
-            this.hasErrorEmail = false;
+            this.hasErrorEmailRequired = false;
           }
           //account type confirm
           if (theError.AccountType != null) {

@@ -29,8 +29,8 @@
                     <input type="text" class="form-control code" aria-required="true" placeholder="Email" name="email" [(ngModel)]="user.email"
                         [class.input-error]="hasErrorEmail && submited"
                         [class.input-valid]="!hasErrorEmail && submited"/>
-                        <span class="text-error code" *ngIf="hasErrorEmail">Email is required.</span>
-                        <span class="text-error code" *ngIf="hasErrorEmailRegex">The email may be taken or not valid.</span>
+                    <span class="text-error code" *ngIf="hasErrorEmailRequired">Email is required.</span>
+                    <span class="text-error code" *ngIf="hasErrorEmailRegex">The email may be taken or not valid.</span>
                 </div>
                 <div class="form-group">
                     <select #select class="form-control code" aria-required="true" placeholder="Account Type" 
