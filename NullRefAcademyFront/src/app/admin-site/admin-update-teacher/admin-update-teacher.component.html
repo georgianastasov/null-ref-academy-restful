@@ -11,22 +11,35 @@
                 <div class="form-group">
                     <div class="box">
                         <label class="code">First Name</label>
-                        <input type="text" value="{{takenTeacher.firstName}}" name="firstName" [(ngModel)]="teacher.firstName"/>
-                        <span class="validation code">First Name must be longer than 2 letters.</span>
+                        <input type="text" value="{{takenTeacher.firstName}}" placeholder="First Name" name="firstName" [(ngModel)]="teacher.firstName"
+                            [class.input-error]="hasErrorFirstName && submited"
+                            [class.input-valid]="!hasErrorFirstName && submited"/>
+                        <span class="text-error code" *ngIf="hasErrorFirstNameRequired">First Name is required.</span>
+                        <span class="text-error code" *ngIf="hasErrorFirstNameLength">First Name must be longer than 2 characters.</span>
                     </div>
                     <div class="box">
                         <label class="code">Last Name</label>
-                        <input type="text" value="{{takenTeacher.lastName}}" name="lastName" [(ngModel)]="teacher.lastName"/>
-                        <span class="validation code">Last Name must be longer than 2 letters.</span>
+                        <input type="text" value="{{takenTeacher.lastName}}" placeholder="Last Name" name="lastName" [(ngModel)]="teacher.lastName"
+                            [class.input-error]="hasErrorLastName && submited"
+                            [class.input-valid]="!hasErrorLastName && submited"/>
+                        <span class="text-error code" *ngIf="hasErrorLastNameRequired">Last Name is required.</span>
+                        <span class="text-error code" *ngIf="hasErrorLastNameLength">Last Name must be longer than 2 characters.</span>
                     </div>
                     <div class="box">
                         <label class="code">Username</label>
-                        <input type="text" value="{{takenTeacher.username}}" name="username" [(ngModel)]="teacher.username" />
-                        <span class="validation code">Username must be longer than 5 letters.</span>
+                        <input type="text" value="{{takenTeacher.username}}" placeholder="Username" name="username" [(ngModel)]="teacher.username" 
+                            [class.input-error]="hasErrorUsername && submited"
+                            [class.input-valid]="!hasErrorUsername && submited"/>
+                        <span class="text-error code" *ngIf="hasErrorUsernameRequired">Username is required.</span>
+                        <span class="text-error code" *ngIf="hasErrorUsernameLength">Username must be longer than 5 characters.</span>
                     </div>
                     <div class="box">
                         <label class="code">Email</label>
-                        <input type="text" value="{{takenTeacher.email}}" name="email" [(ngModel)]="teacher.email"/>
+                        <input type="text" value="{{takenTeacher.email}}" placeholder="Email" name="email" [(ngModel)]="teacher.email"
+                            [class.input-error]="hasErrorEmail && submited"
+                            [class.input-valid]="!hasErrorEmail && submited"/>
+                        <span class="text-error code" *ngIf="hasErrorEmailRequired">Email is required.</span>
+                        <span class="text-error code" *ngIf="hasErrorEmailRegex">The email may be taken or not valid.</span>
                     </div>
                     <div class="box">
                         <label class="code">Account Type</label>
@@ -34,15 +47,19 @@
                     </div>
                     <div class="box">
                         <label class="code">Password</label>
-                        <input type="text" value="{{takenTeacher.password}}" name="password" [(ngModel)]="teacher.password" />
-                        <span class="validation code">Password must start with uppercase letter.</span>
-                        <span class="validation code">Password must have digits.</span>
-                        <span class="validation code">Password must be longer than 5 symbols.</span>
+                        <input #passwordInput type="text" value="{{takenTeacher.password}}" placeholder="Password" name="password" [(ngModel)]="teacher.password" 
+                            [class.input-error]="hasErrorPassword && submited"
+                            [class.input-valid]="!hasErrorPassword && submited"/>
+                        <span class="text-error code" *ngIf="hasErrorPassword">Password must start with uppercase letter and be longer than 5 symbols.</span>
+                        <span class="text-error code" *ngIf="hasErrorPassword">Password must have digits.</span>
                     </div>
                     <div class="box">
                         <label class="code">Confirm Password</label>
-                        <input type="text" value="{{takenTeacher.confirmPassword}}" name="confirmPassword" [(ngModel)]="teacher.confirmPassword"/>
-                        <span class="validation code">Confirm Password must match password.</span>
+                        <input #confirmPasswordInput type="text" value="{{takenTeacher.confirmPassword}}" placeholder="Confirm Password" name="confirmPassword" [(ngModel)]="teacher.confirmPassword"
+                            [class.input-error]="hasErrorConfirmPassword && submited"
+                            [class.input-valid]="!hasErrorConfirmPassword && submited"/>
+                        <span class="text-error code" *ngIf="hasErrorConfirmPasswordRequired">Confirm Password is required.</span>
+                        <span class="text-error code" *ngIf="hasErrorConfirmPasswordNotSame">Enter the same password from the upper field.</span>
                     </div>
                     <div class="box">
                         <label class="code">Created Date</label>
