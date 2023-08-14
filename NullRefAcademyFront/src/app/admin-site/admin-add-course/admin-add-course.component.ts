@@ -88,9 +88,10 @@ export class AdminAddCourseComponent implements OnInit {
         this.hasErrorVidoeUrlRegex = false;
       }
     } else {
+      this.course.videoUrl = 'initial';
       this.hasErrorVidoeUrl = false;
       this.hasErrorVidoeUrlRegex = false;
-    }
+    } 
     //category
     if(this.course.categoryID === this.nullfield){
       this.hasErrorCategory = true;
