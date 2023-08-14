@@ -27,6 +27,7 @@ export class AdminAddNewsComponent implements OnInit {
   public hasErrorTextLength: boolean = false;
 
   public submited = false;
+
   constructor(private service: AdminApiService, private router: Router, private route: ActivatedRoute) { }
 
   news: News = {
@@ -118,5 +119,4 @@ export class AdminAddNewsComponent implements OnInit {
       }
     )
   }
-
 }
