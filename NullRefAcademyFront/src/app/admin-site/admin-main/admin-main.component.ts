@@ -13,9 +13,9 @@ import { AdminApiService } from 'src/app/services/admin-api.service';
   styleUrls: ['./admin-main.component.css']
 })
 export class AdminMainComponent implements OnInit {
+  public routeSub!: Subscription;
+  public routeid!: number;
 
-  routeSub!: Subscription;
-  routeid!: number;
   constructor(private service: AdminApiService, private route: ActivatedRoute, private router: Router) { 
   }
 
@@ -43,8 +43,6 @@ export class AdminMainComponent implements OnInit {
     this.getAllNews();
 
     this.routeSub = this.route.params.subscribe(params => {
-      console.log(params);
-      console.log('id: ' + params['id']);
       this.routeid = params['id'];
     });
 
@@ -60,9 +58,7 @@ export class AdminMainComponent implements OnInit {
     this.service.getAllUsers()
     .subscribe(
       response => {
-        console.log('Users');
         this.users = response;
-        console.log(this.users);
       }
     );
   }
@@ -71,9 +67,7 @@ export class AdminMainComponent implements OnInit {
     this.service.getAllAdmins()
     .subscribe(
       response => {
-        console.log('Admins');
         this.admins = response;
-        console.log(this.admins);
       }
     );
   }
@@ -82,9 +76,7 @@ export class AdminMainComponent implements OnInit {
     this.service.getAllTeachers()
     .subscribe(
       response => {
-        console.log('Teachers');
         this.teachers = response;
-        console.log(this.teachers);
       }
     );
   }
@@ -93,9 +85,7 @@ export class AdminMainComponent implements OnInit {
     this.service.getAllStudents()
     .subscribe(
       response => {
-        console.log('Students');
         this.students = response;
-        console.log(this.students);
       }
     );
   }
@@ -104,9 +94,7 @@ export class AdminMainComponent implements OnInit {
     this.service.getAllCategories()
     .subscribe(
       response => {
-        console.log('Categories');
         this.categories = response;
-        console.log(this.categories);
       }
     );
   }
@@ -115,9 +103,7 @@ export class AdminMainComponent implements OnInit {
     this.service.getAllCourses()
     .subscribe(
       response => {
-        console.log('Courses');
         this.courses = response;
-        console.log(this.courses);
       }
     );
   }
@@ -126,9 +112,7 @@ export class AdminMainComponent implements OnInit {
     this.service.getAllSections()
     .subscribe(
       response => {
-        console.log('Sections');
         this.sections = response;
-        console.log(this.sections);
       }
     );
   }
@@ -137,9 +121,7 @@ export class AdminMainComponent implements OnInit {
     this.service.getAllArticles()
     .subscribe(
       response => {
-        console.log('Articles');
         this.articles = response;
-        console.log(this.articles);
       }
     );
   }
@@ -148,9 +130,7 @@ export class AdminMainComponent implements OnInit {
     this.service.getAllNews()
     .subscribe(
       response => {
-        console.log('News');
         this.newss = response;
-        console.log(this.newss);
       }
     );
   }
@@ -159,7 +139,6 @@ export class AdminMainComponent implements OnInit {
     this.service.getUser(this.userid)
     .subscribe(
       response => {
-        console.log('User');
         if (response.accountType == "Admin"){
           this.router.navigate(['/Admin/'+ this.routeid + '/Delete/Admin/' + response.id])
         }
@@ -182,7 +161,6 @@ export class AdminMainComponent implements OnInit {
     this.service.getUser(this.userid)
     .subscribe(
       response => {
-        console.log('User');
         if (response.accountType == "Admin"){
           this.router.navigate(['/Admin/'+ this.routeid + '/Update/Admin/' + response.id])
         }
@@ -215,12 +193,10 @@ export class AdminMainComponent implements OnInit {
     this.service.getAllCourses()
       .subscribe(
         response => {
-          console.log('CoursesA');
           this.courses2 = response;
           this.service.getAllStudents()
             .subscribe(
               response => {
-                console.log('StudentsA');
                 this.students2 = response;
                 this.students2.forEach(student => {
                   if (student.coursesIDs != null) {
@@ -264,12 +240,10 @@ export class AdminMainComponent implements OnInit {
     this.service.getAllStudents()
       .subscribe(
         response => {
-          console.log('StudentsA');
           this.students3 = response;
           this.service.getAllCourses()
             .subscribe(
               response => {
-                console.log('CoursesA');
                 this.courses3 = response;
                 this.courses3.forEach(course => {
                   if (course.studentsIDs != null) {

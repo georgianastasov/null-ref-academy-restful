@@ -10,9 +10,9 @@ import { AdminApiService } from 'src/app/services/admin-api.service';
   styleUrls: ['./admin-navigation.component.css']
 })
 export class AdminNavigationComponent implements OnInit {
+  public routeSub!: Subscription;
+  public routeid!: number;
 
-  routeSub!: Subscription;
-  routeid!: number;
   constructor(private service: AdminApiService, private route: ActivatedRoute) { }
 
   admin: Admin = {
@@ -29,8 +29,6 @@ export class AdminNavigationComponent implements OnInit {
 
   ngOnInit(): void {
     this.routeSub = this.route.params.subscribe(params => {
-      console.log(params);
-      console.log('id: ' + params['id']);
       this.routeid = params['id'];
     });
 
@@ -45,9 +43,7 @@ export class AdminNavigationComponent implements OnInit {
     this.service.getAdmin(this.routeid)
     .subscribe(
       response => {
-        console.log('Admin');
         this.admin = response;
-        console.log(this.admin);
       }
     );
   }
