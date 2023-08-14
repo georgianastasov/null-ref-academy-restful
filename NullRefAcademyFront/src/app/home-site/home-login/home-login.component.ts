@@ -10,7 +10,6 @@ import { HomeApiService } from '../../services/home-api.service';
   styleUrls: ['./home-login.component.css']
 })
 export class HomeLoginComponent implements OnInit {
-
   public hasErrorEmailPass: boolean = false;
   public hasErrorInvalid: boolean = false;
 
@@ -44,7 +43,6 @@ export class HomeLoginComponent implements OnInit {
         }
       },
       err => {
-        console.log(err.error)
         if (err.error === 'Login failed.') {
           this.hasErrorEmailPass = true;
           this.hasErrorEmail = true;

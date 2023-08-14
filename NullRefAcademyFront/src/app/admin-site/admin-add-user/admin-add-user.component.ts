@@ -74,11 +74,13 @@ export class AdminAddUserComponent implements OnInit {
 
   onSubmit() {
     this.submited = true;
+    //acount type
     if (this.user.accountType === "") {
       this.hasErrorAccountType = true;
     } else {
       this.hasErrorAccountType = false;
     }
+    //email
     let matchEmail = this.regExpEmail.test(this.user.email);
     if(!matchEmail){
       this.hasErrorEmail = true;
@@ -87,6 +89,7 @@ export class AdminAddUserComponent implements OnInit {
       this.hasErrorEmail = false;
       this.hasErrorEmailRegex = false;
     }
+    //password
     let matchPassword = this.regExpPassword.test(this.user.password);
     if(!matchPassword){
       this.hasErrorPassword = true;
@@ -95,6 +98,7 @@ export class AdminAddUserComponent implements OnInit {
       this.hasErrorPassword = false;
       this.hasErrorPasswordRegex = false;
     }
+    //confirm password
     if (this.passwordInput.nativeElement.value !== this.confirmPasswordInput.nativeElement.value) {
       this.hasErrorConfirmPassword = true;
       this.hasErrorConfirmPasswordNotSame = true;

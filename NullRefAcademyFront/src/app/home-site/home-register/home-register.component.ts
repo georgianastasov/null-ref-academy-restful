@@ -69,6 +69,7 @@ export class HomeRegisterComponent implements OnInit {
   
   onSubmit() {
     this.submited = true;
+    //acount type
     if (this.select.nativeElement.value === "Select account type") {
       this.hasErrorAccountType = true;
     } else {
@@ -81,6 +82,7 @@ export class HomeRegisterComponent implements OnInit {
       this.hasErrorAccountTypeRepeat = false;
       this.hasErrorAccountTypeNotSame = false;
     }
+    //email
     let matchEmail = this.regExpEmail.test(this.user.email);
     if(!matchEmail){
       this.hasErrorEmail = true;
@@ -89,6 +91,7 @@ export class HomeRegisterComponent implements OnInit {
       this.hasErrorEmail = false;
       this.hasErrorEmailRegex = false;
     }
+    //password
     let matchPassword = this.regExpPassword.test(this.user.password);
     if(!matchPassword){
       this.hasErrorPassword = true;
@@ -97,6 +100,7 @@ export class HomeRegisterComponent implements OnInit {
       this.hasErrorPassword = false;
       this.hasErrorPasswordRegex = false;
     }
+    //confirm password
     if (this.passwordInput.nativeElement.value !== this.confirmPasswordInput.nativeElement.value) {
       this.hasErrorConfirmPassword = true;
       this.hasErrorConfirmPasswordNotSame = true;
