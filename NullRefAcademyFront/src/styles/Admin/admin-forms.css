@@ -22,6 +22,13 @@
     font-size: 1rem;
 }
 
+.site-form .box-form .box label img{
+    width: 13px;
+    position: relative;
+    top: -0.2rem;
+    margin-left: 0.1rem;
+}
+
 .site-form .box-form .box input{
     padding: 0.3rem;
     font-size: 0.7rem;
@@ -69,6 +76,13 @@
 .site-form .box-form .box textarea{
     padding: 0.3rem;
     font-size: 0.7rem;
+}
+
+.site-form .box-form .box textarea:disabled{
+    border-color: #222534;
+    outline-color:#222534;
+    border-radius: 0.2rem;
+    background-color: #FFE08C;
 }
 
 .site-form .box-form .box textarea:focus-visible{
