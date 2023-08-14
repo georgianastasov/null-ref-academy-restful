@@ -79,6 +79,11 @@ export class AdminAddStudentComponent implements OnInit {
 
   onSubmit() {
     this.submited = true;
+    //bio
+    if(this.student.bio == ''){
+      this.student.bio = 'initial';
+    }
+    //email
     let matchEmail = this.regExpEmail.test(this.student.email);
     if(!matchEmail){
       this.hasErrorEmail = true;
@@ -87,6 +92,7 @@ export class AdminAddStudentComponent implements OnInit {
       this.hasErrorEmail = false;
       this.hasErrorEmailRegex = false;
     }
+    //password
     let matchPassword = this.regExpPassword.test(this.student.password);
     if(!matchPassword){
       this.hasErrorPassword = true;
@@ -95,6 +101,7 @@ export class AdminAddStudentComponent implements OnInit {
       this.hasErrorPassword = false;
       this.hasErrorPasswordRegex = false;
     }
+    //confirm password
     if (this.passwordInput.nativeElement.value !== this.confirmPasswordInput.nativeElement.value) {
       this.hasErrorConfirmPassword = true;
       this.hasErrorConfirmPasswordNotSame = true;
@@ -109,6 +116,7 @@ export class AdminAddStudentComponent implements OnInit {
       },
       error => {
         let theError = error.error.errors;
+        console.log(theError)
         if (theError != null) {
           //first name
           if (theError.FirstName != null) {

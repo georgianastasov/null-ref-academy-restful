@@ -72,6 +72,7 @@ export class AdminAddAdminComponent implements OnInit {
 
   onSubmit() {
     this.submited = true;
+    //email
     let matchEmail = this.regExpEmail.test(this.admin.email);
     if(!matchEmail){
       this.hasErrorEmail = true;
@@ -80,6 +81,7 @@ export class AdminAddAdminComponent implements OnInit {
       this.hasErrorEmail = false;
       this.hasErrorEmailRegex = false;
     }
+    //password
     let matchPassword = this.regExpPassword.test(this.admin.password);
     if(!matchPassword){
       this.hasErrorPassword = true;
@@ -88,6 +90,7 @@ export class AdminAddAdminComponent implements OnInit {
       this.hasErrorPassword = false;
       this.hasErrorPasswordRegex = false;
     }
+    //confirm password
     if (this.passwordInput.nativeElement.value !== this.confirmPasswordInput.nativeElement.value) {
       this.hasErrorConfirmPassword = true;
       this.hasErrorConfirmPasswordNotSame = true;
