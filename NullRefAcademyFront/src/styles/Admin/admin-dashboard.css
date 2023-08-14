@@ -132,6 +132,17 @@
 
 .site-dashboard .site-right .dashboard-table tr:hover {
     background-color: #222534;
+    color: #FFE08C;
+}
+
+.site-dashboard .site-right .dashboard-table tr:hover td {
+    border-color: #FFE08C;
+}
+
+.site-dashboard .site-right .dashboard-table tr:hover .update,
+.site-dashboard .site-right .dashboard-table tr:hover .delete  {
+    background-color: #FFE08C;
+    color: #222534;
 }
 
 .site-dashboard .site-right .dashboard-table th {
@@ -168,10 +179,11 @@
     border-radius: 0.4rem;
     margin-bottom: 0.3rem;
     color: #FFE08C;
+    cursor: pointer;
 }
 
 .site-dashboard .site-right .dashboard-table .update:hover {
-    color: white;
+    font-weight: bold;
 }
 
 .site-dashboard .site-right .dashboard-table .delete {
@@ -181,9 +193,10 @@
     padding: 0.3rem 0.5rem;
     border-radius: 0.4rem;
     color: #FFE08C;
+    cursor: pointer;
 }
 
 .site-dashboard .site-right .dashboard-table .delete:hover {
-    color: white;
+    font-weight: bold;
 }
 
