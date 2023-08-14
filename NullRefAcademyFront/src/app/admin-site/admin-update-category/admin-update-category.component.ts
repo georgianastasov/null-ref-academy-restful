@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { error } from 'console';
 import { Subscription } from 'rxjs';
 import { Admin } from 'src/app/models/admin.model';
 import { Category } from 'src/app/models/category.model';
@@ -13,14 +14,24 @@ import { AdminApiService } from 'src/app/services/admin-api.service';
   styleUrls: ['./admin-update-category.component.css']
 })
 export class AdminUpdateCategoryComponent implements OnInit {
+  public routeSub!: Subscription;
+  public routeid!: number;
+  public categoryid!: number;
 
-  routeSub!: Subscription;
-  routeid!: number;
-  categoryid!: number;
+  public hasErrorTitle = false;
+  public hasErrorTitleRequired: boolean = false;
+  public hasErrorTitleLength: boolean = false;
+
+  public hasErrorDescription = false;
+  public hasErrorDescriptionRequired: boolean = false;
+  public hasErrorDescriptionLength: boolean = false;
+
+  public submited = false;
+
   constructor(private service: AdminApiService, private router: Router, private route: ActivatedRoute) { }
 
-  hasAdmin: boolean = false;
-  hasTeacher: boolean = false;
+  public hasAdmin: boolean = false;
+  public hasTeacher: boolean = false;
 
   takenCategory: Category = {
     id: 0,
@@ -40,10 +51,7 @@ export class AdminUpdateCategoryComponent implements OnInit {
 
   ngOnInit(): void {
     this.routeSub = this.route.params.subscribe(params => {
-      console.log(params);
-      console.log('id: ' + params['id']);
       this.routeid = params['id'];
-      console.log('idAdmin: ' + params['id2']);
       this.categoryid = params['id2'];
     });
 
@@ -61,20 +69,59 @@ export class AdminUpdateCategoryComponent implements OnInit {
     this.service.getCategory(this.categoryid)
     .subscribe(
       response => {
-        console.log('Category');
         this.takenCategory = response;
-        console.log(this.takenCategory);
       }
     );
   }
 
   onSubmit() {
     this.populate();
+    this.submited = true;
     this.service.updateCategory(this.categoryid, this.takenCategory)
     .subscribe(
       response => {
-        console.log(response);
         this.router.navigate(['/Admin/' + this.routeid + '/Categories']);
+      }, 
+      error => {
+        let theError = error.error.errors;
+        if (theError != null) {
+          //title
+          if (theError.Title != null) {
+            this.hasErrorTitle = true;
+            if(theError.Title[0]){
+              this.hasErrorTitleRequired = true;
+            } else {
+              this.hasErrorTitleLength = false;
+            }
+            if(theError.Title[1]){
+              this.hasErrorTitleLength = true;
+            } else {
+              this.hasErrorTitleRequired = false;
+            }
+          } else {
+            this.hasErrorTitle = false;
+            this.hasErrorTitleRequired = false;
+            this.hasErrorTitleLength = false;
+          }
+          //descriotion
+          if (theError.Description != null) {
+            this.hasErrorDescription = true;
+            if(theError.Description[0]){
+              this.hasErrorDescriptionRequired = true;
+            } else {
+              this.hasErrorDescriptionLength = false;
+            }
+            if(theError.Description[1]){
+              this.hasErrorDescriptionLength = true;
+            } else {
+              this.hasErrorDescriptionRequired = false;
+            }
+          } else {
+            this.hasErrorDescription = false;
+            this.hasErrorDescriptionRequired = false;
+            this.hasErrorDescriptionLength = false;
+          }
+        }
       }
     )
   }

@@ -11,13 +11,19 @@
                 <div class="form-group">
                     <div class="box">
                         <label class="code">Title</label>
-                        <input type="text" value="{{takenCategory.title}}" name="title" [(ngModel)]="category.title"/>
-                        <span class="validation code">Title must be longer than 2 letters.</span>
+                        <input type="text" value="{{takenCategory.title}}" placeholder="Title" name="title" [(ngModel)]="category.title"
+                            [class.input-error]="hasErrorTitle && submited"
+                            [class.input-valid]="!hasErrorTitle && submited"/>
+                        <span class="text-error code" *ngIf="hasErrorTitleRequired">Title is required.</span>
+                        <span class="text-error code" *ngIf="hasErrorTitleLength">Title must be longer than 2 characters.</span>
                     </div>
                     <div class="box">
                         <label class="code">Description</label>
-                        <textarea type="text" rows="10" cols="55" value="{{takenCategory.description}}" name="description" [(ngModel)]="category.description"></textarea>
-                        <span class="validation code">Description must be longer than 2 letters.</span>
+                        <textarea type="text" rows="10" cols="55" value="{{takenCategory.description}}" placeholder="Title" name="description" [(ngModel)]="category.description"
+                            [class.input-error]="hasErrorDescription && submited"
+                            [class.input-valid]="!hasErrorDescription && submited"></textarea>
+                        <span class="text-error code" *ngIf="hasErrorDescriptionRequired">Description is required.</span>
+                        <span class="text-error code" *ngIf="hasErrorDescriptionLength">Description must be longer than 2 characters.</span>
                     </div>
                     <div class="box">
                         <label class="code">Courses</label>
