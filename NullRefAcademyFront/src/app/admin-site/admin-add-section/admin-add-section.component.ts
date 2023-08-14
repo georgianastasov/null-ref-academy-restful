@@ -77,6 +77,7 @@ export class AdminAddSectionComponent implements OnInit {
         this.hasErrorVidoeUrlRegex = false;
       }
     } else {
+      this.section.videoUrl = 'initial';
       this.hasErrorVidoeUrl = false;
       this.hasErrorVidoeUrlRegex = false;
     }
