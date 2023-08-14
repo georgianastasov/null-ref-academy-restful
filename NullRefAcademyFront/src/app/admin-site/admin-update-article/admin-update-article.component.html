@@ -11,28 +11,35 @@
                 <div class="form-group">
                     <div class="box">
                         <label class="code">Title</label>
-                        <input type="text" value="{{takenArticle.title}}" name="title" [(ngModel)]="article.title"/>
-                        <span class="validation code">Title must be longer than 2 letters.</span>
+                        <input type="text" value="{{takenArticle.title}}" placeholder="Title" name="title" [(ngModel)]="article.title"
+                            [class.input-error]="hasErrorTitle && submited"
+                            [class.input-valid]="!hasErrorTitle && submited"/>
+                        <span class="text-error code" *ngIf="hasErrorTitleRequired">Title is required.</span>
+                        <span class="text-error code" *ngIf="hasErrorTitleLength">Title must be longer than 2 characters.</span>
                     </div>
                     <div class="box">
                         <label class="code">Description</label>
-                        <textarea type="text" rows="10" cols="55" value="{{takenArticle.description}}" name="description" [(ngModel)]="article.description"></textarea>
-                        <span class="validation code">Description must be longer than 2 letters.</span>
+                        <textarea type="text" rows="10" cols="55" value="{{takenArticle.description}}" placeholder="Description" name="description" [(ngModel)]="article.description"
+                            [class.input-error]="hasErrorDescription && submited"
+                            [class.input-valid]="!hasErrorDescription && submited"></textarea>
+                        <span class="text-error code" *ngIf="hasErrorDescriptionRequired">Description is required.</span>
+                        <span class="text-error code" *ngIf="hasErrorDescriptionLength">Description must be longer than 2 characters.</span>
                     </div>
                     <div class="box">
                         <label class="code">Text</label>
-                        <textarea type="text" rows="15" cols="85" value="{{takenArticle.text}}" name="text" [(ngModel)]="article.text"></textarea>
-                        <span class="validation code">The text must be longer than 2 letters.</span>
+                        <textarea type="text" rows="15" cols="85" value="{{takenArticle.text}}" placeholder="Text" name="text" [(ngModel)]="article.text"
+                            [class.input-error]="hasErrorText && submited"
+                            [class.input-valid]="!hasErrorText && submited"></textarea>
+                        <span class="text-error code" *ngIf="hasErrorTextRequired">Text is required.</span>
+                        <span class="text-error code" *ngIf="hasErrorTextLength">Text must be longer than 2 characters.</span>
                     </div>
                     <div class="box">
                         <label class="code">Rating</label>
-                        <input type="text" value="{{takenArticle.rating}}" name="rating" [(ngModel)]="article.rating" />
-                        <span asp-validation-for="Rating"></span>
+                        <input type="text" value="{{takenArticle.rating}}" placeholder="Rating" name="rating" [(ngModel)]="article.rating" disabled/>
                     </div>
                     <div class="box">
                         <label class="code">Rating Quantity</label>
-                        <input type="text" value="{{takenArticle.ratingQty}}" name="ratingQty" [(ngModel)]="article.ratingQty" />
-                        <span asp-validation-for="RatingQty"></span>
+                        <input type="text" value="{{takenArticle.ratingQty}}" placeholder="Rating Quantity" name="ratingQty" [(ngModel)]="article.ratingQty" disabled/>
                     </div>
                     <div class="box">
                         <label class="code">Created Date</label>
