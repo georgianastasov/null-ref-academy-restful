@@ -6,14 +6,14 @@
                 <h2 class="digital">Log in</h2>
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div class="form-group">
-                    <input type="text" class="form-control code" autocomplete="username" aria-required="true" placeholder="Email" name="email" [(ngModel)]="userlogin.email"
+                    <input type="text" class="form-control code" autocomplete="username" aria-required="true" placeholder="Email⃰" name="email" [(ngModel)]="userlogin.email"
                         [class.input-error]="hasErrorEmail && submited"
                         [class.input-valid]="!hasErrorEmail && submited"/>
                     <span class="text-error code" *ngIf="hasErrorEmailPass">Inavlid email!</span>
                     <span class="text-error code" *ngIf="hasErrorInvalid">Inavlid input!</span>
                 </div>
                 <div class="form-group">
-                    <input type="password" class="form-control code" autocomplete="current-password" aria-required="true" placeholder="Password" name="password" [(ngModel)]="userlogin.password"
+                    <input type="password" class="form-control code" autocomplete="current-password" aria-required="true" placeholder="Password⃰" name="password" [(ngModel)]="userlogin.password"
                         [class.input-error]="hasErrorPass && submited"
                         [class.input-valid]="!hasErrorPass && submited"/>
                     <span class="text-error code" *ngIf="hasErrorEmailPass">Inavlid password!</span>

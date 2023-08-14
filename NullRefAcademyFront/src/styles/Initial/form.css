@@ -44,6 +44,13 @@
     display: block;
 }
 
+.site-login .container img {
+    width: 15px;
+    position: relative;
+    top: 1.6rem;
+    left: 7.5rem;
+}
+
 .site-login .container .text-error {
     font-size: 15px;
     margin-bottom: 0.2rem;
@@ -90,6 +97,10 @@
     margin-top: 0.5rem;
 }
 
+.site-login .container button:hover {
+    font-size: 16px;
+}
+
     button:active {
         transform: scale(0.95);
     }
@@ -103,9 +114,6 @@
         border-color: white;
     }
 
-    button:hover {
-        font-weight: bold;
-    }
 
 .site-login .container a {
     text-decoration: none;

@@ -5,38 +5,38 @@
             <form id="registerForm" #form="ngForm" (ngSubmit)="onSubmit()" >
                 <h2 class="digital">Create Account</h2>
                 <div class="form-group">
-                    <input type="text" class="form-control code" aria-required="true" placeholder="First Name" name="firstName" [(ngModel)]="user.firstName"
+                    <input type="text" class="form-control code" aria-required="true" placeholder="First Name⃰" name="firstName" [(ngModel)]="user.firstName"
                         [class.input-error]="hasErrorFirstName && submited"
                         [class.input-valid]="!hasErrorFirstName && submited"/>
                     <span class="text-error code" *ngIf="hasErrorFirstNameRequired">First Name is required.</span>
                     <span class="text-error code" *ngIf="hasErrorFirstNameLength">First Name must be longer than 2 characters.</span>
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control code" aria-required="true" placeholder="Last Name" name="lastName" [(ngModel)]="user.lastName"
+                    <input type="text" class="form-control code" aria-required="true" placeholder="Last Name⃰" name="lastName" [(ngModel)]="user.lastName"
                         [class.input-error]="hasErrorLastName && submited"
                         [class.input-valid]="!hasErrorLastName && submited"/>
                     <span class="text-error code" *ngIf="hasErrorLastNameRequired">Last Name is required.</span>
                     <span class="text-error code" *ngIf="hasErrorLastNameLength">Last Name must be longer than 2 characters.</span>
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control code" aria-required="true" placeholder="Username" name="username" [(ngModel)]="user.username"
+                    <input type="text" class="form-control code" aria-required="true" placeholder="Username⃰" name="username" [(ngModel)]="user.username"
                         [class.input-error]="hasErrorUsername && submited"
                         [class.input-valid]="!hasErrorUsername && submited"/>
                     <span class="text-error code" *ngIf="hasErrorUsernameRequired">Username is required.</span>
                     <span class="text-error code" *ngIf="hasErrorUsernameLength">Username must be longer than 5 characters.</span>
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control code" aria-required="true" placeholder="Email" name="email" [(ngModel)]="user.email"
+                    <input type="text" class="form-control code" aria-required="true" placeholder="Email⃰" name="email" [(ngModel)]="user.email"
                         [class.input-error]="hasErrorEmail && submited"
                         [class.input-valid]="!hasErrorEmail && submited"/>
                     <span class="text-error code" *ngIf="hasErrorEmailRequired">Email is required.</span>
                     <span class="text-error code" *ngIf="hasErrorEmailRegex">The email may be taken or not valid.</span>
                 </div>
                 <div class="form-group">
-                    <select #select class="form-control code" aria-required="true" placeholder="Account Type" 
+                    <select #select class="form-control code" aria-required="true" placeholder="Account Type⃰" 
                         [class.input-error]="hasErrorAccountType && submited"
                         [class.input-valid]="!hasErrorAccountType && submited">
-                        <option selected disabled>Select account type</option>
+                        <option selected disabled>Select account type⃰</option>
                         <option value="Admin" name="Admin">Admin</option>
                         <option value="Teacher" name="Teacher">Teacher</option>
                         <option value="Student" name="Student">Student</option>
@@ -44,14 +44,14 @@
                     <span class="text-error code" *ngIf="hasErrorAccountType">Account Type is required.</span>
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control code" aria-required="true" placeholder="Confirnm Account Type" name="accountType" [(ngModel)]="user.accountType"
+                    <input type="text" class="form-control code" aria-required="true" placeholder="Confirnm Account Type⃰" name="accountType" [(ngModel)]="user.accountType"
                         [class.input-error]="hasErrorAccountTypeRepeat && submited"
                         [class.input-valid]="!hasErrorAccountTypeRepeat && submited"/>
                     <span class="text-error code" *ngIf="hasErrorAccountTypeRepeatRequired">Confirm Account Type is required.</span>
                     <span class="text-error code" *ngIf="hasErrorAccountTypeNotSame">Enter the same account type from the upper field.</span>
                 </div>
                 <div class="form-group">
-                    <input #passwordInput type="password" class="form-control code" aria-required="true" placeholder="Password" name="password" [(ngModel)]="user.password"
+                    <input #passwordInput type="password" class="form-control code" aria-required="true" placeholder="Password⃰" name="password" [(ngModel)]="user.password"
                         [class.input-error]="hasErrorPassword && submited"
                         [class.input-valid]="!hasErrorPassword && submited"/>
                     <span class="text-error code" *ngIf="hasErrorPasswordRequired">Password is required.</span>
@@ -59,14 +59,14 @@
                     <span class="text-error code" *ngIf="hasErrorPassword">Password must have digits.</span>
                 </div>
                 <div class="form-group">
-                    <input #confirmPasswordInput type="password" class="form-control code" aria-required="true" placeholder="Confirm Password" name="confirmPassword" [(ngModel)]="user.confirmPassword"
+                    <input #confirmPasswordInput type="password" class="form-control code" aria-required="true" placeholder="Confirm Password⃰" name="confirmPassword" [(ngModel)]="user.confirmPassword"
                         [class.input-error]="hasErrorConfirmPassword && submited"
                         [class.input-valid]="!hasErrorConfirmPassword && submited"/>
                     <span class="text-error code" *ngIf="hasErrorConfirmPasswordRequired">Confirm Password is required.</span>
                     <span class="text-error code" *ngIf="hasErrorConfirmPasswordNotSame">Enter the same password from the upper field.</span>
                 </div>
                 <div class="form-group">
-                    <button id="registerSubmit" class="font">Register</button>
+                    <button id="register-submit" class="font">Register</button>
                 </div>
             </form>
         </div>
