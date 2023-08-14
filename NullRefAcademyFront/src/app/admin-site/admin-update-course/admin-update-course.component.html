@@ -11,33 +11,41 @@
                 <div class="form-group">
                     <div class="box">
                         <label class="code">Title</label>
-                        <input type="text" value="{{takenCourse.title}}" name="title" [(ngModel)]="course.title"/>
-                        <span class="validation code">Title must be longer than 2 letters.</span>
+                        <input type="text" value="{{takenCourse.title}}" placeholder="Title" name="title" [(ngModel)]="course.title"
+                            [class.input-error]="hasErrorTitle && submited"
+                            [class.input-valid]="!hasErrorTitle && submited"/>
+                        <span class="text-error code" *ngIf="hasErrorTitleRequired">Title is required.</span>
+                        <span class="text-error code" *ngIf="hasErrorTitleLength">Title must be longer than 2 characters.</span>
                     </div>
                     <div class="box">
                         <label class="code">Description</label>
-                        <textarea type="text" rows="10" cols="55" value="{{takenCourse.description}}" name="description" [(ngModel)]="course.description"></textarea>
-                        <span class="validation code">Description must be longer than 2 letters.</span>
+                        <textarea type="text" rows="10" cols="55" value="{{takenCourse.description}}" placeholder="Description" name="description" [(ngModel)]="course.description"
+                            [class.input-error]="hasErrorDescription && submited"
+                            [class.input-valid]="!hasErrorDescription && submited"></textarea>
+                        <span class="text-error code" *ngIf="hasErrorDescriptionRequired">Description is required.</span>
+                        <span class="text-error code" *ngIf="hasErrorDescriptionLength">Description must be longer than 2 characters.</span>
                     </div>
                     <div class="box">
                         <label class="code">Points</label>
-                        <input type="text" value="{{takenCourse.points}}" name="points" [(ngModel)]="course.points" />
-                        <span asp-validation-for="Points"></span>
+                        <input type="text" value="{{takenCourse.points}}" placeholder="Points" name="points" [(ngModel)]="course.points" 
+                            [class.input-error]="hasErrorPoints && submited"
+                            [class.input-valid]="!hasErrorPoints && submited"/>
+                        <span class="text-error code" *ngIf="hasErrorPointsValue">Points must be bigger than > 0.</span>
                     </div>
                     <div class="box">
                         <label class="code">Rating</label>
-                        <input type="text" value="{{takenCourse.rating}}" name="rating" [(ngModel)]="course.rating" />
-                        <span asp-validation-for="Rating"></span>
+                        <input type="text" value="{{takenCourse.rating}}" placeholder="Rating" name="rating" [(ngModel)]="course.rating" disabled/>
                     </div>
                     <div class="box">
                         <label class="code">Rating Quantity</label>
-                        <input type="text" value="{{takenCourse.ratingQty}}" name="ratingQty" [(ngModel)]="course.ratingQty" />
-                        <span asp-validation-for="RatingQty"></span>
+                        <input type="text" value="{{takenCourse.ratingQty}}" placeholder="Rating Quantity" name="ratingQty" [(ngModel)]="course.ratingQty" disabled/>
                     </div>
                     <div class="box">
                         <label class="code">Video Url</label>
-                        <input type="text" value="{{takenCourse.videoUrl}}" name="videoUrl" [(ngModel)]="course.videoUrl" />
-                        <span class="validation code">Video Url must be valid.</span>
+                        <input type="text" value="{{takenCourse.videoUrl}}" placeholder="Video Url" name="videoUrl" [(ngModel)]="course.videoUrl" 
+                            [class.input-error]="hasErrorVidoeUrl && submited"
+                            [class.input-valid]="!hasErrorVidoeUrl && submited"/>
+                        <span class="text-error code" *ngIf="hasErrorVidoeUrlRegex">Video Url must be valid.</span>
                     </div>
                     <div class="box">
                         <label class="code">Created Date</label>
