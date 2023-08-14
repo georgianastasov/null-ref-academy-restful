@@ -53,6 +53,7 @@ export class AdminAddNewsComponent implements OnInit {
 
   onSubmit() {
     this.submited = true;
+    this.news.adminID = this.routeid;
     this.service.addNews(this.news)
     .subscribe(
       response => {

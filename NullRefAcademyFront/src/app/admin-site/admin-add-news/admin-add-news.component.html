@@ -26,7 +26,7 @@
                     </div>
                     <div class="box">
                         <label class="code">Text</label>
-                        <textarea type="text" aria-required="true" placeholder="Text" name="text" [(ngModel)]="news.text" 
+                        <textarea type="text" rows="15" cols="85" aria-required="true" placeholder="Text" name="text" [(ngModel)]="news.text" 
                             [class.input-error]="hasErrorText && submited"
                             [class.input-valid]="!hasErrorText && submited"></textarea>
                         <span class="text-error code" *ngIf="hasErrorTextRequired">Text is required.</span>

@@ -54,6 +54,7 @@ export class AdminAddArticleComponent implements OnInit {
 
   onSubmit() {
     this.submited = true;
+    this.article.adminID = this.routeid;
     this.service.addArticle(this.article)
     .subscribe(
       response => {
