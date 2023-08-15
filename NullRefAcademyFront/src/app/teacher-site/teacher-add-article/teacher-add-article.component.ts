@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { error } from 'console';
 import { Subscription } from 'rxjs';
 import { Article } from 'src/app/models/article.model';
 import { Category } from 'src/app/models/category.model';
@@ -14,10 +15,24 @@ import { TeacherApiService } from 'src/app/services/teacher-api.service';
   styleUrls: ['./teacher-add-article.component.css']
 })
 export class TeacherAddArticleComponent implements OnInit {
+  public routeSub!: Subscription;
+  public routeid!: number;
+  public nullfield!: number;
 
-  routeSub!: Subscription;
-  routeid!: number;
-  nullfield!: number;
+  public hasErrorTitle = false;
+  public hasErrorTitleRequired: boolean = false;
+  public hasErrorTitleLength: boolean = false;
+
+  public hasErrorDescription = false;
+  public hasErrorDescriptionRequired: boolean = false;
+  public hasErrorDescriptionLength: boolean = false;
+
+  public hasErrorText = false;
+  public hasErrorTextRequired: boolean = false;
+  public hasErrorTextLength: boolean = false;
+
+  public submited = false;
+
   constructor(private service: TeacherApiService, private router: Router, private route: ActivatedRoute) { }
 
   teacher: Teacher = {
@@ -66,12 +81,71 @@ export class TeacherAddArticleComponent implements OnInit {
   }
 
   onSubmit() {
+    this.submited = true;
     this.article.teacherID = this.routeid;
     this.service.createArticle(this.article)
     .subscribe(
       response => {
-        console.log(response);
         this.router.navigate(['/Teacher/' + this.routeid + '/Dashboard']);
+      }, 
+      error => {
+        let theError = error.error.errors;
+        if (theError != null) {
+          //title
+          if (theError.Title != null) {
+            this.hasErrorTitle = true;
+            if(theError.Title[0]){
+              this.hasErrorTitleRequired = true;
+            } else {
+              this.hasErrorTitleLength = false;
+            }
+            if(theError.Title[1]){
+              this.hasErrorTitleLength = true;
+            } else {
+              this.hasErrorTitleRequired = false;
+            }
+          } else {
+            this.hasErrorTitle = false;
+            this.hasErrorTitleRequired = false;
+            this.hasErrorTitleLength = false;
+          }
+          //descriotion
+          if (theError.Description != null) {
+            this.hasErrorDescription = true;
+            if(theError.Description[0]){
+              this.hasErrorDescriptionRequired = true;
+            } else {
+              this.hasErrorDescriptionLength = false;
+            }
+            if(theError.Description[1]){
+              this.hasErrorDescriptionLength = true;
+            } else {
+              this.hasErrorDescriptionRequired = false;
+            }
+          } else {
+            this.hasErrorDescription = false;
+            this.hasErrorDescriptionRequired = false;
+            this.hasErrorDescriptionLength = false;
+          }
+          //text
+          if (theError.Text != null) {
+            this.hasErrorText = true;
+            if(theError.Text[0]){
+              this.hasErrorTextRequired = true;
+            } else {
+              this.hasErrorTextLength = false;
+            }
+            if(theError.Text[1]){
+              this.hasErrorTextLength = true;
+            } else {
+              this.hasErrorTextRequired = false;
+            }
+          } else {
+            this.hasErrorText = false;
+            this.hasErrorTextRequired = false;
+            this.hasErrorTextLength = false;
+          }
+        }
       }
     )
   }
