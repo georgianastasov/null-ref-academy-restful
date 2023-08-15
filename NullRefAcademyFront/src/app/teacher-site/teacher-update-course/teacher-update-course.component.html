@@ -8,9 +8,9 @@
             </div>
         </div>
         <div class="right">
-            <p class="score">Categories: {{countCategories}}</p>
-            <p class="score">Courses: {{countCourses}}</p>
-            <p class="score">Sections: {{countSections}}</p>
+            <p class="score code">Categories: {{countCategories}}</p>
+            <p class="score code">Courses: {{countCourses}}</p>
+            <p class="score code">Sections: {{countSections}}</p>
             <p class="score code">Articles: {{countArticles}}</p>
         </div>
     </div>
@@ -19,62 +19,72 @@
     <div class="wrapper">
         <form #form="ngForm" (ngSubmit)="onSubmit()">
             <div class="site-top">
-                <p class="caption">Update Category</p>
+                <p class="caption digital">Update Category</p>
             </div>
             <div class="box-form">
                 <div asp-validation-summary="ModelOnly"></div>
                 <div class="form-group">
                     <div class="box">
-                        <label>Title</label>
-                        <input type="text" value="{{takenCourse.title}}" name="title" [(ngModel)]="course.title"/>
-                        <span class="validation">Title must be longer than 2 letters.</span>
+                        <label class="code">Title</label>
+                        <input type="text" value="{{takenCourse.title}}" placeholder="Title" name="title" [(ngModel)]="course.title"
+                            [class.input-error]="hasErrorTitle && submited"
+                            [class.input-valid]="!hasErrorTitle && submited"/>
+                        <span class="text-error code" *ngIf="hasErrorTitleRequired">Title is required.</span>
+                        <span class="text-error code" *ngIf="hasErrorTitleLength">Title must be longer than 2 characters.</span>
                     </div>
                     <div class="box">
-                        <label>Description</label>
-                        <textarea type="text" rows="10" cols="55" value="{{takenCourse.description}}" name="description" [(ngModel)]="course.description"></textarea>
-                        <span class="validation">Description must be longer than 2 letters.</span>
+                        <label class="code">Description</label>
+                        <textarea type="text" rows="10" cols="55" value="{{takenCourse.description}}" placeholder="Description" name="description" [(ngModel)]="course.description"
+                            [class.input-error]="hasErrorDescription && submited"
+                            [class.input-valid]="!hasErrorDescription && submited"></textarea>
+                        <span class="text-error code" *ngIf="hasErrorDescriptionRequired">Description is required.</span>
+                        <span class="text-error code" *ngIf="hasErrorDescriptionLength">Description must be longer than 2 characters.</span>
                     </div>
                     <div class="box">
-                        <label>Points</label>
-                        <input type="text" value="{{takenCourse.points}}" name="points" [(ngModel)]="course.points" />
-                        <span asp-validation-for="Points"></span>
+                        <label class="code">Points</label>
+                        <input type="text" value="{{takenCourse.points}}" placeholder="Points" name="points" [(ngModel)]="course.points" 
+                            [class.input-error]="hasErrorPoints && submited"
+                            [class.input-valid]="!hasErrorPoints && submited"/>
+                        <span class="text-error code" *ngIf="hasErrorPointsValue">Points must be bigger than > 0.</span>
                     </div>
                     <div class="box">
-                        <label>Video Url</label>
-                        <input type="text" value="{{takenCourse.videoUrl}}" name="videoUrl" [(ngModel)]="course.videoUrl"/>
-                        <span class="validation">Video Url must be valid.</span>
+                        <label class="code">Video Url</label>
+                        <input type="text" value="{{takenCourse.videoUrl}}" placeholder="Video Url" name="videoUrl" [(ngModel)]="course.videoUrl"
+                            [class.input-error]="hasErrorVidoeUrl && submited"
+                            [class.input-valid]="!hasErrorVidoeUrl && submited"/>
+                        <span class="text-error code" *ngIf="hasErrorVidoeUrlRegex">Video Url must be valid.</span>
                     </div>
                     <div class="box">
-                        <label>Created Date</label>
+                        <label class="code">Created Date</label>
                         <input type="text" value="{{takenCourse.createdDate}}" disabled />
                     </div>
                     <div class="box">
-                        <label>Category</label>
+                        <label class="code">Category</label>
                         <textarea rows="2" cols="45" disabled>{{categoryText}}</textarea>
                     </div>
                     <div class="box">
-                        <label>Sections</label>
+                        <label class="code">Sections</label>
                         <textarea rows="10" cols="45" disabled>{{sectionsText}}</textarea>
                     </div>
                     <div class="box">
-                        <label>Students</label>
+                        <label class="code">Students</label>
                         <textarea rows="10" cols="45" disabled>{{studentsText}}</textarea>
                     </div>
                     <div class="box" *ngIf="hasAdmin">
-                        <label>Admin</label>
+                        <label class="code">Admin</label>
                         <textarea rows="2" cols="45" disabled>{{adminText}}</textarea>
                     </div>
                     <div class="box" *ngIf="hasTeacher">
-                        <label>Teacher</label>
+                        <label class="code">Teacher</label>
                         <textarea rows="2" cols="45" disabled>{{teacherText}}</textarea>
                     </div>
                     <div class="box" *ngIf="!hasAdmin && !hasTeacher">
-                        <label>Created by</label>
+                        <label class="code">Created by</label>
                         <textarea rows="2" cols="45" disabled>The creator was deactivated or no information.</textarea>
                     </div>
                     <div class="box-buttons">
-                        <button class="update">Update</button>
-                        <a class="" routerLink="/Teacher/{{routeid}}/Dashboard">Back</a>
+                        <button class="update font">Update</button>
+                        <a class="font" routerLink="/Teacher/{{routeid}}/Dashboard">Back</a>
                     </div>
                 </div>
             </div>
