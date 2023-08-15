@@ -56,10 +56,10 @@
             <div class="left-links">
                 <p class="digital">Wellcome, <a class="username" href="/Student/{{routeid}}/Dashboard">{{student.username}}</a></p>
                 <a class="bio">
-                    <ng-container *ngIf="student.bio == null || student.bio == ''">
+                    <ng-container *ngIf="student.bio == null || student.bio == 'initial'">
                         <a class="bio-o code" (click)="showBioo()">Add your bio here..</a>
                     </ng-container>
-                    <ng-container *ngIf="student.bio != null">
+                    <ng-container *ngIf="student.bio != null && student.bio != 'initial'">
                         <a class="bio-written code" (click)="showBioo()">{{student.bio}}</a>
                     </ng-container>
                 </a>
