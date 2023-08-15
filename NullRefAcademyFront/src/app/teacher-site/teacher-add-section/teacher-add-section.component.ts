@@ -14,10 +14,32 @@ import { TeacherApiService } from 'src/app/services/teacher-api.service';
   styleUrls: ['./teacher-add-section.component.css']
 })
 export class TeacherAddSectionComponent implements OnInit {
+  public routeSub!: Subscription;
+  public routeid!: number;
+  public nullfield!: number;
 
-  routeSub!: Subscription;
-  routeid!: number;
-  nullfield!: number;
+  public hasErrorTitle = false;
+  public hasErrorTitleRequired: boolean = false;
+  public hasErrorTitleLength: boolean = false;
+
+  public hasErrorDescription = false;
+  public hasErrorDescriptionRequired: boolean = false;
+  public hasErrorDescriptionLength: boolean = false;
+
+  public hasErrorText = false;
+  public hasErrorTextRequired: boolean = false;
+  public hasErrorTextLength: boolean = false;
+
+  public hasErrorVidoeUrl = false;
+  public hasErrorVidoeUrlRegex = false;
+
+  public hasErrorCourse = false;
+  public hasErrorCourseRequired: boolean = false;
+
+  public submited = false;
+
+  private regExpVideo = new RegExp('(https:\/\/www\.|http:\/\/www\.|https:\/\/|http:\/\/)?[a-zA-Z0-9]{2,}(\.[a-zA-Z0-9]{2,})(\.[a-zA-Z0-9]{2,})?', 'g');
+
   constructor(private service: TeacherApiService, private router: Router, private route: ActivatedRoute) { }
 
   teacher: Teacher = {
@@ -67,11 +89,93 @@ export class TeacherAddSectionComponent implements OnInit {
   }
 
   onSubmit() {
+    this.submited = true;
+    //vidoeurl
+    if(this.section.videoUrl != ''){
+      let matchVideo = this.regExpVideo.test(this.section.videoUrl);
+      if(!matchVideo){
+        this.hasErrorVidoeUrl = true;
+        this.hasErrorVidoeUrlRegex = true;
+      } else {
+        this.hasErrorVidoeUrl = false;
+        this.hasErrorVidoeUrlRegex = false;
+      }
+    } else {
+      this.hasErrorVidoeUrl = false;
+      this.hasErrorVidoeUrlRegex = false;
+    }
+    //course
+    if(this.section.courseID === this.nullfield){
+      this.hasErrorCourse = true;
+      this.hasErrorCourseRequired = true;
+    } else {
+      this.hasErrorCourse = false;
+      this.hasErrorCourseRequired = false;
+    }
     this.section.teacherID = this.routeid;
     this.service.createSection(this.section)
     .subscribe(
       response => {
         this.router.navigate(['/Teacher/' + this.routeid + '/Dashboard']);
+      },
+      error => {
+        let theError = error.error.errors;
+        if (theError != null) {
+          //title
+          if (theError.Title != null) {
+            this.hasErrorTitle = true;
+            if(theError.Title[0]){
+              this.hasErrorTitleRequired = true;
+            } else {
+              this.hasErrorTitleLength = false;
+            }
+            if(theError.Title[1]){
+              this.hasErrorTitleLength = true;
+            } else {
+              this.hasErrorTitleRequired = false;
+            }
+          } else {
+            this.hasErrorTitle = false;
+            this.hasErrorTitleRequired = false;
+            this.hasErrorTitleLength = false;
+          }
+          //descriotion
+          if (theError.Description != null) {
+            this.hasErrorDescription = true;
+            if(theError.Description[0]){
+              this.hasErrorDescriptionRequired = true;
+            } else {
+              this.hasErrorDescriptionLength = false;
+            }
+            if(theError.Description[1]){
+              this.hasErrorDescriptionLength = true;
+            } else {
+              this.hasErrorDescriptionRequired = false;
+            }
+          } else {
+            this.hasErrorDescription = false;
+            this.hasErrorDescriptionRequired = false;
+            this.hasErrorDescriptionLength = false;
+          }
+          //text
+          if (theError.Text != null) {
+            this.hasErrorText = true;
+            if(theError.Text[0]){
+              this.hasErrorTextRequired = true;
+            } else {
+              this.hasErrorTextLength = false;
+            }
+            if(theError.Text[1]){
+              this.hasErrorTextLength = true;
+            } else {
+              this.hasErrorTextRequired = false;
+            }
+          } else {
+            this.hasErrorText = false;
+            this.hasErrorTextRequired = false;
+            this.hasErrorTextLength = false;
+          }
+        }
       }
     )
   }
