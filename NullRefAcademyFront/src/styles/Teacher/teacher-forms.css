@@ -33,6 +33,26 @@
     width: 400px;
 }
 
+.site-form .box-form .box .input-error{
+    border: 1px solid red;
+    outline: 1px solid red;
+    border-radius: 0.2rem;
+}
+
+.site-form .box-form .box .input-valid{
+    border: 1px solid green;
+    outline: 1px solid green;
+    border-radius: 0.2rem;
+}
+
+.site-form .box-form .box .text-error{
+    color: red;
+}
+
+.site-form .box-form .box .text-valid{
+    color: green;
+}
+
 .teacher-form .box-form .box input:focus-visible{
     background-color: #FFE08C;
     border-color: #222534;
