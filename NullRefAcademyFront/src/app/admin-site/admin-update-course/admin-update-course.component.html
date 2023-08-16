@@ -10,7 +10,7 @@
                 <div asp-validation-summary="ModelOnly"></div>
                 <div class="form-group">
                     <div class="box">
-                        <label class="code">Title</label>
+                        <label class="code">Title<img src="https://cdn-icons-png.flaticon.com/128/8704/8704368.png" alt="required"></label>
                         <input type="text" value="{{takenCourse.title}}" placeholder="Title" name="title" [(ngModel)]="course.title"
                             [class.input-error]="hasErrorTitle && submited"
                             [class.input-valid]="!hasErrorTitle && submited"/>
@@ -18,7 +18,7 @@
                         <span class="text-error code" *ngIf="hasErrorTitleLength">Title must be longer than 2 characters.</span>
                     </div>
                     <div class="box">
-                        <label class="code">Description</label>
+                        <label class="code">Description<img src="https://cdn-icons-png.flaticon.com/128/8704/8704368.png" alt="required"></label>
                         <textarea type="text" rows="10" cols="55" value="{{takenCourse.description}}" placeholder="Description" name="description" [(ngModel)]="course.description"
                             [class.input-error]="hasErrorDescription && submited"
                             [class.input-valid]="!hasErrorDescription && submited"></textarea>
@@ -26,7 +26,7 @@
                         <span class="text-error code" *ngIf="hasErrorDescriptionLength">Description must be longer than 2 characters.</span>
                     </div>
                     <div class="box">
-                        <label class="code">Points</label>
+                        <label class="code">Points<img src="https://cdn-icons-png.flaticon.com/128/8704/8704368.png" alt="required"></label>
                         <input type="text" value="{{takenCourse.points}}" placeholder="Points" name="points" [(ngModel)]="course.points" 
                             [class.input-error]="hasErrorPoints && submited"
                             [class.input-valid]="!hasErrorPoints && submited"/>
@@ -52,7 +52,7 @@
                         <input type="text" value="{{takenCourse.createdDate}}" disabled />
                     </div>
                     <div class="box">
-                        <label class="code">Category</label>
+                        <label class="code">Category<img src="https://cdn-icons-png.flaticon.com/128/8704/8704368.png" alt="required"></label>
                         <textarea rows="2" cols="45" disabled>{{categoryText}}</textarea>
                     </div>
                     <div class="box">

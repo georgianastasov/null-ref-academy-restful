@@ -10,7 +10,7 @@
                 <div asp-validation-summary="ModelOnly"></div>
                 <div class="form-group">
                     <div class="box">
-                        <label class="code">Title</label>
+                        <label class="code">Title<img src="https://cdn-icons-png.flaticon.com/128/8704/8704368.png" alt="required"></label>
                         <input type="text" value="{{takenSection.title}}" placeholder="Title" name="title" [(ngModel)]="section.title"
                             [class.input-error]="hasErrorTitle && submited"
                             [class.input-valid]="!hasErrorTitle && submited"/>
@@ -18,7 +18,7 @@
                         <span class="text-error code" *ngIf="hasErrorTitleLength">Title must be longer than 2 characters.</span>
                     </div>
                     <div class="box">
-                        <label class="code">Description</label>
+                        <label class="code">Description<img src="https://cdn-icons-png.flaticon.com/128/8704/8704368.png" alt="required"></label>
                         <textarea type="text" rows="10" cols="55" value="{{takenSection.description}}" placeholder="Description" name="description" [(ngModel)]="section.description"
                             [class.input-error]="hasErrorDescription && submited"
                             [class.input-valid]="!hasErrorDescription && submited"></textarea>
@@ -26,7 +26,7 @@
                         <span class="text-error code" *ngIf="hasErrorDescriptionLength">Description must be longer than 2 characters.</span>
                     </div>
                     <div class="box">
-                        <label class="code">Text</label>
+                        <label class="code">Text<img src="https://cdn-icons-png.flaticon.com/128/8704/8704368.png" alt="required"></label>
                         <textarea type="text" rows="15" cols="85" value="{{takenSection.text}}" placeholder="Text" name="text" [(ngModel)]="section.text"
                             [class.input-error]="hasErrorText && submited"
                             [class.input-valid]="!hasErrorText && submited"></textarea>
@@ -41,7 +41,7 @@
                         <span class="text-error code" *ngIf="hasErrorVidoeUrlRegex">Video Url must be valid.</span>
                     </div>
                     <div class="box">
-                        <label class="code">Course</label>
+                        <label class="code">Course<img src="https://cdn-icons-png.flaticon.com/128/8704/8704368.png" alt="required"></label>
                         <textarea rows="2" cols="25" disabled>{{ courseText }}</textarea>
                     </div>
                     <div class="box" *ngIf="hasAdmin">
