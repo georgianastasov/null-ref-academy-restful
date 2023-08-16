@@ -9,7 +9,7 @@
                 <div asp-validation-summary="ModelOnly"></div>
                 <div class="form-group">
                     <div class="box">
-                        <label class="code">Title</label>
+                        <label class="code">Title<img src="https://cdn-icons-png.flaticon.com/128/8704/8704368.png" alt="required"></label>
                         <input type="text" aria-required="true" placeholder="Title" name="title" [(ngModel)]="course.title"
                             [class.input-error]="hasErrorTitle && submited"
                             [class.input-valid]="!hasErrorTitle && submited"/>
@@ -17,7 +17,7 @@
                         <span class="text-error code" *ngIf="hasErrorTitleLength">Title must be longer than 2 characters.</span>
                     </div>
                     <div class="box">
-                        <label class="code">Description</label>
+                        <label class="code">Description<img src="https://cdn-icons-png.flaticon.com/128/8704/8704368.png" alt="required"></label>
                         <textarea type="text" rows="10" cols="55" placeholder="Description" aria-required="true" name="description" [(ngModel)]="course.description"
                             [class.input-error]="hasErrorDescription && submited"
                             [class.input-valid]="!hasErrorDescription && submited"></textarea>
@@ -25,7 +25,7 @@
                         <span class="text-error code" *ngIf="hasErrorDescriptionLength">Description must be longer than 2 characters.</span>
                     </div>
                     <div class="box">
-                        <label class="code">Points</label>
+                        <label class="code">Points<img src="https://cdn-icons-png.flaticon.com/128/8704/8704368.png" alt="required"></label>
                         <input type="text" aria-required="true" placeholder="Points" name="points" [(ngModel)]="course.points"
                             [class.input-error]="hasErrorPoints && submited"
                             [class.input-valid]="!hasErrorPoints && submited"/>
@@ -39,7 +39,7 @@
                         <span class="text-error code" *ngIf="hasErrorVidoeUrlRegex">Video Url must be valid.</span>
                     </div>
                     <div class="box">
-                        <label class="code">Category</label>
+                        <label class="code">Category<img src="https://cdn-icons-png.flaticon.com/128/8704/8704368.png" alt="required"></label>
                         <select #selectCategory class="form-control" aria-required="true" name="categoryId" [(ngModel)]="course.categoryID"
                             [class.input-error]="hasErrorCategory && submited"
                             [class.input-valid]="!hasErrorCategory && submited">

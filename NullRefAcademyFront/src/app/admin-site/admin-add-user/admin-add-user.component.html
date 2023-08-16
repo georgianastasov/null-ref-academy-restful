@@ -10,7 +10,7 @@
                     <div asp-validation-summary="ModelOnly"></div>
                     <div class="form-group">
                         <div class="box">
-                            <label class="code">First Name</label>
+                            <label class="code">First Name<img src="https://cdn-icons-png.flaticon.com/128/8704/8704368.png" alt="required"></label>
                             <input type="text" aria-required="true" placeholder="First Name" name="firstName" [(ngModel)]="user.firstName" 
                                 [class.input-error]="hasErrorFirstName && submited"
                                 [class.input-valid]="!hasErrorFirstName && submited"/>
@@ -18,7 +18,7 @@
                             <span class="text-error code" *ngIf="hasErrorFirstNameLength">First Name must be longer than 2 characters.</span>
                         </div>
                         <div class="box">
-                            <label class="code">Last Name</label>
+                            <label class="code">Last Name<img src="https://cdn-icons-png.flaticon.com/128/8704/8704368.png" alt="required"></label>
                             <input type="text" aria-required="true" placeholder="Last Name" name="lastName" [(ngModel)]="user.lastName" 
                                 [class.input-error]="hasErrorLastName && submited"
                                 [class.input-valid]="!hasErrorLastName && submited"/>
@@ -26,7 +26,7 @@
                             <span class="text-error code" *ngIf="hasErrorLastNameLength">Last Name must be longer than 2 characters.</span>
                         </div>
                         <div class="box">
-                            <label class="code">Username</label>
+                            <label class="code">Username<img src="https://cdn-icons-png.flaticon.com/128/8704/8704368.png" alt="required"></label>
                             <input type="text" aria-required="true" placeholder="Username" name="username" [(ngModel)]="user.username" 
                                 [class.input-error]="hasErrorUsername && submited"
                                 [class.input-valid]="!hasErrorUsername && submited"/>
@@ -34,7 +34,7 @@
                             <span class="text-error code" *ngIf="hasErrorUsernameLength">Username must be longer than 5 characters.</span>
                         </div>
                         <div class="box">
-                            <label class="code">Email</label>
+                            <label class="code">Email<img src="https://cdn-icons-png.flaticon.com/128/8704/8704368.png" alt="required"></label>
                             <input type="text" aria-required="true" placeholder="Email" name="email" [(ngModel)]="user.email" 
                                 [class.input-error]="hasErrorEmail && submited"
                                 [class.input-valid]="!hasErrorEmail && submited"/>
@@ -42,7 +42,7 @@
                             <span class="text-error code" *ngIf="hasErrorEmailRegex">The email may be taken or not valid.</span>
                         </div>
                         <div class="box">
-                            <label class="code">Account Type</label>
+                            <label class="code">Account Type<img src="https://cdn-icons-png.flaticon.com/128/8704/8704368.png" alt="required"></label>
                             <select class="form-control" aria-required="true" placeholder="Select account type" name="accountType" [(ngModel)]="user.accountType"
                                 [class.input-error]="hasErrorAccountType && submited"
                                 [class.input-valid]="!hasErrorAccountType && submited">
@@ -54,7 +54,7 @@
                             </select>
                         </div>
                         <div class="box">
-                            <label class="code">Password</label>
+                            <label class="code">Password<img src="https://cdn-icons-png.flaticon.com/128/8704/8704368.png" alt="required"></label>
                             <input #passwordInput type="text" aria-required="true" placeholder="Password" name="password" [(ngModel)]="user.password" 
                                 [class.input-error]="hasErrorPassword && submited"
                                 [class.input-valid]="!hasErrorPassword && submited"/>
@@ -62,7 +62,7 @@
                             <span class="text-error code" *ngIf="hasErrorPassword">Password must have digits.</span>
                         </div>
                         <div class="box">
-                            <label class="code">Confirm Password</label>
+                            <label class="code">Confirm Password<img src="https://cdn-icons-png.flaticon.com/128/8704/8704368.png" alt="required"></label>
                             <input #confirmPasswordInput type="text" aria-required="true" placeholder="Confirm Password" name="confirmPassword" [(ngModel)]="user.confirmPassword" 
                                 [class.input-error]="hasErrorConfirmPassword && submited"
                                 [class.input-valid]="!hasErrorConfirmPassword && submited"/>
