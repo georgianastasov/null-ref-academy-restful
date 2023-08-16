@@ -27,10 +27,23 @@
     font-size: 1rem;
 }
 
+.teacher-form .box-form .box label img{
+    width: 13px;
+    position: relative;
+    top: -0.2rem;
+    margin-left: 0.1rem;
+}
+
 .teacher-form .box-form .box input{
     padding: 0.3rem;
     font-size: 0.8rem;
     width: 400px;
+}
+
+.teacher-form .box-form .box input:disabled{
+    border-color: #222534;
+    outline-color: #222534;
+    background-color: #FFE08C;
 }
 
 .site-form .box-form .box .input-error{
@@ -66,6 +79,12 @@
 .teacher-form .box-form .box textarea:focus-visible{
     background-color: #FFE08C;
     border-color: #222534;
+}
+
+.teacher-form .box-form .box textarea:disabled{
+    border-color: #222534;
+    outline-color: #222534;
+    background-color: #FFE08C;
 }
 
 .teacher-form .box-form .box select {
