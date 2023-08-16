@@ -8,9 +8,9 @@
             </div>
         </div>
         <div class="right">
-            <p class="score">Categories: {{countCategories}}</p>
-            <p class="score">Courses: {{countCourses}}</p>
-            <p class="score">Sections: {{countSections}}</p>
+            <p class="score code">Categories: {{countCategories}}</p>
+            <p class="score code">Courses: {{countCourses}}</p>
+            <p class="score code">Sections: {{countSections}}</p>
             <p class="score code">Articles: {{countArticles}}</p>
         </div>
     </div>
@@ -20,38 +20,38 @@
         <form #form="ngForm" (ngSubmit)="onSubmit()">
             <input asp-for="Id" hidden />
             <div class="site-top">
-                <p class="caption">Delete Category</p>
+                <p class="caption digital">Delete Category</p>
             </div>
             <div class="box-form">
                 <div asp-validation-summary="ModelOnly"></div>
                 <div class="form-group">
                     <div class="box">
-                        <label>Title</label>
+                        <label class="code">Title<img src="https://cdn-icons-png.flaticon.com/128/8704/8704368.png" alt="required"></label>
                         <input type="text" value="{{category.title}}" disabled />
                     </div>
                     <div class="box">
-                        <label>Description</label>
+                        <label class="code">Description<img src="https://cdn-icons-png.flaticon.com/128/8704/8704368.png" alt="required"></label>
                         <textarea rows="12" cols="55" value="{{category.description}}" disabled></textarea>
                     </div>
                     <div class="box">
-                        <label>Courses</label>
+                        <label class="code">Courses</label>
                         <textarea rows="10" cols="40" disabled>{{ coursesText }}</textarea>
                     </div>
                     <div class="box" *ngIf="hasAdmin">
-                        <label>Admin</label>
+                        <label class="code">Admin</label>
                         <textarea rows="2" cols="45" disabled>{{ adminText }}</textarea>
                     </div>
                     <div class="box" *ngIf="hasTeacher">
-                        <label>Teacher</label>
+                        <label class="code">Teacher</label>
                         <textarea rows="2" cols="45" disabled>{{ teacherText }}</textarea>
                     </div>
                     <div class="box" *ngIf="!hasAdmin && !hasTeacher">
-                        <label>Created by</label>
+                        <label class="code">Created by</label>
                         <textarea rows="2" cols="45" disabled>The creator was deactivated or no information.</textarea>
                     </div>
                     <div class="box-buttons">
-                        <button class="delete">Delete</button>
-                        <a class="" routerLink="/Teacher/{{routeid}}/Dashboard">Back</a>
+                        <button class="delete font">Delete</button>
+                        <a class="font" routerLink="/Teacher/{{routeid}}/Dashboard">Back</a>
                     </div>
                 </div>
             </div>
