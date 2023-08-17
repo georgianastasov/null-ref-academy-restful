@@ -12,19 +12,40 @@
                     <ng-container *ngFor="let category of categories">
                         <ng-container *ngIf="category.id == course.categoryID">
                             <ng-container *ngIf="category.title == 'Math'">
-                                <a routerLink="/Teacher/{{routeid}}/Course/{{course.id}}"><img src="../../../assets/images/mathicon.jpg"></a>
+                                <a routerLink="/Teacher/{{routeid}}/Course/{{course.id}}"><img src="https://cdn-icons-png.flaticon.com/128/3771/3771278.png" alt="math"></a>
                             </ng-container>
                             <ng-container *ngIf="category.title == 'Science'">
-                                <a routerLink="/Teacher/{{routeid}}/Course/{{course.id}}"><img src="../../../assets/images/scienceicon.jpg"></a>
-                            </ng-container>
-                            <ng-container *ngIf="category.title == 'Art'">
-                                <a routerLink="/Teacher/{{routeid}}/Course/{{course.id}}"><img src="../../../assets/images/articon.jpg"></a>
+                                <a routerLink="/Teacher/{{routeid}}/Course/{{course.id}}"><img src="https://cdn-icons-png.flaticon.com/128/3655/3655580.png" alt="science"></a>
                             </ng-container>
                             <ng-container *ngIf="category.title == 'Informatics'">
-                                <a routerLink="/Teacher/{{routeid}}/Course/{{course.id}}"><img src="../../../assets/images/informaticsicon.png"></a>
+                                <a routerLink="/Teacher/{{routeid}}/Course/{{course.id}}"><img src="https://cdn-icons-png.flaticon.com/128/6062/6062646.png" alt="informatics"></a>
+                            </ng-container>
+                            <ng-container *ngIf="category.title == 'Software Development'">
+                                <a routerLink="/Teacher/{{routeid}}/Course/{{course.id}}"><img src="https://cdn-icons-png.flaticon.com/128/1316/1316740.png" alt="software development"></a>
+                            </ng-container>
+                            <ng-container *ngIf="category.title == 'Software Technologies'">
+                                <a routerLink="/Teacher/{{routeid}}/Course/{{course.id}}"><img src="https://cdn-icons-png.flaticon.com/128/644/644667.png" alt="software technologies"></a>
+                            </ng-container>
+                            <ng-container *ngIf="category.title == 'Web Applications'">
+                                <a routerLink="/Teacher/{{routeid}}/Course/{{course.id}}"><img src="https://cdn-icons-png.flaticon.com/128/5044/5044729.png" alt="web applications"></a>
+                            </ng-container>
+                            <ng-container *ngIf="category.title == 'Mobile Development'">
+                                <a routerLink="/Teacher/{{routeid}}/Course/{{course.id}}"><img src="https://cdn-icons-png.flaticon.com/128/2586/2586488.png" alt="mobile development"></a>
                             </ng-container>
                             <ng-container *ngIf="category.title == 'Physics'">
-                                <a routerLink="/Teacher/{{routeid}}/Course/{{course.id}}"><img src="../../../assets/images/physicsicon.jpg"></a>
+                                <a routerLink="/Teacher/{{routeid}}/Course/{{course.id}}"><img src="https://cdn-icons-png.flaticon.com/128/6813/6813708.png" alt="physics"></a>
+                            </ng-container>
+                            <ng-container *ngIf="category.title == 'Creativity'">
+                                <a routerLink="/Teacher/{{routeid}}/Course/{{course.id}}"><img src="https://cdn-icons-png.flaticon.com/128/3749/3749896.png" alt="creativity"></a>
+                            </ng-container>
+                            <ng-container *ngIf="category.title == 'Art'">
+                                <a routerLink="/Teacher/{{routeid}}/Course/{{course.id}}"><img src="https://cdn-icons-png.flaticon.com/128/2400/2400603.png" alt="art"></a>
+                            </ng-container>
+                            <ng-container *ngIf="category.title == 'Marketing'">
+                                <a routerLink="/Teacher/{{routeid}}/Course/{{course.id}}"><img src="https://cdn-icons-png.flaticon.com/128/1998/1998087.png" alt="marketing"></a>
+                            </ng-container>
+                            <ng-container *ngIf="category.title == 'Self Development'">
+                                <a routerLink="/Teacher/{{routeid}}/Course/{{course.id}}"><img src="https://cdn-icons-png.flaticon.com/128/10068/10068898.png" alt="self development"></a>
                             </ng-container>
                         </ng-container>
                     </ng-container>
