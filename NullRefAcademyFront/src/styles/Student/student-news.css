@@ -36,6 +36,8 @@
     display: block;
     margin-bottom: 3rem;
     text-align: center;
+    background-color: #222534;
+    border: 2px solid #FFE08C;
 }
 
 .info-newss .box:last-child {
@@ -50,12 +52,13 @@
 
 .info-newss .box .left a{
     text-decoration: none;
-    color: #0A2A66;
 }
 
 .info-newss .box .left a img {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
+    position: relative;
+    top: 0.3rem;
 }
 
 .info-newss .box .left a:hover img {
@@ -64,6 +67,7 @@
 
 .info-newss .box .right {
     flex-basis: 85%;
+    margin-left: 0.5rem;
 }
 
 .info-newss .box .right .up{
@@ -73,23 +77,18 @@
 }
 
 .info-newss .box .right .caption {
-    color: gray;
-    font-size: 0.9rem;
+    color: #FFE08C;
+    font-size: 0.7rem;
     text-transform: uppercase;
 }
 
 .info-newss .box .title{
-    font-size: 1.3rem;
-    font-weight: bold;
+    font-size: 1.5rem;
 }
 
 .info-newss .box .title a{
     text-decoration: none;
-    color: black;
-}
-
-.info-newss .box .title a:hover{
-    color: #1B83AB;
+    color: #FFE08C;
 }
 
 .info-newss .box .points{
@@ -106,7 +105,7 @@
 
 .info-newss .box .description{
     font-size: 0.9rem;
-    color: gray;
+    color: #FFE08C;
 }
 
 .info-newss .no{

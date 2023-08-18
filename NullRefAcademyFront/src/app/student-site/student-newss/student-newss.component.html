@@ -9,11 +9,12 @@
         <ng-container *ngFor="let news of newss">
             <div class="box">
                 <div class="left">
-                    <a routerLink="/Student/{{routeid}}/Article/{{news.id}}"><img src="https://cdn-icons-png.flaticon.com/128/2965/2965879.png" alt="math"></a>
+                    <a routerLink="/Student/{{routeid}}/Article/{{news.id}}"><img src="https://cdn-icons-png.flaticon.com/128/2965/2965879.png" alt="news"></a>
                 </div>
                 <div class="right">
-                    <p class="title"><a routerLink="/Student/{{routeid}}/News/{{news.id}}">{{news.title}}</a></p>
-                    <p class="description">{{news.description}}</p>
+                    <p class="caption code">Date: <strong>{{news.createdDate}}</strong></p>
+                    <p class="title digital"><a routerLink="/Student/{{routeid}}/News/{{news.id}}">Title: <strong>{{news.title}}</strong></a></p>
+                    <p class="description code">Description: <strong>{{news.description}}</strong></p>
                 </div>
             </div>
         </ng-container>
