@@ -24,6 +24,8 @@
     display: block;
     margin-bottom: 3rem;
     text-align: center;
+    background-color: #222534;
+    border: 2px solid #FFE08C;
 }
 
 .info-categories .box:last-child {
@@ -38,6 +40,7 @@
 
 .info-categories .box .right{
     flex-basis: 85%;
+    margin-left: 0.5rem;
 }
 
 .info-categories .box .left a{
@@ -46,8 +49,10 @@
 }
 
 .info-categories .box .left a img{
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
+    position: relative;
+    top: 0.3rem;
 }
 
 .info-categories .box .left a:hover img{
@@ -55,23 +60,24 @@
 }
 
 .info-categories .box .title{
-    font-size: 1.3rem;
-    font-weight: bold;
-    margin-bottom: 0.3rem;
+    font-size: 1.5rem;
+    margin-bottom: 0.2rem;
 }
 
 .info-categories .box .title a{
     text-decoration: none;
-    color: black;
-}
-
-.info-categories .box .title a:hover{
-    color: #1B83AB;
+    color: #FFE08C;
 }
 
 .info-categories .box .description{
     font-size: 0.9rem;
-    color: gray;
+    color: #FFE08C;
+    margin-bottom: 0.4rem;
+}
+
+.info-categories .box .info{
+    font-size: 0.7rem;
+    color: #FFE08C;
 }
 
 .info-categories .no {

@@ -47,8 +47,9 @@
                     </ng-container>
                 </div>
                 <div class="right">
-                    <p class="title"><a routerLink="/Student/{{routeid}}/Category/{{category.id}}">{{category.title}}</a></p>
-                    <p class="description">{{category.description}}</p>
+                    <p class="title digital"><a routerLink="/Student/{{routeid}}/Category/{{category.id}}">Title: <strong>{{category.title}}</strong></a></p>
+                    <p class="description code">Description: <strong>{{category.description}}</strong></p>
+                    <p class="info code">Courses: <strong>{{countCourses(category.id)}}</strong></p>
                 </div>
             </div>
         </ng-container>
