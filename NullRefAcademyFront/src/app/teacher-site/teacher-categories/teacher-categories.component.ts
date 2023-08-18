@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Category } from 'src/app/models/category.model';
+import { Course } from 'src/app/models/course.model';
 import { StudentApiService } from 'src/app/services/student-api.service';
 
 @Component({
@@ -16,6 +17,7 @@ export class TeacherCategoriesComponent implements OnInit {
   constructor(private service: StudentApiService, private router: Router, private route: ActivatedRoute) { }
 
   categories: Category[] = [];
+  courses: Course[] = [];
   
   ngOnInit(): void {
     this.routeSub = this.route.params.subscribe(params => {
@@ -23,6 +25,7 @@ export class TeacherCategoriesComponent implements OnInit {
     });
 
     this.getAllCategories();
+    this.getAllCourses();
   }
 
   ngOnDestroy() {
@@ -38,4 +41,22 @@ export class TeacherCategoriesComponent implements OnInit {
       );
   }
 
+  getAllCourses() {
+    this.service.getAllCourses()
+      .subscribe(
+        response => {
+          this.courses = response;
+        }
+      );
+  }
+
+  countCourses(categoryId : number){
+    let count = 0;
+    for (let i = 0; i < this.courses.length; i++) {
+      if(this.courses[i].categoryID === categoryId){
+        count++;
+      }
+    }
+    return count;
+  }
 }
