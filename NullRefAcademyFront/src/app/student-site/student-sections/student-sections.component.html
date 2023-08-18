@@ -59,17 +59,17 @@
                         <ng-container *ngFor="let course of courses">
                             <ng-container *ngIf="section.courseID == course.id">
                                 <ng-container *ngIf="category.id == course.categoryID">
-                                    <p class="caption">{{category.title}} > {{course.title}}</p>
+                                    <p class="caption code">Category: <strong>{{category.title}}</strong> > Course: <strong>{{course.title}}</strong></p>
                                 </ng-container>
                             </ng-container>
                         </ng-container>
                     </ng-container>
                     <ng-container *ngFor="let course of courses">
                         <ng-container *ngIf="section.courseID == course.id">
-                            <p class="title"><a routerLink="/Student/{{routeid}}/Course/{{course.id}}">{{section.title}}</a></p>
+                            <p class="title digital"><a routerLink="/Student/{{routeid}}/Course/{{course.id}}">Title: <strong>{{section.title}}</strong></a></p>
                         </ng-container>
                     </ng-container>
-                    <p class="description">{{section.description}}</p>
+                    <p class="description code">Description: <strong>{{section.description}}</strong></p>
                 </div>
             </div>
         </ng-container>
