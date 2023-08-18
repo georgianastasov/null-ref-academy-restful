@@ -36,6 +36,8 @@
     display: block;
     margin-bottom: 3rem;
     text-align: center;
+    background-color: #222534;
+    border: 2px solid #FFE08C;
 }
 
 .info-courses .box:last-child {
@@ -50,12 +52,14 @@
 
 .info-courses .box .left a{
     text-decoration: none;
-    color: #0A2A66;
+    color: black;
 }
 
 .info-courses .box .left a img {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
+    position: relative;
+    top: 0.3rem;
 }
 
 .info-courses .box .left a:hover img {
@@ -64,6 +68,20 @@
 
 .info-courses .box .right {
     flex-basis: 85%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.info-courses .box .right-left {
+    flex-basis: 80%;
+}
+
+.info-courses .box .right-right img {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    top: 0.1rem;
 }
 
 .info-courses .box .right .up{
@@ -73,23 +91,19 @@
 }
 
 .info-courses .box .right .caption {
-    color: gray;
-    font-size: 0.9rem;
+    color: #FFE08C;
+    font-size: 0.7rem;
     text-transform: uppercase;
 }
 
 .info-courses .box .title{
-    font-size: 1.3rem;
-    font-weight: bold;
+    font-size: 1.5rem;
+    margin-bottom: 0.2rem;
 }
 
 .info-courses .box .title a{
     text-decoration: none;
-    color: black;
-}
-
-.info-courses .box .title a:hover{
-    color: #1B83AB;
+    color: #FFE08C;
 }
 
 .info-courses .box .points{
@@ -106,7 +120,13 @@
 
 .info-courses .box .description{
     font-size: 0.9rem;
-    color: gray;
+    color: #FFE08C;
+    margin-bottom: 0.4rem;
+}
+
+.info-courses .box .info{
+    font-size: 0.7rem;
+    color: #FFE08C;
 }
 
 .info-courses .no{
