@@ -1,7 +1,7 @@
 <app-teacher-header></app-teacher-header>
 <div class="intro-courses">
     <div class="wrapper">
-        <p class="cap">Courses</p>
+        <p class="cap digital">Courses</p>
     </div>
 </div>
 <div class="info-courses">
@@ -51,13 +51,22 @@
                     </ng-container>
                 </div>
                 <div class="right">
-                    <ng-container *ngFor="let category of categories">
-                        <ng-container *ngIf="category.id == course.categoryID">
-                            <p class="caption">{{category.title}}</p>
+                    <div class="right-left">
+                        <ng-container *ngFor="let category of categories">
+                            <ng-container *ngIf="category.id == course.categoryID">
+                                <p class="caption code">Category: <strong>{{category.title}}</strong></p>
+                            </ng-container>
                         </ng-container>
-                    </ng-container>
-                    <p class="title"><a routerLink="/Teacher/{{routeid}}/Course/{{course.id}}">{{course.title}}</a></p>
-                    <p class="description">{{course.description}}</p>
+                        <p class="title digital"><a routerLink="/Teacher/{{routeid}}/Course/{{course.id}}">Title: <strong>{{course.title}}</strong></a></p>
+                        <p class="description code">Description: <strong>{{course.description}}</strong></p>
+                    </div>
+                    <div class="right-right">
+                        <p class="info code">Sections: <strong>{{countSections(course.id)}}</strong></p>
+                        <p class="info code">Enrolled Students: <strong>{{countStudents(course)}}</strong></p>
+                        <p class="info code">Points: <strong>{{course.points}}</strong></p>
+                        <p class="info code">Raiting: <strong>{{course.rating}} <img src="https://cdn-icons-png.flaticon.com/128/477/477406.png" alt="stars"></strong></p>
+                        <p class="info code">Users Rate: <strong>{{course.ratingQty}} <img src="https://cdn-icons-png.flaticon.com/128/9195/9195871.png" alt="users"></strong></p>
+                    </div>
                 </div>
             </div>
         </ng-container>
