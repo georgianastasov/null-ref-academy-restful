@@ -1,29 +1,27 @@
 ﻿.intro-course {
-    padding: 1.5rem;
-    background-color: #0A2A66;
-}
-
-.intro-course .upcap a{
-    text-decoration: none;
-    color: lightgray;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-}
-
-.intro-course .upcap a:hover{
-    color: white;
-    font-weight: bold;
+    padding: 3rem 2rem 2rem 2rem;
+    background-color: #FFE08C;
+    position: relative;
+    top: -1rem;
 }
 
 .intro-course .cap{
     font-size: 1.8rem;
-    font-weight: bold;
-    color: white;
+    color: #222534;
+}
+
+.intro-course .cap a{
+    font-size: 1.8rem;
+    color: #222534;
+    text-decoration: none;
+}
+
+.intro-course .cap:hover{
+    font-weight: bolder;
 }
 
 .info-course {
     padding: 3rem 0 4rem 0;
-    background-color: #F7F8FA;
 }
 
 .info-course .wrapper{
@@ -42,51 +40,83 @@
 }
 
 .info-course .left .up{
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
+    background-color: #222534;
+    color: #FFE08C;
+    padding: 1rem;
+    border-radius: 0.4rem;
 } 
 
 .info-course .left .up .count{
     font-size: 0.9rem;
-    color: gray;
+    color: #FFE08C;
 }
 
+.info-course .left .down {
+    margin-bottom: 1rem;
+    background-color: #222534;
+    color: #FFE08C;
+    padding: 1rem;
+    border-radius: 0.4rem;
+}
 
 .info-course .left .down .points {
-    padding: 0.1rem 0.8rem;
-    border-radius: 0.4rem;
-    font-size: 0.9rem;
-    background: linear-gradient(to right, #0A2A66, #25B6D2);
-    vertical-align: central;
-    font-weight: bold;
-    color: white;
-    margin-bottom: 2rem;
     text-decoration: none;
     display: inline-block;
 }
 
+.info-course .left .down .points img{
+    width: 25px;
+    height: 25px;
+    position: relative;
+    top: 0.15rem;
+    margin-left: 0.2rem;
+}
+
 .info-course .left .down-down{
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
+    background-color: #222534;
+    color: #FFE08C;
+    padding: 1rem;
+    border-radius: 0.4rem;
+}
+
+.info-course .left .down-under{
+    margin-bottom: 1rem;
+    background-color: #222534;
+    color: #FFE08C;
+    padding: 1rem;
+    border-radius: 0.4rem;
+}
+
+.info-course .left .down-under img{
+    width: 25px;
+    height: 25px;
+    position: relative;
+    top: 0.15rem;
+    margin-left: 0.2rem;
 }
 
 .info-course .left .down-down .description {
     font-size: 0.9rem;
-    color: gray;
+}
+
+.info-course .left .bottom{
+    background-color: #222534;
+    color: #FFE08C;
+    padding: 1rem;
+    border-radius: 0.4rem;
 }
 
 .info-course .left .bottom .creator{
     font-size: 0.9rem;
-    color: gray;
+    color: #FFE08C;
 }
 
 .info-course .left .bottom .creatort{
     text-decoration: none;
     font-size: 0.9rem;
-    color: gray;
-}
-
-.info-course .left .bottom .creatort:hover{
-    color: darkslategray;
-    text-decoration: underline;
+    color: #FFE08C;
 }
 
 .info-course .right{
@@ -94,28 +124,28 @@
 }
 
 .info-course .right .box{
+    width: 100%;
     padding: 1rem 0.5rem;
-    border-radius: 0.3rem;
+    border-radius: 0.4rem;
     box-shadow: 0px 0px 14px 3px rgba(0,0,0,0.3);
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     margin-bottom: 2rem;
-    border-top: 3px solid blue;
+    background-color: #FFE08C;
 }
 
 .info-course .right .box .up{
     display: flex;
     align-items: center;
     flex-basis: 100%;
-    border-bottom: 1px solid lightgray;
+    border-bottom: 1px solid #222534;
 }
 
 .info-course .right .box .up img{
     width: 40px;
     height: 40px;
-    border-radius: 50%;
-    margin-right: 0.3rem;
+    margin-right: 0.5rem;
 }
 
 .info-course .right .box .up a:hover img {
@@ -124,20 +154,21 @@
 
 .info-course .right .box .up .title{
     font-size: 1.3rem;
-    font-weight: bold;
+    color: #222534;
 }
 
 .info-course .right .box .up .title:hover{
-    color: #1B83AB;
+    cursor: pointer;
+    font-weight: bolder;
 }
 
 .info-course .right .box .down{
-    padding:0.8rem;
+    padding: 0.8rem;
 }
 
 .info-course .right .box .description {
     font-size: 0.9rem;
-    color: gray;
+    color: #222534;
 }
 
 .info-course .right .under p{
@@ -147,25 +178,22 @@
 .info-course .right .under a {
     text-decoration: none;
     padding: 0.7rem 1.2rem;
-    color: white;
+    color: #FFE08C;
     font-weight: 500;
     font-size: 0.8rem;
-    background-color: #186AF2;
+    background-color: #222534;
     margin-right: 0.5rem;
     border-radius: 0.3rem;
 }
 
 .info-course .right .under a:hover {
     font-weight: bold;
-    border: 2px solid white;
-    outline: 2px solid #186AF2;
 }
 
 .info-course .right .under .teach {
     text-align: center;
     font-size: 1.2rem;
     font-weight: 500;
-    color: cadetblue;
 }
 
 @media screen and (min-width: 1050px) {
@@ -175,9 +203,13 @@
 
     .info-course .left{
         flex-basis: 35%;
-        border-right: 1px solid lightgray;
+        border-right: 1px solid #222534;
         padding-right: 1rem;
         margin-bottom: 0;
         text-align: start;
+    }
+
+    .info-course .right{
+        flex-basis: 64%;
     }
 }
