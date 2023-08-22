@@ -8,12 +8,11 @@
 .intro-courses .upcap a{
     text-decoration: none;
     color: #222534;
-    font-size: 0.9rem;
+    font-size: 0.7rem;
     text-transform: uppercase;
 }
 
 .intro-courses .upcap a:hover{
-    color: white;
     font-weight: bold;
 }
 

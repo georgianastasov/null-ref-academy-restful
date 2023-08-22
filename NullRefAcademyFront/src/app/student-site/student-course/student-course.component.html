@@ -3,6 +3,15 @@
     <div class="wrapper">
         <ng-container *ngFor="let course of courses">
             <ng-container *ngIf="course.id == courseid">
+                <ng-container *ngFor="let category of categories">
+                    <ng-container *ngIf="course.categoryID == category.id">
+                        <p class="upcap code"><a routerLink="/Student/{{routeid}}/Category/{{category.id}}">{{category.title}}</a></p>
+                    </ng-container>
+                </ng-container>
+            </ng-container>
+        </ng-container>
+        <ng-container *ngFor="let course of courses">
+            <ng-container *ngIf="course.id == courseid">
                 <p class="cap digital"><a routerLink="/Student/{{routeid}}/Courses">Course: <strong>{{course.title}}</strong></a></p>
             </ng-container>
         </ng-container>
@@ -35,11 +44,19 @@
                     </ng-container>
                 </ng-container>
             </div>
+            <div class="down-up">
+                <p class="cap code">Enrolled students:</p>
+                <ng-container *ngFor="let course of courses">
+                    <ng-container *ngIf="course.id == courseid">
+                        <p class="description code">{{countStudents(course)}}<img src="https://cdn-icons-png.flaticon.com/128/3750/3750011.png" alt="student"> Students</p>
+                    </ng-container>
+                </ng-container>
+            </div>
             <div class="down-under code">
                 <p class="cap">Course rating:</p>
                 <ng-container *ngFor="let course of courses">
                     <ng-container *ngIf="course.id == courseid">
-                        <p class="description code">Rate {{course.rating}}<img src="https://cdn-icons-png.flaticon.com/128/477/477406.png" alt="stars"> from {{course.ratingQty}}<img src="https://cdn-icons-png.flaticon.com/128/9195/9195871.png" alt="users"> users.</p>
+                        <p class="description code">Rate {{course.rating}}<img src="https://cdn-icons-png.flaticon.com/128/477/477406.png" alt="stars"> from {{course.ratingQty}}<img src="https://cdn-icons-png.flaticon.com/128/9195/9195871.png" alt="users"> users</p>
                     </ng-container>
                 </ng-container>
             </div>
@@ -69,6 +86,13 @@
             </div>
         </div>
         <div class="right">
+            <ng-container *ngFor="let course of courses">
+                <ng-container *ngIf="course.id == courseid"> 
+                    <ng-container *ngIf="course.videoUrl !== 'initial'">
+                        <youtube-player [videoId]="course.videoUrl" suggestedQuality="highres" [width]="1000" [height]="450" [startSeconds]="4" [endSeconds]="300" style="width: 100%;"></youtube-player>
+                    </ng-container>
+                </ng-container>
+            </ng-container>
             <ng-container *ngFor="let course of courses">
                 <ng-container *ngIf="course.id == courseid"> 
                     <ng-container *ngFor="let section of sections">

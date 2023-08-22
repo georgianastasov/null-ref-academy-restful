@@ -39,5 +39,4 @@ export class TeacherArticlesComponent implements OnInit {
         }
       );
   }
-
 }

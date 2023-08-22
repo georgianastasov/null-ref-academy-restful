@@ -35,11 +35,19 @@
                     </ng-container>
                 </ng-container>
             </div>
+            <div class="down-up">
+                <p class="cap code">Enrolled students:</p>
+                <ng-container *ngFor="let course of courses">
+                    <ng-container *ngIf="course.id == courseid">
+                        <p class="description code">{{countStudents(course)}}<img src="https://cdn-icons-png.flaticon.com/128/3750/3750011.png" alt="student"> Students</p>
+                    </ng-container>
+                </ng-container>
+            </div>
             <div class="down-under">
                 <p class="cap code">Course rating:</p>
                 <ng-container *ngFor="let course of courses">
                     <ng-container *ngIf="course.id == courseid">
-                        <p class="description code">Rate {{course.rating}}<img src="https://cdn-icons-png.flaticon.com/128/477/477406.png" alt="stars"> from {{course.ratingQty}}<img src="https://cdn-icons-png.flaticon.com/128/9195/9195871.png" alt="users"> students.</p>
+                        <p class="description code">Rate {{course.rating}}<img src="https://cdn-icons-png.flaticon.com/128/477/477406.png" alt="stars"> from {{course.ratingQty}}<img src="https://cdn-icons-png.flaticon.com/128/9195/9195871.png" alt="users"> users</p>
                     </ng-container>
                 </ng-container>
             </div>

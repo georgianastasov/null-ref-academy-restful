@@ -44,21 +44,27 @@ export class StudentCourseComponent implements OnInit {
   categories: Category[] = [];
   courses: Course[] = [];
   sections: Section[] = [];
+  students: Student[] = [];
   studentCourses: StudentCourses[] = [];
+
+  video = 'https://www.youtube.com/embed/51HPYcWCgSo?si=oB56ummW2SUx3l5b'
+  img = 'https://cdn-icons-png.flaticon.com/128/3771/3771278.png'
   
   ngOnInit(): void {
     this.routeSub = this.route.params.subscribe(params => {
       this.routeid = params['id'];
       this.courseid = params['id2'];
-      console.log('courseidd:' + this.courseid)
+      console.log('courseidd: ' + this.courseid)
     });
 
     this.getStudent();
 
     this.getAllAdmins();
     this.getAllTeachers();
+    this.getAllStudents();
     this.getAllCategories();
     this.getAllCourses();
+
     this.getAllSections();
 
     this.getStudentCourses();
@@ -93,6 +99,15 @@ export class StudentCourseComponent implements OnInit {
     .subscribe(
       response => {
         this.teachers = response;
+      }
+    );
+  }
+
+  getAllStudents() {
+    this.service.getAllStudents()
+    .subscribe(
+      response => {
+        this.students = response;
       }
     );
   }
@@ -192,4 +207,17 @@ export class StudentCourseComponent implements OnInit {
       );
   }
 
+  countStudents(course : any){
+    let count = 0
+    let array = course.studentsIDs.split(',');
+    for (let i = 0; i < array.length; i++) {
+      let studentId = parseInt(array[i]);
+      this.students.forEach(student => {
+        if (studentId === student.id) {
+          count++;
+        }
+      });
+    }
+    return count;
+  }
 }
