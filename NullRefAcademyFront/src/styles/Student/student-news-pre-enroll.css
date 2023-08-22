@@ -1,0 +1,237 @@
+.intro-news {
+    padding: 3rem 2rem 2rem 2rem;
+    background-color: #FFE08C;
+    position: relative;
+    top: -1rem;
+}
+
+.intro-news .cap{
+    font-size: 1.8rem;
+    color: #222534;
+}
+
+.intro-news .cap a{
+    font-size: 1.8rem;
+    color: #222534;
+    text-decoration: none;
+}
+
+.intro-news .cap:hover{
+    font-weight: bolder;
+}
+
+.info-news {
+    padding: 3rem 0 4rem 0;
+}
+
+.info-news .wrapper{
+    display: block;
+}
+
+.info-news .left{
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.info-news .left .cap{
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-bottom: 0.2rem;
+}
+
+.info-news .left .up{
+    margin-bottom: 1rem;
+    background-color: #222534;
+    color: #FFE08C;
+    padding: 1rem;
+    border-radius: 0.4rem;
+    box-shadow: 0px 0px 14px 3px rgba(0,0,0,0.2);
+} 
+
+.info-news .left .up .count{
+    font-size: 0.9rem;
+    color: #FFE08C;
+}
+
+.info-news .left .down {
+    margin-bottom: 1rem;
+    background-color: #222534;
+    color: #FFE08C;
+    padding: 1rem;
+    border-radius: 0.4rem;
+    box-shadow: 0px 0px 14px 3px rgba(0,0,0,0.2);
+}
+
+.info-news .left .down .points {
+    text-decoration: none;
+    display: inline-block;
+}
+
+.info-news .left .down .points img{
+    width: 25px;
+    height: 25px;
+    position: relative;
+    top: 0.15rem;
+    margin-left: 0.2rem;
+}
+
+.info-news .left .down-up{
+    margin-bottom: 1rem;
+    background-color: #222534;
+    color: #FFE08C;
+    padding: 1rem;
+    border-radius: 0.4rem;
+    box-shadow: 0px 0px 14px 3px rgba(0,0,0,0.2);
+}
+
+.info-news .left .down-up img{
+    width: 25px;
+    height: 25px;
+    position: relative;
+    top: 0.15rem;
+    margin-left: 0.2rem;
+}
+
+.info-news .left .down-down{
+    margin-bottom: 1rem;
+    background-color: #222534;
+    color: #FFE08C;
+    padding: 1rem;
+    border-radius: 0.4rem;
+    box-shadow: 0px 0px 14px 3px rgba(0,0,0,0.2);
+}
+
+.info-news .left .down-under{
+    margin-bottom: 1rem;
+    background-color: #222534;
+    color: #FFE08C;
+    padding: 1rem;
+    border-radius: 0.4rem;
+    box-shadow: 0px 0px 14px 3px rgba(0,0,0,0.2);
+}
+
+.info-news .left .down-under img{
+    width: 25px;
+    height: 25px;
+    position: relative;
+    top: 0.15rem;
+    margin-left: 0.2rem;
+}
+
+.info-news .left .down-down .description {
+    font-size: 0.8rem;
+}
+
+.info-news .left .bottom{
+    background-color: #222534;
+    color: #FFE08C;
+    padding: 1rem;
+    border-radius: 0.4rem;
+    box-shadow: 0px 0px 14px 3px rgba(0,0,0,0.2);
+}
+
+.info-news .left .bottom .creator{
+    font-size: 0.9rem;
+    color: #FFE08C;
+}
+
+.info-news .left .bottom .creatort{
+    text-decoration: none;
+    font-size: 0.9rem;
+    color: #FFE08C;
+}
+
+.info-news .right{
+    margin-left: 2rem; 
+}
+
+.info-news .right .box{
+    width: 100%;
+    padding: 1rem 0.5rem;
+    border-radius: 0.4rem;
+    box-shadow: 0px 0px 14px 3px rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+    background-color: #FFE08C;
+}
+
+.info-news .right .box .up{
+    display: flex;
+    align-items: center;
+    flex-basis: 100%;
+    border-bottom: 1px solid #222534;
+}
+
+.info-news .right .box .up img{
+    width: 40px;
+    height: 40px;
+    margin-right: 0.5rem;
+}
+
+.info-news .right .box .up a:hover img {
+    transform: scale(1.05);
+}
+
+.info-news .right .box .up .title{
+    font-size: 1.3rem;
+    color: #222534;
+}
+
+.info-news .right .box .up .title:hover{
+    cursor: pointer;
+    font-weight: bolder;
+}
+
+.info-news .right .box .down{
+    padding: 0.8rem;
+}
+
+.info-news .right .box .description {
+    font-size: 0.9rem;
+    color: #222534;
+}
+
+.info-news .right .under p{
+    text-align: end;
+}
+
+.info-news .right .under a {
+    text-decoration: none;
+    padding: 0.7rem 1.2rem;
+    color: #FFE08C;
+    font-weight: 500;
+    font-size: 0.8rem;
+    background-color: #222534;
+    margin-right: 0.5rem;
+    border-radius: 0.3rem;
+}
+
+.info-news .right .under a:hover {
+    font-weight: bold;
+}
+
+.info-news .right .under .teach {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+@media screen and (min-width: 1050px) {
+    .info-news .wrapper{
+        display: flex;
+    }
+
+    .info-news .left{
+        flex-basis: 35%;
+        border-right: 1px solid #222534;
+        padding-right: 1rem;
+        margin-bottom: 0;
+        text-align: start;
+    }
+
+    .info-news .right{
+        flex-basis: 64%;
+    }
+}
