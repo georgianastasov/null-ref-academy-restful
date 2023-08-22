@@ -3,58 +3,93 @@
     <div class="wrapper">
         <ng-container *ngFor="let article of articles">
             <ng-container *ngIf="article.id == articleid">
-                <p class="upcap"><a routerLink="/Teacher/{{routeid}}/Articles">{{article.title}}</a></p>
+                <p class="cap digital"><a routerLink="/Teacher/{{routeid}}/Articles">Article: <strong>{{article.title}}</strong></a></p>
             </ng-container>
         </ng-container>
-        <p class="cap">Article</p>
     </div>
 </div>
 <div class="info-article">
     <div class="wrapper">
         <div class="left">
             <div class="down-down">
-                <p class="cap">Article about:</p>
+                <p class="cap code">Article about:</p>
                 <ng-container *ngFor="let article of articles">
                     <ng-container *ngIf="article.id == articleid">
-                        <p class="description">{{article.description}}</p>
+                        <p class="description code">{{article.description}}</p>
+                    </ng-container>
+                </ng-container>
+            </div>
+            <div class="down-up code">
+                <p class="cap">Users readed this article:</p>
+                <ng-container *ngFor="let article of articles">
+                    <ng-container *ngIf="article.id == articleid">
+                        <p class="description code">0<img src="https://cdn-icons-png.flaticon.com/128/3750/3750011.png" alt="student"> Users</p>
                     </ng-container>
                 </ng-container>
             </div>
             <div class="down-under">
-                <p class="cap">Article rating:</p>
+                <p class="cap code">Article rating:</p>
                 <ng-container *ngFor="let article of articles">
                     <ng-container *ngIf="article.id == articleid">
-                        <p class="description">{{article.rating}} from {{article.ratingQty}} students.</p>
+                        <p class="description code">Rate {{article.rating}}<img src="https://cdn-icons-png.flaticon.com/128/477/477406.png" alt="stars"> from {{article.ratingQty}}<img src="https://cdn-icons-png.flaticon.com/128/9195/9195871.png" alt="users"> users</p>
                     </ng-container>
                 </ng-container>
             </div>
             <div class="bottom">
-                <p class="cap">Created by:</p>
+                <p class="cap code">Created by:</p>
                 <ng-container *ngFor="let article of articles">
                     <ng-container *ngIf="article.id == articleid">
                         <ng-container *ngIf="article.adminID != null">
                             <ng-container *ngFor="let admin of admins">
                                 <ng-container *ngIf="article.adminID == admin.id">
-                                    <p class="creator">Admin: {{admin.username}}</p>
+                                    <p class="creator code">Admin: {{admin.username}}</p>
                                 </ng-container>
                             </ng-container>
                         </ng-container>
                         <ng-container *ngIf="article.teacherID != null">
                             <ng-container *ngFor="let teacher of teachers">
                                 <ng-container *ngIf="article.teacherID == teacher.id">
-                                    <a class="creator" routerLink="/Teacher/{{routeid}}/Profile/Teacher/{{teacher.id}}">Teacher: {{teacher.username}}</a>
+                                    <a class="creator code" routerLink="/Teacher/{{routeid}}/Profile/Teacher/{{teacher.id}}">Teacher: {{teacher.username}}</a>
                                 </ng-container>
                             </ng-container>
                         </ng-container>
                         <ng-container *ngIf="article.teacherID == null && article.adminID == null">
-                            <p class="creator">The creator was deactivated.</p>
+                            <p class="creator code">The creator was deactivated.</p>
                         </ng-container>
                     </ng-container>
                 </ng-container>
             </div>
         </div>
         <div class="right">
-            <p>article</p>
+                <ng-container *ngFor="let article of articles">
+                    <ng-container *ngIf="article.id == articleid"> 
+                        <div class="box">
+                            <div class="up">
+                                <ng-container>
+                                    <a routerLink="/Teacher/{{routeid}}/Article/{{article.id}}"><img src="https://cdn-icons-png.flaticon.com/128/4228/4228952.png" alt="articles"></a>
+                                </ng-container>
+                                <p class="title digital">Title: <strong>{{article.title}}</strong></p>
+                            </div>
+                                <div class="down">
+                                    <p class="description code">Description: <strong>{{article.description}}</strong></p>
+                                </div>
+                        </div>
+                    </ng-container>
+                </ng-container>
+                <div class="under">
+                    <p class="font"><a routerLink="/Teacher/{{routeid}}/Article/{{articleid}}/Enroll">Read</a></p>
+                    <!-- <ng-container *ngIf="studentCourses.length == 0">
+                        <p class="font"><a routerLink="/Teacher/{{routeid}}/Article/{{articleid}}/Enroll">Enroll</a></p>
+                    </ng-container>
+                    <ng-container *ngIf="studentCourses.length != 0">
+                        <ng-container *ngIf="hasEnroll">
+                            <p class="font"><a routerLink="/Teacher/{{routeid}}/Article/{{articleid}}/Enroll">Preview</a></p>
+                        </ng-container>
+                        <ng-container *ngIf="!hasEnroll">
+                            <p class="font"><a routerLink="/Teacher/{{routeid}}/Article/{{articleid}}/Enroll">Enroll</a></p>
+                        </ng-container>
+                    </ng-container> -->
+                </div>
         </div>
     </div>
 </div>
