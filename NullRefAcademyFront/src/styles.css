@@ -30,13 +30,17 @@
 @import url(../src/styles/Admin/admin-forms.css);
 
 @import url(../src/styles/Student/student-dashboard.css);
-@import url(../src/styles/Student/student-enroll.css);
-@import url(../src/styles/Student/student-preenroll.css);
 @import url(../src/styles/Student/student-categories.css);
 @import url(../src/styles/Student/student-courses.css);
+@import url(../src/styles/Student/student-course-pre-enroll.css);
+@import url(../src/styles/Student/student-course-enroll.css);
 @import url(../src/styles/Student/student-sections.css);
 @import url(../src/styles/Student/student-articles.css);
+@import url(../src/styles/Student/student-article-pre-enroll.css);
+@import url(../src/styles/Student/student-article-enroll.css);
 @import url(../src/styles/Student/student-news.css);
+@import url(../src/styles/Student/student-news-pre-enroll.css);
+@import url(../src/styles/Student/student-news-enroll.css);
 
 @import url(../src/styles/Teacher/teacher-categories.css);
 @import url(../src/styles/Teacher/teacher-courses.css);
