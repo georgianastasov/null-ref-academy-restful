@@ -1,92 +1,42 @@
 <app-student-header></app-student-header>
-<div class="intro-enroll">
+<div class="intro-course-enroll">
     <div class="wrapper">
         <ng-container *ngFor="let course of courses">
             <ng-container *ngIf="course.id == courseid">
                 <ng-container *ngFor="let category of categories">
                     <ng-container *ngIf="course.categoryID == category.id">
-                        <p class="upcap"><a routerLink="/Student/{{routeid}}/Category/{{category.id}}">{{category.title}}</a></p>
+                        <p class="upcap code"><a routerLink="/Student/{{routeid}}/Category/{{category.id}}">{{category.title}}</a></p>
                     </ng-container>
                 </ng-container>
             </ng-container>
         </ng-container>
-        <p class="cap">Course</p>
+        <ng-container *ngFor="let course of courses">
+            <ng-container *ngIf="course.id == courseid">
+                <p class="cap digital"><a routerLink="/Student/{{routeid}}/Courses">Course: <strong>{{course.title}}</strong></a></p>
+            </ng-container>
+        </ng-container>
     </div>
 </div>
-<div class="info-enroll">
+<div class="info-course-enroll">
     <div class="wrapper">
-        <div class="left">
-            <div class="up">
-                <p class="cap">In this course:</p>
-                <ng-container *ngFor="let section of sections">
-                    <ng-container *ngIf="section.courseID == courseid">
-                        <p class="count"><a href="/Student/{{routeid}}/Course/{{courseid}}/Enroll#{{section.title}}">{{counts[section.id]}}. {{section.title}}</a></p>
-                    </ng-container>
-                </ng-container>
-            </div>
-            <div class="down">
-                <p class="cap">This course will bring you:</p>
-                <ng-container *ngFor="let course of courses">
-                    <ng-container *ngIf="course.id == courseid">
-                        <a class="points">{{course.points}} points</a>
-                    </ng-container>
-                </ng-container>
-            </div>
-            <div class="down-down">
-                <p class="cap">Course about:</p>
-                <ng-container *ngFor="let course of courses">
-                    <ng-container *ngIf="course.id == courseid">
-                        <p class="description">{{course.description}}</p>
-                    </ng-container>
-                </ng-container>
-            </div>
-            <div class="down-under">
-                <p class="cap">Course rating:</p>
-                <ng-container *ngFor="let course of courses">
-                    <ng-container *ngIf="course.id == courseid">
-                        <p class="description">{{course.rating}} from {{course.ratingQty}} students.</p>
-                    </ng-container>
-                </ng-container>
-            </div>
-            <div class="bottom">
-                <p class="cap">Created by:</p>
-                <ng-container *ngFor="let course of courses">
-                    <ng-container *ngIf="course.id == courseid">
-                        <ng-container *ngIf="course.adminID != null">
-                            <ng-container *ngFor="let admin of admins">
-                                <ng-container *ngIf="course.adminID == admin.id">
-                                    <p class="creator">Admin: {{admin.username}}</p>
-                                </ng-container>
-                            </ng-container>
-                        </ng-container>
-                        <ng-container *ngIf="course.teacherID != null">
-                            <ng-container *ngFor="let teacher of teachers">
-                                <ng-container *ngIf="course.teacherID == teacher.id">
-                                    <a class="creator" routerLink="/Student/{{routeid}}/Profile/Teacher/{{teacher.id}}">Teacher: {{teacher.username}}</a>
-                                </ng-container>
-                            </ng-container>
-                        </ng-container>
-                        <ng-container *ngIf="course.teacherID == null && course.adminID == null">
-                            <p class="creator">The creator was deactivated.</p>
-                        </ng-container>
-                    </ng-container>
-                </ng-container>
-            </div>
-        </div>
-        <div class="right">
+        <div class="main">
             <ng-container *ngFor="let course of courses">
                 <ng-container *ngIf="course.id == courseid">
-                    <p class="title">{{course.title}}</p>
+                    <div class="up">
+                        <p class="title digital">Title: {{course.title}}</p>
+                        <p class="date code">Date: {{course.createdDate}}</p>
+                        <p class="description code">Description: {{course.title}}</p>
+                    </div>
                 </ng-container>
             </ng-container>
             <ng-container *ngFor="let section of sections">
                 <ng-container *ngIf="section.courseID == courseid">
                     <div class="box">
                         <div class="up">
-                            <p id="{{section.title}}" class="section-title">{{section.title}}</p>
+                            <p id="{{section.title}}" class="section-title code">{{section.title}}</p>
                         </div>
                         <div class="down">
-                            <p class="description">{{section.description}}</p>
+                            <p class="description code">{{section.description}}</p>
                         </div>
                         <div class="down-down">
                             <p class="text">{{section.text}}</p>
@@ -94,20 +44,33 @@
                     </div>
                 </ng-container>
             </ng-container>
-            <div class="under">
-                <ng-container *ngFor="let studentCourse of studentCourses">
-                    <ng-container *ngIf="studentCourse.id == courseid">
-                        <ng-container *ngIf="studentCourse.isFinished == '1'">
-                            <p class="done">You already finished this course.</p>
-                            <p><a class="donebtn" routerLink="/Student/{{routeid}}/Dashboard">Go to dashboard</a></p>
-                        </ng-container>
-                        <ng-container *ngIf="studentCourse.isFinished == '0'">
-                            <p class="ready">Are you ready?</p>
-                            <p><a (click)="finishCourse()">Finish</a></p>
-                        </ng-container>
+            <ng-container *ngFor="let section of sections">
+                <ng-container *ngIf="section.courseID == courseid">
+                    <youtube-player [videoId]="section.videoUrl" suggestedQuality="highres" [width]="1200" [height]="450" [startSeconds]="4" [endSeconds]="300" style="width: 100%;"></youtube-player>
+                </ng-container>
+            </ng-container>
+        </div>
+        <div class="agenda">
+            <p class="cap code">Sections:</p>
+            <ng-container *ngFor="let section of sections">
+                <ng-container *ngIf="section.courseID == courseid">
+                    <p class="count code"><a href="/Student/{{routeid}}/Course/{{courseid}}/Enroll#{{section.title}}">{{counts[section.id]}}. {{section.title}}</a></p>
+                </ng-container>
+            </ng-container>
+        </div>
+        <div class="under">
+            <ng-container *ngFor="let studentCourse of studentCourses">
+                <ng-container *ngIf="studentCourse.id == courseid">
+                    <ng-container *ngIf="studentCourse.isFinished == '1'">
+                        <p class="done code">You already finished this course.</p>
+                        <p><a class="donebtn font" routerLink="/Student/{{routeid}}/Dashboard">Go to dashboard</a></p>
+                    </ng-container>
+                    <ng-container *ngIf="studentCourse.isFinished == '0'">
+                        <p class="ready code">Are you ready?</p>
+                        <p><a class="font" (click)="finishCourse()">Finish</a></p>
                     </ng-container>
                 </ng-container>
-            </div>
+            </ng-container>
         </div>
     </div>
 </div>

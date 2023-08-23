@@ -45,14 +45,14 @@ export class StudentEnrollcourseComponent implements OnInit {
     title: '',
     description: '',
     points: 0,
+    rating: 0,
+    ratingQty: 0,
+    videoUrl: '',
     createdDate: '',
     categoryID: 0,
     teacherID: 0,
     adminID: 0,
-    studentsIDs: '',
-    rating: 0,
-    ratingQty: 0,
-    videoUrl: ''
+    studentsIDs: ''
   }
   
   admins: Admin[] = [];
@@ -66,7 +66,6 @@ export class StudentEnrollcourseComponent implements OnInit {
     this.routeSub = this.route.params.subscribe(params => {
       this.routeid = params['id'];
       this.courseid = params['id2'];
-      console.log('courseidd:' + this.courseid)
     });
 
     this.getStudent();
@@ -78,12 +77,11 @@ export class StudentEnrollcourseComponent implements OnInit {
     this.getAllCourses();
     this.getAllSections();
 
-    this.getStudentCourses();
+    //this.getStudentCourses();
 
-    this.getStudent();
-    this.onloadEnroll();
+    //this.getStudent();
 
-    this.sectionsNumbers();
+    //this.sectionsNumbers();
   }
 
   ngOnDestroy() {
@@ -95,6 +93,8 @@ export class StudentEnrollcourseComponent implements OnInit {
       .subscribe(
         response => {
           this.student = response;
+          console.log('response student')
+          console.log(response)
         }
       );
   }
@@ -104,6 +104,8 @@ export class StudentEnrollcourseComponent implements OnInit {
     .subscribe(
       response => {
         this.course = response;
+        console.log('response course')
+        console.log(response)
       }
     );
   }
@@ -288,21 +290,4 @@ export class StudentEnrollcourseComponent implements OnInit {
     this.student.points += this.points;
     this.onSubmitCourses();
   }
-
-  onloadEnroll(){
-    this.service.getStudent(this.routeid)
-      .subscribe(
-        response => {
-          this.student = response;
-          if (this.student.coursesIDs == null) {
-            var date = formatDate(Date.now(), 'dd/MM/YYYY', 'en-US').toString();
-            this.student.coursesIDs = this.courseid + '=' + '0' + '=' + date + ',';
-            this.course.studentsIDs += this.routeid + ',';
-            this.onSubmitCourseStudent();
-            this.onSubmitEnroll();
-          }
-        }
-      );
-  }
-
 }
