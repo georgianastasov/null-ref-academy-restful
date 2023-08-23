@@ -18,9 +18,9 @@ import { StudentApiService } from 'src/app/services/student-api.service';
 })
 export class StudentCourseComponent implements OnInit {
 
-  routeSub!: Subscription;
-  routeid!: number;
-  courseid!: number;
+  public routeSub!: Subscription;
+  public routeid!: number;
+  public courseid!: number;
   constructor(private service: StudentApiService, private router: Router, private route: ActivatedRoute) { }
 
   student: Student = {
@@ -150,8 +150,8 @@ export class StudentCourseComponent implements OnInit {
       );
   }
 
-  count: number = 0;
-  counts: number[] = [];
+  public count: number = 0;
+  public counts: number[] = [];
   sectionsNumbers(){
     this.service.getAllSections()
       .subscribe(
