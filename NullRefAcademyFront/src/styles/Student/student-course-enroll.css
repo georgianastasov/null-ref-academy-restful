@@ -123,6 +123,12 @@
     font-weight: bold;
 }
 
+.info-course-enroll .under{
+    flex-basis: 76%;
+    display: flex;
+    justify-content: flex-end;
+}
+
 .info-course-enroll .under p{
     text-align: end;
 }
@@ -149,6 +155,7 @@
     font-size: 0.8rem;
     background-color: #222534;
     margin-right: 0.5rem;
+    margin-top: 1rem;
     border-radius: 0.3rem;
     display: inline-block;
     cursor: pointer;
