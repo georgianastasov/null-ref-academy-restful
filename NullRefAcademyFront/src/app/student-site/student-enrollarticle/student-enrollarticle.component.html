@@ -1,0 +1,51 @@
+<app-student-header></app-student-header>
+<div class="intro-article-enroll">
+    <div class="wrapper">
+        <ng-container *ngFor="let article of articles">
+            <ng-container *ngIf="article.id == articleid">
+                <p class="cap digital"><a routerLink="/Student/{{routeid}}/Articles">Article: <strong>{{article.title}}</strong></a></p>
+            </ng-container>
+        </ng-container>
+    </div>
+</div>
+<div class="info-article-enroll">
+    <div class="wrapper">
+        <div class="main">
+            <ng-container *ngFor="let article of articles">
+                <ng-container *ngIf="article.id == articleid">
+                    <div class="up">
+                        <p class="title digital">Title: {{article.title}}</p>
+                        <p class="date code">Date: {{article.createdDate}}</p>
+                        <p class="description code">Description: {{article.title}}</p>
+                    </div>
+                </ng-container>
+            </ng-container>
+            <ng-container *ngFor="let article of articles">
+                <ng-container *ngIf="article.id == articleid">
+                    <div class="box">
+                        <div class="up">
+                            <p class="section-title code">Information</p>
+                        </div>
+                        <div class="down">
+                            <p class="description code">From {{article.createdDate}}</p>
+                        </div>
+                        <div class="down-down">
+                            <p class="text">{{article.text}}</p>
+                        </div>
+                    </div>
+                </ng-container>
+            </ng-container>
+        </div>
+        <div class="agenda">
+            <p class="cap code">Articles:</p>
+            <ng-container *ngFor="let article of articles">
+                <p class="count code"><a href="/Student/{{routeid}}/Article/{{article.id}}">{{article.title}}</a></p>
+            </ng-container>
+        </div>
+        <div class="under">
+            <p><a class="donebtn font" *ngIf="!finish" routerLink="/Student/{{routeid}}/Dashboard">Go to dashboard</a></p>
+            <p><a class="finish font" *ngIf="finish">Finish</a></p>
+        </div>
+    </div>
+</div>
+<app-student-footer></app-student-footer>
