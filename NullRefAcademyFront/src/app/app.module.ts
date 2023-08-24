@@ -107,6 +107,8 @@ import { TeacherNewsComponent } from './teacher-site/teacher-news/teacher-news.c
 import { TeacherNewssComponent } from './teacher-site/teacher-newss/teacher-newss.component';
 import { StudentEnrollArticleComponent } from './student-site/student-enrollarticle/student-enrollarticle.component';
 import { StudentEnrollNewsComponent } from './student-site/student-enrollnews/student-enrollnews.component';
+import { TeacherEnrollArticleComponent } from './teacher-site/teacher-enrollarticle/teacher-enrollarticle.component';
+import { TeacherEnrollNewsComponent } from './teacher-site/teacher-enrollnews/teacher-enrollnews.component';
 
 @NgModule({
   declarations: [
@@ -209,6 +211,8 @@ import { StudentEnrollNewsComponent } from './student-site/student-enrollnews/st
     StudentProfileStudentComponent,
     TeacherProfileStudentComponent,
     TeacherProfileTeacherComponent,
+    TeacherEnrollArticleComponent,
+    TeacherEnrollNewsComponent
   ],
   imports: [
     BrowserModule,

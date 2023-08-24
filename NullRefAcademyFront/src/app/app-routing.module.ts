@@ -91,6 +91,8 @@ import { TeacherNewssComponent } from './teacher-site/teacher-newss/teacher-news
 import { TeacherNewsComponent } from './teacher-site/teacher-news/teacher-news.component';
 import { StudentEnrollArticleComponent } from './student-site/student-enrollarticle/student-enrollarticle.component';
 import { StudentEnrollNewsComponent } from './student-site/student-enrollnews/student-enrollnews.component';
+import { TeacherEnrollNewsComponent } from './teacher-site/teacher-enrollnews/teacher-enrollnews.component';
+import { TeacherEnrollArticleComponent } from './teacher-site/teacher-enrollarticle/teacher-enrollarticle.component';
 
 const routes: Routes = [
   {
@@ -444,7 +446,15 @@ const routes: Routes = [
   {
     path: 'Teacher/:id/Profile/Student/:id2',
     component: TeacherProfileStudentComponent
-  }
+  },
+  {
+    path: 'Teacher/:id/Article/:id2/Enroll',
+    component: TeacherEnrollArticleComponent
+  },
+  {
+    path: 'Teacher/:id/News/:id2/Enroll',
+    component: TeacherEnrollNewsComponent
+  },
 ];
 
 @NgModule({
