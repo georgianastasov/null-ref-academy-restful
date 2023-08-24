@@ -1,0 +1,51 @@
+<app-student-header></app-student-header>
+<div class="intro-news-enroll">
+    <div class="wrapper">
+        <ng-container *ngFor="let news of newss">
+            <ng-container *ngIf="news.id == newsid">
+                <p class="cap digital"><a routerLink="/Student/{{routeid}}/AllNews">Article: <strong>{{news.title}}</strong></a></p>
+            </ng-container>
+        </ng-container>
+    </div>
+</div>
+<div class="info-news-enroll">
+    <div class="wrapper">
+        <div class="main">
+            <ng-container *ngFor="let news of newss">
+                <ng-container *ngIf="news.id == newsid">
+                    <div class="up">
+                        <p class="title digital">Title: {{news.title}}</p>
+                        <p class="date code">Date: {{news.createdDate}}</p>
+                        <p class="description code">Description: {{news.title}}</p>
+                    </div>
+                </ng-container>
+            </ng-container>
+            <ng-container *ngFor="let news of newss">
+                <ng-container *ngIf="news.id == newsid">
+                    <div class="box">
+                        <div class="up">
+                            <p class="section-title code">Information</p>
+                        </div>
+                        <div class="down">
+                            <p class="description code">From {{news.createdDate}}</p>
+                        </div>
+                        <div class="down-down">
+                            <p class="text">{{news.text}}</p>
+                        </div>
+                    </div>
+                </ng-container>
+            </ng-container>
+        </div>
+        <div class="agenda">
+            <p class="cap code">News:</p>
+            <ng-container *ngFor="let news of newss">
+                <p class="count code"><a href="/Student/{{routeid}}/News/{{news.id}}">{{news.title}}</a></p>
+            </ng-container>
+        </div>
+        <div class="under">
+            <p><a class="donebtn font" *ngIf="!finish" routerLink="/Student/{{routeid}}/Dashboard">Go to dashboard</a></p>
+            <p><a class="finish font" *ngIf="finish">Finish</a></p>
+        </div>
+    </div>
+</div>
+<app-student-footer></app-student-footer>
