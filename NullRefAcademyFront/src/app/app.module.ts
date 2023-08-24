@@ -105,6 +105,8 @@ import { StudentNewsComponent } from './student-site/student-news/student-news.c
 import { StudentNewssComponent } from './student-site/student-newss/student-newss.component';
 import { TeacherNewsComponent } from './teacher-site/teacher-news/teacher-news.component';
 import { TeacherNewssComponent } from './teacher-site/teacher-newss/teacher-newss.component';
+import { StudentEnrollArticleComponent } from './student-site/student-enrollarticle/student-enrollarticle.component';
+import { StudentEnrollNewsComponent } from './student-site/student-enrollnews/student-enrollnews.component';
 
 @NgModule({
   declarations: [
@@ -171,6 +173,8 @@ import { TeacherNewssComponent } from './teacher-site/teacher-newss/teacher-news
     StudentCategoryComponent,
     StudentCourseComponent,
     StudentEnrollcourseComponent,
+    StudentEnrollArticleComponent,
+    StudentEnrollNewsComponent,
     TeacherSiteComponent,
     TeacherHeaderComponent,
     TeacherFooterComponent,

@@ -89,6 +89,8 @@ import { StudentNewssComponent } from './student-site/student-newss/student-news
 import { StudentNewsComponent } from './student-site/student-news/student-news.component';
 import { TeacherNewssComponent } from './teacher-site/teacher-newss/teacher-newss.component';
 import { TeacherNewsComponent } from './teacher-site/teacher-news/teacher-news.component';
+import { StudentEnrollArticleComponent } from './student-site/student-enrollarticle/student-enrollarticle.component';
+import { StudentEnrollNewsComponent } from './student-site/student-enrollnews/student-enrollnews.component';
 
 const routes: Routes = [
   {
@@ -306,6 +308,14 @@ const routes: Routes = [
   {
     path: 'Student/:id/Course/:id2/Enroll',
     component: StudentEnrollcourseComponent
+  },
+  {
+    path: 'Student/:id/Article/:id2/Enroll',
+    component: StudentEnrollArticleComponent
+  },
+  {
+    path: 'Student/:id/News/:id2/Enroll',
+    component: StudentEnrollNewsComponent
   },
   {
     path: 'Student/:id/Sections',
