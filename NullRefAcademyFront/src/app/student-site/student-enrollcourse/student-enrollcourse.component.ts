@@ -60,6 +60,7 @@ export class StudentEnrollcourseComponent implements OnInit {
   categories: Category[] = [];
   courses: Course[] = [];
   sections: Section[] = [];
+  students: Student[] = [];
   studentCourses: StudentCourses[] = [];
   
   ngOnInit(): void {
@@ -77,11 +78,8 @@ export class StudentEnrollcourseComponent implements OnInit {
     this.getAllCourses();
     this.getAllSections();
 
-    //this.getStudentCourses();
-
-    //this.getStudent();
-
-    //this.sectionsNumbers();
+    this.sectionsNumbers();
+    this.checkFinish();
   }
 
   ngOnDestroy() {
@@ -155,8 +153,8 @@ export class StudentEnrollcourseComponent implements OnInit {
       );
   }
 
-  count: number = 0;
-  counts: number[] = [];
+  public count: number = 0;
+  public counts: number[] = [];
   sectionsNumbers(){
     this.service.getAllSections()
       .subscribe(
@@ -171,123 +169,64 @@ export class StudentEnrollcourseComponent implements OnInit {
       );
   }
 
-  //Get courses of this student
-  arrayCourses: string[] = [];
-  innerArrayCourses: string[] = [];
-  innerCourseId: number = 0;
-  countttttt: number = 0;
-  dates: string[] = [];
-  br: number = 0;
-  hasEnroll: boolean = false;
-  isFind: boolean = false;
-  getStudentCourses() {
-    this.service.getStudent(this.routeid)
+  public finish = false;
+  checkFinish() {
+    this.service.getAllStudents()
       .subscribe(
         response => {
-          this.student = response;
-          this.arrayCourses = this.student.coursesIDs.split(',');
-          this.arrayCourses.forEach(coursee => {
-            if (coursee != '') {
-              this.innerArrayCourses = coursee.split('=');
-              this.innerCourseId = Number(this.innerArrayCourses[0]);
-              this.getAllCourses();
-              for (let i = 0; i < this.courses.length; i++) {
-                if (this.courses[i].id === this.innerCourseId) {
-                  var element = {
-                    id: this.courses[i].id,
-                    title: this.courses[i].title,
-                    description: this.courses[i].description,
-                    points: this.courses[i].points,
-                    createdDate: this.courses[i].createdDate,
-                    categoryID: this.courses[i].categoryID,
-                    teacherID: this.courses[i].teacherID,
-                    adminID: this.courses[i].adminID,
-                    studentsIDs: this.courses[i].studentsIDs,
-                    isFinished: this.innerArrayCourses[1],
-                    startDate: this.innerArrayCourses[2],
-                    endDate: ''
+          this.students = response;
+          this.students.forEach(student => {
+            if(student.id === Number(this.routeid)){
+                let coursesIDs = student.coursesIDs.split(',')
+                coursesIDs.pop();
+                for (let i = 0; i < coursesIDs.length; i++) {
+                  let arr = coursesIDs[i].split('=');
+                  let id = arr[0];
+                  let isFinish = arr[1];
+                  if(Number(id) == this.courseid){
+                    if(isFinish === "0"){
+                      this.finish = true;
+                      break;
+                    } else {
+                      this.finish = false;
+                    }
                   }
-                  if (this.innerArrayCourses.length == 4) {
-                    element.endDate = this.innerArrayCourses[3];
-                  }
-                  this.studentCourses[this.countttttt++] = element;
                 }
-              }
             }
           });
-          this.studentCourses.forEach(course => {
-            if (course.id == this.courseid) {
-              this.hasEnroll = true;
-              this.isFind = true;
-            }
-          });
-          if (!this.isFind) {
-            var date = formatDate(Date.now(), 'dd/MM/YYYY', 'en-US').toString();
-            this.student.coursesIDs += this.courseid + '=' + '0' + '=' + date + ',';
-            if (this.br < 1) {
-              this.course.studentsIDs += this.routeid + ',';
-              this.onSubmitCourseStudent();
-              this.br++;
-            }
-            this.onSubmitEnroll();
-            this.getStudentCourses();
-          }
         }
       );
   }
 
-  //Finish course
-  onSubmitCourses() {
-    this.service.updateStudent(this.routeid, this.student)
-    .subscribe(
-      response => {
-        this.router.navigate(['/Student/' + this.routeid + '/Dashboard']);
-      }
-    )
-  }
-
-  //Enroll course
-  onSubmitEnroll() {
-    this.service.updateStudent(this.routeid, this.student)
-    .subscribe(
-      response => {
-        console.log(response);
-      }
-    )
-  }
-
-  //Course Student ids
-  onSubmitCourseStudent() {
-    this.service.updateCourse(this.courseid, this.course)
-    .subscribe(
-      response => {
-        console.log(response);
-      }
-    )
-  }
-
-  points: number = 0;
-  result: string = '';
+  private result: string = '';
   finishCourse(){
-    this.studentCourses.forEach(course => {
-      if (course.id == this.courseid) {
-        course.isFinished = '1';
-        this.points = course.points;
-        var date = formatDate(Date.now(), 'dd/MM/YYYY', 'en-US').toString();
-        course.endDate = date.toString();
-        this.result +=  course.id + '=' + course.isFinished + '=' + course.startDate + '=' + course.endDate + ',';
-      }
-      else{
-        if (course.endDate == '' || course.endDate == null) {
-          this.result +=  course.id + '=' + course.isFinished + '=' + course.startDate + ',';
+    this.service.getStudent(this.routeid)
+    .subscribe(
+      response => {
+        this.student = response;
+        let coursesIDs = this.student.coursesIDs.split(',')
+        coursesIDs.pop();
+        for (let i = 0; i < coursesIDs.length; i++) {
+          let arr = coursesIDs[i].split('=');
+          let id = arr[0];
+          let date = arr[2];
+          let finishDate = formatDate(Date.now(), 'dd/MM/YYYY', 'en-US').toString();
+          if(Number(id) == this.courseid){
+            this.result += id + '=' + "1" + '=' + date + '=' + finishDate;
+            this.student.coursesIDs = this.student.coursesIDs.replace(coursesIDs[i], this.result)
+            break;
+          }
         }
-        else{
-          this.result +=  course.id + '=' + course.isFinished + '=' + course.startDate + '=' + course.endDate + ',';
-        }
-      }
-    });
-    this.student.coursesIDs = this.result;
-    this.student.points += this.points;
-    this.onSubmitCourses();
+        this.service.updateStudent(this.routeid, this.student)
+        .subscribe(
+          response => {
+            setTimeout(() => {
+              this.router.navigate(['/Student/' + this.routeid + '/Dashboard/']);
+            }, 100);
+        })
+      },
+    );
   }
+
+  
 }

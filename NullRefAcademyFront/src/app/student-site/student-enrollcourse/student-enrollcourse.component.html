@@ -59,18 +59,8 @@
             </ng-container>
         </div>
         <div class="under">
-            <ng-container *ngFor="let studentCourse of studentCourses">
-                <ng-container *ngIf="studentCourse.id == courseid">
-                    <ng-container *ngIf="studentCourse.isFinished == '1'">
-                        <p class="done code">You already finished this course.</p>
-                        <p><a class="donebtn font" routerLink="/Student/{{routeid}}/Dashboard">Go to dashboard</a></p>
-                    </ng-container>
-                    <ng-container *ngIf="studentCourse.isFinished == '0'">
-                        <p class="ready code">Are you ready?</p>
-                        <p><a class="font" (click)="finishCourse()">Finish</a></p>
-                    </ng-container>
-                </ng-container>
-            </ng-container>
+            <p><a class="donebtn font" *ngIf="!finish" routerLink="/Student/{{routeid}}/Dashboard">Go to dashboard</a></p>
+            <p><a class="finish font" *ngIf="finish" (click)="finishCourse()">Finish</a></p>
         </div>
     </div>
 </div>
