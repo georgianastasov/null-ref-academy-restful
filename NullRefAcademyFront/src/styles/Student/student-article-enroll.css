@@ -1,0 +1,177 @@
+html {
+    scroll-behavior: smooth;
+}
+
+.intro-article-enroll {
+    padding: 3rem 2rem 2rem 2rem;
+    background-color: #FFE08C;
+    position: relative;
+    top: -1rem;
+}
+
+.intro-article-enroll .upcap a{
+    text-decoration: none;
+    color: #222534;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+}
+
+.intro-article-enroll .upcap a:hover{
+    font-weight: bold;
+}
+
+.intro-article-enroll .cap{
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #222534;
+}
+
+.intro-article-enroll .cap a{
+    text-decoration: none;
+    color: #222534;
+}
+
+.info-article-enroll {
+    padding: 3rem 0 3rem 0;
+}
+
+.info-article-enroll .wrapper{
+    display: block;
+}
+
+.info-article-enroll .main{
+    flex-basis: 80%;
+}
+
+.info-article-enroll .main > .up{
+    background-color: #222534;
+    padding: 0.5rem;
+    border-radius: 0.4rem;
+    box-shadow: 0px 0px 14px 3px rgba(0,0,0,0.3);
+    color: #FFE08C;
+}
+
+.info-article-enroll .main .title{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.info-article-enroll .main .date{
+    font-size: 0.7rem;
+    font-weight: bold;
+}
+
+.info-article-enroll .main .date{
+    font-size: 0.8rem;
+}
+
+.info-article-enroll .main .box{
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+    padding: 0.5rem;
+}
+
+.info-article-enroll .main .box .section-title{
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.info-article-enroll .main .box .description {
+    font-size: 0.9rem;
+    color: #222534;
+    padding-bottom: 0.2rem;
+}
+
+.info-article-enroll .main .box .down {
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid #222534;
+}
+
+.info-article-enroll .main .box .down-down{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width:100%;
+    display:inline;
+}
+
+.info-article-enroll .main .box .down-down .text{
+    max-width: 100%;
+}
+
+.info-article-enroll .agenda{
+    flex-basis: 15%;
+    margin-left: 2rem;
+    margin-top: 7rem;
+    position: sticky;
+    top: 1rem;
+    background-color: #FFE08C;
+    padding: 0.5rem;
+    border-radius: 0.4rem;
+    box-shadow: 0px 0px 14px 3px rgba(0,0,0,0.3);
+}
+
+.info-article-enroll .agenda .cap{
+    margin-bottom: 0.5rem;
+}
+
+.info-article-enroll .agenda .count a{
+    text-decoration: none;
+    color: #222534;
+}
+
+.info-article-enroll .agenda .count a:hover{
+    font-weight: bold;
+}
+
+.info-article-enroll .under{
+    flex-basis: 76%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.info-article-enroll .under p{
+    text-align: end;
+}
+
+.info-article-enroll .under .ready{
+    font-size: 0.9rem;
+    color: #222534;
+    margin-bottom: 0.2rem;
+    font-weight: bold;
+}
+
+.info-article-enroll .under .done{
+    font-size: 0.9rem;
+    color: #222534;
+    margin-bottom: 0.2rem;
+    font-weight: bold;
+}
+
+.info-article-enroll .under a {
+    text-decoration: none;
+    padding: 0.7rem 1.2rem;
+    color: #FFE08C;
+    font-weight: 500;
+    font-size: 0.8rem;
+    background-color: #222534;
+    margin-right: 0.5rem;
+    margin-top: 1rem;
+    border-radius: 0.3rem;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.info-article-enroll .under a:hover {
+    font-weight: bold;
+}
+
+.info-article-enroll .under .donebtn:hover {
+    font-weight: bold;
+}
+
+@media screen and (min-width: 1050px) {
+    .info-article-enroll .wrapper{
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
