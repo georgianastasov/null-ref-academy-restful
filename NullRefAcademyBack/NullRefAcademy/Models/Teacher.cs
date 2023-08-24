@@ -42,5 +42,13 @@ namespace NullRefAcademy.Models
 
         [DisplayName("Created Date")]
         public string? CreatedDate { get; set; }
+
+        //[StringLength(2000)]
+        //[DisplayName("Article")]
+        //public string? ArticleIDs { get; set; }
+
+        //[StringLength(2000)]
+        //[DisplayName("News")]
+        //public string? NewsIDs { get; set; }
     }
 }

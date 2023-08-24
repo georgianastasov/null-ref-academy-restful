@@ -56,5 +56,13 @@ namespace NullRefAcademy.Models
         [StringLength(2000)]
         [DisplayName("Courses")]
         public string? CoursesIDs { get; set; }
+
+        //[StringLength(2000)]
+        //[DisplayName("Article")]
+        //public string? ArticleIDs { get; set; }
+
+        //[StringLength(2000)]
+        //[DisplayName("News")]
+        //public string? NewsIDs { get; set; }
     }
 }
