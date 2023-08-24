@@ -54,6 +54,13 @@
             </div>
         </div>
         <div class="right">
+            <!-- <ng-container *ngFor="let news of newss">
+                <ng-container *ngIf="news.id == newsid"> 
+                    <ng-container *ngIf="news.videoUrl !== 'initial'">
+                        <youtube-player [videoId]="news.videoUrl" suggestedQuality="highres" [width]="1000" [height]="450" [startSeconds]="4" [endSeconds]="300" style="width: 100%;"></youtube-player>
+                    </ng-container>
+                </ng-container>
+            </ng-container> -->
             <ng-container *ngFor="let news of newss">
                 <ng-container *ngIf="news.id == newsid"> 
                     <div class="box">
@@ -71,16 +78,11 @@
             </ng-container>
             <div class="under">
                 <p class="font"><a routerLink="/Student/{{routeid}}/News/{{newsid}}/Enroll">Read</a></p>
-                <!-- <ng-container *ngIf="studentCourses.length == 0">
-                    <p class="font"><a routerLink="/Student/{{routeid}}/Article/{{articleid}}/Enroll">Enroll</a></p>
+                <!-- <ng-container *ngIf="preview">
+                    <p class="font"><a routerLink="/Student/{{routeid}}/Course/{{courseid}}/Enroll">Preview</a></p>
                 </ng-container>
-                <ng-container *ngIf="studentCourses.length != 0">
-                    <ng-container *ngIf="hasEnroll">
-                        <p class="font"><a routerLink="/Student/{{routeid}}/Article/{{articleid}}/Enroll">Preview</a></p>
-                    </ng-container>
-                    <ng-container *ngIf="!hasEnroll">
-                        <p class="font"><a routerLink="/Student/{{routeid}}/Article/{{articleid}}/Enroll">Enroll</a></p>
-                    </ng-container>
+                <ng-container *ngIf="enroll">
+                    <p class="font"><a (click)="enrollStudent()" style="cursor: pointer;">Enroll</a></p>
                 </ng-container> -->
             </div>
         </div>
