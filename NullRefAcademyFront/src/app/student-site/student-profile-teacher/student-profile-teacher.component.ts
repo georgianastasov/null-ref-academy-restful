@@ -30,7 +30,9 @@ export class StudentProfileTeacherComponent implements OnInit {
     accountType: '',
     password: '',
     confirmPassword: '',
-    createdDate: ''
+    createdDate: '',
+    articleIDs: '',
+    newsIDs: ''
   }
 
   categories: Category[] = [];

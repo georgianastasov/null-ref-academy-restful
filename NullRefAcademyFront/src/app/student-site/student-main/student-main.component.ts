@@ -34,7 +34,9 @@ export class StudentMainComponent implements OnInit {
     points: 0,
     progress: 0,
     timeSpent: '',
-    coursesIDs: ''
+    coursesIDs: '',
+    articleIDs: '',
+    newsIDs: ''
   }
 
   editStudent: Student = {
@@ -51,7 +53,9 @@ export class StudentMainComponent implements OnInit {
     points: 0,
     progress: 0,
     timeSpent: '',
-    coursesIDs: ''
+    coursesIDs: '',
+    articleIDs: '',
+    newsIDs: ''
   }
 
   student: Student = {
@@ -68,7 +72,9 @@ export class StudentMainComponent implements OnInit {
     points: 0,
     progress: 0,
     timeSpent: '',
-    coursesIDs: ''
+    coursesIDs: '',
+    articleIDs: '',
+    newsIDs: ''
   }
 
   studentCourse: StudentCourses = {

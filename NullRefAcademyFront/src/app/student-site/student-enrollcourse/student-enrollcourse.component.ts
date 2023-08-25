@@ -37,7 +37,9 @@ export class StudentEnrollcourseComponent implements OnInit {
     points: 0,
     progress: 0,
     timeSpent: '',
-    coursesIDs: ''
+    coursesIDs: '',
+    articleIDs: '',
+    newsIDs: ''
   }
 
   course: Course = {

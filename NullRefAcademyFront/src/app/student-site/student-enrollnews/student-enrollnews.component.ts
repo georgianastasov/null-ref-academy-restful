@@ -39,7 +39,9 @@ export class StudentEnrollNewsComponent implements OnInit {
     points: 0,
     progress: 0,
     timeSpent: '',
-    coursesIDs: ''
+    coursesIDs: '',
+    articleIDs: '',
+    newsIDs: ''
   }
 
   news: News = {
@@ -50,7 +52,10 @@ export class StudentEnrollNewsComponent implements OnInit {
     rating: 0,
     ratingQty: 0,
     createdDate: '',
-    adminID: 0
+    adminID: 0,
+    videoUrl: '',
+    studentsIDs: '',
+    teachersIDs: ''
   }
   
   admins: Admin[] = [];

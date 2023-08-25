@@ -38,7 +38,9 @@ export class StudentNewsComponent implements OnInit {
     points: 0,
     progress: 0,
     timeSpent: '',
-    coursesIDs: ''
+    coursesIDs: '',
+    articleIDs: '',
+    newsIDs: ''
   }
   
   admins: Admin[] = [];

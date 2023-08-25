@@ -64,7 +64,9 @@ export class StudentSettingsComponent implements OnInit {
     points: 0,
     progress: 0,
     timeSpent: '',
-    coursesIDs: ''
+    coursesIDs: '',
+    articleIDs: '',
+    newsIDs: ''
   }
 
   editStudent: Student = {
@@ -81,7 +83,9 @@ export class StudentSettingsComponent implements OnInit {
     points: 0,
     progress: 0,
     timeSpent: '',
-    coursesIDs: ''
+    coursesIDs: '',
+    articleIDs: '',
+    newsIDs: ''
   }
   
   ngOnInit(): void {
