@@ -5,7 +5,10 @@ export interface Article{
     text: string;
     rating: number;
     ratingQty: number;
+    videoUrl: string;
     createdDate: string;
     teacherID: number;
     adminID: number;
+    studentsIDs: string;
+    teachersIDs: string;
 }

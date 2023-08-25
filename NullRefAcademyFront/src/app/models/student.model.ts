@@ -13,4 +13,6 @@ export interface Student{
     progress: number;
     timeSpent: string;
     coursesIDs: string;
+    articleIDs: string;
+    newsIDs: string;
 }

@@ -5,6 +5,9 @@ export interface News{
     text: string;
     rating: number;
     ratingQty: number;
+    videoUrl: string;
     createdDate: string;
     adminID: number;
+    studentsIDs: string;
+    teachersIDs: string;
 }

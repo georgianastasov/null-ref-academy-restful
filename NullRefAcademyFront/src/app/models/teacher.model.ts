@@ -8,4 +8,6 @@ export interface Teacher{
     password: string;
     confirmPassword: string;
     createdDate: string;
+    articleIDs: string;
+    newsIDs: string;
 }
