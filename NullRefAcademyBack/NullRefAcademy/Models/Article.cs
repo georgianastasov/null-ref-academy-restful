@@ -28,8 +28,8 @@ namespace NullRefAcademy.Models
         [DisplayName("Rating Quantity")]
         public int? RatingQty { get; set; }
 
-        //[DisplayName("Video Url")]
-        //public string? VideoUrl { get; set; }
+        [DisplayName("Video Url")]
+        public string? VideoUrl { get; set; }
 
         [DisplayName("Created Date")]
         public string? CreatedDate { get; set; }
@@ -40,12 +40,12 @@ namespace NullRefAcademy.Models
         [DisplayName("Teacher")]
         public int? TeacherID { get; set; }
 
-        //[StringLength(2000)]
-        //[DisplayName("Students")]
-        //public string? StudentsIDs { get; set; }
+        [StringLength(3000)]
+        [DisplayName("Students")]
+        public string? StudentsIDs { get; set; }
 
-        //[StringLength(2000)]
-        //[DisplayName("Teachers")]
-        //public string? TeacherIDs { get; set; }
+        [StringLength(3000)]
+        [DisplayName("Teachers")]
+        public string? TeacherIDs { get; set; }
     }
 }

@@ -42,7 +42,7 @@ namespace NullRefAcademy.Models
         [DisplayName("Admin")]
         public int? AdminID { get; set; }
 
-        [StringLength(2000)]
+        [StringLength(3000)]
         [DisplayName("Students")]
         public string? StudentsIDs { get; set; }
     }
