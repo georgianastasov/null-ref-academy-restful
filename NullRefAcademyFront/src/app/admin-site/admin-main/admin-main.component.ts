@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
+import { Article } from 'src/app/models/article.model';
 import { Course } from 'src/app/models/course.model';
+import { News } from 'src/app/models/news.model';
 import { Student } from 'src/app/models/student.model';
+import { Teacher } from 'src/app/models/teacher.model';
 import { User } from 'src/app/models/user.model';
 import { AdminApiService } from 'src/app/services/admin-api.service';
 
@@ -46,8 +49,17 @@ export class AdminMainComponent implements OnInit {
       this.routeid = params['id'];
     });
 
+    this.getArticlesOfStudent();
     this.getCoursesOfStudent();
+    this.getNewsOfStudent();
+    this.getArticlesOfTeacher();
+    this.getNewsOfTeacher();
+
     this.getStudentsOfCourses();
+    this.getStudentsOfArticles();
+    this.getTeachersOfArticles();
+    this.getStudentsOfNews();
+    this.getTeachersOfNews();
   }
 
   ngOnDestroy() {
@@ -223,6 +235,178 @@ export class AdminMainComponent implements OnInit {
       );
   }
 
+  //Get articles of this student.. 
+  articlesText: string = '';
+  articles2: Article[] = [];
+  students4: Student[] = [];
+  inArticles: boolean = false;
+  array2: string[] = [];
+  articleArray: string[] = [];
+  articleid: number = 0;
+  articleTextArray: string[] = [];
+  getArticlesOfStudent() {
+    this.service.getAllArticles()
+      .subscribe(
+        response => {
+          this.articles2 = response;
+          this.service.getAllStudents()
+            .subscribe(
+              response => {
+                this.students4 = response;
+                this.students4.forEach(student => {
+                  if (student.articleIDs != null) {
+                    this.array2 = student.articleIDs.split(',');
+                    this.removeNull(this.array2);
+                    for (let i = 0; i < this.array2.length; i++) {
+                      this.articleArray = this.array2[i].split('=');
+                      this.removeNull(this.articleArray);
+                      this.articleid = parseInt(this.articleArray[0]);
+                      this.articles2.forEach(article => {
+                        if (this.articleid == article.id) {
+                          this.inArticles = true;
+                          this.articlesText += "Id: " + article.id + " " + "Title: " + article.title + ' <span class="line"></span> ';
+                        }
+                      });
+                    }
+                    this.articleTextArray[student.id] = this.articlesText;
+                    this.articlesText = '';
+                  }
+                });
+              }
+            );
+        }
+      );
+  }
+
+  //Get news of this student.. 
+  newsText: string = '';
+  news2: News[] = [];
+  students5: Student[] = [];
+  inNews: boolean = false;
+  array3: string[] = [];
+  newsArray: string[] = [];
+  newsid: number = 0;
+  newsTextArray: string[] = [];
+  getNewsOfStudent() {
+    this.service.getAllNews()
+      .subscribe(
+        response => {
+          this.news2 = response;
+          this.service.getAllStudents()
+            .subscribe(
+              response => {
+                this.students5 = response;
+                this.students5.forEach(student => {
+                  if (student.newsIDs != null) {
+                    this.array3 = student.newsIDs.split(',');
+                    this.removeNull(this.array3);
+                    for (let i = 0; i < this.array3.length; i++) {
+                      this.newsArray = this.array3[i].split('=');
+                      this.removeNull(this.newsArray);
+                      this.newsid = parseInt(this.newsArray[0]);
+                      this.news2.forEach(news => {
+                        if (this.newsid == news.id) {
+                          this.inNews = true;
+                          this.newsText += "Id: " + news.id + " " + "Title: " + news.title + ' <span class="line"></span> ';
+                        }
+                      });
+                    }
+                    this.newsTextArray[student.id] = this.newsText;
+                    this.newsText = '';
+                  }
+                });
+              }
+            );
+        }
+      );
+  }
+
+  //Get articles of this teacher.. 
+  articlestText: string = '';
+  articles2t: Article[] = [];
+  teachers4t: Teacher[] = [];
+  inArticlest: boolean = false;
+  array2t: string[] = [];
+  articleArrayt: string[] = [];
+  articleidt: number = 0;
+  articletTextArray: string[] = [];
+  getArticlesOfTeacher() {
+    this.service.getAllArticles()
+      .subscribe(
+        response => {
+          this.articles2t = response;
+          this.service.getAllTeachers()
+            .subscribe(
+              response => {
+                this.teachers4t = response;
+                this.teachers4t.forEach(teacher => {
+                  if (teacher.articleIDs != null) {
+                    this.array2t = teacher.articleIDs.split(',');
+                    this.removeNull(this.array2t);
+                    for (let i = 0; i < this.array2t.length; i++) {
+                      this.articleArrayt = this.array2t[i].split('=');
+                      this.removeNull(this.articleArrayt);
+                      this.articleidt = parseInt(this.articleArrayt[0]);
+                      this.articles2.forEach(article => {
+                        if (this.articleidt == article.id) {
+                          this.inArticlest = true;
+                          this.articlestText += "Id: " + article.id + " " + "Title: " + article.title + ' <span class="line"></span> ';
+                        }
+                      });
+                    }
+                    this.articletTextArray[teacher.id] = this.articlestText;
+                    this.articlestText = '';
+                  }
+                });
+              }
+            );
+        }
+      );
+  }
+
+  //Get news of this student.. 
+  newstText: string = '';
+  news2t: News[] = [];
+  teachers5: Teacher[] = [];
+  inNewst: boolean = false;
+  array3t: string[] = [];
+  newsArrayt: string[] = [];
+  newsidt: number = 0;
+  newstTextArray: string[] = [];
+  getNewsOfTeacher() {
+    this.service.getAllNews()
+      .subscribe(
+        response => {
+          this.news2t = response;
+          this.service.getAllTeachers()
+            .subscribe(
+              response => {
+                this.teachers5 = response;
+                this.teachers5.forEach(teacher => {
+                  if (teacher.newsIDs != null) {
+                    this.array3t = teacher.newsIDs.split(',');
+                    this.removeNull(this.array3t);
+                    for (let i = 0; i < this.array3t.length; i++) {
+                      this.newsArrayt = this.array3t[i].split('=');
+                      this.removeNull(this.newsArrayt);
+                      this.newsidt = parseInt(this.newsArrayt[0]);
+                      this.news2t.forEach(news => {
+                        if (this.newsidt == news.id) {
+                          this.inNewst = true;
+                          this.newstText += "Id: " + news.id + " " + "Title: " + news.title + ' <span class="line"></span> ';
+                        }
+                      });
+                    }
+                    this.newstTextArray[teacher.id] = this.newstText;
+                    this.newstText = '';
+                  }
+                });
+              }
+            );
+        }
+      );
+  }
+
   removeNull(array: string[]) {
     return array.filter(x => x !== null)
   };
@@ -235,7 +419,6 @@ export class AdminMainComponent implements OnInit {
   array1: string[] = [];
   studentid: number = 0;
   studentTextArray: string[] = [];
-
   getStudentsOfCourses() {
     this.service.getAllStudents()
       .subscribe(
@@ -259,6 +442,162 @@ export class AdminMainComponent implements OnInit {
                     }
                     this.studentTextArray[course.id] = this.studentText;
                     this.studentText = '';
+                  }
+                });
+              }
+            );
+        }
+      );
+  }
+
+  //Get students of this article.. 
+  studentTextArticle: string = '';
+  articles3: Article[] = [];
+  studentsArticles: Student[] = [];
+  inStudentsArticles: boolean = false;
+  arrayArticles: string[] = [];
+  studentid2: number = 0;
+  studentArticleTextArray: string[] = [];
+  getStudentsOfArticles() {
+    this.service.getAllStudents()
+      .subscribe(
+        response => {
+          this.studentsArticles = response;
+          this.service.getAllArticles()
+            .subscribe(
+              response => {
+                this.articles3 = response;
+                this.articles3.forEach(article => {
+                  if (article.studentsIDs != null) {
+                    this.arrayArticles = article.studentsIDs.split(',');
+                    this.removeNull(this.arrayArticles);
+                    for (let i = 0; i < this.arrayArticles.length; i++) {
+                      this.studentid2 = parseInt(this.arrayArticles[i]);
+                      this.studentsArticles.forEach(student => {
+                        if (this.studentid2 == student.id) {
+                          this.studentTextArticle += "Id:" + student.id + " " + "Username:" + student.username + ' <span class="line"></span> ';
+                        }
+                      });
+                    }
+                    this.studentArticleTextArray[article.id] = this.studentTextArticle;
+                    this.studentTextArticle = '';
+                  }
+                });
+              }
+            );
+        }
+      );
+  }
+
+  //Get teachers of this article.. 
+  teacherTextArticle: string = '';
+  articles4: Article[] = [];
+  teacherArticles: Teacher[] = [];
+  inTeacherArticles: boolean = false;
+  arrayArticles2: string[] = [];
+  teacherid2: number = 0;
+  teacherArticleTextArray: string[] = [];
+  getTeachersOfArticles() {
+    this.service.getAllTeachers()
+      .subscribe(
+        response => {
+          this.teacherArticles = response;
+          this.service.getAllArticles()
+            .subscribe(
+              response => {
+                this.articles4 = response;
+                this.articles4.forEach(article => {
+                  if (article.teachersIDs != null) {
+                    this.arrayArticles2 = article.teachersIDs.split(',');
+                    this.removeNull(this.arrayArticles2);
+                    for (let i = 0; i < this.arrayArticles2.length; i++) {
+                      this.teacherid2 = parseInt(this.arrayArticles2[i]);
+                      this.teacherArticles.forEach(teacher => {
+                        if (this.teacherid2 == teacher.id) {
+                          this.teacherTextArticle += "Id:" + teacher.id + " " + "Username:" + teacher.username + ' <span class="line"></span> ';
+                        }
+                      });
+                    }
+                    this.teacherArticleTextArray[article.id] = this.teacherTextArticle;
+                    this.teacherTextArticle = '';
+                  }
+                });
+              }
+            );
+        }
+      );
+  }
+
+  //Get students of this news.. 
+  studentTextNews: string = '';
+  newss2: News[] = [];
+  studentsNews: Student[] = [];
+  inStudentsNews: boolean = false;
+  arrayNews: string[] = [];
+  studentid3: number = 0;
+  studentNewsTextArray: string[] = [];
+  getStudentsOfNews() {
+    this.service.getAllStudents()
+      .subscribe(
+        response => {
+          this.studentsNews = response;
+          this.service.getAllNews()
+            .subscribe(
+              response => {
+                this.newss2 = response;
+                this.newss2.forEach(news => {
+                  if (news.studentsIDs != null) {
+                    this.arrayNews = news.studentsIDs.split(',');
+                    this.removeNull(this.arrayNews);
+                    for (let i = 0; i < this.arrayNews.length; i++) {
+                      this.studentid3 = parseInt(this.arrayNews[i]);
+                      this.studentsNews.forEach(student => {
+                        if (this.studentid3 == student.id) {
+                          this.studentTextNews += "Id:" + student.id + " " + "Username:" + student.username + ' <span class="line"></span> ';
+                        }
+                      });
+                    }
+                    this.studentNewsTextArray[news.id] = this.studentTextNews;
+                    this.studentTextNews = '';
+                  }
+                });
+              }
+            );
+        }
+      );
+  }
+
+  //Get teachers of this article.. 
+  teacherTextNews: string = '';
+  newss3: News[] = [];
+  teacherNews: Teacher[] = [];
+  inTeacherNews: boolean = false;
+  arrayNews2: string[] = [];
+  teacherid3: number = 0;
+  teacherNewsTextArray: string[] = [];
+  getTeachersOfNews() {
+    this.service.getAllTeachers()
+      .subscribe(
+        response => {
+          this.teacherNews = response;
+          this.service.getAllNews()
+            .subscribe(
+              response => {
+                this.newss3 = response;
+                this.newss3.forEach(news => {
+                  if (news.teachersIDs != null) {
+                    this.arrayNews2 = news.teachersIDs.split(',');
+                    this.removeNull(this.arrayNews2);
+                    for (let i = 0; i < this.arrayNews2.length; i++) {
+                      this.teacherid3 = parseInt(this.arrayNews2[i]);
+                      this.teacherNews.forEach(teacher => {
+                        if (this.teacherid3 == teacher.id) {
+                          this.teacherTextNews += "Id:" + teacher.id + " " + "Username:" + teacher.username + ' <span class="line"></span> ';
+                        }
+                      });
+                    }
+                    this.teacherNewsTextArray[news.id] = this.teacherTextNews;
+                    this.teacherTextNews = '';
                   }
                 });
               }

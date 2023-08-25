@@ -56,6 +56,8 @@
                         <th>Account Type</th>
                         <th>Password</th>
                         <th>Created Date</th>
+                        <th>Articles</th>
+                        <th>News</th>
                         <th>Categories</th>
                         <th>Courses</th>
                         <th>Sections</th>
@@ -72,6 +74,18 @@
                         <td>{{ admin.accountType }}</td>
                         <td>{{ admin.password }}</td>
                         <td>{{ admin.createdDate }}</td>
+                        <td>
+                            <ng-container *ngFor="let article of articles">
+                                <p *ngIf="article.adminID == admin.id">Id: {{ article.id }} <br>Title: {{ article.title }}</p>
+                                <p *ngIf="article.adminID == admin.id" class="line"></p>
+                            </ng-container>
+                        </td>
+                        <td>
+                            <ng-container *ngFor="let news of newss">
+                                <p *ngIf="news.adminID == admin.id">Id: {{ news.id }} <br>Title: {{ news.title }}</p>
+                                <p *ngIf="news.adminID == admin.id" class="line"></p>
+                            </ng-container>
+                        </td>
                         <td>
                             <ng-container *ngFor="let category of categories">
                                 <p *ngIf="category.adminID == admin.id">Id: {{ category.id }} <br>Title: {{ category.title }}</p>
@@ -100,112 +114,58 @@
                 </tbody>
             </table>
         </div>
-        <div id="teacher-section">
+        <div id="article-section">
             <div class="site-top">
-                <p class="caption digital">Section Teachers</p>
-                <a class="btt add font" routerLink="/Admin/{{ routeid }}/Add/Teacher">Add Teacher</a>
+                <p class="caption digital">Section Articles</p>
+                <a class="btt create font" routerLink="/Admin/{{ routeid }}/Add/Article">Create Article</a>
             </div>
             <table class="dashboard-table">
                 <thead>
                     <tr class="code">
                         <th>ID</th>
-                        <th>First name</th>
-                        <th>Last Name</th>
-                        <th>Username</th>
-                        <th>Email</th>
-                        <th>Account Type</th>
-                        <th>Password</th>
-                        <th>Created Date</th>
-                        <th>Categories</th>
-                        <th>Courses</th>
-                        <th>Sections</th>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Rating</th>
+                        <th>Rating Qty</th>
+                        <th>Video Url</th>
+                        <th>CreatedDate</th>
+                        <th>Enrolled Students</th>
+                        <th>Enrolled Teachers</th>
+                        <th>Created by</th>
                         <th>Options</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let teacher of teachers">
-                        <td>{{ teacher.id }}</td>
-                        <td>{{ teacher.firstName }}</td>
-                        <td>{{ teacher.lastName }}</td>
-                        <td>{{ teacher.username }}</td>
-                        <td>{{ teacher.email }}</td>
-                        <td>{{ teacher.accountType }}</td>
-                        <td>{{ teacher.password }}</td>
-                        <td>{{ teacher.createdDate }}</td>
+                    <tr *ngFor="let article of articles">
+                        <td>{{ article.id }}</td>
+                        <td>{{ article.title }}</td>
+                        <td>{{ article.description }}</td>
+                        <td>{{ article.rating }}</td>
+                        <td>{{ article.ratingQty }}</td>
+                        <td>{{ article.videoUrl }}</td>
+                        <td>{{ article.createdDate }}</td>
                         <td>
-                            <ng-container *ngFor="let category of categories">
-                                <p *ngIf="category.teacherID == teacher.id">Id: {{ category.id }} <br>Title: {{ category.title }}</p>
-                                <p  *ngIf="category.teacherID == teacher.id" class="line"></p>
-                            </ng-container>
+                            <p *ngIf="studentArticleTextArray[article.id] == null">0</p>
+                            <p [innerHTML]="studentArticleTextArray[article.id]"></p>
                         </td>
                         <td>
-                            <ng-container *ngFor="let course of courses">
-                                <p *ngIf="course.teacherID == teacher.id">Id: {{ course.id }} <br>Title: {{ course.title }}</p>
-                                <p *ngIf="course.teacherID == teacher.id" class="line"></p>
-                            </ng-container>
+                            <p *ngIf="teacherArticleTextArray[article.id] == null">0</p>
+                            <p [innerHTML]="teacherArticleTextArray[article.id]"></p>
                         </td>
-                        <td>
-                            <ng-container *ngFor="let section of sections">
-                                <p *ngIf="section.teacherID == teacher.id">Id: {{ section.id }} <br>Title: {{ section.title }}</p>
-                                <p *ngIf="section.teacherID == teacher.id" class="line"></p>
+                        <ng-container *ngIf="article.adminID != null">
+                            <ng-container *ngFor="let admin of admins">
+                                <td *ngIf="article.adminID == admin.id">Admin <br>Id: {{ admin.id }} <br>Username: {{ admin.username }}</td>
                             </ng-container>
-                        </td>
+                        </ng-container>
+                        <ng-container *ngIf="article.teacherID != null">
+                            <ng-container *ngFor="let teacher of teachers">
+                                <td *ngIf="article.teacherID == teacher.id">Teacher <br>Id: {{ teacher.id }} <br>Username: {{ teacher.username }}</td>
+                            </ng-container>
+                        </ng-container>
                         <td>
                             <div class="box">
-                                <a class="update" routerLink="/Admin/{{routeid}}/Update/Teacher/{{teacher.id}}">Update</a>
-                                <a class="delete" routerLink="/Admin/{{routeid}}/Delete/Teacher/{{teacher.id}}">Delete</a>
-                            </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div id="student-section">
-            <div class="site-top">
-                <p class="caption digital">Section Students</p>
-                <a class="btt add font" routerLink="/Admin/{{ routeid }}/Add/Student">Add Student</a>
-            </div>
-            <table class="dashboard-table">
-                <thead>
-                    <tr class="code">
-                        <th>ID</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Username</th>
-                        <th>Email</th>
-                        <th>Account Type</th>
-                        <th>Password</th>
-                        <th>Bio</th>
-                        <th>Points</th>
-                        <th>Progress</th>
-                        <th>Time Spent</th>
-                        <th>Creted Date</th>
-                        <th>Courses</th>
-                        <th>Options</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let student of students">
-                        <td>{{ student.id }}</td>
-                        <td>{{ student.firstName }}</td>
-                        <td>{{ student.lastName }}</td>
-                        <td>{{ student.username }}</td>
-                        <td>{{ student.email }}</td>
-                        <td>{{ student.accountType }}</td>
-                        <td>{{ student.password }}</td>
-                        <td>{{ student.bio }}</td>
-                        <td>{{ student.points }}</td>
-                        <td>{{ student.progress }}</td>
-                        <td>{{ student.timeSpent }}</td>
-                        <td>{{ student.createdDate }}</td>
-                        <td>
-                            <p [innerHTML]="courseTextArray[student.id]"></p>
-                        <td>
-                            <div class="box">
-                                <a class="update"
-                                    routerLink="/Admin/{{routeid}}/Update/Student/{{student.id}}">Update</a>
-                                <a class="delete"
-                                    routerLink="/Admin/{{routeid}}/Delete/Student/{{student.id}}">Delete</a>
+                                <a class="update" routerLink="/Admin/{{routeid}}/Update/Article/{{article.id}}">Update</a>
+                                <a class="delete" routerLink="/Admin/{{routeid}}/Delete/Article/{{article.id}}">Delete</a>
                             </div>
                         </td>
                     </tr>
@@ -328,6 +288,59 @@
                 </tbody>
             </table>
         </div>
+        <div id="news-section">
+            <div class="site-top">
+                <p class="caption digital">Section News</p>
+                <a class="btt create font" routerLink="/Admin/{{ routeid }}/Add/News">Create News</a>
+            </div>
+            <table class="dashboard-table">
+                <thead>
+                    <tr class="code">
+                        <th>ID</th>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Rating</th>
+                        <th>Rating Qty</th>
+                        <th>Video Url</th>
+                        <th>CreatedDate</th>
+                        <th>Enrolled Students</th>
+                        <th>Enrolled Teachers</th>
+                        <th>Created by</th>
+                        <th>Options</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let news of newss">
+                        <td>{{ news.id }}</td>
+                        <td>{{ news.title }}</td>
+                        <td>{{ news.description }}</td>
+                        <td>{{ news.rating }}</td>
+                        <td>{{ news.ratingQty }}</td>
+                        <td>{{ news.videoUrl }}</td>
+                        <td>{{ news.createdDate }}</td>
+                        <td>
+                            <p *ngIf="studentNewsTextArray[news.id] == null">0</p>
+                            <p [innerHTML]="studentNewsTextArray[news.id]"></p>
+                        </td>
+                        <td>
+                            <p *ngIf="teacherNewsTextArray[news.id] == null">0</p>
+                            <p [innerHTML]="teacherNewsTextArray[news.id]"></p>
+                        </td>
+                        <ng-container *ngIf="news.adminID != null">
+                            <ng-container *ngFor="let admin of admins">
+                                <td *ngIf="news.adminID == admin.id">Admin <br>Id: {{ admin.id }} <br>Username: {{ admin.username }}</td>
+                            </ng-container>
+                        </ng-container>
+                        <td>
+                            <div class="box">
+                                <a class="update" routerLink="/Admin/{{routeid}}/Update/News/{{news.id}}">Update</a>
+                                <a class="delete" routerLink="/Admin/{{routeid}}/Delete/News/{{news.id}}">Delete</a>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
         <div id="section-section">
             <div class="site-top">
                 <p class="caption digital">Section Sections</p>
@@ -376,87 +389,141 @@
                 </tbody>
             </table>
         </div>
-        <div id="article-section">
+        <div id="student-section">
             <div class="site-top">
-                <p class="caption digital">Section Articles</p>
-                <a class="btt create font" routerLink="/Admin/{{ routeid }}/Add/Article">Create Article</a>
+                <p class="caption digital">Section Students</p>
+                <a class="btt add font" routerLink="/Admin/{{ routeid }}/Add/Student">Add Student</a>
             </div>
             <table class="dashboard-table">
                 <thead>
                     <tr class="code">
                         <th>ID</th>
-                        <th>Title</th>
-                        <th>Description</th>
-                        <th>Rating</th>
-                        <th>Rating Qty</th>
-                        <th>CreatedDate</th>
-                        <th>Created by</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>Account Type</th>
+                        <th>Password</th>
+                        <th>Bio</th>
+                        <th>Points</th>
+                        <th>Progress</th>
+                        <th>Time Spent</th>
+                        <th>Creted Date</th>
+                        <th>Readed Articles</th>
+                        <th>Enrolled Courses</th>
+                        <th>Readed News</th>
                         <th>Options</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let article of articles">
-                        <td>{{ article.id }}</td>
-                        <td>{{ article.title }}</td>
-                        <td>{{ article.description }}</td>
-                        <td>{{ article.rating }}</td>
-                        <td>{{ article.ratingQty }}</td>
-                        <td>{{ article.createdDate }}</td>
-                        <ng-container *ngIf="article.adminID != null">
-                            <ng-container *ngFor="let admin of admins">
-                                <td *ngIf="article.adminID == admin.id">Admin <br>Id: {{ admin.id }} <br>Username: {{ admin.username }}</td>
-                            </ng-container>
-                        </ng-container>
-                        <ng-container *ngIf="article.teacherID != null">
-                            <ng-container *ngFor="let teacher of teachers">
-                                <td *ngIf="article.teacherID == teacher.id">Teacher <br>Id: {{ teacher.id }} <br>Username: {{ teacher.username }}</td>
-                            </ng-container>
-                        </ng-container>
+                    <tr *ngFor="let student of students">
+                        <td>{{ student.id }}</td>
+                        <td>{{ student.firstName }}</td>
+                        <td>{{ student.lastName }}</td>
+                        <td>{{ student.username }}</td>
+                        <td>{{ student.email }}</td>
+                        <td>{{ student.accountType }}</td>
+                        <td>{{ student.password }}</td>
+                        <td>{{ student.bio }}</td>
+                        <td>{{ student.points }}</td>
+                        <td>{{ student.progress }}</td>
+                        <td>{{ student.timeSpent }}</td>
+                        <td>{{ student.createdDate }}</td>
+                        <td>
+                            <p *ngIf="articleTextArray[student.id] == null">0</p>
+                            <p [innerHTML]="articleTextArray[student.id]"></p>
+                        </td>
+                        <td>
+                            <p *ngIf="courseTextArray[student.id] == null">0</p>
+                            <p [innerHTML]="courseTextArray[student.id]"></p>
+                        </td>
+                        <td>
+                            <p *ngIf="newsTextArray[student.id] == null">0</p>
+                            <p [innerHTML]="newsTextArray[student.id]"></p>
+                        </td>
                         <td>
                             <div class="box">
-                                <a class="update" routerLink="/Admin/{{routeid}}/Update/Article/{{article.id}}">Update</a>
-                                <a class="delete" routerLink="/Admin/{{routeid}}/Delete/Article/{{article.id}}">Delete</a>
+                                <a class="update"
+                                    routerLink="/Admin/{{routeid}}/Update/Student/{{student.id}}">Update</a>
+                                <a class="delete"
+                                    routerLink="/Admin/{{routeid}}/Delete/Student/{{student.id}}">Delete</a>
                             </div>
                         </td>
                     </tr>
                 </tbody>
             </table>
         </div>
-        <div id="news-section">
+        <div id="teacher-section">
             <div class="site-top">
-                <p class="caption digital">Section News</p>
-                <a class="btt create font" routerLink="/Admin/{{ routeid }}/Add/News">Create News</a>
+                <p class="caption digital">Section Teachers</p>
+                <a class="btt add font" routerLink="/Admin/{{ routeid }}/Add/Teacher">Add Teacher</a>
             </div>
             <table class="dashboard-table">
                 <thead>
                     <tr class="code">
                         <th>ID</th>
-                        <th>Title</th>
-                        <th>Description</th>
-                        <th>Rating</th>
-                        <th>Rating Qty</th>
-                        <th>CreatedDate</th>
-                        <th>Created by</th>
+                        <th>First name</th>
+                        <th>Last Name</th>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>Account Type</th>
+                        <th>Password</th>
+                        <th>Created Date</th>
+                        <th>Articles</th>
+                        <th>Categories</th>
+                        <th>Courses</th>
+                        <th>Sections</th>
+                        <th>Readed Articles</th>
+                        <th>Readed News</th>
                         <th>Options</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let news of newss">
-                        <td>{{ news.id }}</td>
-                        <td>{{ news.title }}</td>
-                        <td>{{ news.description }}</td>
-                        <td>{{ news.rating }}</td>
-                        <td>{{ news.ratingQty }}</td>
-                        <td>{{ news.createdDate }}</td>
-                        <ng-container *ngIf="news.adminID != null">
-                            <ng-container *ngFor="let admin of admins">
-                                <td *ngIf="news.adminID == admin.id">Admin <br>Id: {{ admin.id }} <br>Username: {{ admin.username }}</td>
+                    <tr *ngFor="let teacher of teachers">
+                        <td>{{ teacher.id }}</td>
+                        <td>{{ teacher.firstName }}</td>
+                        <td>{{ teacher.lastName }}</td>
+                        <td>{{ teacher.username }}</td>
+                        <td>{{ teacher.email }}</td>
+                        <td>{{ teacher.accountType }}</td>
+                        <td>{{ teacher.password }}</td>
+                        <td>{{ teacher.createdDate }}</td>
+                        <td>
+                            <ng-container *ngFor="let article of articles">
+                                <p *ngIf="article.teacherID == teacher.id">Id: {{ article.id }} <br>Title: {{ article.title }}</p>
+                                <p  *ngIf="article.teacherID == teacher.id" class="line"></p>
                             </ng-container>
-                        </ng-container>
+                        </td>
+                        <td>
+                            <ng-container *ngFor="let category of categories">
+                                <p *ngIf="category.teacherID == teacher.id">Id: {{ category.id }} <br>Title: {{ category.title }}</p>
+                                <p  *ngIf="category.teacherID == teacher.id" class="line"></p>
+                            </ng-container>
+                        </td>
+                        <td>
+                            <ng-container *ngFor="let course of courses">
+                                <p *ngIf="course.teacherID == teacher.id">Id: {{ course.id }} <br>Title: {{ course.title }}</p>
+                                <p *ngIf="course.teacherID == teacher.id" class="line"></p>
+                            </ng-container>
+                        </td>
+                        <td>
+                            <ng-container *ngFor="let section of sections">
+                                <p *ngIf="section.teacherID == teacher.id">Id: {{ section.id }} <br>Title: {{ section.title }}</p>
+                                <p *ngIf="section.teacherID == teacher.id" class="line"></p>
+                            </ng-container>
+                        </td>
+                        <td>
+                            <p *ngIf="articletTextArray[teacher.id] == null">0</p>
+                            <p [innerHTML]="articletTextArray[teacher.id]"></p>
+                        </td>
+                        <td>
+                            <p *ngIf="newstTextArray[teacher.id] == null">0</p>
+                            <p [innerHTML]="newstTextArray[teacher.id]"></p>
+                        </td>
                         <td>
                             <div class="box">
-                                <a class="update" routerLink="/Admin/{{routeid}}/Update/News/{{news.id}}">Update</a>
-                                <a class="delete" routerLink="/Admin/{{routeid}}/Delete/News/{{news.id}}">Delete</a>
+                                <a class="update" routerLink="/Admin/{{routeid}}/Update/Teacher/{{teacher.id}}">Update</a>
+                                <a class="delete" routerLink="/Admin/{{routeid}}/Delete/Teacher/{{teacher.id}}">Delete</a>
                             </div>
                         </td>
                     </tr>
