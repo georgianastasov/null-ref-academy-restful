@@ -60,7 +60,9 @@ export class AdminUpdateTeacherComponent implements OnInit {
     accountType: '',
     password: '',
     confirmPassword: '',
-    createdDate: ''
+    createdDate: '',
+    articleIDs: '',
+    newsIDs: ''
   }
 
   teacher: Teacher = {
@@ -72,7 +74,9 @@ export class AdminUpdateTeacherComponent implements OnInit {
     accountType: '',
     password: '',
     confirmPassword: '',
-    createdDate: ''
+    createdDate: '',
+    articleIDs: '',
+    newsIDs: ''
   }
 
   ngOnInit(): void {

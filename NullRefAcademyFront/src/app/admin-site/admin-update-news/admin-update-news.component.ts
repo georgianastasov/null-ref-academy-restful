@@ -46,7 +46,10 @@ export class AdminUpdateNewsComponent implements OnInit {
     rating: 0,
     ratingQty: 0,
     createdDate: '',
-    adminID: 0
+    adminID: 0,
+    videoUrl: '',
+    studentsIDs: '',
+    teachersIDs: ''
   }
 
   news: News = {
@@ -57,7 +60,10 @@ export class AdminUpdateNewsComponent implements OnInit {
     rating: 0,
     ratingQty: 0,
     createdDate: '',
-    adminID: 0
+    adminID: 0,
+    videoUrl: '',
+    studentsIDs: '',
+    teachersIDs: ''
   }
 
   ngOnInit(): void {

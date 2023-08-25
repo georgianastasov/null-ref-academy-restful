@@ -31,7 +31,9 @@ export class AdminDeleteStudentComponent implements OnInit {
     points: 0,
     progress: 0,
     timeSpent: '',
-    coursesIDs: ''
+    coursesIDs: '',
+    articleIDs: '',
+    newsIDs: ''
   }
 
   ngOnInit(): void {

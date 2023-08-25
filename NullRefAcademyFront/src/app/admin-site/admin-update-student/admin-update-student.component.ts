@@ -70,7 +70,9 @@ export class AdminUpdateStudentComponent implements OnInit {
     points: 0,
     progress: 0,
     timeSpent: '',
-    coursesIDs: ''
+    coursesIDs: '',
+    articleIDs: '',
+    newsIDs: ''
   }
 
   student: Student = {
@@ -87,7 +89,9 @@ export class AdminUpdateStudentComponent implements OnInit {
     points: 0,
     progress: 0,
     timeSpent: '',
-    coursesIDs: ''
+    coursesIDs: '',
+    articleIDs: '',
+    newsIDs: ''
   }
 
   ngOnInit(): void {

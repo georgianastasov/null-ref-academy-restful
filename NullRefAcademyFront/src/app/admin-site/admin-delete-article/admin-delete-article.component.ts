@@ -30,7 +30,10 @@ export class AdminDeleteArticleComponent implements OnInit {
     ratingQty: 0,
     createdDate: '',
     teacherID: 0,
-    adminID: 0
+    adminID: 0,
+    videoUrl: '',
+    studentsIDs: '',
+    teachersIDs: ''
   }
 
   ngOnInit(): void {
