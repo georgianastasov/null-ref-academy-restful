@@ -60,7 +60,9 @@ export class TeacherSettingsComponent implements OnInit {
     accountType: '',
     password: '',
     confirmPassword: '',
-    createdDate: ''
+    createdDate: '',
+    articleIDs: '',
+    newsIDs: ''
   }
 
   takenTeacher: Teacher = {
@@ -72,7 +74,9 @@ export class TeacherSettingsComponent implements OnInit {
     accountType: '',
     password: '',
     confirmPassword: '',
-    createdDate: ''
+    createdDate: '',
+    articleIDs: '',
+    newsIDs: ''
   }
 
   categories: Category[] = [];

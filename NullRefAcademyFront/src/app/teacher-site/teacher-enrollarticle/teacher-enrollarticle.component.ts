@@ -24,7 +24,7 @@ export class TeacherEnrollArticleComponent implements OnInit {
   articleid!: number;
   constructor(private service: StudentApiService, private router: Router, private route: ActivatedRoute) { }
 
-  student: Student = {
+  teacher: Teacher = {
     id: 0,
     firstName: '',
     lastName: '',
@@ -34,11 +34,8 @@ export class TeacherEnrollArticleComponent implements OnInit {
     password: '',
     confirmPassword: '',
     createdDate: '',
-    bio: '',
-    points: 0,
-    progress: 0,
-    timeSpent: '',
-    coursesIDs: ''
+    articleIDs: '',
+    newsIDs: ''
   }
 
   article: Article = {
@@ -50,7 +47,10 @@ export class TeacherEnrollArticleComponent implements OnInit {
     ratingQty: 0,
     createdDate: '',
     teacherID: 0,
-    adminID: 0
+    adminID: 0,
+    videoUrl: '',
+    studentsIDs: '',
+    teachersIDs: ''
   }
   
   admins: Admin[] = [];
@@ -65,7 +65,7 @@ export class TeacherEnrollArticleComponent implements OnInit {
       this.articleid = params['id2'];
     });
 
-    this.getStudent();
+    this.getTeacher();
     this.getArticle();
     this.getAllArticles();
 
@@ -79,11 +79,11 @@ export class TeacherEnrollArticleComponent implements OnInit {
     this.routeSub.unsubscribe();
   }
 
-  getStudent() {
-    this.service.getStudent(this.routeid)
+  getTeacher() {
+    this.service.getTeacher(this.routeid)
       .subscribe(
         response => {
-          this.student = response;
+          this.teacher = response;
         }
       );
   }

@@ -31,7 +31,9 @@ export class TeacherDeleteArticleComponent implements OnInit {
     accountType: '',
     password: '',
     confirmPassword: '',
-    createdDate: ''
+    createdDate: '',
+    articleIDs: '',
+    newsIDs: ''
   }
 
   article: Article = {
@@ -43,7 +45,10 @@ export class TeacherDeleteArticleComponent implements OnInit {
     ratingQty: 0,
     createdDate: '',
     teacherID: 0,
-    adminID: 0
+    adminID: 0,
+    videoUrl: '',
+    studentsIDs: '',
+    teachersIDs: ''
   }
 
   hasAdmin: boolean = false;

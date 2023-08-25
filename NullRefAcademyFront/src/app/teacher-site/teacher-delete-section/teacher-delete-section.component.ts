@@ -30,7 +30,9 @@ export class TeacherDeleteSectionComponent implements OnInit {
     accountType: '',
     password: '',
     confirmPassword: '',
-    createdDate: ''
+    createdDate: '',
+    articleIDs: '',
+    newsIDs: ''
   }
 
   section: Section = {

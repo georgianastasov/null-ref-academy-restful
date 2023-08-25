@@ -53,7 +53,9 @@ export class TeacherUpdateCourseComponent implements OnInit {
     accountType: '',
     password: '',
     confirmPassword: '',
-    createdDate: ''
+    createdDate: '',
+    articleIDs: '',
+    newsIDs: ''
   }
 
   takenCourse: Course = {

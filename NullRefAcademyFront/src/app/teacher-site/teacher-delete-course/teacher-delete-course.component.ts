@@ -31,7 +31,9 @@ export class TeacherDeleteCourseComponent implements OnInit {
     accountType: '',
     password: '',
     confirmPassword: '',
-    createdDate: ''
+    createdDate: '',
+    articleIDs: '',
+    newsIDs: ''
   }
 
   course: Course = {

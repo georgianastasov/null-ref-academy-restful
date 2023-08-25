@@ -52,7 +52,9 @@ export class TeacherUpdateSectionComponent implements OnInit {
     accountType: '',
     password: '',
     confirmPassword: '',
-    createdDate: ''
+    createdDate: '',
+    articleIDs: '',
+    newsIDs: ''
   }
 
   takenSection: Section = {

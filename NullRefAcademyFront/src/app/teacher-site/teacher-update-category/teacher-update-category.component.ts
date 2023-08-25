@@ -40,7 +40,9 @@ export class TeacherUpdateCategoryComponent implements OnInit {
     accountType: '',
     password: '',
     confirmPassword: '',
-    createdDate: ''
+    createdDate: '',
+    articleIDs: '',
+    newsIDs: ''
   }
 
   takenCategory: Category = {

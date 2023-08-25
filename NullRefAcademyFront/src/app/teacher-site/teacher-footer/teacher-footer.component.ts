@@ -24,7 +24,9 @@ export class TeacherFooterComponent implements OnInit {
     accountType: '',
     password: '',
     confirmPassword: '',
-    createdDate: ''
+    createdDate: '',
+    articleIDs: '',
+    newsIDs: ''
   }
   
   ngOnInit(): void {
