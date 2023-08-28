@@ -347,7 +347,7 @@ export class AdminMainComponent implements OnInit {
                       this.articleArrayt = this.array2t[i].split('=');
                       this.removeNull(this.articleArrayt);
                       this.articleidt = parseInt(this.articleArrayt[0]);
-                      this.articles2.forEach(article => {
+                      this.articles2t.forEach(article => {
                         if (this.articleidt == article.id) {
                           this.inArticlest = true;
                           this.articlestText += "Id: " + article.id + " " + "Title: " + article.title + ' <span class="line"></span> ';
