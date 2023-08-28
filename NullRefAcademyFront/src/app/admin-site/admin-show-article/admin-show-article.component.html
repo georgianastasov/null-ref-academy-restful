@@ -4,18 +4,21 @@
         <div id="article-section">
             <div class="site-top">
                 <p class="caption digital">Section Articles</p>
-                <a class="btt create font" routerLink="/Admin/{{routeid}}/Add/Article">Create Article</a>
+                <a class="btt create font" routerLink="/Admin/{{ routeid }}/Add/Article">Create Article</a>
             </div>
             <table class="dashboard-table">
                 <thead>
                     <tr class="code">
-                        <th>Identical</th>
+                        <th>ID</th>
                         <th>Title</th>
                         <th>Description</th>
                         <th>Rating</th>
                         <th>Rating Qty</th>
-                        <th>Created Date</th>
-                        <th>Createdby</th>
+                        <th>Video Url</th>
+                        <th>CreatedDate</th>
+                        <th>Enrolled Students</th>
+                        <th>Enrolled Teachers</th>
+                        <th>Created by</th>
                         <th>Options</th>
                     </tr>
                 </thead>
@@ -26,7 +29,16 @@
                         <td>{{ article.description }}</td>
                         <td>{{ article.rating }}</td>
                         <td>{{ article.ratingQty }}</td>
+                        <td>{{ article.videoUrl }}</td>
                         <td>{{ article.createdDate }}</td>
+                        <td>
+                            <p *ngIf="studentArticleTextArray[article.id] == null">0</p>
+                            <p [innerHTML]="studentArticleTextArray[article.id]"></p>
+                        </td>
+                        <td>
+                            <p *ngIf="teacherArticleTextArray[article.id] == null">0</p>
+                            <p [innerHTML]="teacherArticleTextArray[article.id]"></p>
+                        </td>
                         <ng-container *ngIf="article.adminID != null">
                             <ng-container *ngFor="let admin of admins">
                                 <td *ngIf="article.adminID == admin.id">Admin <br>Id: {{ admin.id }} <br>Username: {{ admin.username }}</td>

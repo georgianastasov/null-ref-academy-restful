@@ -33,6 +33,9 @@ export class AdminShowArticleComponent implements OnInit {
       console.log('id: ' + params['id']);
       this.routeid = params['id'];
     });
+
+    this.getStudentsOfArticles();
+    this.getTeachersOfArticles();
   }
 
   ngOnDestroy() {
@@ -76,4 +79,82 @@ export class AdminShowArticleComponent implements OnInit {
   removeNull(array: string[]) {
     return array.filter(x => x !== null)
   };
+
+  //Get students of this article.. 
+  studentTextArticle: string = '';
+  articles3: Article[] = [];
+  studentsArticles: Student[] = [];
+  inStudentsArticles: boolean = false;
+  arrayArticles: string[] = [];
+  studentid2: number = 0;
+  studentArticleTextArray: string[] = [];
+  getStudentsOfArticles() {
+    this.service.getAllStudents()
+      .subscribe(
+        response => {
+          this.studentsArticles = response;
+          this.service.getAllArticles()
+            .subscribe(
+              response => {
+                this.articles3 = response;
+                this.articles3.forEach(article => {
+                  if (article.studentsIDs != null) {
+                    this.arrayArticles = article.studentsIDs.split(',');
+                    this.removeNull(this.arrayArticles);
+                    for (let i = 0; i < this.arrayArticles.length; i++) {
+                      this.studentid2 = parseInt(this.arrayArticles[i]);
+                      this.studentsArticles.forEach(student => {
+                        if (this.studentid2 == student.id) {
+                          this.studentTextArticle += "Id:" + student.id + " " + "Username:" + student.username + ' <span class="line"></span> ';
+                        }
+                      });
+                    }
+                    this.studentArticleTextArray[article.id] = this.studentTextArticle;
+                    this.studentTextArticle = '';
+                  }
+                });
+              }
+            );
+        }
+      );
+  }
+
+  //Get teachers of this article.. 
+  teacherTextArticle: string = '';
+  articles4: Article[] = [];
+  teacherArticles: Teacher[] = [];
+  inTeacherArticles: boolean = false;
+  arrayArticles2: string[] = [];
+  teacherid2: number = 0;
+  teacherArticleTextArray: string[] = [];
+  getTeachersOfArticles() {
+    this.service.getAllTeachers()
+      .subscribe(
+        response => {
+          this.teacherArticles = response;
+          this.service.getAllArticles()
+            .subscribe(
+              response => {
+                this.articles4 = response;
+                this.articles4.forEach(article => {
+                  if (article.teachersIDs != null) {
+                    this.arrayArticles2 = article.teachersIDs.split(',');
+                    this.removeNull(this.arrayArticles2);
+                    for (let i = 0; i < this.arrayArticles2.length; i++) {
+                      this.teacherid2 = parseInt(this.arrayArticles2[i]);
+                      this.teacherArticles.forEach(teacher => {
+                        if (this.teacherid2 == teacher.id) {
+                          this.teacherTextArticle += "Id:" + teacher.id + " " + "Username:" + teacher.username + ' <span class="line"></span> ';
+                        }
+                      });
+                    }
+                    this.teacherArticleTextArray[article.id] = this.teacherTextArticle;
+                    this.teacherTextArticle = '';
+                  }
+                });
+              }
+            );
+        }
+      );
+  }
 }

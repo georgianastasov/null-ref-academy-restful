@@ -4,18 +4,21 @@
         <div id="news-section">
             <div class="site-top">
                 <p class="caption digital">Section News</p>
-                <a class="btt create font" routerLink="/Admin/{{routeid}}/Add/News">Create News</a>
+                <a class="btt create font" routerLink="/Admin/{{ routeid }}/Add/News">Create News</a>
             </div>
             <table class="dashboard-table">
                 <thead>
                     <tr class="code">
-                        <th>Identical</th>
+                        <th>ID</th>
                         <th>Title</th>
                         <th>Description</th>
                         <th>Rating</th>
                         <th>Rating Qty</th>
-                        <th>Created Date</th>
-                        <th>Createdby</th>
+                        <th>Video Url</th>
+                        <th>CreatedDate</th>
+                        <th>Enrolled Students</th>
+                        <th>Enrolled Teachers</th>
+                        <th>Created by</th>
                         <th>Options</th>
                     </tr>
                 </thead>
@@ -26,7 +29,16 @@
                         <td>{{ news.description }}</td>
                         <td>{{ news.rating }}</td>
                         <td>{{ news.ratingQty }}</td>
+                        <td>{{ news.videoUrl }}</td>
                         <td>{{ news.createdDate }}</td>
+                        <td>
+                            <p *ngIf="studentNewsTextArray[news.id] == null">0</p>
+                            <p [innerHTML]="studentNewsTextArray[news.id]"></p>
+                        </td>
+                        <td>
+                            <p *ngIf="teacherNewsTextArray[news.id] == null">0</p>
+                            <p [innerHTML]="teacherNewsTextArray[news.id]"></p>
+                        </td>
                         <ng-container *ngIf="news.adminID != null">
                             <ng-container *ngFor="let admin of admins">
                                 <td *ngIf="news.adminID == admin.id">Admin <br>Id: {{ admin.id }} <br>Username: {{ admin.username }}</td>
