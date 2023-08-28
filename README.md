@@ -67,7 +67,7 @@ Usage from the perspective of students, teachers and administrators.
 2. Enrollment in various courses.
 3. Grade after finishing a course.
 4. Read articles and news.
-5. Rating of courses and articles.
+5. Rating of courses, articles and news.
 6. Profile overview and information about the platform and other students.
 
 ### **Teacher Panel**
@@ -76,7 +76,7 @@ Usage from the perspective of students, teachers and administrators.
 3. Giving grades to students.
 4. Create articles.
 5. Read articles and news.
-5. Rating of courses and articles.
+5. Rating of courses, articles and news.
 6. Profile overview and information about the platform about the students and other teachers.
 
 ### **Administrators Panel**
@@ -85,7 +85,7 @@ Usage from the perspective of students, teachers and administrators.
 3. An overview of everything happening on the platform.
 4. Information management.
 5. User management.
-6. Creation of news from the IT sphere and about the platform.
+6. Creation of courses, articles and news from the IT sphere and about the platform.
 
 ## :chart_with_upwards_trend: Product perspective
 The implemented platform has great potential for future development and improvement with the addition of many engaging and useful functionalities. With the development of e-learning and new technologies, the developed platform will also develop and support. Adding new features will make this kind of software competitive in the market and extremely popular.
