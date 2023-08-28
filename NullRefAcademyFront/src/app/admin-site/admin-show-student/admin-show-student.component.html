@@ -4,12 +4,12 @@
         <div id="student-section">
             <div class="site-top">
                 <p class="caption digital">Section Students</p>
-                <a class="btt add font" routerLink="/Admin/{{routeid}}/Add/Student">Add Student</a>
+                <a class="btt add font" routerLink="/Admin/{{ routeid }}/Add/Student">Add Student</a>
             </div>
             <table class="dashboard-table">
                 <thead>
                     <tr class="code">
-                        <th>Identical</th>
+                        <th>ID</th>
                         <th>First Name</th>
                         <th>Last Name</th>
                         <th>Username</th>
@@ -21,7 +21,9 @@
                         <th>Progress</th>
                         <th>Time Spent</th>
                         <th>Creted Date</th>
-                        <th>Courses</th>
+                        <th>Readed Articles</th>
+                        <th>Enrolled Courses</th>
+                        <th>Readed News</th>
                         <th>Options</th>
                     </tr>
                 </thead>
@@ -40,7 +42,17 @@
                         <td>{{ student.timeSpent }}</td>
                         <td>{{ student.createdDate }}</td>
                         <td>
+                            <p *ngIf="articleTextArray[student.id] == null">0</p>
+                            <p [innerHTML]="articleTextArray[student.id]"></p>
+                        </td>
+                        <td>
+                            <p *ngIf="courseTextArray[student.id] == null">0</p>
                             <p [innerHTML]="courseTextArray[student.id]"></p>
+                        </td>
+                        <td>
+                            <p *ngIf="newsTextArray[student.id] == null">0</p>
+                            <p [innerHTML]="newsTextArray[student.id]"></p>
+                        </td>
                         <td>
                             <div class="box">
                                 <a class="update"

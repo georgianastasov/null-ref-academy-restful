@@ -4,12 +4,12 @@
         <div id="teacher-section">
             <div class="site-top">
                 <p class="caption digital">Section Teachers</p>
-                <a class="btt add font" routerLink="/Admin/{{routeid}}/Add/Teacher">Add Teacher</a>
+                <a class="btt add font" routerLink="/Admin/{{ routeid }}/Add/Teacher">Add Teacher</a>
             </div>
             <table class="dashboard-table">
                 <thead>
                     <tr class="code">
-                        <th>Identical</th>
+                        <th>ID</th>
                         <th>First name</th>
                         <th>Last Name</th>
                         <th>Username</th>
@@ -17,9 +17,12 @@
                         <th>Account Type</th>
                         <th>Password</th>
                         <th>Created Date</th>
+                        <th>Articles</th>
                         <th>Categories</th>
                         <th>Courses</th>
                         <th>Sections</th>
+                        <th>Readed Articles</th>
+                        <th>Readed News</th>
                         <th>Options</th>
                     </tr>
                 </thead>
@@ -33,6 +36,12 @@
                         <td>{{ teacher.accountType }}</td>
                         <td>{{ teacher.password }}</td>
                         <td>{{ teacher.createdDate }}</td>
+                        <td>
+                            <ng-container *ngFor="let article of articles">
+                                <p *ngIf="article.teacherID == teacher.id">Id: {{ article.id }} <br>Title: {{ article.title }}</p>
+                                <p  *ngIf="article.teacherID == teacher.id" class="line"></p>
+                            </ng-container>
+                        </td>
                         <td>
                             <ng-container *ngFor="let category of categories">
                                 <p *ngIf="category.teacherID == teacher.id">Id: {{ category.id }} <br>Title: {{ category.title }}</p>
@@ -50,6 +59,14 @@
                                 <p *ngIf="section.teacherID == teacher.id">Id: {{ section.id }} <br>Title: {{ section.title }}</p>
                                 <p *ngIf="section.teacherID == teacher.id" class="line"></p>
                             </ng-container>
+                        </td>
+                        <td>
+                            <p *ngIf="articletTextArray[teacher.id] == null">0</p>
+                            <p [innerHTML]="articletTextArray[teacher.id]"></p>
+                        </td>
+                        <td>
+                            <p *ngIf="newstTextArray[teacher.id] == null">0</p>
+                            <p [innerHTML]="newstTextArray[teacher.id]"></p>
                         </td>
                         <td>
                             <div class="box">
