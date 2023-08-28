@@ -9,7 +9,7 @@
             <table class="dashboard-table">
                 <thead>
                     <tr class="code">
-                        <th>Identical</th>
+                        <th>ID</th>
                         <th>First name</th>
                         <th>Last Name</th>
                         <th>Username</th>
@@ -17,6 +17,8 @@
                         <th>Account Type</th>
                         <th>Password</th>
                         <th>Created Date</th>
+                        <th>Articles</th>
+                        <th>News</th>
                         <th>Categories</th>
                         <th>Courses</th>
                         <th>Sections</th>
@@ -33,6 +35,18 @@
                         <td>{{ admin.accountType }}</td>
                         <td>{{ admin.password }}</td>
                         <td>{{ admin.createdDate }}</td>
+                        <td>
+                            <ng-container *ngFor="let article of articles">
+                                <p *ngIf="article.adminID == admin.id">Id: {{ article.id }} <br>Title: {{ article.title }}</p>
+                                <p *ngIf="article.adminID == admin.id" class="line"></p>
+                            </ng-container>
+                        </td>
+                        <td>
+                            <ng-container *ngFor="let news of newss">
+                                <p *ngIf="news.adminID == admin.id">Id: {{ news.id }} <br>Title: {{ news.title }}</p>
+                                <p *ngIf="news.adminID == admin.id" class="line"></p>
+                            </ng-container>
+                        </td>
                         <td>
                             <ng-container *ngFor="let category of categories">
                                 <p *ngIf="category.adminID == admin.id">Id: {{ category.id }} <br>Title: {{ category.title }}</p>

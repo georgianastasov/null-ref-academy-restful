@@ -18,16 +18,18 @@ export class AdminShowAdminComponent implements OnInit {
   categories: any = [];
   courses: any = [];
   sections: any = [];
+  articles: any = [];
+  newss: any = [];
 
   ngOnInit(): void {
     this.getAllAdmins();
     this.getAllCategories();
     this.getAllCourses();
     this.getAllSections();
+    this.getAllArticles();
+    this.getAllNews();
 
     this.routeSub = this.route.params.subscribe(params => {
-      console.log(params);
-      console.log('id: ' + params['id']);
       this.routeid = params['id'];
     });
   }
@@ -40,9 +42,7 @@ export class AdminShowAdminComponent implements OnInit {
     this.service.getAllAdmins()
     .subscribe(
       response => {
-        console.log('Admins');
         this.admins = response;
-        console.log(this.admins);
       }
     );
   }
@@ -51,9 +51,7 @@ export class AdminShowAdminComponent implements OnInit {
     this.service.getAllCategories()
     .subscribe(
       response => {
-        console.log('Categories');
         this.categories = response;
-        console.log(this.categories);
       }
     );
   }
@@ -62,9 +60,7 @@ export class AdminShowAdminComponent implements OnInit {
     this.service.getAllCourses()
     .subscribe(
       response => {
-        console.log('Courses');
         this.courses = response;
-        console.log(this.courses);
       }
     );
   }
@@ -73,11 +69,26 @@ export class AdminShowAdminComponent implements OnInit {
     this.service.getAllSections()
     .subscribe(
       response => {
-        console.log('Sections');
         this.sections = response;
-        console.log(this.sections);
       }
     );
   }
 
+  getAllArticles() {
+    this.service.getAllArticles()
+    .subscribe(
+      response => {
+        this.articles = response;
+      }
+    );
+  }
+
+  getAllNews() {
+    this.service.getAllNews()
+    .subscribe(
+      response => {
+        this.newss = response;
+      }
+    );
+  }
 }
