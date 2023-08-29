@@ -32,7 +32,12 @@ export class AdminUpdateNewsComponent implements OnInit {
   public hasErrorTextRequired: boolean = false;
   public hasErrorTextLength: boolean = false;
 
+  public hasErrorVidoeUrl = false;
+  public hasErrorVidoeUrlRegex = false;
+
   public submited = false;
+
+  private regExpVideo = new RegExp('(https:\/\/www\.|http:\/\/www\.|https:\/\/|http:\/\/)?[a-zA-Z0-9]{2,}(\.[a-zA-Z0-9]{2,})(\.[a-zA-Z0-9]{2,})?', 'g');
 
   constructor(private service: AdminApiService, private router: Router, private route: ActivatedRoute) { }
 
@@ -74,6 +79,9 @@ export class AdminUpdateNewsComponent implements OnInit {
 
     this.getNews();
     this.getNewsAdmin();
+
+    this.getStudentsOfThisNews();
+    this.getTeachersOfThisNews();
   }
 
   ngOnDestroy() {
@@ -92,6 +100,20 @@ export class AdminUpdateNewsComponent implements OnInit {
   onSubmit() {
     this.populate();
     this.submited = true;
+    //vidoeurl
+    if(this.news.videoUrl != ''){
+      let matchVideo = this.regExpVideo.test(this.news.videoUrl);
+      if(!matchVideo){
+        this.hasErrorVidoeUrl = true;
+        this.hasErrorVidoeUrlRegex = true;
+      } else {
+        this.hasErrorVidoeUrl = false;
+        this.hasErrorVidoeUrlRegex = false;
+      }
+    } else {
+      this.hasErrorVidoeUrl = false;
+      this.hasErrorVidoeUrlRegex = false;
+    }
     this.service.updateNews(this.newsid, this.takenNews)
     .subscribe(
       response => {
@@ -177,10 +199,6 @@ export class AdminUpdateNewsComponent implements OnInit {
     }
   }
 
-  removeNull(array: string[]) {
-    return array.filter(x => x !== null)
-  };
-
   //Find creator - admin
   admins: Admin[] = [];
   adminText: string = '';
@@ -199,4 +217,74 @@ export class AdminUpdateNewsComponent implements OnInit {
       }
     );
   }
+
+    //Get students enrolled in this news..
+    studentsText: string = '';
+    students: Student[] = [];
+    inStudent: boolean = false;
+    array: string[] = [];
+    studentArray: string[] = [];
+    studentid: number = 0;
+  
+    getStudentsOfThisNews(){
+      this.service.getAllStudents()
+      .subscribe(
+        response => {
+          this.students = response;
+          if (this.students != null) {
+              this.array = this.news.studentsIDs.split(',');
+              this.removeNull(this.array);
+              for (let i = 0; i < this.array.length; i++) {
+                this.students.forEach(student => {
+                  this.studentid = parseInt(this.array[i]);
+                  if (this.studentid == student.id) {
+                    this.inStudent = true;
+                    this.studentsText += "Id:" + student.id + " " + "Username:" + student.username + "\n";
+                  }
+                });
+              }
+          }
+          if(!this.inStudent){
+            this.studentsText += "This news has no enrolled students.";
+          }
+        }
+      );
+    }
+  
+    //Get teachers enrolled in this news..
+    teachersText: string = '';
+    teachers2: Teacher[] = [];
+    inTeacher: boolean = false;
+    array2: string[] = [];
+    teacherArray: string[] = [];
+    teacherid: number = 0;
+  
+    getTeachersOfThisNews(){
+      this.service.getAllTeachers()
+      .subscribe(
+        response => {
+          this.teachers2 = response;
+          if (this.teachers2 != null) {
+              this.array2 = this.news.teachersIDs.split(',');
+              this.removeNull(this.array2);
+              for (let i = 0; i < this.array2.length; i++) {
+                this.teachers2.forEach(teacher => {
+                  this.teacherid = parseInt(this.array2[i]);
+                  if (this.teacherid == teacher.id) {
+                    this.inTeacher = true;
+                    this.teachersText += "Id:" + teacher.id + " " + "Username:" + teacher.username + "\n";
+                  }
+                });
+              }
+          }
+          if(!this.inTeacher){
+            this.teachersText += "This news has no enrolled teachers.";
+          }
+        }
+      );
+    }
+  
+    removeNull(array: string[]) {
+      return array.filter(x => x !== null)
+    };
 }
