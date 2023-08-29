@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs';
 import { Admin } from 'src/app/models/admin.model';
 import { Article } from 'src/app/models/article.model';
 import { News } from 'src/app/models/news.model';
+import { Student } from 'src/app/models/student.model';
 import { Teacher } from 'src/app/models/teacher.model';
 import { AdminApiService } from 'src/app/services/admin-api.service';
 
@@ -47,6 +48,9 @@ export class AdminDeleteNewsComponent implements OnInit {
 
     this.getNews();
     this.getNewsAdmin();
+
+    this.getStudentsOfThisNews();
+    this.getTeachersOfThisNews();
   }
 
   ngOnDestroy() {
@@ -91,4 +95,80 @@ export class AdminDeleteNewsComponent implements OnInit {
       }
     );
   }
+
+  //Get students enrolled in this news..
+  studentsText: string = '';
+  students: Student[] = [];
+  inStudent: boolean = false;
+  array: string[] = [];
+  studentArray: string[] = [];
+  studentid: number = 0;
+
+  getStudentsOfThisNews(){
+    this.service.getAllStudents()
+    .subscribe(
+      response => {
+        this.students = response;
+        if (this.students != null) {
+          if (!this.news.studentsIDs){
+            this.studentsText += "This news has no enrolled students.";
+          }
+            this.array = this.news.studentsIDs.split(',');
+            this.removeNull(this.array);
+            for (let i = 0; i < this.array.length; i++) {
+              this.students.forEach(student => {
+                this.studentid = parseInt(this.array[i]);
+                if (this.studentid == student.id) {
+                  this.inStudent = true;
+                  this.studentsText += "Id:" + student.id + " " + "Username:" + student.username + "\n";
+                }
+              });
+            }
+        }
+        if(!this.inStudent){
+          this.studentsText += "This news has no enrolled students.";
+        }
+      }
+    );
+  }
+
+  //Get teachers enrolled in this news..
+  teachersText: string = '';
+  teachers2: Teacher[] = [];
+  inTeacher: boolean = false;
+  array2: string[] = [];
+  teacherArray: string[] = [];
+  teacherid: number = 0;
+
+  getTeachersOfThisNews(){
+    this.service.getAllTeachers()
+    .subscribe(
+      response => {
+        this.teachers2 = response;
+        if (this.teachers2 != null) {
+          if (!this.news.teachersIDs){
+            this.teachersText += "This news has no enrolled teachers.";
+          }
+            this.array2 = this.news.teachersIDs.split(',');
+            this.removeNull(this.array2);
+            for (let i = 0; i < this.array2.length; i++) {
+              this.teachers2.forEach(teacher => {
+                this.teacherid = parseInt(this.array2[i]);
+                if (this.teacherid == teacher.id) {
+                  this.inTeacher = true;
+                  this.teachersText += "Id:" + teacher.id + " " + "Username:" + teacher.username + "\n";
+                }
+              });
+            }
+        }
+        if(!this.inTeacher){
+          this.teachersText += "This news has no enrolled teachers.";
+        }
+      }
+    );
+  }
+
+  removeNull(array: string[]) {
+    return array.filter(x => x !== null)
+  };
 }
