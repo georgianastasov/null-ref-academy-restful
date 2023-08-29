@@ -26,7 +26,12 @@ export class AdminAddNewsComponent implements OnInit {
   public hasErrorTextRequired: boolean = false;
   public hasErrorTextLength: boolean = false;
 
+  public hasErrorVidoeUrl = false;
+  public hasErrorVidoeUrlRegex = false;
+
   public submited = false;
+
+  private regExpVideo = new RegExp('(https:\/\/www\.|http:\/\/www\.|https:\/\/|http:\/\/)?[a-zA-Z0-9]{2,}(\.[a-zA-Z0-9]{2,})(\.[a-zA-Z0-9]{2,})?', 'g');
 
   constructor(private service: AdminApiService, private router: Router, private route: ActivatedRoute) { }
 
@@ -56,6 +61,21 @@ export class AdminAddNewsComponent implements OnInit {
 
   onSubmit() {
     this.submited = true;
+    //vidoeurl
+    if(this.news.videoUrl != ''){
+      let matchVideo = this.regExpVideo.test(this.news.videoUrl);
+      if(!matchVideo){
+        this.hasErrorVidoeUrl = true;
+        this.hasErrorVidoeUrlRegex = true;
+      } else {
+        this.hasErrorVidoeUrl = false;
+        this.hasErrorVidoeUrlRegex = false;
+      }
+    } else {
+      this.news.videoUrl = 'initial';
+      this.hasErrorVidoeUrl = false;
+      this.hasErrorVidoeUrlRegex = false;
+    } 
     this.news.adminID = this.routeid;
     this.service.addNews(this.news)
     .subscribe(
