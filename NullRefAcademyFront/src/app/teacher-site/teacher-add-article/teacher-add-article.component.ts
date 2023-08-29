@@ -31,7 +31,12 @@ export class TeacherAddArticleComponent implements OnInit {
   public hasErrorTextRequired: boolean = false;
   public hasErrorTextLength: boolean = false;
 
+  public hasErrorVidoeUrl = false;
+  public hasErrorVidoeUrlRegex = false;
+
   public submited = false;
+
+  private regExpVideo = new RegExp('(https:\/\/www\.|http:\/\/www\.|https:\/\/|http:\/\/)?[a-zA-Z0-9]{2,}(\.[a-zA-Z0-9]{2,})(\.[a-zA-Z0-9]{2,})?', 'g');
 
   constructor(private service: TeacherApiService, private router: Router, private route: ActivatedRoute) { }
 
@@ -87,6 +92,21 @@ export class TeacherAddArticleComponent implements OnInit {
 
   onSubmit() {
     this.submited = true;
+    //vidoeurl
+    if(this.article.videoUrl != ''){
+      let matchVideo = this.regExpVideo.test(this.article.videoUrl);
+      if(!matchVideo){
+        this.hasErrorVidoeUrl = true;
+        this.hasErrorVidoeUrlRegex = true;
+      } else {
+        this.hasErrorVidoeUrl = false;
+        this.hasErrorVidoeUrlRegex = false;
+      }
+    } else {
+      this.article.videoUrl = 'initial';
+      this.hasErrorVidoeUrl = false;
+      this.hasErrorVidoeUrlRegex = false;
+    } 
     this.article.teacherID = this.routeid;
     this.service.createArticle(this.article)
     .subscribe(

@@ -47,6 +47,13 @@
                         <span class="text-error code" *ngIf="hasErrorTextRequired">Text is required.</span>
                         <span class="text-error code" *ngIf="hasErrorTextLength">Text must be longer than 2 characters.</span>
                     </div>
+                    <div class="box">
+                        <label class="code">Video Url<img src="https://cdn-icons-png.flaticon.com/128/8704/8704368.png" alt="required"></label>
+                        <input type="text" aria-required="true" placeholder="Video Url" name="videoUrl" [(ngModel)]="article.videoUrl"
+                            [class.input-error]="hasErrorVidoeUrl && submited"
+                            [class.input-valid]="!hasErrorVidoeUrl && submited"/>
+                        <span class="text-error code" *ngIf="hasErrorVidoeUrlRegex">Video Url must be valid.</span>
+                    </div>
                     <div class="box-buttons">
                         <button class="add font">Create</button>
                         <a class="font" routerLink="/Teacher/{{routeid}}/Dashboard">Back</a>
