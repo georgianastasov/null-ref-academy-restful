@@ -49,8 +49,23 @@
                         <span class="text-error code" *ngIf="hasErrorTextLength">Text must be longer than 2 characters.</span>
                     </div>
                     <div class="box">
+                        <label class="code">Video Url</label>
+                        <input type="text" value="{{takenArticle.videoUrl}}" placeholder="Video Url" name="videoUrl" [(ngModel)]="article.videoUrl" 
+                            [class.input-error]="hasErrorVidoeUrl && submited"
+                            [class.input-valid]="!hasErrorVidoeUrl && submited"/>
+                        <span class="text-error code" *ngIf="hasErrorVidoeUrlRegex">Video Url must be valid.</span>
+                    </div>
+                    <div class="box">
                         <label class="code">Created Date</label>
                         <input type="text" value="{{takenArticle.createdDate}}" disabled />
+                    </div>
+                    <div class="box">
+                        <label class="code">Students</label>
+                        <textarea rows="10" cols="45" disabled>{{studentsText}}</textarea>
+                    </div>
+                    <div class="box">
+                        <label class="code">Teachers</label>
+                        <textarea rows="10" cols="45" disabled>{{teachersText}}</textarea>
                     </div>
                     <div class="box" *ngIf="hasAdmin">
                         <label class="code">Admin</label>
