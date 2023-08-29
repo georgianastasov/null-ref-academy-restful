@@ -46,8 +46,20 @@
                         <input type="text" value="{{article.ratingQty}}" disabled />
                     </div>
                     <div class="box">
+                        <label class="code">Video Url</label>
+                        <input type="text" value="{{article.videoUrl}}" disabled />
+                    </div>
+                    <div class="box">
                         <label class="code">Created Date</label>
                         <input type="text" value="{{article.createdDate}}" disabled />
+                    </div>
+                    <div class="box">
+                        <label class="code">Students</label>
+                        <textarea rows="10" cols="45" disabled>{{studentsText}}</textarea>
+                    </div>
+                    <div class="box">
+                        <label class="code">Teachers</label>
+                        <textarea rows="10" cols="45" disabled>{{teachersText}}</textarea>
                     </div>
                     <div class="box" *ngIf="hasAdmin">
                         <label class="code">Admin</label>
