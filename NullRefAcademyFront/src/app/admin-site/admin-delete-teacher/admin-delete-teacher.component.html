@@ -42,6 +42,10 @@
                         <input type="text" value="{{teacher.createdDate}}" disabled/>
                     </div>
                     <div class="box">
+                        <label class="code">Articles</label>
+                        <textarea rows="10" cols="45" disabled>{{ articlesText }}</textarea>
+                    </div>
+                    <div class="box">
                         <label class="code">Categories</label>
                         <textarea rows="10" cols="45" disabled>{{ categoriesText }}</textarea>
                     </div>
@@ -52,6 +56,14 @@
                     <div class="box">
                         <label class="code">Sections</label>
                         <textarea rows="10" cols="45" disabled>{{ sectionsText }}</textarea>
+                    </div>
+                    <div class="box">
+                        <label class="code">Enrolled Articles</label>
+                        <textarea rows="10" cols="45" disabled>{{ enrolledArticlesText }}</textarea>
+                    </div>
+                    <div class="box">
+                        <label class="code">Enrolled News</label>
+                        <textarea rows="10" cols="45" disabled>{{ enrolledNewsText }}</textarea>
                     </div>
                     <div class="box-buttons">
                         <button class="delete font">Delete</button>
