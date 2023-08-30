@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { Article } from 'src/app/models/article.model';
 import { Course } from 'src/app/models/course.model';
+import { News } from 'src/app/models/news.model';
 import { Student } from 'src/app/models/student.model';
 import { AdminApiService } from 'src/app/services/admin-api.service';
 
@@ -47,6 +49,8 @@ export class AdminDeleteStudentComponent implements OnInit {
     
     this.getStudent();
     this.getCoursesOfStudent();
+    this.getArticlesOfStudent();
+    this.getNewsOfStudent();
   }
 
   ngOnDestroy() {
@@ -105,6 +109,76 @@ export class AdminDeleteStudentComponent implements OnInit {
           }
           if(!this.inCourses){
             this.coursesText += "This student no enrolled in any course.";
+          }
+        }
+      );
+    }
+
+    //Get articles of this student.. 
+    articlesText: string = '';
+    articles: Article[] = [];
+    inArticles: boolean = false;
+    array2: string[] = [];
+    articleArray: string[] = [];
+    articleid: number = 0;
+  
+    getArticlesOfStudent() {
+      this.service.getAllArticles()
+      .subscribe(
+        response => {
+          this.articles = response;
+          if (this.articles != null) {
+              this.array2 = this.student.articleIDs.split(',');
+              this.removeNull(this.array2);
+              for (let i = 0; i < this.array2.length; i++) {
+                this.articleArray = this.array2[i].split('=');
+                this.removeNull(this.articleArray);
+                this.articleid = parseInt(this.articleArray[0]);
+                this.articles.forEach(article => {
+                  if (this.articleid == article.id) {
+                    this.inArticles = true;
+                    this.articlesText += "Id:" + article.id + " " + "Title:" + article.title + "\n";
+                  }
+                });
+              }
+          }
+          if(!this.inArticles){
+            this.articlesText += "This student no enrolled in any article.";
+          }
+        }
+      );
+    }
+
+    //Get news of this student.. 
+    newsText: string = '';
+    news: News[] = [];
+    inNews: boolean = false;
+    array3: string[] = [];
+    newsArray: string[] = [];
+    newsid: number = 0;
+  
+    getNewsOfStudent() {
+      this.service.getAllNews()
+      .subscribe(
+        response => {
+          this.news = response;
+          if (this.news != null) {
+              this.array3 = this.student.newsIDs.split(',');
+              this.removeNull(this.array3);
+              for (let i = 0; i < this.array3.length; i++) {
+                this.newsArray = this.array3[i].split('=');
+                this.removeNull(this.newsArray);
+                this.newsid = parseInt(this.newsArray[0]);
+                this.news.forEach(news => {
+                  if (this.newsid == news.id) {
+                    this.inNews = true;
+                    this.newsText += "Id:" + news.id + " " + "Title:" + news.title + "\n";
+                  }
+                });
+              }
+          }
+          if(!this.inNews){
+            this.newsText += "This student no enrolled in any news.";
           }
         }
       );
