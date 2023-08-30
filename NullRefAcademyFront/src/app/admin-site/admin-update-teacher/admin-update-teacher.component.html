@@ -43,7 +43,7 @@
                     </div>
                     <div class="box">
                         <label class="code">Account Type</label>
-                        <input type="text" value="{{takenTeacher.accountType}}" [(ngModel)]="teacher.accountType" disabled/>
+                        <input type="text" value="{{takenTeacher.accountType}}"  name="accountType" [(ngModel)]="teacher.accountType" disabled/>
                     </div>
                     <div class="box">
                         <label class="code">Password<img src="https://cdn-icons-png.flaticon.com/128/8704/8704368.png" alt="required"></label>
@@ -63,7 +63,11 @@
                     </div>
                     <div class="box">
                         <label class="code">Created Date</label>
-                        <input type="text" value="{{takenTeacher.createdDate}}" [(ngModel)]="teacher.createdDate" disabled/>
+                        <input type="text" value="{{takenTeacher.createdDate}}" disabled/>
+                    </div>
+                    <div class="box">
+                        <label class="code">Articles</label>
+                        <textarea rows="10" cols="45" disabled>{{ articlesText }}</textarea>
                     </div>
                     <div class="box">
                         <label class="code">Categories</label>
@@ -76,6 +80,14 @@
                     <div class="box">
                         <label class="code">Sections</label>
                         <textarea type="text" rows="10" cols="45" disabled>{{ sectionsText }}</textarea>
+                    </div>
+                    <div class="box">
+                        <label class="code">Enrolled Articles</label>
+                        <textarea rows="10" cols="45" disabled>{{ enrolledArticlesText }}</textarea>
+                    </div>
+                    <div class="box">
+                        <label class="code">Enrolled News</label>
+                        <textarea rows="10" cols="45" disabled>{{ enrolledNewsText }}</textarea>
                     </div>
                     <div class="box-buttons">
                         <button class="update font">Update</button>
