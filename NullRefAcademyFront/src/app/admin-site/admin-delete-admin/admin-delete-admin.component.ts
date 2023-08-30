@@ -2,8 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Admin } from 'src/app/models/admin.model';
+import { Article } from 'src/app/models/article.model';
 import { Category } from 'src/app/models/category.model';
 import { Course } from 'src/app/models/course.model';
+import { News } from 'src/app/models/news.model';
 import { Section } from 'src/app/models/section.model';
 import { AdminApiService } from 'src/app/services/admin-api.service';
 
@@ -41,6 +43,8 @@ export class AdminDeleteAdminComponent implements OnInit {
     });
     
     this.getAdmin();
+    this.getArticlesOfAdmin();
+    this.getNewsOfAdmin();
     this.getCategoriesOfAdmin();
     this.getCoursesOfAdmin();
     this.getSectionsOfAdmin();
@@ -69,6 +73,52 @@ export class AdminDeleteAdminComponent implements OnInit {
         this.router.navigate(['/Admin/' + this.routeid + '/Admins']);
       }
     )
+  }
+
+  //Get categories of this admin.. 
+  articlesText: string = '';
+  articles: Article[] = [];
+  inArticles: boolean = false;
+
+  getArticlesOfAdmin() {
+    this.service.getAllArticles()
+    .subscribe(
+      response => {
+        this.articles = response;
+        this.articles.forEach(article => { 
+          if(article.adminID == this.adminid){
+            this.inArticles = true;
+            this.articlesText += "Id:" + article.id + " " + "Title:" + article.title + "\n";
+          }
+        });
+        if(!this.inArticles){
+          this.articlesText += "This admin has no articles.";
+        }
+      }
+    );
+  }
+
+  //Get news of this admin.. 
+  newsText: string = '';
+  news: News[] = [];
+  inNews: boolean = false;
+
+  getNewsOfAdmin() {
+    this.service.getAllNews()
+    .subscribe(
+      response => {
+        this.news = response;
+        this.news.forEach(news => { 
+          if(news.adminID == this.adminid){
+            this.inNews = true;
+            this.newsText += "Id:" + news.id + " " + "Title:" + news.title + "\n";
+          }
+        });
+        if(!this.inNews){
+          this.newsText += "This admin has no news.";
+        }
+      }
+    );
   }
 
   //Get categories of this admin.. 
