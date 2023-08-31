@@ -41,12 +41,8 @@
                         <div class="down-down">
                             <p class="text">{{section.text}}</p>
                         </div>
+                        <youtube-player [videoId]="section.videoUrl" suggestedQuality="highres" [width]="1200" [height]="450" [startSeconds]="4" [endSeconds]="300" style="width: 100%;"></youtube-player>
                     </div>
-                </ng-container>
-            </ng-container>
-            <ng-container *ngFor="let section of sections">
-                <ng-container *ngIf="section.courseID == courseid">
-                    <youtube-player [videoId]="section.videoUrl" suggestedQuality="highres" [width]="1200" [height]="450" [startSeconds]="4" [endSeconds]="300" style="width: 100%;"></youtube-player>
                 </ng-container>
             </ng-container>
         </div>
