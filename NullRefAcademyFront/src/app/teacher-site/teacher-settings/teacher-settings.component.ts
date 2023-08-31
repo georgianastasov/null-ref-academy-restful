@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs';
 import { Article } from 'src/app/models/article.model';
 import { Category } from 'src/app/models/category.model';
 import { Course } from 'src/app/models/course.model';
+import { News } from 'src/app/models/news.model';
 import { Section } from 'src/app/models/section.model';
 import { Teacher } from 'src/app/models/teacher.model';
 import { TeacherApiService } from 'src/app/services/teacher-api.service';
@@ -91,6 +92,7 @@ export class TeacherSettingsComponent implements OnInit {
 
     this.getTeacher();
 
+    this.getArticlesOfTeacher();
     this.getCategoriesOfTeacher();
     this.getCoursesOfTeacher();
     this.getSectionsOfTeacher();
@@ -99,6 +101,9 @@ export class TeacherSettingsComponent implements OnInit {
     this.getCountCourses();
     this.getCountSections();
     this.getCountArticles();
+
+    this.getEnrolledArticlesOfTeacher();
+    this.getEnrolledNewsOfTeacher();
   }
 
   ngOnDestroy() {
@@ -259,6 +264,29 @@ export class TeacherSettingsComponent implements OnInit {
       );
   }
 
+  //Get articles of this teacher.. 
+  articlesText: string = '';
+  articles1: Article[] = [];
+  inArticles1: boolean = false;
+
+  getArticlesOfTeacher() {
+    this.service.getAllArticles()
+    .subscribe(
+      response => {
+        this.articles1 = response;
+        this.articles1.forEach(article => { 
+          if(article.teacherID == this.routeid){
+            this.inArticles1 = true;
+            this.articlesText += "Id:" + article.id + " " + "Title:" + article.title + "\n";
+          }
+        });
+        if(!this.inArticles1){
+          this.articlesText += "You have no articles.";
+        }
+      }
+    );
+  }
+
   //Get categories of this teacher.. 
   categoriesText: string = '';
   categories2: Category[] = [];
@@ -398,4 +426,78 @@ export class TeacherSettingsComponent implements OnInit {
         }
       );
   }
+
+  //Get enrolled articles of this teacher.. 
+  enrolledArticlesText: string = '';
+  articles2: Article[] = [];
+  inArticles: boolean = false;
+  array2: string[] = [];
+  articleArray: string[] = [];
+  articleid: number = 0;
+
+  getEnrolledArticlesOfTeacher() {
+    this.service.getAllArticles()
+    .subscribe(
+      response => {
+        this.articles2 = response;
+        if (this.articles2 != null) {
+            this.array2 = this.teacher.articleIDs.split(',');
+            this.removeNull(this.array2);
+            for (let i = 0; i < this.array2.length; i++) {
+              this.articleArray = this.array2[i].split('=');
+              this.removeNull(this.articleArray);
+              this.articleid = parseInt(this.articleArray[0]);
+              this.articles2.forEach(article => {
+                if (this.articleid == article.id) {
+                  this.inArticles = true;
+                  this.enrolledArticlesText += "Id:" + article.id + " " + "Title:" + article.title + "\n";
+                }
+              });
+            }
+        }
+        if(!this.inArticles){
+          this.enrolledArticlesText += "This teacher no enrolled in any article.";
+        }
+      }
+    );
+  }
+
+  //Get enrolled news of this teacher.. 
+  enrolledNewsText: string = '';
+  news: News[] = [];
+  inNews: boolean = false;
+  array3: string[] = [];
+  newsArray: string[] = [];
+  newsid: number = 0;
+
+  getEnrolledNewsOfTeacher() {
+    this.service.getAllNews()
+    .subscribe(
+      response => {
+        this.news = response;
+        if (this.news != null) {
+            this.array3 = this.teacher.newsIDs.split(',');
+            this.removeNull(this.array3);
+            for (let i = 0; i < this.array3.length; i++) {
+              this.newsArray = this.array3[i].split('=');
+              this.removeNull(this.newsArray);
+              this.newsid = parseInt(this.newsArray[0]);
+              this.news.forEach(news => {
+                if (this.newsid == news.id) {
+                  this.inNews = true;
+                  this.enrolledNewsText += "Id:" + news.id + " " + "Title:" + news.title + "\n";
+                }
+              });
+            }
+        }
+        if(!this.inNews){
+          this.enrolledNewsText += "This teacher no enrolled in any news.";
+        }
+      }
+    );
+  }
+
+  removeNull(array: string[]) {
+    return array.filter(x => x !== null)
+  };
 }
