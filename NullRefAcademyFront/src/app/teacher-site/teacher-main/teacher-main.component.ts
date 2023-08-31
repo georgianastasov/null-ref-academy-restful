@@ -280,6 +280,7 @@ export class TeacherMainComponent implements OnInit {
   showCategories: boolean = false;
   showCourses: boolean = true;
   showSections: boolean = false;
+  showArticless: boolean = false;
   showStudents: boolean = false;
   showProfile: boolean = false;
 
@@ -287,6 +288,7 @@ export class TeacherMainComponent implements OnInit {
     this.showCategories = true;
     this.showCourses = false;
     this.showSections = false;
+    this.showArticless = false;
     this.showStudents = false;
     this.showProfile = false;
   }
@@ -295,6 +297,7 @@ export class TeacherMainComponent implements OnInit {
     this.showCategories = false;
     this.showCourses = true;
     this.showSections = false;
+    this.showArticless = false;
     this.showStudents = false;
     this.showProfile = false;
   }
@@ -303,6 +306,16 @@ export class TeacherMainComponent implements OnInit {
     this.showCategories = false;
     this.showCourses = false;
     this.showSections = true;
+    this.showArticless = false;
+    this.showStudents = false;
+    this.showProfile = false;
+  }
+
+  showArticles() {
+    this.showCategories = false;
+    this.showCourses = false;
+    this.showSections = false;
+    this.showArticless = true;
     this.showStudents = false;
     this.showProfile = false;
   }
@@ -311,6 +324,7 @@ export class TeacherMainComponent implements OnInit {
     this.showCategories = false;
     this.showCourses = false;
     this.showSections = false;
+    this.showArticless = false;
     this.showStudents = true;
     this.showProfile = false;
   }
@@ -319,6 +333,7 @@ export class TeacherMainComponent implements OnInit {
     this.showCategories = false;
     this.showCourses = false;
     this.showSections = false;
+    this.showArticless = false;
     this.showStudents = false;
     this.showProfile = true;
   }

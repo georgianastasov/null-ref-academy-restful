@@ -61,6 +61,13 @@
             </div>
         </div>
         <div class="right">
+            <ng-container *ngFor="let article of articles">
+                <ng-container *ngIf="article.id == articleid"> 
+                    <ng-container *ngIf="article.videoUrl !== 'initial'">
+                        <youtube-player [videoId]="article.videoUrl" suggestedQuality="highres" [width]="1000" [height]="450" [startSeconds]="4" [endSeconds]="300" style="width: 100%;"></youtube-player>
+                    </ng-container>
+                </ng-container>
+            </ng-container>
                 <ng-container *ngFor="let article of articles">
                     <ng-container *ngIf="article.id == articleid"> 
                         <div class="box">
