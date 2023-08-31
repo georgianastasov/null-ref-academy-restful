@@ -40,7 +40,7 @@
             <a class="btn code" (click)="showEditt()">Edit profile</a>
             <p class="score code"><img src="https://cdn-icons-png.flaticon.com/128/5415/5415390.png" alt="category">Categories: {{countCategories}}</p>
             <p class="score code"><img src="https://cdn-icons-png.flaticon.com/128/9387/9387582.png" alt="course">Courses: {{countCourses}}</p>
-            <p class="score code"><img src="https://cdn-icons-png.flaticon.com/128/4228/4228952.png" alt="section">Sections: {{countSections}}</p>
+            <p class="score code"><img src="https://cdn-icons-png.flaticon.com/128/6348/6348026.png" alt="section">Sections: {{countSections}}</p>
             <p class="score code"><img src="https://cdn-icons-png.flaticon.com/128/4228/4228952.png" alt="section">Articles: {{countArticles}}</p>
         </div>
     </div>
@@ -50,6 +50,7 @@
         <a class="code" (click)="showCategoriess()">Categories</a>
         <a class="code" (click)="showCoursess()">Courses</a>
         <a class="code" (click)="showSectionss()">Sections</a>
+        <a class="code" (click)="showArticles()">Articles</a>
         <a class="code" (click)="showStudentss()">Students</a>
         <a class="code" (click)="showProfilee()">Profile</a>
     </div>
@@ -187,6 +188,38 @@
             </ng-container>
             <ng-container *ngIf="!hasCreatedSections">
                 <p class="no code">No created sections at this moment.</p>
+            </ng-container>
+        </div>
+        <div id="teacher-article" class="downn down-article" *ngIf="showArticless">
+            <div class="top-top">
+                <p class="titlee code">My articles</p>
+                <a class="btncreate font" routerLink="/Teacher/{{routeid}}/Add/Article">Create article</a>
+            </div>
+            <ng-container *ngFor="let article of articles">
+                <ng-container *ngIf="article.teacherID != null">
+                    <ng-container *ngIf="article.teacherID == routeid">
+                        <div class="box">
+                            <div class="leftt">
+                                <div class="top">
+                                    <div class="left">
+                                        <p class="title">{{article.title}}</p>
+                                    </div>
+                                </div>
+                                <div class="middle">
+                                    <p class="description">{{article.description}}</p>
+                                </div>
+                            </div>
+                            <div class="rightt">
+                                <a class="btn update" routerLink="/Teacher/{{routeid}}/Update/Course/{{article.id}}">Update</a>
+                                <a class="btn delete" routerLink="/Teacher/{{routeid}}/Delete/Course/{{article.id}}">Delete</a>
+                                <a class="btn preview" routerLink="/Teacher/{{routeid}}/Course/{{article.id}}">Preview</a>
+                            </div>
+                        </div>
+                    </ng-container>
+                </ng-container>
+            </ng-container>
+            <ng-container *ngIf="!hasCreatedCourses">
+                <p class="no code">No created courses at this moment.</p>
             </ng-container>
         </div>
         <div id="teacher-students" class="downn down-students" *ngIf="showStudents">
