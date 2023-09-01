@@ -190,7 +190,7 @@
                 <p class="no code">No created sections at this moment.</p>
             </ng-container>
         </div>
-        <div id="teacher-article" class="downn down-article" *ngIf="showArticless">
+        <div id="teacher-article" class="downn down-articles" *ngIf="showArticless">
             <div class="top-top">
                 <p class="titlee code">My articles</p>
                 <a class="btncreate font" routerLink="/Teacher/{{routeid}}/Add/Article">Create article</a>
@@ -210,16 +210,16 @@
                                 </div>
                             </div>
                             <div class="rightt">
-                                <a class="btn update" routerLink="/Teacher/{{routeid}}/Update/Course/{{article.id}}">Update</a>
-                                <a class="btn delete" routerLink="/Teacher/{{routeid}}/Delete/Course/{{article.id}}">Delete</a>
-                                <a class="btn preview" routerLink="/Teacher/{{routeid}}/Course/{{article.id}}">Preview</a>
+                                <a class="btn update" routerLink="/Teacher/{{routeid}}/Update/Article/{{article.id}}">Update</a>
+                                <a class="btn delete" routerLink="/Teacher/{{routeid}}/Delete/Article/{{article.id}}">Delete</a>
+                                <a class="btn preview" routerLink="/Teacher/{{routeid}}/Article/{{article.id}}">Preview</a>
                             </div>
                         </div>
                     </ng-container>
                 </ng-container>
             </ng-container>
             <ng-container *ngIf="!hasCreatedCourses">
-                <p class="no code">No created courses at this moment.</p>
+                <p class="no code">No created articles at this moment.</p>
             </ng-container>
         </div>
         <div id="teacher-students" class="downn down-students" *ngIf="showStudents">
