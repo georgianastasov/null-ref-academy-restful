@@ -32,7 +32,7 @@
                         <td>{{ article.videoUrl }}</td>
                         <td>{{ article.createdDate }}</td>
                         <td>
-                            <p *ngIf="studentArticleTextArray[article.id] == null">0</p>
+                            <p *ngIf="studentArticleTextArray[article.id] == ''">0</p>
                             <p [innerHTML]="studentArticleTextArray[article.id]"></p>
                         </td>
                         <td>
