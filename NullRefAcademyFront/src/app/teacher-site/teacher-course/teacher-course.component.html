@@ -79,6 +79,13 @@
         <div class="right">
             <ng-container *ngFor="let course of courses">
                 <ng-container *ngIf="course.id == courseid"> 
+                    <ng-container *ngIf="course.videoUrl !== 'initial'">
+                        <youtube-player [videoId]="course.videoUrl" suggestedQuality="highres" [width]="1000" [height]="450" [startSeconds]="4" [endSeconds]="300" style="width: 100%;"></youtube-player>
+                    </ng-container>
+                </ng-container>
+            </ng-container>
+            <ng-container *ngFor="let course of courses">
+                <ng-container *ngIf="course.id == courseid"> 
                     <ng-container *ngFor="let section of sections">
                         <ng-container *ngIf="section.courseID == courseid">
                             <ng-container *ngFor="let category of categories">
