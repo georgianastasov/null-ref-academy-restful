@@ -78,11 +78,19 @@ export class StudentApiService {
     return this.http.get<Article>(this.articleUrl + '/GetArticle/' + id);
   }
 
+  updateArticle(id: number, article: Article): Observable<any>{
+    return this.http.put<Article>(this.articleUrl + '/UpdateArticle/' + id, article);
+  }
+
   getAllNews(): Observable<News[]>{
     return this.http.get<News[]>(this.newsUrl + '/GetAllNews');
   }
 
   getNews(id: number): Observable<News>{
     return this.http.get<News>(this.newsUrl + '/GetNews/' + id);
+  }
+
+  updateNews(id: number, news: News): Observable<any>{
+    return this.http.put<News>(this.newsUrl + '/UpdateNews/' + id, news);
   }
 }
