@@ -1,3 +1,4 @@
+import { formatDate } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
@@ -42,6 +43,20 @@ export class StudentNewsComponent implements OnInit {
     articleIDs: '',
     newsIDs: ''
   }
+
+  news: News = {
+    id: 0,
+    title: '',
+    description: '',
+    text: '',
+    rating: 0,
+    ratingQty: 0,
+    videoUrl: '',
+    createdDate: '',
+    adminID: 0,
+    studentsIDs: '',
+    teachersIDs: ''
+  }
   
   admins: Admin[] = [];
   newss: News[] = [];
@@ -57,6 +72,8 @@ export class StudentNewsComponent implements OnInit {
 
     this.getAllAdmins();
     this.getAllNews();
+
+    this.checkEnrollPreview();
   }
 
   ngOnDestroy() {
@@ -88,5 +105,58 @@ export class StudentNewsComponent implements OnInit {
           this.newss = response;
         }
       );
+  }
+
+  public enroll = true;
+  public preview = false;
+  checkEnrollPreview() {
+    this.service.getAllNews()
+      .subscribe(
+        response => {
+          this.newss = response;
+          this.newss.forEach(news => {
+            if(news.id === Number(this.newsid)){
+                let studentIDs = news.studentsIDs.split(',');
+                studentIDs.pop();
+                studentIDs.forEach(studentID => {
+                  if(Number(studentID) == this.routeid){
+                    this.preview = true;
+                    this.enroll = false;
+                  }
+                });
+            }
+          });
+        }
+      );
+  }
+
+  enrollStudent(){
+    this.service.getStudent(this.routeid)
+    .subscribe(
+      response => {
+        this.student = response;
+        var date = formatDate(Date.now(), 'dd/MM/YYYY', 'en-US').toString();
+        this.student.newsIDs += this.newsid + '=' + '0' + '=' + date + ',';
+        this.service.updateStudent(this.routeid, this.student)
+        .subscribe(
+          response => {
+        })
+
+        this.service.getNews(this.newsid)
+        .subscribe(
+          response => {
+            this.news = response;
+            this.news.studentsIDs += this.routeid + ',';
+
+            this.service.updateNews(this.newsid, this.news)
+              .subscribe(
+                response => {
+                  setTimeout(() => {
+                    this.router.navigate(['/Student/' + this.routeid + '/News/' + this.newsid + '/Enroll']);
+                  }, 100);
+              })
+          })
+      },
+    );
   }
 }
