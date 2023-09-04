@@ -110,6 +110,29 @@ namespace NullRefAcademy.Controllers
                 return NotFound("No article with this id..");
             }
 
+            string result = null;
+            var students = _dataBase.Students;
+            foreach (var student in students)
+            {
+                if (student.ArticleIDs != null)
+                {
+                    var array = student.ArticleIDs.Split(',', StringSplitOptions.RemoveEmptyEntries);
+                    for (int i = 0; i < array.Length; i++)
+                    {
+                        string articleInfo = array[i];
+                        var articleArray = articleInfo.Split('=', StringSplitOptions.RemoveEmptyEntries);
+                        int articleId = int.Parse(articleArray[0].ToString());
+                        if (articleId != findArticle.Id)
+                        {
+                            result += articleInfo + ",";
+                        }
+                    }
+                    student.ArticleIDs = result;
+                }
+                _dataBase.Students.Update(student);
+                result = null;
+            }
+
             _dataBase.Articles.Remove(findArticle);
             _dataBase.SaveChanges();
 
