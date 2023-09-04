@@ -216,6 +216,7 @@ export class StudentEnrollcourseComponent implements OnInit {
           if(Number(id) == this.courseid){
             this.result += id + '=' + "1" + '=' + date + '=' + finishDate;
             this.student.coursesIDs = this.student.coursesIDs.replace(coursesIDs[i], this.result)
+            this.student.points += this.course.points;
             break;
           }
         }
