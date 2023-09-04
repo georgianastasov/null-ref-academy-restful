@@ -110,6 +110,29 @@ namespace NullRefAcademy.Controllers
                 return NotFound("No news with this id..");
             }
 
+            string result = null;
+            var students = _dataBase.Students;
+            foreach (var student in students)
+            {
+                if (student.NewsIDs != null)
+                {
+                    var array = student.NewsIDs.Split(',', StringSplitOptions.RemoveEmptyEntries);
+                    for (int i = 0; i < array.Length; i++)
+                    {
+                        string newsInfo = array[i];
+                        var newsArray = newsInfo.Split('=', StringSplitOptions.RemoveEmptyEntries);
+                        int newsId = int.Parse(newsArray[0].ToString());
+                        if (newsId != findNews.Id)
+                        {
+                            result += newsInfo + ",";
+                        }
+                    }
+                    student.NewsIDs = result;
+                }
+                _dataBase.Students.Update(student);
+                result = null;
+            }
+
             _dataBase.News.Remove(findNews);
             _dataBase.SaveChanges();
 
