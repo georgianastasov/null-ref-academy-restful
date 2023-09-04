@@ -1,3 +1,4 @@
+import { formatDate } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
@@ -41,6 +42,21 @@ export class StudentArticleComponent implements OnInit {
     articleIDs: '',
     newsIDs: ''
   }
+
+  article: Article = {
+    id: 0,
+    title: '',
+    description: '',
+    text: '',
+    rating: 0,
+    ratingQty: 0,
+    videoUrl: '',
+    createdDate: '',
+    teacherID: 0,
+    adminID: 0,
+    studentsIDs: '',
+    teachersIDs: ''
+  }
   
   admins: Admin[] = [];
   teachers: Teacher[] = [];
@@ -50,7 +66,6 @@ export class StudentArticleComponent implements OnInit {
     this.routeSub = this.route.params.subscribe(params => {
       this.routeid = params['id'];
       this.articleid = params['id2'];
-      console.log('courseidd:' + this.articleid)
     });
 
     this.getStudent();
@@ -58,6 +73,8 @@ export class StudentArticleComponent implements OnInit {
     this.getAllAdmins();
     this.getAllTeachers();
     this.getAllArticles();
+
+    this.checkEnrollPreview();
   }
 
   ngOnDestroy() {
@@ -98,5 +115,58 @@ export class StudentArticleComponent implements OnInit {
           this.articles = response;
         }
       );
+  }
+
+  public enroll = true;
+  public preview = false;
+  checkEnrollPreview() {
+    this.service.getAllArticles()
+      .subscribe(
+        response => {
+          this.articles = response;
+          this.articles.forEach(article => {
+            if(article.id === Number(this.articleid)){
+                let studentIDs = article.studentsIDs.split(',');
+                studentIDs.pop();
+                studentIDs.forEach(studentID => {
+                  if(Number(studentID) == this.routeid){
+                    this.preview = true;
+                    this.enroll = false;
+                  }
+                });
+            }
+          });
+        }
+      );
+  }
+
+  enrollStudent(){
+    this.service.getStudent(this.routeid)
+    .subscribe(
+      response => {
+        this.student = response;
+        var date = formatDate(Date.now(), 'dd/MM/YYYY', 'en-US').toString();
+        this.student.articleIDs += this.articleid + '=' + '0' + '=' + date + ',';
+        this.service.updateStudent(this.routeid, this.student)
+        .subscribe(
+          response => {
+        })
+
+        this.service.getArticle(this.articleid)
+        .subscribe(
+          response => {
+            this.article = response;
+            this.article.studentsIDs += this.routeid + ',';
+
+            this.service.updateArticle(this.articleid, this.article)
+              .subscribe(
+                response => {
+                  setTimeout(() => {
+                    this.router.navigate(['/Student/' + this.routeid + '/Article/' + this.articleid + '/Enroll']);
+                  }, 100);
+              })
+          })
+      },
+    );
   }
 }
