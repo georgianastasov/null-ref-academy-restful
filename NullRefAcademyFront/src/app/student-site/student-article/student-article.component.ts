@@ -59,6 +59,7 @@ export class StudentArticleComponent implements OnInit {
   }
   
   admins: Admin[] = [];
+  students: Student[] = [];
   teachers: Teacher[] = [];
   articles: Article[] = [];
   
@@ -71,6 +72,7 @@ export class StudentArticleComponent implements OnInit {
     this.getStudent();
 
     this.getAllAdmins();
+    this.getAllStudents();
     this.getAllTeachers();
     this.getAllArticles();
 
@@ -99,6 +101,15 @@ export class StudentArticleComponent implements OnInit {
     );
   }
 
+  getAllStudents() {
+    this.service.getAllStudents()
+    .subscribe(
+      response => {
+        this.students = response;
+      }
+    );
+  }
+
   getAllTeachers() {
     this.service.getAllTeachers()
     .subscribe(
@@ -115,6 +126,33 @@ export class StudentArticleComponent implements OnInit {
           this.articles = response;
         }
       );
+  }
+
+  countUsers(article : any){
+    let count = 0
+    if(article.studentsIDs){
+      let array = article.studentsIDs.split(',');
+      for (let i = 0; i < array.length; i++) {
+        let studentId = parseInt(array[i]);
+        this.students.forEach(student => {
+          if (studentId === student.id) {
+            count++;
+          }
+        });
+      }
+    }
+    if (article.teachersIDs) {
+      let array2 = article.teachersIDs.split(',');
+      for (let i = 0; i < array2.length; i++) {
+        let teacherId = parseInt(array2[i]);
+        this.teachers.forEach(teacher => {
+          if (teacherId === teacher.id) {
+            count++;
+          }
+        });
+      }
+    }
+    return count;
   }
 
   public enroll = true;
