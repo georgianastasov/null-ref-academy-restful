@@ -59,6 +59,8 @@ export class StudentNewsComponent implements OnInit {
   }
   
   admins: Admin[] = [];
+  students: Student[] = [];
+  teachers: Teacher[] = [];
   newss: News[] = [];
   
   ngOnInit(): void {
@@ -71,6 +73,8 @@ export class StudentNewsComponent implements OnInit {
     this.getStudent();
 
     this.getAllAdmins();
+    this.getAllStudents();
+    this.getAllTeachers();
     this.getAllNews();
 
     this.checkEnrollPreview();
@@ -98,6 +102,24 @@ export class StudentNewsComponent implements OnInit {
     );
   }
 
+  getAllStudents() {
+    this.service.getAllStudents()
+    .subscribe(
+      response => {
+        this.students = response;
+      }
+    );
+  }
+
+  getAllTeachers() {
+    this.service.getAllTeachers()
+    .subscribe(
+      response => {
+        this.teachers = response;
+      }
+    );
+  }
+
   getAllNews() {
     this.service.getAllNews()
       .subscribe(
@@ -105,6 +127,33 @@ export class StudentNewsComponent implements OnInit {
           this.newss = response;
         }
       );
+  }
+
+  countUsers(news : any){
+    let count = 0
+    if(news.studentsIDs){
+      let array = news.studentsIDs.split(',');
+      for (let i = 0; i < array.length; i++) {
+        let studentId = parseInt(array[i]);
+        this.students.forEach(student => {
+          if (studentId === student.id) {
+            count++;
+          }
+        });
+      }
+    }
+    if (news.teachersIDs) {
+      let array2 = news.teachersIDs.split(',');
+      for (let i = 0; i < array2.length; i++) {
+        let teacherId = parseInt(array2[i]);
+        this.teachers.forEach(teacher => {
+          if (teacherId === teacher.id) {
+            count++;
+          }
+        });
+      }
+    }
+    return count;
   }
 
   public enroll = true;
