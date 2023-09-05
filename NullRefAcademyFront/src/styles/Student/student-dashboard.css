@@ -331,8 +331,9 @@
 }
 
 .student-dashboard .right-courses .box{
-    flex-basis: 50%;
+    flex-basis: 49%;
     margin-bottom: 4rem;
+    margin-right: 0.5rem;
     background-color: #222534;
     padding: 0.5rem;
     border-radius: 0.4rem;
