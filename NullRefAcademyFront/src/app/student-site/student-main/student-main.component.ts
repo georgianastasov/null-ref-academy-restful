@@ -283,22 +283,46 @@ export class StudentMainComponent implements OnInit {
 
   //Show diferent menues
   showCourse: boolean = true;
+  showArticle!: boolean;
+  showNews!: boolean;
   showProgres!: boolean;
   showProfile!: boolean;
   showCoursess() {
     this.showCourse = true;
+    this.showArticle = false;
+    this.showNews = false;
+    this.showProgres = false;
+    this.showProfile = false;
+  }
+
+  showArticles() {
+    this.showCourse = false;
+    this.showArticle = true;
+    this.showNews = false;
+    this.showProgres = false;
+    this.showProfile = false;
+  }
+
+  showNewss() {
+    this.showCourse = false;
+    this.showArticle = false;
+    this.showNews = true;
     this.showProgres = false;
     this.showProfile = false;
   }
 
   showProgress() {
     this.showCourse = false;
+    this.showArticle = false;
+    this.showNews = false;
     this.showProgres = true;
     this.showProfile = false;
   }
 
   showProfilee() {
     this.showCourse = false;
+    this.showArticle = false;
+    this.showNews = false;
     this.showProgres = false;
     this.showProfile = true;
   }
