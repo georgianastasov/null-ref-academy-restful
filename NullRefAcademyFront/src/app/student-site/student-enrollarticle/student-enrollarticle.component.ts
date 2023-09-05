@@ -77,7 +77,7 @@ export class StudentEnrollArticleComponent implements OnInit {
     this.getAllAdmins();
     this.getAllTeachers();
 
-    //this.checkFinish();
+    this.checkFinish();
   }
 
   ngOnDestroy() {
@@ -130,61 +130,61 @@ export class StudentEnrollArticleComponent implements OnInit {
   }
 
   public finish = false;
-  // checkFinish() {
-  //   this.service.getAllStudents()
-  //     .subscribe(
-  //       response => {
-  //         this.students = response;
-  //         this.students.forEach(student => {
-  //           if(student.id === Number(this.routeid)){
-  //               let coursesIDs = student.coursesIDs.split(',')
-  //               coursesIDs.pop();
-  //               for (let i = 0; i < coursesIDs.length; i++) {
-  //                 let arr = coursesIDs[i].split('=');
-  //                 let id = arr[0];
-  //                 let isFinish = arr[1];
-  //                 if(Number(id) == this.courseid){
-  //                   if(isFinish === "0"){
-  //                     this.finish = true;
-  //                     break;
-  //                   } else {
-  //                     this.finish = false;
-  //                   }
-  //                 }
-  //               }
-  //           }
-  //         });
-  //       }
-  //     );
-  // }
+  checkFinish() {
+    this.service.getAllStudents()
+      .subscribe(
+        response => {
+          this.students = response;
+          this.students.forEach(student => {
+            if(student.id === Number(this.routeid)){
+                let articlesIDs = student.articleIDs.split(',')
+                articlesIDs.pop();
+                for (let i = 0; i < articlesIDs.length; i++) {
+                  let arr = articlesIDs[i].split('=');
+                  let id = arr[0];
+                  let isFinish = arr[1];
+                  if(Number(id) == this.articleid){
+                    if(isFinish === "0"){
+                      this.finish = true;
+                      break;
+                    } else {
+                      this.finish = false;
+                    }
+                  }
+                }
+            }
+          });
+        }
+      );
+  }
 
-  // private result: string = '';
-  // finishCourse(){
-  //   this.service.getStudent(this.routeid)
-  //   .subscribe(
-  //     response => {
-  //       this.student = response;
-  //       let coursesIDs = this.student.coursesIDs.split(',')
-  //       coursesIDs.pop();
-  //       for (let i = 0; i < coursesIDs.length; i++) {
-  //         let arr = coursesIDs[i].split('=');
-  //         let id = arr[0];
-  //         let date = arr[2];
-  //         let finishDate = formatDate(Date.now(), 'dd/MM/YYYY', 'en-US').toString();
-  //         if(Number(id) == this.courseid){
-  //           this.result += id + '=' + "1" + '=' + date + '=' + finishDate;
-  //           this.student.coursesIDs = this.student.coursesIDs.replace(coursesIDs[i], this.result)
-  //           break;
-  //         }
-  //       }
-  //       this.service.updateStudent(this.routeid, this.student)
-  //       .subscribe(
-  //         response => {
-  //           setTimeout(() => {
-  //             this.router.navigate(['/Student/' + this.routeid + '/Dashboard/']);
-  //           }, 100);
-  //       })
-  //     },
-  //   );
-  // }
+  private result: string = '';
+  finishCourse(){
+    this.service.getStudent(this.routeid)
+    .subscribe(
+      response => {
+        this.student = response;
+        let articlesIDs = this.student.articleIDs.split(',')
+        articlesIDs.pop();
+        for (let i = 0; i < articlesIDs.length; i++) {
+          let arr = articlesIDs[i].split('=');
+          let id = arr[0];
+          let date = arr[2];
+          let finishDate = formatDate(Date.now(), 'dd/MM/YYYY', 'en-US').toString();
+          if(Number(id) == this.articleid){
+            this.result += id + '=' + "1" + '=' + date + '=' + finishDate;
+            this.student.articleIDs = this.student.articleIDs.replace(articlesIDs[i], this.result)
+            break;
+          }
+        }
+        this.service.updateStudent(this.routeid, this.student)
+        .subscribe(
+          response => {
+            setTimeout(() => {
+              this.router.navigate(['/Student/' + this.routeid + '/Dashboard/']);
+            }, 100);
+        })
+      },
+    );
+  }
 }
