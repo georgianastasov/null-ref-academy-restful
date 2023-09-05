@@ -44,7 +44,7 @@
         </div>
         <div class="under">
             <p><a class="donebtn font" *ngIf="!finish" routerLink="/Student/{{routeid}}/Dashboard">Go to dashboard</a></p>
-            <p><a class="finish font" *ngIf="finish">Finish</a></p>
+            <p><a class="finish font" *ngIf="finish" (click)="finishCourse()">Finish</a></p>
         </div>
     </div>
 </div>
