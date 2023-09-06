@@ -139,6 +139,7 @@ namespace NullRefAcademy.Controllers
                     }
                     student.CoursesIDs = result;
                 }
+                student.Points -= findCourse.Points;
                 _dataBase.Students.Update(student);
                 result = null;
             }
