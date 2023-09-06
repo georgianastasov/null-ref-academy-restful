@@ -173,6 +173,61 @@ namespace NullRefAcademy.Controllers
                 }
             }
 
+            var articles = _dataBase.Articles;
+            foreach (var article in articles)
+            {
+                if (article.TeacherID == findTeacher.Id)
+                {
+                    article.TeacherID = null;
+                    _dataBase.Articles.Update(article);
+                }
+            }
+
+            string result = null;
+            foreach (var article in articles)
+            {
+                if (article.TeachersIDs != null)
+                {
+                    var array = article.TeachersIDs.Split(',', StringSplitOptions.RemoveEmptyEntries);
+
+                    for (int i = 0; i < array.Length; i++)
+                    {
+                        int studentId = int.Parse(array[i].ToString());
+                        if (studentId != findTeacher.Id)
+                        {
+                            result += studentId + ",";
+                        }
+                    }
+
+                    article.TeachersIDs = result;
+                }
+                _dataBase.Articles.Update(article);
+                result = null;
+            }
+
+            result = null;
+            var newss = _dataBase.News;
+            foreach (var news in newss)
+            {
+                if (news.TeachersIDs != null)
+                {
+                    var array = news.TeachersIDs.Split(',', StringSplitOptions.RemoveEmptyEntries);
+
+                    for (int i = 0; i < array.Length; i++)
+                    {
+                        int studentId = int.Parse(array[i].ToString());
+                        if (studentId != findTeacher.Id)
+                        {
+                            result += studentId + ",";
+                        }
+                    }
+
+                    news.TeachersIDs = result;
+                }
+                _dataBase.News.Update(news);
+                result = null;
+            }
+
             _dataBase.Teachers.Remove(findTeacher);
             _dataBase.SaveChanges();
 
