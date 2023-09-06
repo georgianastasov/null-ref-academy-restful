@@ -1,3 +1,4 @@
+import { formatDate } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
@@ -9,6 +10,7 @@ import { News } from 'src/app/models/news.model';
 import { Section } from 'src/app/models/section.model';
 import { Teacher } from 'src/app/models/teacher.model';
 import { StudentApiService } from 'src/app/services/student-api.service';
+import { TeacherApiService } from 'src/app/services/teacher-api.service';
 
 @Component({
   selector: 'app-teacher-news',
@@ -20,7 +22,37 @@ export class TeacherNewsComponent implements OnInit {
   routeSub!: Subscription;
   routeid!: number;
   newsid!: number;
-  constructor(private service: StudentApiService, private router: Router, private route: ActivatedRoute) { }
+  constructor(private service: TeacherApiService, private router: Router, private route: ActivatedRoute) { }
+
+  teacher: Teacher = {
+    id: 0,
+    firstName: '',
+    lastName: '',
+    username: '',
+    email: '',
+    accountType: '',
+    password: '',
+    confirmPassword: '',
+    createdDate: '',
+    articleIDs: '',
+    newsIDs: ''
+  }
+
+  news: News = {
+    id: 0,
+    title: '',
+    description: '',
+    text: '',
+    rating: 0,
+    ratingQty: 0,
+    videoUrl: '',
+    createdDate: '',
+    adminID: 0,
+    studentsIDs: '',
+    teachersIDs: '',
+    usersStudentsRateIDs: '',
+    usersTeachersRateIDs: ''
+  }
 
   admins: Admin[] = [];
   teachers: Teacher[] = [];
@@ -44,6 +76,8 @@ export class TeacherNewsComponent implements OnInit {
     this.getAllSections();
     this.getAllArticles();
     this.getAllNews();
+
+    this.checkEnrollPreview();
   }
 
   ngOnDestroy() {
@@ -111,5 +145,58 @@ export class TeacherNewsComponent implements OnInit {
           this.newss = response;
         }
       );
+  }
+
+  public enroll = true;
+  public preview = false;
+  checkEnrollPreview() {
+    this.service.getAllNews()
+      .subscribe(
+        response => {
+          this.newss = response;
+          this.newss.forEach(news => {
+            if(news.id === Number(this.newsid)){
+                let teachersIDs = news.teachersIDs.split(',');
+                teachersIDs.pop();
+                teachersIDs.forEach(teacherID => {
+                  if(Number(teacherID) == this.routeid){
+                    this.preview = true;
+                    this.enroll = false;
+                  }
+                });
+            }
+          });
+        }
+      );
+  }
+
+  enrollTeacher(){
+    this.service.getTeacher(this.routeid)
+    .subscribe(
+      response => {
+        this.teacher = response;
+        var date = formatDate(Date.now(), 'dd/MM/YYYY', 'en-US').toString();
+        this.teacher.newsIDs += this.newsid + '=' + '0' + '=' + date + ',';
+        this.service.updateTeacher(this.routeid, this.teacher)
+        .subscribe(
+          response => {
+        })
+
+        this.service.getNews(this.newsid)
+        .subscribe(
+          response => {
+            this.news = response;
+            this.news.studentsIDs += this.routeid + ',';
+
+            this.service.updateNews(this.newsid, this.news)
+              .subscribe(
+                response => {
+                  setTimeout(() => {
+                    this.router.navigate(['/Teacher/' + this.routeid + '/News/' + this.newsid + '/Enroll']);
+                  }, 100);
+              })
+          })
+      },
+    );
   }
 }
