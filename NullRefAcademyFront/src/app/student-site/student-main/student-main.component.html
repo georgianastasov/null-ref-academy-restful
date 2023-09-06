@@ -243,6 +243,44 @@
                     <p class="view font"><a routerLink="/Student/{{routeid}}/Course/{{studentCourse.id}}/Enroll">Preview this course again</a></p>
                 </div>
             </ng-container>
+            <ng-container *ngFor="let article of enrolledArticles">
+                <div class="progress-box">
+                    <p class="title digital">{{article.title}}</p>
+                    <div class="p-box">
+                        <span class="line start-line"></span><p class="start code">Started on: <span class="bold">{{article.startDate}}</span></p>
+                    </div>
+                    <ng-container *ngIf="article.isFinished == '1'">
+                        <div class="p-box">
+                            <span class="line end-line"></span><p class="end code">Finished on: <span class="bold">{{article.endDate}}</span></p>
+                        </div>
+                    </ng-container>
+                    <ng-container *ngIf="article.isFinished != '1'">
+                        <div class="p-box">
+                            <span class="line end-line"></span><p class="end code">Not finished yed</p>
+                        </div>
+                    </ng-container>
+                    <p class="view font"><a routerLink="/Student/{{routeid}}/Article/{{article.id}}/Enroll">Preview this article again</a></p>
+                </div>
+            </ng-container>
+            <ng-container *ngFor="let news of enrolledNews">
+                <div class="progress-box">
+                    <p class="title digital">{{news.title}}</p>
+                    <div class="p-box">
+                        <span class="line start-line"></span><p class="start code">Started on: <span class="bold">{{news.startDate}}</span></p>
+                    </div>
+                    <ng-container *ngIf="news.isFinished == '1'">
+                        <div class="p-box">
+                            <span class="line end-line"></span><p class="end code">Finished on: <span class="bold">{{news.endDate}}</span></p>
+                        </div>
+                    </ng-container>
+                    <ng-container *ngIf="news.isFinished != '1'">
+                        <div class="p-box">
+                            <span class="line end-line"></span><p class="end code">Not finished yed</p>
+                        </div>
+                    </ng-container>
+                    <p class="view font"><a routerLink="/Student/{{routeid}}/News/{{news.id}}/Enroll">Preview this news again</a></p>
+                </div>
+            </ng-container>
         </div>
         <div id="student-profile" class="right right-profile" *ngIf="showProfile">
             <p class="titlee code">My profile</p>
