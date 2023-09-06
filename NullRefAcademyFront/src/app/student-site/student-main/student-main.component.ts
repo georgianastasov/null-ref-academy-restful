@@ -2,8 +2,10 @@ import { formatDate } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { Article } from 'src/app/models/article.model';
 import { Category } from 'src/app/models/category.model';
 import { Course } from 'src/app/models/course.model';
+import { News } from 'src/app/models/news.model';
 import { Section } from 'src/app/models/section.model';
 import { Student } from 'src/app/models/student.model';
 import { StudentCourses } from 'src/app/models/studentcourses.model';
@@ -114,6 +116,8 @@ export class StudentMainComponent implements OnInit {
     this.getAllSections();
 
     this.getStudentCourses();
+    this.getArticlesOfStudent();
+    this.getNewsOfStudent();
   }
 
   ngOnDestroy() {
@@ -280,6 +284,110 @@ export class StudentMainComponent implements OnInit {
         }
       );
   }
+
+  //Get articles of this student.. 
+  articlesText: string = '';
+  articles: Article[] = [];
+  array2: string[] = [];
+  articleArray: string[] = [];
+  articleid: number = 0;
+  enrolledArticles: any[] = [];
+  counterArticles: number = 0;
+
+  getArticlesOfStudent() {
+    this.service.getAllArticles()
+    .subscribe(
+      response => {
+        this.articles = response;
+        if (this.articles != null) {
+            this.array2 = this.student.articleIDs.split(',');
+            this.removeNull(this.array2);
+            for (let i = 0; i < this.array2.length; i++) {
+              this.articleArray = this.array2[i].split('=');
+              this.removeNull(this.articleArray);
+              this.articleid = parseInt(this.articleArray[0]);
+              this.articles.forEach(article => {
+                if (this.articleid == article.id) {
+                  var helpArticle = article as any;
+                  let articlesIDs = this.student.articleIDs.split(',');
+                  articlesIDs.pop();
+                  for (let i = 0; i < articlesIDs.length; i++) {
+                    let arr = articlesIDs[i].split('=');
+                    let id = arr[0];
+                    let isFinish = arr[1];
+                    if(Number(id) == this.articleid){
+                      helpArticle.startDate = arr[2];
+                      if(isFinish === "0"){
+                        helpArticle.isFinished = '0';
+                      } else {
+                        helpArticle.isFinished = '1';
+                        helpArticle.endDate = arr[3];
+                        this.counterArticles++;
+                      }
+                    }
+                  }
+                  this.enrolledArticles.push(helpArticle);
+                }
+              });
+            }
+        }
+      }
+    );
+  }
+
+  //Get news of this student.. 
+  newsText: string = '';
+  news: News[] = [];
+  array3: string[] = [];
+  newsArray: string[] = [];
+  newsid: number = 0;
+  enrolledNews: any[] = [];
+  counterNews: number = 0;
+
+  getNewsOfStudent() {
+    this.service.getAllNews()
+    .subscribe(
+      response => {
+        this.news = response;
+        if (this.news != null) {
+            this.array3 = this.student.newsIDs.split(',');
+            this.removeNull(this.array3);
+            for (let i = 0; i < this.array3.length; i++) {
+              this.newsArray = this.array3[i].split('=');
+              this.removeNull(this.newsArray);
+              this.newsid = parseInt(this.newsArray[0]);
+              this.news.forEach(news => {
+                if (this.newsid == news.id) {
+                  var helpNews = news as any;
+                  let newsIDs = this.student.newsIDs.split(',');
+                  newsIDs.pop();
+                  for (let i = 0; i < newsIDs.length; i++) {
+                    let arr = newsIDs[i].split('=');
+                    let id = arr[0];
+                    let isFinish = arr[1];
+                    if(Number(id) == this.newsid){
+                      helpNews.startDate = arr[2];
+                      if(isFinish === "0"){
+                        helpNews.isFinished = '0';
+                      } else {
+                        helpNews.isFinished = '1';
+                        helpNews.endDate = arr[3];
+                        this.counterNews++;
+                      }
+                    }
+                  }
+                  this.enrolledNews.push(helpNews);
+                }
+              });
+            }
+        }
+      }
+    );
+  }
+
+  removeNull(array: string[]) {
+    return array.filter(x => x !== null)
+  };
 
   //Show diferent menues
   showCourse: boolean = true;
