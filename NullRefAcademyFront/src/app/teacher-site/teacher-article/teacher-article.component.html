@@ -84,18 +84,21 @@
                     </ng-container>
                 </ng-container>
                 <div class="under">
-                    <p class="font"><a routerLink="/Teacher/{{routeid}}/Article/{{articleid}}/Enroll">Read</a></p>
-                    <!-- <ng-container *ngIf="studentCourses.length == 0">
-                        <p class="font"><a routerLink="/Teacher/{{routeid}}/Article/{{articleid}}/Enroll">Enroll</a></p>
+                    <ng-container *ngFor="let article of articles">
+                        <ng-container *ngIf="article.id == articleid"> 
+                            <ng-container *ngIf="article.teacherID == routeid"> 
+                                <p class="font"><a routerLink="/Teacher/{{routeid}}/Article/{{articleid}}/Enroll">Preview</a></p>
+                            </ng-container>
+                            <ng-container *ngIf="article.teacherID != routeid"> 
+                                <ng-container *ngIf="preview">
+                                    <p class="font"><a routerLink="/Teacher/{{routeid}}/Article/{{articleid}}/Enroll">Preview</a></p>
+                                </ng-container>
+                                <ng-container *ngIf="enroll">
+                                    <p class="font"><a (click)="enrollTeacher()" style="cursor: pointer;">Enroll</a></p>
+                                </ng-container>
+                            </ng-container>
+                        </ng-container>
                     </ng-container>
-                    <ng-container *ngIf="studentCourses.length != 0">
-                        <ng-container *ngIf="hasEnroll">
-                            <p class="font"><a routerLink="/Teacher/{{routeid}}/Article/{{articleid}}/Enroll">Preview</a></p>
-                        </ng-container>
-                        <ng-container *ngIf="!hasEnroll">
-                            <p class="font"><a routerLink="/Teacher/{{routeid}}/Article/{{articleid}}/Enroll">Enroll</a></p>
-                        </ng-container>
-                    </ng-container> -->
                 </div>
         </div>
     </div>
