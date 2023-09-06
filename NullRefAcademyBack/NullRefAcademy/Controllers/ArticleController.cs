@@ -133,6 +133,29 @@ namespace NullRefAcademy.Controllers
                 result = null;
             }
 
+            result = null;
+            var teachers = _dataBase.Teachers;
+            foreach (var teacher in teachers)
+            {
+                if (teacher.ArticleIDs != null)
+                {
+                    var array = teacher.ArticleIDs.Split(',', StringSplitOptions.RemoveEmptyEntries);
+                    for (int i = 0; i < array.Length; i++)
+                    {
+                        string articleInfo = array[i];
+                        var articleArray = articleInfo.Split('=', StringSplitOptions.RemoveEmptyEntries);
+                        int articleId = int.Parse(articleArray[0].ToString());
+                        if (articleId != findArticle.Id)
+                        {
+                            result += articleInfo + ",";
+                        }
+                    }
+                    teacher.ArticleIDs = result;
+                }
+                _dataBase.Teachers.Update(teacher);
+                result = null;
+            }
+
             _dataBase.Articles.Remove(findArticle);
             _dataBase.SaveChanges();
 
