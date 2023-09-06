@@ -319,15 +319,7 @@
                     <p class="desc code"><img src="https://cdn-icons-png.flaticon.com/128/887/887997.png" alt="course">Courses</p>
                 </div>
                 <div class="down">
-                    <p class="cap code">Course statistic</p>
-                    <div class="box">
-                        <p class="info-left code">Course completed</p>
-                        <p class="info-right code">{{counter}}</p>
-                    </div>
-                    <div class="box">
-                        <p class="info-left code">Points earned</p>
-                        <p class="info-right points code">{{student.points}}</p>
-                    </div>
+                    <p class="cap code">Statistics</p>
                     <div class="box">
                         <p class="info-left code">Course enrolled</p>
                         <ng-container *ngIf="studentCourses.length != null">
@@ -336,6 +328,40 @@
                         <ng-container *ngIf="studentCourses.length == null">
                             <p class="info-right code">0</p>
                         </ng-container>
+                    </div>
+                    <div class="box">
+                        <p class="info-left code">Course completed</p>
+                        <p class="info-right code">{{counter}}</p>
+                    </div>
+                    <div class="box">
+                        <p class="info-left code">Articles enrolled</p>
+                        <ng-container *ngIf="enrolledArticles.length != null">
+                            <p class="info-right code">{{enrolledArticles.length}}</p>
+                        </ng-container>
+                        <ng-container *ngIf="enrolledArticles.length == null">
+                            <p class="info-right code">0</p>
+                        </ng-container>
+                    </div>
+                    <div class="box">
+                        <p class="info-left code">Articles completed</p>
+                        <p class="info-right code">{{counterArticles}}</p>
+                    </div>
+                    <div class="box">
+                        <p class="info-left code">News enrolled</p>
+                        <ng-container *ngIf="enrolledNews.length != null">
+                            <p class="info-right code">{{enrolledNews.length}}</p>
+                        </ng-container>
+                        <ng-container *ngIf="enrolledNews.length == null">
+                            <p class="info-right code">0</p>
+                        </ng-container>
+                    </div>
+                    <div class="box">
+                        <p class="info-left code">News completed</p>
+                        <p class="info-right code">{{counterNews}}</p>
+                    </div>
+                    <div class="box">
+                        <p class="info-left code">Points earned</p>
+                        <p class="info-right points code">{{student.points}}</p>
                     </div>
                 </div>
             </div>
