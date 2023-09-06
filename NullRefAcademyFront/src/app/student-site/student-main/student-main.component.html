@@ -161,6 +161,64 @@
                 </div>
             </ng-container>
         </div>
+        <div id="student-articles" class="right right-courses" *ngIf="showArticle">
+            <p class="titlee code">My Articles</p>
+            <ng-container *ngFor="let article of enrolledArticles">
+                <div class="box">
+                    <div class="up">
+                        <div class="leftt">
+                            <p class="title digital">{{article.title}}</p>
+                        </div>
+                        <div class="rightt">
+                            <ng-container *ngIf="article.isFinished == '1'">
+                                <p class="isfinishy code">Readed</p>
+                            </ng-container>
+                            <ng-container *ngIf="article.isFinished == '0'">
+                                <p class="isfinishn code">Not readed yet</p>
+                            </ng-container>
+                        </div>
+                    </div>
+                    <div class="down">
+                        <p class="description code"><img src="https://cdn-icons-png.flaticon.com/128/4228/4228952.png" alt="articles"><strong>About:</strong> {{article.description}}</p>
+                    </div>
+                    <ng-container *ngIf="article.isFinished == '1'">
+                        <p class="btn preview font"><a routerLink="/Student/{{routeid}}/Article/{{article.id}}/Enroll">Preview</a></p>
+                    </ng-container>
+                    <ng-container *ngIf="article.isFinished == '0'">
+                        <p class="btn resume font"><a routerLink="/Student/{{routeid}}/Article/{{article.id}}/Enroll">Resume</a></p>
+                    </ng-container>
+                </div>
+            </ng-container>
+        </div>
+        <div id="student-news" class="right right-courses" *ngIf="showNews">
+            <p class="titlee code">My News</p>
+            <ng-container *ngFor="let news of enrolledNews">
+                <div class="box">
+                    <div class="up">
+                        <div class="leftt">
+                            <p class="title digital">{{news.title}}</p>
+                        </div>
+                        <div class="rightt">
+                            <ng-container *ngIf="news.isFinished == '1'">
+                                <p class="isfinishy code">Readed</p>
+                            </ng-container>
+                            <ng-container *ngIf="news.isFinished == '0'">
+                                <p class="isfinishn code">Not readed yet</p>
+                            </ng-container>
+                        </div>
+                    </div>
+                    <div class="down">
+                        <p class="description code"><img src="https://cdn-icons-png.flaticon.com/128/2965/2965879.png" alt="news"><strong>About:</strong> {{news.description}}</p>
+                    </div>
+                    <ng-container *ngIf="news.isFinished == '1'">
+                        <p class="btn preview font"><a routerLink="/Student/{{routeid}}/News/{{news.id}}/Enroll">Preview</a></p>
+                    </ng-container>
+                    <ng-container *ngIf="news.isFinished == '0'">
+                        <p class="btn resume font"><a routerLink="/Student/{{routeid}}/News/{{news.id}}/Enroll">Resume</a></p>
+                    </ng-container>
+                </div>
+            </ng-container>
+        </div>
         <div id="student-progress" class="right right-progress" *ngIf="showProgres">
             <p class="titlee code">My Progress</p>
             <ng-container *ngFor="let studentCourse of studentCourses">
