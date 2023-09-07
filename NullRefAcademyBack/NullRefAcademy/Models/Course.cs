@@ -45,5 +45,13 @@ namespace NullRefAcademy.Models
         [StringLength(3000)]
         [DisplayName("Students")]
         public string? StudentsIDs { get; set; }
+
+        [StringLength(3000)]
+        [DisplayName("Users Students Rate")]
+        public string? UsersStudentsRateIDs { get; set; }
+
+        [StringLength(3000)]
+        [DisplayName("Users Teachers Rate")]
+        public string? UsersTeachersRateIDs { get; set; }
     }
 }
