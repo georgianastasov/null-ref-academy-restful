@@ -55,7 +55,9 @@ export class StudentNewsComponent implements OnInit {
     createdDate: '',
     adminID: 0,
     studentsIDs: '',
-    teachersIDs: ''
+    teachersIDs: '',
+    usersStudentsRateIDs: '',
+    usersTeachersRateIDs: ''
   }
   
   admins: Admin[] = [];

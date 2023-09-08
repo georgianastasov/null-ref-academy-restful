@@ -54,7 +54,9 @@ export class StudentCourseComponent implements OnInit {
     categoryID: 0,
     teacherID: 0,
     adminID: 0,
-    studentsIDs: ''
+    studentsIDs: '',
+    usersStudentsRateIDs: '',
+    usersTeachersRateIDs: ''
   }
 
   admins: Admin[] = [];
