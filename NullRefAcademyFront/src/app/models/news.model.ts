@@ -10,4 +10,6 @@ export interface News{
     adminID: number;
     studentsIDs: string;
     teachersIDs: string;
+    usersStudentsRateIDs: string;
+    usersTeachersRateIDs: string;
 }
