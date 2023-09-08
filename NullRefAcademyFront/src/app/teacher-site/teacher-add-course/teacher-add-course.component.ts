@@ -67,7 +67,9 @@ export class TeacherAddCourseComponent implements OnInit {
     categoryID: 0,
     teacherID: 0,
     adminID: this.nullfield,
-    studentsIDs: ''
+    studentsIDs: '',
+    usersStudentsRateIDs: '',
+    usersTeachersRateIDs: ''
   }
 
   categories: Category[] = [];

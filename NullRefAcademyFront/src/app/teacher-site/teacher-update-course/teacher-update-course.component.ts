@@ -70,7 +70,9 @@ export class TeacherUpdateCourseComponent implements OnInit {
     categoryID: 0,
     teacherID: 0,
     adminID: 0,
-    studentsIDs: ''
+    studentsIDs: '',
+    usersStudentsRateIDs: '',
+    usersTeachersRateIDs: ''
   }
 
   course: Course = {
@@ -85,7 +87,9 @@ export class TeacherUpdateCourseComponent implements OnInit {
     categoryID: 0,
     teacherID: 0,
     adminID: 0,
-    studentsIDs: ''
+    studentsIDs: '',
+    usersStudentsRateIDs: '',
+    usersTeachersRateIDs: ''
   }
 
   hasAdmin: boolean = false;
