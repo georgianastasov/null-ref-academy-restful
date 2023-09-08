@@ -56,7 +56,9 @@ export class AdminUpdateArticleComponent implements OnInit {
     adminID: 0,
     videoUrl: '',
     studentsIDs: '',
-    teachersIDs: ''
+    teachersIDs: '',
+    usersStudentsRateIDs: '',
+    usersTeachersRateIDs: ''
   }
 
   article: Article = {
@@ -71,7 +73,9 @@ export class AdminUpdateArticleComponent implements OnInit {
     adminID: 0,
     videoUrl: '',
     studentsIDs: '',
-    teachersIDs: ''
+    teachersIDs: '',
+    usersStudentsRateIDs: '',
+    usersTeachersRateIDs: ''
   }
 
   ngOnInit(): void {

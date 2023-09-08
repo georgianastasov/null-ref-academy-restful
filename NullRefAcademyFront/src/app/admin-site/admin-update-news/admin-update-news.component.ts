@@ -54,7 +54,9 @@ export class AdminUpdateNewsComponent implements OnInit {
     adminID: 0,
     videoUrl: '',
     studentsIDs: '',
-    teachersIDs: ''
+    teachersIDs: '',
+    usersStudentsRateIDs: '',
+    usersTeachersRateIDs: ''
   }
 
   news: News = {
@@ -68,7 +70,9 @@ export class AdminUpdateNewsComponent implements OnInit {
     adminID: 0,
     videoUrl: '',
     studentsIDs: '',
-    teachersIDs: ''
+    teachersIDs: '',
+    usersStudentsRateIDs: '',
+    usersTeachersRateIDs: ''
   }
 
   ngOnInit(): void {

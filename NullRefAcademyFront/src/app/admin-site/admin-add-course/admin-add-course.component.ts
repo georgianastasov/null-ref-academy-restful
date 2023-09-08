@@ -50,7 +50,9 @@ export class AdminAddCourseComponent implements OnInit {
     categoryID: this.nullfield,
     teacherID: this.nullfield,
     adminID: 0,
-    studentsIDs: ''
+    studentsIDs: '',
+    usersStudentsRateIDs: '',
+    usersTeachersRateIDs: ''
   }
 
   categories: any = [];

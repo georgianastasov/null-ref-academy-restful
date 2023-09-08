@@ -36,7 +36,9 @@ export class AdminDeleteCourseComponent implements OnInit {
     categoryID: 0,
     teacherID: 0,
     adminID: 0,
-    studentsIDs: ''
+    studentsIDs: '',
+    usersStudentsRateIDs: '',
+    usersTeachersRateIDs: ''
   }
 
   ngOnInit(): void {

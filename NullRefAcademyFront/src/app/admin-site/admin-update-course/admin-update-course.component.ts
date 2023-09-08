@@ -56,7 +56,9 @@ export class AdminUpdateCourseComponent implements OnInit {
     categoryID: 0,
     teacherID: 0,
     adminID: 0,
-    studentsIDs: ''
+    studentsIDs: '',
+    usersStudentsRateIDs: '',
+    usersTeachersRateIDs: ''
   }
 
   course: Course = {
@@ -71,7 +73,9 @@ export class AdminUpdateCourseComponent implements OnInit {
     categoryID: 0,
     teacherID: 0,
     adminID: 0,
-    studentsIDs: ''
+    studentsIDs: '',
+    usersStudentsRateIDs: '',
+    usersTeachersRateIDs: ''
   }
 
   ngOnInit(): void {
