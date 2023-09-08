@@ -11,4 +11,6 @@ export interface Course{
     teacherID: number;
     adminID: number;
     studentsIDs: string;
+    usersStudentsRateIDs: string;
+    usersTeachersRateIDs: string;
 }
