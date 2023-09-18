@@ -98,6 +98,56 @@ html {
     max-width: 100%;
 }
 
+.info-news-enroll .additions{
+    flex-basis: 15%;
+}
+
+.info-news-enroll .rate{
+    background-color: #222534;
+    color: #FFE08C;
+    margin-left: 2rem;
+    padding: 0.5rem;
+    border-radius: 0.4rem;
+    box-shadow: 0px 0px 14px 3px rgba(0,0,0,0.3);
+}
+
+.info-news-enroll .rate select{
+    width: 40px;
+    height: 25px;
+    background-color: #FFE08C;
+    color: #222534;
+    font-size: 0.8rem;
+}
+
+.info-news-enroll .rate select:focus-visible{
+    border: 1px solid #FFE08C;
+    outline: 1px solid #FFE08C;
+}
+
+.info-news-enroll .rate img{
+    width: 35px;
+    height: 30px;
+    position: relative;
+    top: 0.3rem;
+    padding-left: 0.2rem;
+}
+
+.info-news-enroll .rate a{
+    background-color: #FFE08C;
+    color: #222534;
+    margin: auto 0;
+    padding: 0.3rem;
+    border-radius: 0.3rem;
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.info-news-enroll .rate a:hover{
+    font-weight: bold;
+}
+
 .info-news-enroll .agenda{
     flex-basis: 15%;
     margin-left: 2rem;
