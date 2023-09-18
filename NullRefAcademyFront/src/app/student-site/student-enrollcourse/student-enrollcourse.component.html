@@ -46,13 +46,42 @@
                 </ng-container>
             </ng-container>
         </div>
-        <div class="agenda">
-            <p class="cap code">Sections:</p>
-            <ng-container *ngFor="let section of sections">
-                <ng-container *ngIf="section.courseID == courseid">
-                    <p class="count code"><a href="/Student/{{routeid}}/Course/{{courseid}}/Enroll#{{section.title}}">{{counts[section.id]}}. {{section.title}}</a></p>
-                </ng-container>
+        <div class="additions">
+            <ng-container *ngIf="!rated">
+                <div class="rate">
+                    <p class="tup code">Rating</p>
+                    <label for="rating" class="code">Stars:</label>
+                    <select #select name="rating" id="rating">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                    <img src="https://cdn-icons-png.flaticon.com/128/477/477406.png" alt="star">
+                    <a class="font" (click)="rateCourse(select.value)">Rate</a>
+                </div>
             </ng-container>
+            <ng-container *ngIf="rated">
+                <div class="rate">
+                    <p class="tup code">Rating:</p>
+                    <ng-container *ngFor="let course of courses">
+                        <ng-container *ngIf="course.id == courseid">
+                            <ng-container *ngFor="let star of countStars(course)">
+                                <img src="https://cdn-icons-png.flaticon.com/128/477/477406.png" alt="star">
+                            </ng-container>
+                        </ng-container>
+                    </ng-container>
+                </div>
+            </ng-container>
+            <div class="agenda">
+                <p class="cap code">Sections:</p>
+                <ng-container *ngFor="let section of sections">
+                    <ng-container *ngIf="section.courseID == courseid">
+                        <p class="count code"><a href="/Student/{{routeid}}/Course/{{courseid}}/Enroll#{{section.title}}">{{counts[section.id]}}. {{section.title}}</a></p>
+                    </ng-container>
+                </ng-container>
+            </div>
         </div>
         <div class="under">
             <p><a class="donebtn font" *ngIf="!finish" routerLink="/Student/{{routeid}}/Dashboard">Go to dashboard</a></p>

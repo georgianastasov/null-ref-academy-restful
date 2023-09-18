@@ -1,5 +1,5 @@
 import { DatePipe, formatDate } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, NgIterable, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Admin } from 'src/app/models/admin.model';
@@ -54,7 +54,9 @@ export class StudentEnrollcourseComponent implements OnInit {
     categoryID: 0,
     teacherID: 0,
     adminID: 0,
-    studentsIDs: ''
+    studentsIDs: '',
+    usersStudentsRateIDs: '',
+    usersTeachersRateIDs: ''
   }
   
   admins: Admin[] = [];
@@ -82,6 +84,7 @@ export class StudentEnrollcourseComponent implements OnInit {
 
     this.sectionsNumbers();
     this.checkFinish();
+    this.checkRated();
   }
 
   ngOnDestroy() {
@@ -231,5 +234,52 @@ export class StudentEnrollcourseComponent implements OnInit {
     );
   }
 
-  
+  countStars(course: any){
+    let arr = [];
+    let number = course.rating / course.ratingQty;
+    for (let i = 0; i < number; i++) {
+      arr[i] = i;
+    }
+    return arr;
+  }
+
+  public rated = false;
+  checkRated() {
+    this.service.getAllStudents()
+      .subscribe(
+        response => {
+          this.students = response;
+          this.students.forEach(student => {
+            if(student.id === Number(this.routeid)){
+                if(this.course.usersStudentsRateIDs){
+                  let usersRateIDs = this.course.usersStudentsRateIDs.split(',');
+                  usersRateIDs.pop();
+                  for (let i = 0; i < usersRateIDs.length; i++) {
+                    let id = usersRateIDs[0];
+                    if(Number(id) == student.id){
+                      this.rated = true;
+                      break;
+                    } else {
+                      this.rated = false;
+                    }
+                  }
+                }
+            }
+          });
+        }
+      );
+  }
+
+  rateCourse(value: any){
+    this.course.rating += Number(value);
+    this.course.ratingQty += 1;
+    this.course.usersStudentsRateIDs += this.routeid + ',';
+    this.service.updateCourse(this.courseid, this.course)
+        .subscribe(
+          response => {
+            setTimeout(() => {
+              this.rated = true;
+            }, 100);
+        })
+  }
 }
