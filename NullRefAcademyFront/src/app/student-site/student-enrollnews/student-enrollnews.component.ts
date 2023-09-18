@@ -55,7 +55,9 @@ export class StudentEnrollNewsComponent implements OnInit {
     adminID: 0,
     videoUrl: '',
     studentsIDs: '',
-    teachersIDs: ''
+    teachersIDs: '',
+    usersStudentsRateIDs: '',
+    usersTeachersRateIDs: ''
   }
   
   admins: Admin[] = [];
@@ -78,6 +80,7 @@ export class StudentEnrollNewsComponent implements OnInit {
     this.getAllTeachers();
 
     this.checkFinish();
+    this.checkRated();
   }
 
   ngOnDestroy() {
@@ -186,5 +189,54 @@ export class StudentEnrollNewsComponent implements OnInit {
         })
       },
     );
+  }
+
+  countStars(news: any){
+    let arr = [];
+    let number = news.rating / news.ratingQty;
+    for (let i = 0; i < number; i++) {
+      arr[i] = i;
+    }
+    return arr;
+  }
+
+  public rated = false;
+  checkRated() {
+    this.service.getAllStudents()
+      .subscribe(
+        response => {
+          this.students = response;
+          this.students.forEach(student => {
+            if(student.id === Number(this.routeid)){
+                if(this.news.usersStudentsRateIDs){
+                  let usersRateIDs = this.news.usersStudentsRateIDs.split(',');
+                  usersRateIDs.pop();
+                  for (let i = 0; i < usersRateIDs.length; i++) {
+                    let id = usersRateIDs[0];
+                    if(Number(id) == student.id){
+                      this.rated = true;
+                      break;
+                    } else {
+                      this.rated = false;
+                    }
+                  }
+                }
+            }
+          });
+        }
+      );
+  }
+
+  rateNews(value: any){
+    this.news.rating += Number(value);
+    this.news.ratingQty += 1;
+    this.news.usersStudentsRateIDs += this.routeid + ',';
+    this.service.updateNews(this.newsid, this.news)
+        .subscribe(
+          response => {
+            setTimeout(() => {
+              this.rated = true;
+            }, 100);
+        })
   }
 }
