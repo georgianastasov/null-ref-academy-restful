@@ -99,10 +99,59 @@
     margin-bottom: 0.5rem;
 }
 
-.info-course-enroll .agenda{
+.info-course-enroll .additions{
     flex-basis: 15%;
+}
+
+.info-course-enroll .rate{
+    background-color: #222534;
+    color: #FFE08C;
     margin-left: 2rem;
-    margin-top: 7rem;
+    padding: 0.5rem;
+    border-radius: 0.4rem;
+    box-shadow: 0px 0px 14px 3px rgba(0,0,0,0.3);
+}
+
+.info-course-enroll .rate select{
+    width: 45px;
+    height: 25px;
+    background-color: #FFE08C;
+    color: #222534;
+    font-size: 0.8rem;
+}
+
+.info-course-enroll .rate select:focus-visible{
+    border: 1px solid #FFE08C;
+    outline: 1px solid #FFE08C;
+}
+
+.info-course-enroll .rate img{
+    width: 35px;
+    height: 30px;
+    position: relative;
+    top: 0.4rem;
+    padding-left: 0.4rem;
+}
+
+.info-course-enroll .rate a{
+    background-color: #FFE08C;
+    color: #222534;
+    margin: auto 0;
+    padding: 0.3rem;
+    border-radius: 0.3rem;
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.info-course-enroll .rate a:hover{
+    font-weight: bold;
+}
+
+.info-course-enroll .agenda{
+    margin-left: 2rem;
+    margin-top: 3rem;
     position: sticky;
     top: 1rem;
     background-color: #FFE08C;
