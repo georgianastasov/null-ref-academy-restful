@@ -11,6 +11,7 @@ import { Student } from 'src/app/models/student.model';
 import { StudentCourses } from 'src/app/models/studentcourses.model';
 import { Teacher } from 'src/app/models/teacher.model';
 import { StudentApiService } from 'src/app/services/student-api.service';
+import { TeacherApiService } from 'src/app/services/teacher-api.service';
 
 @Component({
   selector: 'app-teacher-enrollarticle',
@@ -22,7 +23,7 @@ export class TeacherEnrollArticleComponent implements OnInit {
   routeSub!: Subscription;
   routeid!: number;
   articleid!: number;
-  constructor(private service: StudentApiService, private router: Router, private route: ActivatedRoute) { }
+  constructor(private service: TeacherApiService, private router: Router, private route: ActivatedRoute) { }
 
   teacher: Teacher = {
     id: 0,
@@ -50,7 +51,9 @@ export class TeacherEnrollArticleComponent implements OnInit {
     adminID: 0,
     videoUrl: '',
     studentsIDs: '',
-    teachersIDs: ''
+    teachersIDs: '',
+    usersStudentsRateIDs: '',
+    usersTeachersRateIDs: ''
   }
   
   admins: Admin[] = [];
@@ -72,7 +75,8 @@ export class TeacherEnrollArticleComponent implements OnInit {
     this.getAllAdmins();
     this.getAllTeachers();
 
-    //this.checkFinish();
+    this.checkFinish();
+    this.checkRated();
   }
 
   ngOnDestroy() {
@@ -125,61 +129,111 @@ export class TeacherEnrollArticleComponent implements OnInit {
   }
 
   public finish = false;
-  // checkFinish() {
-  //   this.service.getAllStudents()
-  //     .subscribe(
-  //       response => {
-  //         this.students = response;
-  //         this.students.forEach(student => {
-  //           if(student.id === Number(this.routeid)){
-  //               let coursesIDs = student.coursesIDs.split(',')
-  //               coursesIDs.pop();
-  //               for (let i = 0; i < coursesIDs.length; i++) {
-  //                 let arr = coursesIDs[i].split('=');
-  //                 let id = arr[0];
-  //                 let isFinish = arr[1];
-  //                 if(Number(id) == this.courseid){
-  //                   if(isFinish === "0"){
-  //                     this.finish = true;
-  //                     break;
-  //                   } else {
-  //                     this.finish = false;
-  //                   }
-  //                 }
-  //               }
-  //           }
-  //         });
-  //       }
-  //     );
-  // }
+  checkFinish() {
+    this.service.getAllTeachers()
+      .subscribe(
+        response => {
+          console.log('a')
+          this.teachers = response;
+          this.teachers.forEach(teacher => {
+            if(teacher.id === Number(this.routeid)){
+                let articleIDs = teacher.articleIDs.split(',')
+                articleIDs.pop();
+                for (let i = 0; i < articleIDs.length; i++) {
+                  let arr = articleIDs[i].split('=');
+                  let id = arr[0];
+                  let isFinish = arr[1];
+                  if(Number(id) == this.articleid){
+                    if(isFinish === "0"){
+                      this.finish = true;
+                      break;
+                    } else {
+                      this.finish = false;
+                    }
+                  }
+                }
+            }
+          });
+        }
+      );
+  }
 
-  // private result: string = '';
-  // finishCourse(){
-  //   this.service.getStudent(this.routeid)
-  //   .subscribe(
-  //     response => {
-  //       this.student = response;
-  //       let coursesIDs = this.student.coursesIDs.split(',')
-  //       coursesIDs.pop();
-  //       for (let i = 0; i < coursesIDs.length; i++) {
-  //         let arr = coursesIDs[i].split('=');
-  //         let id = arr[0];
-  //         let date = arr[2];
-  //         let finishDate = formatDate(Date.now(), 'dd/MM/YYYY', 'en-US').toString();
-  //         if(Number(id) == this.courseid){
-  //           this.result += id + '=' + "1" + '=' + date + '=' + finishDate;
-  //           this.student.coursesIDs = this.student.coursesIDs.replace(coursesIDs[i], this.result)
-  //           break;
-  //         }
-  //       }
-  //       this.service.updateStudent(this.routeid, this.student)
-  //       .subscribe(
-  //         response => {
-  //           setTimeout(() => {
-  //             this.router.navigate(['/Student/' + this.routeid + '/Dashboard/']);
-  //           }, 100);
-  //       })
-  //     },
-  //   );
-  // }
+  private result: string = '';
+  finishCourse(){
+    this.service.getTeacher(this.routeid)
+    .subscribe(
+      response => {
+        this.teacher = response;
+        let articlesIDs = this.teacher.articleIDs.split(',')
+        articlesIDs.pop();
+        for (let i = 0; i < articlesIDs.length; i++) {
+          let arr = articlesIDs[i].split('=');
+          let id = arr[0];
+          let date = arr[2];
+          let finishDate = formatDate(Date.now(), 'dd/MM/YYYY', 'en-US').toString();
+          if(Number(id) == this.articleid){
+            this.result += id + '=' + "1" + '=' + date + '=' + finishDate;
+            this.teacher.articleIDs = this.teacher.articleIDs.replace(articlesIDs[i], this.result)
+            break;
+          }
+        }
+        this.service.updateTeacher(this.routeid, this.teacher)
+        .subscribe(
+          response => {
+            setTimeout(() => {
+              this.router.navigate(['/Teacher/' + this.routeid + '/Dashboard/']);
+            }, 100);
+        })
+      },
+    );
+  }
+
+  countStars(article: any){
+    let arr = [];
+    let number = article.rating / article.ratingQty;
+    for (let i = 0; i < number; i++) {
+      arr[i] = i;
+    }
+    return arr;
+  }
+
+  public rated = false;
+  checkRated() {
+    this.service.getAllStudents()
+      .subscribe(
+        response => {
+          this.students = response;
+          this.students.forEach(student => {
+            if(student.id === Number(this.routeid)){
+                if(this.article.usersTeachersRateIDs){
+                  let usersRateIDs = this.article.usersTeachersRateIDs.split(',');
+                  usersRateIDs.pop();
+                  for (let i = 0; i < usersRateIDs.length; i++) {
+                    let id = usersRateIDs[0];
+                    if(Number(id) == student.id){
+                      this.rated = true;
+                      break;
+                    } else {
+                      this.rated = false;
+                    }
+                  }
+                }
+            }
+          });
+        }
+      );
+  }
+
+  rateArticle(value: any){
+    this.article.rating += Number(value);
+    this.article.ratingQty += 1;
+    this.article.usersTeachersRateIDs += this.routeid + ',';
+    this.service.updateArticle(this.articleid, this.article)
+        .subscribe(
+          response => {
+            setTimeout(() => {
+              this.rated = true;
+            }, 100);
+        })
+  }
 }
