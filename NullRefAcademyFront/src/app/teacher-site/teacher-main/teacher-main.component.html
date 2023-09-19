@@ -52,6 +52,7 @@
         <a class="code" (click)="showSectionss()">Sections</a>
         <a class="code" (click)="showArticles()">Articles</a>
         <a class="code" (click)="showStudentss()">Students</a>
+        <a class="code" (click)="showUserss()">Users</a>
         <a class="code" (click)="showProfilee()">Profile</a>
     </div>
 </div>
@@ -66,18 +67,56 @@
                 <ng-container *ngIf="category.teacherID != null">
                     <ng-container *ngIf="category.teacherID == routeid">
                         <div class="box">
+                            <div class="icon">
+                                <ng-container *ngIf="category.title == 'Math'">
+                                    <img src="https://cdn-icons-png.flaticon.com/128/3771/3771278.png" alt="math">
+                                </ng-container>
+                                <ng-container *ngIf="category.title == 'Science'">
+                                    <img src="https://cdn-icons-png.flaticon.com/128/3655/3655580.png" alt="science">
+                                </ng-container>
+                                <ng-container *ngIf="category.title == 'Informatics'">
+                                    <img src="https://cdn-icons-png.flaticon.com/128/6062/6062646.png" alt="informatics">
+                                </ng-container>
+                                <ng-container *ngIf="category.title == 'Software Development'">
+                                    <img src="https://cdn-icons-png.flaticon.com/128/1316/1316740.png" alt="software development">
+                                </ng-container>
+                                <ng-container *ngIf="category.title == 'Software Technologies'">
+                                    <img src="https://cdn-icons-png.flaticon.com/128/644/644667.png" alt="software technologies">
+                                </ng-container>
+                                <ng-container *ngIf="category.title == 'Web Applications'">
+                                    <img src="https://cdn-icons-png.flaticon.com/128/5044/5044729.png" alt="web applications">
+                                </ng-container>
+                                <ng-container *ngIf="category.title == 'Mobile Development'">
+                                    <img src="https://cdn-icons-png.flaticon.com/128/2586/2586488.png" alt="mobile development">
+                                </ng-container>
+                                <ng-container *ngIf="category.title == 'Physics'">
+                                    <img src="https://cdn-icons-png.flaticon.com/128/6813/6813708.png" alt="physics">
+                                </ng-container>
+                                <ng-container *ngIf="category.title == 'Creativity'">
+                                    <img src="https://cdn-icons-png.flaticon.com/128/3749/3749896.png" alt="creativity">
+                                </ng-container>
+                                <ng-container *ngIf="category.title == 'Art'">
+                                    <img src="https://cdn-icons-png.flaticon.com/128/2400/2400603.png" alt="art">
+                                </ng-container>
+                                <ng-container *ngIf="category.title == 'Marketing'">
+                                    <img src="https://cdn-icons-png.flaticon.com/128/1998/1998087.png" alt="marketing">
+                                </ng-container>
+                                <ng-container *ngIf="category.title == 'Self Development'">
+                                    <img src="https://cdn-icons-png.flaticon.com/128/10068/10068898.png" alt="self development">
+                                </ng-container>
+                            </div>
                             <div class="leftt">
                                 <div class="top">
                                     <div class="left">
-                                        <p class="title">{{category.title}}</p>
+                                        <p class="title digital"><strong>Title:</strong> {{category.title}}</p>
                                     </div>
                                 </div>
                                 <div class="middle">
-                                    <p class="description">{{category.description}}</p>
+                                    <p class="description code"><strong>Description:</strong> {{category.description}}</p>
                                 </div>
                                 <div class="down">
                                     <ng-container *ngIf="hasCoursesInCategory">
-                                        <p class="courses">Courses in this category: {{countCoursesInCategory}}</p>
+                                        <p class="courses code"><strong>Courses:</strong> {{countCoursesInCategory}}</p>
                                     </ng-container>
                                     <ng-container *ngIf="!hasCoursesInCategory">
                                         <p class="courses code">No courses in this category yet.</p>
@@ -85,9 +124,9 @@
                                 </div>
                             </div>
                             <div class="rightt">
-                                <a class="btn update" routerLink="/Teacher/{{routeid}}/Update/Category/{{category.id}}">Update</a>
-                                <a class="btn delete" routerLink="/Teacher/{{routeid}}/Delete/Category/{{category.id}}">Delete</a>
-                                <a class="btn preview" routerLink="/Teacher/{{routeid}}/Category/{{category.id}}">Preview</a>
+                                <a class="btn update font" routerLink="/Teacher/{{routeid}}/Update/Category/{{category.id}}">Update</a>
+                                <a class="btn delete font" routerLink="/Teacher/{{routeid}}/Delete/Category/{{category.id}}">Delete</a>
+                                <a class="btn preview font" routerLink="/Teacher/{{routeid}}/Category/{{category.id}}">Preview</a>
                             </div>
                         </div>
                     </ng-container>
@@ -106,44 +145,74 @@
                 <ng-container *ngIf="course.teacherID != null">
                     <ng-container *ngIf="course.teacherID == routeid">
                         <div class="box">
+                            <div class="icon">
+                                <ng-container *ngFor="let category of categories">
+                                    <ng-container *ngIf="category.id == course.categoryID">
+                                        <ng-container *ngIf="category.title == 'Math'">
+                                            <img src="https://cdn-icons-png.flaticon.com/128/3771/3771278.png" alt="math">
+                                        </ng-container>
+                                        <ng-container *ngIf="category.title == 'Science'">
+                                            <img src="https://cdn-icons-png.flaticon.com/128/3655/3655580.png" alt="science">
+                                        </ng-container>
+                                        <ng-container *ngIf="category.title == 'Informatics'">
+                                            <img src="https://cdn-icons-png.flaticon.com/128/6062/6062646.png" alt="informatics">
+                                        </ng-container>
+                                        <ng-container *ngIf="category.title == 'Software Development'">
+                                            <img src="https://cdn-icons-png.flaticon.com/128/1316/1316740.png" alt="software development">
+                                        </ng-container>
+                                        <ng-container *ngIf="category.title == 'Software Technologies'">
+                                            <img src="https://cdn-icons-png.flaticon.com/128/644/644667.png" alt="software technologies">
+                                        </ng-container>
+                                        <ng-container *ngIf="category.title == 'Web Applications'">
+                                            <img src="https://cdn-icons-png.flaticon.com/128/5044/5044729.png" alt="web applications">
+                                        </ng-container>
+                                        <ng-container *ngIf="category.title == 'Mobile Development'">
+                                            <img src="https://cdn-icons-png.flaticon.com/128/2586/2586488.png" alt="mobile development">
+                                        </ng-container>
+                                        <ng-container *ngIf="category.title == 'Physics'">
+                                            <img src="https://cdn-icons-png.flaticon.com/128/6813/6813708.png" alt="physics">
+                                        </ng-container>
+                                        <ng-container *ngIf="category.title == 'Creativity'">
+                                            <img src="https://cdn-icons-png.flaticon.com/128/3749/3749896.png" alt="creativity">
+                                        </ng-container>
+                                        <ng-container *ngIf="category.title == 'Art'">
+                                            <img src="https://cdn-icons-png.flaticon.com/128/2400/2400603.png" alt="art">
+                                        </ng-container>
+                                        <ng-container *ngIf="category.title == 'Marketing'">
+                                            <img src="https://cdn-icons-png.flaticon.com/128/1998/1998087.png" alt="marketing">
+                                        </ng-container>
+                                        <ng-container *ngIf="category.title == 'Self Development'">
+                                            <img src="https://cdn-icons-png.flaticon.com/128/10068/10068898.png" alt="self development">
+                                        </ng-container>
+                                    </ng-container>
+                                </ng-container>
+                            </div>
                             <div class="leftt">
                                 <div class="top">
                                     <div class="left">
-                                        <p class="title">{{course.title}}</p>
                                         <ng-container *ngFor="let category of categories">
                                             <ng-container *ngIf="course.categoryID == category.id">
-                                                <p class="category">Category: {{category.title}}</p>
+                                                <p class="category code">Category: <strong>{{category.title}}</strong></p>
                                             </ng-container>
                                         </ng-container>
-                                    </div>
-                                    <div class="right">
-                                        <p class="points">Points: {{course.points}}</p>
+                                        <p class="title digital"><strong>Title:</strong> {{course.title}}</p>
                                     </div>
                                 </div>
                                 <div class="middle">
-                                    <p class="description">{{course.description}}</p>
-                                </div>
-                                <div class="pre-down">
-                                    <ng-container *ngIf="hasSectionsInCourse">
-                                        <p class="courses">Sections in this course: {{countSectionsInCourse}}</p>
-                                    </ng-container>
-                                    <ng-container *ngIf="!hasSectionsInCourse">
-                                        <p class="courses code">No sections in this course yet.</p>
-                                    </ng-container>
-                                </div>
-                                <div class="down">
-                                    <ng-container *ngId="course.studentsIDs != null">
-                                        <p class="students">Students enrolled in this course: {{studentCourse[course.id]}}</p>
-                                    </ng-container>
-                                    <ng-container *ngId="course.studentsIDs == null">
-                                        <p class="students code">No students enrolled in this course yet.</p>
-                                    </ng-container>
+                                    <p class="description code"><strong>Description:</strong> {{course.description}}</p>
                                 </div>
                             </div>
+                            <div class="infoo">
+                                <p class="info code">Sections: <strong>{{countSectionss(course.id)}}</strong></p>
+                                <p class="info code">Students: <strong>{{countStudentss(course)}}</strong></p>
+                                <p class="info code">Points: <strong>{{course.points}}</strong></p>
+                                <p class="info code">Raiting: <strong>{{course.rating}}</strong></p>
+                                <p class="info code">Users Rate: <strong>{{course.ratingQty}}</strong></p>
+                            </div>
                             <div class="rightt">
-                                <a class="btn update" routerLink="/Teacher/{{routeid}}/Update/Course/{{course.id}}">Update</a>
-                                <a class="btn delete" routerLink="/Teacher/{{routeid}}/Delete/Course/{{course.id}}">Delete</a>
-                                <a class="btn preview" routerLink="/Teacher/{{routeid}}/Course/{{course.id}}">Preview</a>
+                                <a class="btn update font" routerLink="/Teacher/{{routeid}}/Update/Course/{{course.id}}">Update</a>
+                                <a class="btn delete font" routerLink="/Teacher/{{routeid}}/Delete/Course/{{course.id}}">Delete</a>
+                                <a class="btn preview font" routerLink="/Teacher/{{routeid}}/Course/{{course.id}}">Preview</a>
                             </div>
                         </div>
                     </ng-container>
@@ -162,25 +231,71 @@
                 <ng-container *ngIf="section.teacherID != null">
                     <ng-container *ngIf="section.teacherID == routeid">
                         <div class="box">
+                            <div class="icon">
+                                <ng-container *ngFor="let category of categories">
+                                    <ng-container *ngFor="let course of courses">
+                                        <ng-container *ngIf="section.courseID == course.id">
+                                            <ng-container *ngIf="category.id == course.categoryID">
+                                                <ng-container *ngIf="category.title == 'Math'">
+                                                    <img src="https://cdn-icons-png.flaticon.com/128/3771/3771278.png" alt="math">
+                                                </ng-container>
+                                                <ng-container *ngIf="category.title == 'Science'">
+                                                    <img src="https://cdn-icons-png.flaticon.com/128/3655/3655580.png" alt="science">
+                                                </ng-container>
+                                                <ng-container *ngIf="category.title == 'Informatics'">
+                                                    <img src="https://cdn-icons-png.flaticon.com/128/6062/6062646.png" alt="informatics">
+                                                </ng-container>
+                                                <ng-container *ngIf="category.title == 'Software Development'">
+                                                    <img src="https://cdn-icons-png.flaticon.com/128/1316/1316740.png" alt="software development">
+                                                </ng-container>
+                                                <ng-container *ngIf="category.title == 'Software Technologies'">
+                                                    <img src="https://cdn-icons-png.flaticon.com/128/644/644667.png" alt="software technologies">
+                                                </ng-container>
+                                                <ng-container *ngIf="category.title == 'Web Applications'">
+                                                    <img src="https://cdn-icons-png.flaticon.com/128/5044/5044729.png" alt="web applications">
+                                                </ng-container>
+                                                <ng-container *ngIf="category.title == 'Mobile Development'">
+                                                    <img src="https://cdn-icons-png.flaticon.com/128/2586/2586488.png" alt="mobile development">
+                                                </ng-container>
+                                                <ng-container *ngIf="category.title == 'Physics'">
+                                                    <img src="https://cdn-icons-png.flaticon.com/128/6813/6813708.png" alt="physics">
+                                                </ng-container>
+                                                <ng-container *ngIf="category.title == 'Creativity'">
+                                                    <img src="https://cdn-icons-png.flaticon.com/128/3749/3749896.png" alt="creativity">
+                                                </ng-container>
+                                                <ng-container *ngIf="category.title == 'Art'">
+                                                    <img src="https://cdn-icons-png.flaticon.com/128/2400/2400603.png" alt="art">
+                                                </ng-container>
+                                                <ng-container *ngIf="category.title == 'Marketing'">
+                                                    <img src="https://cdn-icons-png.flaticon.com/128/1998/1998087.png" alt="marketing">
+                                                </ng-container>
+                                                <ng-container *ngIf="category.title == 'Self Development'">
+                                                    <img src="https://cdn-icons-png.flaticon.com/128/10068/10068898.png" alt="self development">
+                                                </ng-container>
+                                            </ng-container>
+                                        </ng-container>
+                                    </ng-container>
+                                </ng-container>
+                            </div>
                             <div class="leftt">
                                 <div class="top">
                                     <div class="left">
-                                        <p class="title">{{section.title}}</p>
                                         <ng-container *ngFor="let course of courses">
                                             <ng-container *ngIf="section.courseID == course.id">
-                                                <p class="course">Course: {{course.title}}</p>
+                                                <p class="course code">Course: <strong>{{course.title}}</strong></p>
                                             </ng-container>
                                         </ng-container>
+                                        <p class="title digital"><strong>Title:</strong> {{section.title}}</p>
                                     </div>
                                 </div>
                                 <div class="middle">
-                                    <p class="description">{{section.description}}</p>
+                                    <p class="description code"><strong>Description:</strong> {{section.description}}</p>
                                 </div>
                             </div>
                             <div class="rightt">
-                                <a class="btn update" routerLink="/Teacher/{{routeid}}/Update/Section/{{section.id}}">Update</a>
-                                <a class="btn delete" routerLink="/Teacher/{{routeid}}/Delete/Section/{{section.id}}">Delete</a>
-                                <a class="btn preview" routerLink="/Teacher/{{routeid}}/Section/{{sectionCourse[section.id]}}">Preview</a>
+                                <a class="btn update font" routerLink="/Teacher/{{routeid}}/Update/Section/{{section.id}}">Update</a>
+                                <a class="btn delete font" routerLink="/Teacher/{{routeid}}/Delete/Section/{{section.id}}">Delete</a>
+                                <a class="btn preview font" routerLink="/Teacher/{{routeid}}/Section/{{sectionCourse[section.id]}}">Preview</a>
                             </div>
                         </div>
                     </ng-container>
@@ -199,20 +314,27 @@
                 <ng-container *ngIf="article.teacherID != null">
                     <ng-container *ngIf="article.teacherID == routeid">
                         <div class="box">
+                            <div class="icon">
+                                <img src="https://cdn-icons-png.flaticon.com/128/4228/4228952.png" alt="articles">
+                            </div>
                             <div class="leftt">
                                 <div class="top">
                                     <div class="left">
-                                        <p class="title">{{article.title}}</p>
+                                        <p class="date code"><strong>Date:</strong> {{article.createdDate}}</p>
+                                        <p class="title digital"><strong>Title:</strong> {{article.title}}</p>
                                     </div>
                                 </div>
                                 <div class="middle">
-                                    <p class="description">{{article.description}}</p>
+                                    <p class="description code"><strong>Description:</strong> {{article.description}}</p>
+                                </div>
+                                <div class="middle">
+                                    <p class="users code">Users: <strong>{{countUsers}}</strong></p>
                                 </div>
                             </div>
                             <div class="rightt">
-                                <a class="btn update" routerLink="/Teacher/{{routeid}}/Update/Article/{{article.id}}">Update</a>
-                                <a class="btn delete" routerLink="/Teacher/{{routeid}}/Delete/Article/{{article.id}}">Delete</a>
-                                <a class="btn preview" routerLink="/Teacher/{{routeid}}/Article/{{article.id}}">Preview</a>
+                                <a class="btn update font" routerLink="/Teacher/{{routeid}}/Update/Article/{{article.id}}">Update</a>
+                                <a class="btn delete font" routerLink="/Teacher/{{routeid}}/Delete/Article/{{article.id}}">Delete</a>
+                                <a class="btn preview font" routerLink="/Teacher/{{routeid}}/Article/{{article.id}}">Preview</a>
                             </div>
                         </div>
                     </ng-container>
@@ -228,27 +350,31 @@
                 <ng-container *ngFor="let teacherStudent of teacherStudents">
                     <div class="box">
                         <div class="up">
-                            <p class="cap">Student</p>
-                            <p class="name">{{teacherStudent.firstName}} {{teacherStudent.lastName}}</p>
-                            <p class="name">{{teacherStudent.email}}</p>
+                            <p class="cap code">Student</p>
+                            <p class="name code"><strong>Name:</strong> {{teacherStudent.firstName}} {{teacherStudent.lastName}}</p>
+                            <p class="name code"><strong>Email:</strong> {{teacherStudent.email}}</p>
                         </div>
                         <div class="middle">
-                            <p class="bio">{{teacherStudent.bio}}</p>
+                            <p class="bio code" *ngIf="teacherStudent.bio != 'initial'"><strong>Bio:</strong> {{teacherStudent.bio}}</p>
+                            <p class="bio code" *ngIf="teacherStudent.bio == 'initial'"><strong>Bio:</strong>no bio</p>
                         </div>
                         <div class="predown">
-                            <p class="username">Username: {{teacherStudent.username}}</p>
-                            <p class="points">Points: {{teacherStudent.points}}</p>
+                            <p class="username digital"><strong>Username:</strong> {{teacherStudent.username}}</p>
+                            <p class="points code"><strong>Points:</strong> {{teacherStudent.points}}</p>
                         </div>
                         <div class="down">
-                            <p class="courses">Courses enrolled: {{teacherStudent.courseCount}}</p>
+                            <p class="courses code"><strong>Courses enrolled:</strong> {{teacherStudent.courseCount}}</p>
                         </div>
-                        <p class="btnbox"><a class="btn preview" routerLink="/Teacher/{{routeid}}/Profile/Student/{{teacherStudent.id}}">View Profile</a></p>
+                        <p class="btnbox font"><a class="btn preview" routerLink="/Teacher/{{routeid}}/Profile/Student/{{teacherStudent.id}}">View Profile</a></p>
                     </div>
                 </ng-container>
             </ng-container>
             <ng-container *ngIf="teacherStudents.length == null || teacherStudents.length == 0">
                 <p class="no code">No students enrolled in you courses at this moment.</p>
             </ng-container>
+        </div>
+        <div id="teacher-users" class="downn down-students" *ngIf="showUsers">
+            <p class="titlee code">Users</p>
         </div>
         <div id="teacher-profile" class="downn down-profile" *ngIf="showProfile">
             <p class="titlee code">My profile</p>
@@ -276,13 +402,47 @@
                         <p class="info-right code">{{countSections}}</p>
                     </div>
                     <div class="box">
-                        <p class="info-left code">Students enrolled to your teach</p>
+                        <p class="info-left code">Created articles</p>
+                        <p class="info-right code">{{countArticles}}</p>
+                    </div>
+                    <div class="box">
+                        <p class="info-left code">Students enrolled in your courses</p>
                         <ng-container *ngIf="hasStudentsInCourses">
                             <p class="info-right code">{{countStudents}}</p>
                         </ng-container>
                         <ng-container *ngIf="!hasStudentsInCourses">
                             <p class="info-right code">0</p>
                         </ng-container>
+                    </div>
+                    <div class="box">
+                        <p class="info-left code">Users readed your articles</p>
+                        <p class="info-right code">{{countUsers}}</p>
+                    </div>
+                    <div class="box">
+                        <p class="info-left code">Articles enrolled</p>
+                        <ng-container *ngIf="enrolledArticles.length != null">
+                            <p class="info-right code">{{enrolledArticles.length}}</p>
+                        </ng-container>
+                        <ng-container *ngIf="enrolledArticles.length == null">
+                            <p class="info-right code">0</p>
+                        </ng-container>
+                    </div>
+                    <div class="box">
+                        <p class="info-left code">Articles completed</p>
+                        <p class="info-right code">{{counterArticles}}</p>
+                    </div>
+                    <div class="box">
+                        <p class="info-left code">News enrolled</p>
+                        <ng-container *ngIf="enrolledNews.length != null">
+                            <p class="info-right code">{{enrolledNews.length}}</p>
+                        </ng-container>
+                        <ng-container *ngIf="enrolledNews.length == null">
+                            <p class="info-right code">0</p>
+                        </ng-container>
+                    </div>
+                    <div class="box">
+                        <p class="info-left code">News completed</p>
+                        <p class="info-right code">{{counterNews}}</p>
                     </div>
                 </div>
             </div>
