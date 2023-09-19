@@ -134,4 +134,8 @@ export class TeacherApiService {
   getNews(id: number): Observable<News>{
     return this.http.get<News>(this.newsUrl + '/GetNews/' + id);
   }
+
+  updateNews(id: number, news: News): Observable<any>{
+    return this.http.put<News>(this.newsUrl + '/UpdateNews/' + id, news);
+  }
 }
