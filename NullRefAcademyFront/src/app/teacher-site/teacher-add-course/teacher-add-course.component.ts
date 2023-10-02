@@ -97,6 +97,7 @@ export class TeacherAddCourseComponent implements OnInit {
 
   onSubmit() {
     this.submited = true;
+    console.log('test')
     //points
     if(this.course.points < 1 || this.course.points === this.nullfield){
       this.hasErrorPoints = true;
