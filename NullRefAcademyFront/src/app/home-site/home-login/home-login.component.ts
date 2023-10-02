@@ -32,6 +32,8 @@ export class HomeLoginComponent implements OnInit {
     this.service.loginUser(this.userlogin)
     .subscribe(
       response => {
+        console.log('response')
+        console.log(response)
         if (response.accountType == "Admin"){
           this.router.navigate(['/Admin/' + response.id + '/Dashboard'])
         }
