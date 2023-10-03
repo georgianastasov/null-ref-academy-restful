@@ -24,8 +24,9 @@
 }
 
 .teacher-dashboard .down-sections .box {
+    background-color: #222534;
     padding: 1rem;
-    border: 1px solid gray;
+    border: 1px solid #FFE08C;
     border-radius: 0.3rem;
     box-shadow: 0px 0px 14px 3px rgba(0,0,0,0.2);
     align-items: center;
@@ -35,8 +36,12 @@
     justify-content: space-between;
 }
 
+.teacher-dashboard .down-sections .box .icon{
+    flex-basis: 6%;
+}
+
 .teacher-dashboard .down-sections .box .leftt{
-    flex-basis: 88%;
+    flex-basis: 80%;
 }
 
 .teacher-dashboard .down-sections .box .rightt{
@@ -50,28 +55,28 @@
 .teacher-dashboard .down-sections .box .top{
     display: flex;
     justify-content: space-between;
-    margin-bottom: 0.8rem;
-    border-bottom: 1px solid lightgray;
     padding-bottom: 0.2rem;
 }
 
 .teacher-dashboard .down-sections .box .top .title{
-    font-size:1.2rem;
-    font-weight: bold;
+    font-size: 1.5rem;
+    color: #FFE08C;
 }
 
 .teacher-dashboard .down-sections .box .top .course{
     font-size: 0.8rem;
-    color: gray;
+    color: #FFE08C;
     text-transform: uppercase;
 }
 
 .teacher-dashboard .down-sections .box .middle .description{
-    font-size: 0.95rem;
-    color: gray;
+    font-size: 0.9rem;
+    color: #FFE08C;
 }
 
 .teacher-dashboard .down-sections .box .btn{
+    background-color: #FFE08C;
+    color: #222534;
     display: inline-block;
     color: black;
     border-radius: 0.4rem;
@@ -84,19 +89,7 @@
 }
 
 .teacher-dashboard .down-sections .box .btn:hover{
-    color: white;
-}
-
-.teacher-dashboard .down-sections .box .btn.update{
-    background-color: orange;
-}
-
-.teacher-dashboard .down-sections .box .btn.delete{
-    background-color: red;
-}
-
-.teacher-dashboard .down-sections .box .btn.preview{
-    background-color: #5FC9DE;
+    font-weight: bold;
 }
 
 .teacher-dashboard .down-sections .box .btn:last-child{
