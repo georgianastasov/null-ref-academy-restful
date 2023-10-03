@@ -24,8 +24,9 @@
 }
 
 .teacher-dashboard .down-articles .box {
+    background-color: #222534;
     padding: 1rem;
-    border: 1px solid gray;
+    border: 1px solid #FFE08C;
     border-radius: 0.3rem;
     box-shadow: 0px 0px 14px 3px rgba(0,0,0,0.2);
     align-items: center;
@@ -35,8 +36,12 @@
     justify-content: space-between;
 }
 
+.teacher-dashboard .down-articles .box .icon{
+    flex-basis: 6%;
+}
+
 .teacher-dashboard .down-articles .box .leftt{
-    flex-basis: 88%;
+    flex-basis: 80%;
 }
 
 .teacher-dashboard .down-articles .box .rightt{
@@ -50,32 +55,37 @@
 .teacher-dashboard .down-articles .box .top{
     display: flex;
     justify-content: space-between;
-    margin-bottom: 0.8rem;
-    border-bottom: 1px solid lightgray;
     padding-bottom: 0.2rem;
 }
 
+.teacher-dashboard .down-articles .box .top .date{
+    font-size: 0.8rem;
+    color: #FFE08C;
+}
+
 .teacher-dashboard .down-articles .box .top .title{
-    font-size:1.2rem;
-    font-weight: bold;
+    font-size: 1.5rem;
+    color: #FFE08C;
 }
 
 .teacher-dashboard .down-articles .box .middle .description{
-    font-size: 0.95rem;
-    color: gray;
+    font-size: 0.9rem;
+    color: #FFE08C;
+}
+
+.teacher-dashboard .down-articles .box .middle .users{
+    font-size: 0.9rem;
+    color: #FFE08C;
+    margin-top: 0.2rem;
 }
 
 .teacher-dashboard .down-articles .box .down{
-    margin-top: 0.8rem;
-    border-top: 1px solid lightgray;
     padding-top: 0.2rem;
 }
 
-.teacher-dashboard .down-articles .box .down .courses{
-    color: gray;
-}
-
 .teacher-dashboard .down-articles .box .btn{
+    background-color: #FFE08C;
+    color: #FFE08C;
     display: inline-block;
     color: black;
     border-radius: 0.4rem;
@@ -88,21 +98,8 @@
 }
 
 .teacher-dashboard .down-articles .box .btn:hover{
-    color: white;
+    font-weight: bold;
 }
-
-.teacher-dashboard .down-articles .box .btn.update{
-    background-color: orange;
-}
-
-.teacher-dashboard .down-articles .box .btn.delete{
-    background-color: red;
-}
-
-.teacher-dashboard .down-articles .box .btn.preview{
-    background-color: #5FC9DE;
-}
-
 
 .teacher-dashboard .down-articles .box .btn:last-child{
     margin-bottom: 0;
