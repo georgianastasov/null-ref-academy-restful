@@ -24,8 +24,9 @@
 }
 
 .teacher-dashboard .down-courses .box {
+    background-color: #222534;
     padding: 1rem;
-    border: 1px solid gray;
+    border: 1px solid #FFE08C;
     border-radius: 0.3rem;
     box-shadow: 0px 0px 14px 3px rgba(0,0,0,0.2);
     align-items: center;
@@ -35,8 +36,18 @@
     justify-content: space-between;
 }
 
+.teacher-dashboard .down-courses .box .icon{
+    flex-basis: 6%;
+}
+
 .teacher-dashboard .down-courses .box .leftt{
-    flex-basis: 88%;
+    flex-basis: 65%;
+}
+
+.teacher-dashboard .down-courses .box .infoo{
+    flex-basis: 14%;
+    color: #FFE08C;
+    font-size: 0.8rem;
 }
 
 .teacher-dashboard .down-courses .box .rightt{
@@ -50,19 +61,17 @@
 .teacher-dashboard .down-courses .box .top{
     display: flex;
     justify-content: space-between;
-    margin-bottom: 0.8rem;
-    border-bottom: 1px solid lightgray;
     padding-bottom: 0.2rem;
 }
 
 .teacher-dashboard .down-courses .box .top .title{
-    font-size:1.2rem;
-    font-weight: bold;
+    font-size: 1.5rem;
+    color: #FFE08C;
 }
 
 .teacher-dashboard .down-courses .box .top .category{
     font-size: 0.8rem;
-    color: gray;
+    color: #FFE08C;
     text-transform: uppercase;
 }
 
@@ -71,27 +80,19 @@
     color: black;
     border-radius: 0.4rem;
     padding: 0.1rem 0.5rem;
-    background-color: #5FC9DE;
 }
 
 .teacher-dashboard .down-courses .box .middle .description{
-    font-size: 0.95rem;
-    color: gray;
+    font-size: 0.9rem;
+    color: #FFE08C;
 }
 
 .teacher-dashboard .down-courses .box .pre-down {
-    margin-top: 0.8rem;
-    border-top: 1px solid lightgray;
     padding-top: 0.4rem;
     padding-bottom: 0.4rem;
 }
 
-.teacher-dashboard .down-courses .box .pre-down .courses{
-    color: gray;
-}
-
 .teacher-dashboard .down-courses .box .down{
-    border-top: 1px solid lightgray;
     padding-top: 0.4rem;
 }
 
@@ -100,6 +101,8 @@
 }
 
 .teacher-dashboard .down-courses .box .btn{
+    background-color: #FFE08C;
+    color: #222534;
     display: inline-block;
     color: black;
     border-radius: 0.4rem;
@@ -112,21 +115,8 @@
 }
 
 .teacher-dashboard .down-courses .box .btn:hover{
-    color: white;
+    font-weight: bold;
 }
-
-.teacher-dashboard .down-courses .box .btn.update{
-    background-color: orange;
-}
-
-.teacher-dashboard .down-courses .box .btn.delete{
-    background-color: red;
-}
-
-.teacher-dashboard .down-courses .box .btn.preview{
-    background-color: #5FC9DE;
-}
-
 
 .teacher-dashboard .down-courses .box .btn:last-child{
     margin-bottom: 0;
